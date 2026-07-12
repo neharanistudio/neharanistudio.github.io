@@ -162,3 +162,31 @@ background:#e75480;
 color:white;
 cursor:pointer;
 }
+.contact{
+padding:70px 20px;
+text-align:center;
+background:#fff0f6;
+}
+
+.contact h2{
+font-size:40px;
+color:#e75480;
+margin-bottom:20px;
+}
+
+.insta{
+background:#c13584;
+margin-left:10px;
+}
+
+footer{
+background:#e75480;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+footer h3{
+font-size:30px;
+margin-bottom:10px;
+}
