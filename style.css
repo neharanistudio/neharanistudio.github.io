@@ -282,20 +282,20 @@ transition:.3s;
 background:#d63384;
 }
 footer{
-background:linear-gradient(135deg,#e75480,#ffb6c1);
-color:white;
-padding:50px 20px;
-text-align:center;
-margin-top:80px;
-}
+<footer>
 
-footer h3{
-font-size:32px;
-margin-bottom:15px;
-}
+<h3>Neha Rani Studio 🌸</h3>
 
-footer p{
-font-size:16px;
-line-height:1.8;
-opacity:.95;
-}
+<p>
+Customized Gifts • Fashion • Bags • Jewellery • Bouquets • Accessories
+</p>
+
+<p>
+Made with ❤️ in Pakistan
+</p>
+
+<p>
+© 2026 Neha Rani Studio. All Rights Reserved.
+</p>
+
+</footer>
