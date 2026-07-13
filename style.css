@@ -460,3 +460,48 @@ transition:.3s;
 transform:scale(1.12);
 background:#1ebe5d;
 }
+.why-us{
+padding:80px 20px;
+background:#fff5fa;
+text-align:center;
+}
+
+.why-us h2{
+font-size:42px;
+color:#d63384;
+margin-bottom:50px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.feature{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+}
+
+.feature{
+font-size:20px;
+}
+
+.feature h3{
+margin:20px 0 10px;
+color:#d63384;
+}
+
+.feature p{
+color:#666;
+line-height:1.7;
+}
