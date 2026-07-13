@@ -330,3 +330,7 @@ background:#000;
 .tiktok:hover{
 background:#222;
 }
+.btn i{
+margin-right:8px;
+font-size:20px;
+}
