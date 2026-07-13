@@ -334,3 +334,11 @@ background:#222;
 margin-right:8px;
 font-size:20px;
 }
+.top-bar{
+background:#ffd6e7;
+color:#d63384;
+text-align:center;
+padding:12px;
+font-size:16px;
+font-weight:bold;
+}
