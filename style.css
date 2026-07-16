@@ -466,3 +466,168 @@ height:260px;
 }
 
 }
+/* ===========================
+FEATURED PRODUCTS
+=========================== */
+
+.featured-products{
+padding:80px 7%;
+background:#fff;
+}
+
+.section-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
+}
+
+.section-title h2{
+font-size:32px;
+font-weight:700;
+color:#222;
+}
+
+.section-title a{
+color:#d63384;
+font-weight:600;
+}
+
+.productSwiper{
+padding-bottom:20px;
+}
+
+.product-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.35s;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.product-card h3{
+font-size:20px;
+padding:18px 20px 8px;
+color:#222;
+}
+
+.product-card .price{
+padding:0 20px;
+font-size:22px;
+font-weight:700;
+color:#d63384;
+margin-bottom:18px;
+}
+
+.product-card button{
+width:calc(100% - 40px);
+margin:0 20px 20px;
+height:48px;
+border:none;
+background:#d63384;
+color:#fff;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.product-card button:hover{
+background:#222;
+}
+
+
+
+/* ===========================
+CATEGORY SECTION
+=========================== */
+
+.category-section{
+padding:80px 7%;
+background:#fffafc;
+}
+
+.categorySwiper{
+padding-bottom:20px;
+}
+
+.category-card{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.category-card:hover{
+transform:translateY(-8px);
+}
+
+.category-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.category-card h3{
+padding:18px;
+text-align:center;
+font-size:18px;
+font-weight:600;
+}
+
+
+
+/* ===========================
+RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.section-title h2{
+font-size:26px;
+}
+
+.product-card img{
+height:230px;
+}
+
+.category-card img{
+height:190px;
+}
+
+}
+
+
+@media(max-width:576px){
+
+.featured-products,
+.category-section{
+padding:50px 20px;
+}
+
+.section-title{
+flex-direction:column;
+gap:10px;
+align-items:flex-start;
+}
+
+.product-card img{
+height:200px;
+}
+
+.category-card img{
+height:170px;
+}
+
+}
