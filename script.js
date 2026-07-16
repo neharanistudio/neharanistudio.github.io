@@ -155,3 +155,42 @@ slidesPerView:5
 }
 
 });
+// ==========================
+// PRODUCT SLIDER
+// ==========================
+
+const productSwiper = new Swiper(".productSwiper",{
+
+loop:true,
+
+spaceBetween:25,
+
+autoplay:{
+
+delay:3000,
+
+disableOnInteraction:false,
+
+},
+
+breakpoints:{
+
+0:{
+slidesPerView:1
+},
+
+576:{
+slidesPerView:2
+},
+
+992:{
+slidesPerView:3
+},
+
+1200:{
+slidesPerView:4
+}
+
+}
+
+});
