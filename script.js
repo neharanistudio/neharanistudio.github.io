@@ -84,3 +84,74 @@ if(topBtn){
     });
 
 }
+// ==========================
+// HERO SLIDER
+// ==========================
+
+const heroSwiper = new Swiper(".heroSwiper",{
+
+loop:true,
+
+speed:900,
+
+autoplay:{
+
+delay:3500,
+
+disableOnInteraction:false,
+
+},
+
+pagination:{
+
+el:".swiper-pagination",
+
+clickable:true,
+
+}
+
+});
+
+
+
+// ==========================
+// CATEGORY SLIDER
+// ==========================
+
+const categorySwiper = new Swiper(".categorySwiper",{
+
+loop:true,
+
+spaceBetween:25,
+
+slidesPerView:2,
+
+autoplay:{
+
+delay:2500,
+
+disableOnInteraction:false,
+
+},
+
+breakpoints:{
+
+576:{
+slidesPerView:2
+},
+
+768:{
+slidesPerView:3
+},
+
+992:{
+slidesPerView:4
+},
+
+1200:{
+slidesPerView:5
+}
+
+}
+
+});
