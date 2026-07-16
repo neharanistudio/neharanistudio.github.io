@@ -1,17 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+const menu = document.getElementById("sideMenu");
 
-    console.log("Welcome to Neha Rani Studio 💖");
+document.querySelector(".menu-btn").onclick = function () {
+    menu.style.left = "0";
+};
 
-    const shopButton = document.querySelector(".btn");
-
-    if (shopButton) {
-        shopButton.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            alert("Welcome to Neha Rani Studio 🌸\nOur collection is coming soon!");
-
-            // Baad mein is button ko Products section par scroll karwayenge.
-        });
-    }
-
-});
+function closeMenu() {
+    menu.style.left = "-320px";
+}
