@@ -1581,3 +1581,37 @@ justify-content:center;
     display:block;
 
 }
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-350px;
+    width:320px;
+    height:100vh;
+    background:white;
+    z-index:9999;
+    padding-top:30px;
+    overflow-y:auto;
+    transition:0.4s;
+}
+
+
+.sidebar.active{
+    left:0;
+}
+
+
+.menu-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    z-index:9998;
+    display:none;
+}
+
+
+.menu-overlay.active{
+    display:block;
+}
