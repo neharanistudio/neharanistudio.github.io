@@ -1,6 +1,6 @@
 /* ===========================
    Neha Rani Studio
-   Premium Boutique Website
+   Clean Premium CSS
 =========================== */
 
 *{
@@ -10,1507 +10,185 @@
     font-family:'Poppins',sans-serif;
 }
 
+
 html{
     scroll-behavior:smooth;
 }
 
+
 body{
-    background:#ffffff;
+    background:#fff;
     color:#222;
     overflow-x:hidden;
 }
 
-/* Scrollbar */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#e78fb3;
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-track{
-    background:#f8f8f8;
-}
-
-/* Links */
 
 a{
     text-decoration:none;
     color:inherit;
 }
 
-/* Images */
 
 img{
     max-width:100%;
     display:block;
 }
 
-/* Announcement Bar */
 
-.announcement{
-    background:#f8d9e7;
-    color:#444;
-    text-align:center;
-    padding:12px;
-    font-size:14px;
-    font-weight:500;
-}
+/* ===========================
+ Header
+=========================== */
 
-/* Header */
 
 header{
+
     width:100%;
     height:85px;
     background:#fff;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     padding:0 60px;
     position:sticky;
     top:0;
-    z-index:999;
-    box-shadow:0 2px 18px rgba(0,0,0,.06);
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
 }
 
-/* Left */
+
 
 .left-header{
+
     display:flex;
     align-items:center;
     gap:20px;
+
 }
 
-/* Menu */
+
 
 .menu-icon{
+
     font-size:28px;
     cursor:pointer;
-    transition:.3s;
+    color:#222;
+
 }
 
+
 .menu-icon:hover{
+
     color:#d63384;
+
 }
+
+
 
 /* Logo */
 
+
 .logo{
+
     display:flex;
     align-items:center;
     gap:12px;
+
 }
 
+
+
 .logo img{
+
     width:55px;
     height:55px;
     border-radius:50%;
+
 }
 
+
+
 .logo h2{
-    font-size:26px;
+
     color:#d63384;
-    font-weight:700;
+    font-size:25px;
+
 }
+
+
 
 /* Search */
 
+
 .search-bar{
+
     width:45%;
     display:flex;
+
 }
+
 
 .search-bar input{
+
     flex:1;
-    height:50px;
-    border:none;
-    outline:none;
-    background:#fafafa;
-    border-radius:40px 0 0 40px;
-    padding:0 20px;
-    font-size:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-}
-
-.search-bar button{
-    width:65px;
-    border:none;
-    background:#d63384;
-    color:#fff;
-    border-radius:0 40px 40px 0;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
-}
-
-.search-bar button:hover{
-    background:#b81d6f;
-}
-
-/* Right Icons */
-
-.right-header{
-    display:flex;
-    align-items:center;
-    gap:25px;
-}
-
-.right-header i{
-    font-size:22px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.right-header i:hover{
-    color:#d63384;
-    transform:scale(1.1);
-}
-
-/* Sidebar */
-
-.sidebar{
-    position:fixed;
-    left:-300px;
-    top:0;
-    width:280px;
-    height:100%;
-    background:#fff;
-    box-shadow:5px 0 25px rgba(0,0,0,.15);
-    padding-top:100px;
-    transition:.4s;
-    z-index:1000;
-}
-
-.sidebar a{
-    display:block;
-    padding:18px 30px;
-    color:#333;
-    font-weight:500;
-    border-bottom:1px solid #f3f3f3;
-    transition:.3s;
-}
-
-.sidebar a:hover{
-    background:#fdeaf3;
-    color:#d63384;
-}
-/* ===========================
-   Hero Section
-=========================== */
-
-.hero{
-    width:100%;
-    min-height:650px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:80px 8%;
-    background:linear-gradient(135deg,#fff8fb,#fdeef5);
-}
-
-.hero-text{
-    width:48%;
-}
-
-.hero-text h1{
-    font-size:58px;
-    line-height:1.2;
-    font-weight:700;
-    color:#222;
-    margin-bottom:20px;
-}
-
-.hero-text p{
-    font-size:18px;
-    color:#666;
-    line-height:1.8;
-    margin-bottom:35px;
-}
-
-.hero-btn{
-    display:inline-block;
-    background:#d63384;
-    color:#fff;
-    padding:16px 38px;
-    border-radius:40px;
-    font-size:16px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.hero-btn:hover{
-    background:#b81d6f;
-    transform:translateY(-4px);
-    box-shadow:0 12px 25px rgba(214,51,132,.25);
-}
-
-.hero-image{
-    width:45%;
-    display:flex;
-    justify-content:center;
-}
-
-.hero-image img{
-    width:100%;
-    max-width:520px;
-    border-radius:25px;
-    box-shadow:0 20px 45px rgba(0,0,0,.12);
-}
-
-/* ===========================
-   Section Title
-=========================== */
-
-.title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.title h2{
-    font-size:40px;
-    color:#222;
-    margin-bottom:10px;
-}
-
-.title p{
-    color:#777;
-    font-size:16px;
-}
-
-/* ===========================
-   Categories
-=========================== */
-
-.categories{
-    padding:90px 8%;
-    background:#fff;
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-}
-
-.category{
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-    transition:.35s;
-    cursor:pointer;
-}
-
-.category:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-}
-
-.category img{
-    width:100%;
-    height:260px;
-    object-fit:cover;
-}
-
-.category h3{
-    padding:18px;
-    text-align:center;
-    font-size:20px;
-    color:#333;
-    font-weight:600;
-}
-
-/* ===========================
-   Responsive
-=========================== */
-
-@media(max-width:992px){
-
-header{
-    padding:0 20px;
-}
-
-.search-bar{
-    display:none;
-}
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-    padding:60px 20px;
-}
-
-.hero-text,
-.hero-image{
-    width:100%;
-}
-
-.hero-text h1{
-    font-size:42px;
-}
-
-.hero-image{
-    margin-top:40px;
-}
-
-.category-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:576px){
-
-.logo h2{
-    font-size:20px;
-}
-
-.right-header{
-    gap:15px;
-}
-
-.hero-text h1{
-    font-size:34px;
-}
-
-.hero-text p{
-    font-size:15px;
-}
-
-.category-grid{
-    grid-template-columns:1fr;
-}
-
-.title h2{
-    font-size:30px;
-}
-
-}
-/* ===========================
-   Trending Products
-=========================== */
-
-.trending{
-    padding:90px 8%;
-    background:#fff8fb;
-}
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-}
-
-.product-card{
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-    transition:.35s;
-    position:relative;
-}
-
-.product-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
-}
-
-.product-card img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-}
-
-.badge{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#d63384;
-    color:#fff;
-    padding:7px 14px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:600;
-}
-
-.product-card h3{
-    padding:18px 18px 8px;
-    font-size:20px;
-    color:#333;
-}
-
-.price{
-    padding:0 18px;
-    color:#d63384;
-    font-size:22px;
-    font-weight:700;
-}
-
-.product-card button{
-    width:calc(100% - 36px);
-    margin:18px;
     height:48px;
     border:none;
-    border-radius:40px;
-    background:#d63384;
-    color:#fff;
-    cursor:pointer;
-    font-size:16px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.product-card button:hover{
-    background:#b81d6f;
-}
-
-/* ===========================
-   Offer Banner
-=========================== */
-
-.offer-banner{
-    margin:90px 8%;
-    background:linear-gradient(135deg,#ffd9e8,#fff);
-    border-radius:30px;
-    padding:70px;
-    text-align:center;
-}
-
-.offer-banner h2{
-    font-size:42px;
-    color:#222;
-    margin-bottom:20px;
-}
-
-.offer-banner p{
-    color:#666;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-/* ===========================
-   Instagram
-=========================== */
-
-.instagram{
-    padding:90px 8%;
-}
-
-.instagram-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.instagram-grid img{
-    width:100%;
-    height:320px;
-    object-fit:cover;
-    border-radius:20px;
-    transition:.3s;
-}
-
-.instagram-grid img:hover{
-    transform:scale(1.03);
-}
-
-/* ===========================
-   Footer
-=========================== */
-
-footer{
-    background:#222;
-    color:#fff;
-    padding:70px 8% 30px;
-}
-
-.footer-content{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
-}
-
-.footer-content h3{
-    margin-bottom:20px;
-    color:#fff;
-}
-
-.footer-content p,
-.footer-content a{
-    display:block;
-    color:#ddd;
-    margin-bottom:12px;
-}
-
-.footer-content a:hover{
-    color:#fff;
-}
-
-.copyright{
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.15);
-    margin-top:40px;
-    padding-top:20px;
-    color:#bbb;
-}
-
-/* ===========================
-   WhatsApp Button
-=========================== */
-
-.whatsapp{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    background:#25D366;
-    color:#fff;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:34px;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-    z-index:999;
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.1);
-}
-
-/* ===========================
-   Responsive
-=========================== */
-
-@media(max-width:992px){
-
-.product-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.instagram-grid{
-    grid-template-columns:repeat(2,1fr);
-}
-
-.footer-content{
-    grid-template-columns:1fr;
-    text-align:center;
-}
-
-.offer-banner{
-    padding:50px 25px;
-}
-
-.offer-banner h2{
-    font-size:32px;
-}
-
-}
-
-@media(max-width:576px){
-
-.product-grid{
-    grid-template-columns:1fr;
-}
-
-.instagram-grid{
-    grid-template-columns:1fr;
-}
-
-.offer-banner h2{
-    font-size:26px;
-}
-
-.offer-banner p{
-    font-size:15px;
-}
-
-}
-/* ===========================
-   Newsletter
-=========================== */
-
-.newsletter{
-    padding:90px 8%;
-    background:#fdeef5;
-    text-align:center;
-}
-
-.newsletter h2{
-    font-size:42px;
-    margin-bottom:15px;
-    color:#222;
-}
-
-.newsletter p{
-    color:#666;
-    margin-bottom:30px;
-    font-size:17px;
-}
-
-.newsletter form{
-    max-width:650px;
-    margin:auto;
-    display:flex;
-}
-
-.newsletter input{
-    flex:1;
-    height:60px;
-    border:none;
     outline:none;
+    background:#f8f8f8;
     padding:0 20px;
-    border-radius:50px 0 0 50px;
-    font-size:16px;
+    border-radius:30px 0 0 30px;
+
 }
 
-.newsletter button{
-    width:180px;
+
+
+.search-bar button{
+
+    width:60px;
     border:none;
     background:#d63384;
     color:#fff;
-    border-radius:0 50px 50px 0;
+    border-radius:0 30px 30px 0;
     cursor:pointer;
-    font-size:16px;
-    font-weight:600;
-}
-
-.newsletter button:hover{
-    background:#b81d6f;
-}
-
-/* ===========================
-   Hover Animation
-=========================== */
-
-.category,
-.product-card,
-.instagram-grid img{
-    transition:.35s ease;
-}
-
-.category:hover,
-.product-card:hover{
-    transform:translateY(-10px);
-}
-
-.instagram-grid img:hover{
-    transform:scale(1.05);
-}
-
-/* ===========================
-   Buttons
-=========================== */
-
-button,
-.hero-btn{
-    transition:.3s;
-}
-
-button:hover,
-.hero-btn:hover{
-    opacity:.95;
-}
-
-/* ===========================
-   Selection Color
-=========================== */
-
-::selection{
-    background:#d63384;
-    color:#fff;
-}
-/* ===========================
-   Smooth Animation
-=========================== */
-
-.hero-text,
-.hero-image,
-.category,
-.product-card,
-.offer-banner,
-.instagram-grid img{
-    animation:fadeUp .8s ease;
-}
-
-@keyframes fadeUp{
-
-0%{
-opacity:0;
-transform:translateY(40px);
-}
-
-100%{
-opacity:1;
-transform:translateY(0);
-}
 
 }
 
-/* ===========================
-   Sidebar Active
-=========================== */
-
-.sidebar.active{
-left:0;
-}
-
-/* ===========================
-   Overlay
-=========================== */
-
-.overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.4);
-opacity:0;
-visibility:hidden;
-transition:.3s;
-z-index:998;
-}
-
-.overlay.show{
-opacity:1;
-visibility:visible;
-}
-
-/* ===========================
-   Footer Social Icons
-=========================== */
-
-.social-icons{
-display:flex;
-gap:15px;
-margin-top:20px;
-}
-
-.social-icons a{
-width:42px;
-height:42px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#fff;
-color:#d63384;
-border-radius:50%;
-font-size:18px;
-transition:.3s;
-}
-
-.social-icons a:hover{
-background:#d63384;
-color:#fff;
-}
-
-/* ===========================
-   Back To Top
-=========================== */
-
-#topBtn{
-position:fixed;
-bottom:100px;
-right:25px;
-width:55px;
-height:55px;
-border:none;
-border-radius:50%;
-background:#d63384;
-color:#fff;
-font-size:20px;
-cursor:pointer;
-display:none;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-z-index:999;
-}
-
-#topBtn:hover{
-background:#b81d6f;
-}
-
-/* ===========================
-   Mobile
-=========================== */
-
-@media(max-width:768px){
-
-header{
-padding:15px;
-}
-
-.logo h2{
-display:none;
-}
-
-.hero{
-padding:50px 20px;
-}
-
-.hero-text h1{
-font-size:32px;
-}
-
-.hero-text p{
-font-size:15px;
-}
-
-.offer-banner{
-margin:50px 20px;
-}
-
-.footer-content{
-text-align:center;
-}
-
-.newsletter form{
-flex-direction:column;
-gap:15px;
-}
-
-.newsletter input{
-border-radius:50px;
-}
-
-.newsletter button{
-width:100%;
-border-radius:50px;
-height:55px;
-}
-
-}
-
-/* ===========================
-   End
-=========================== */
-/* ===========================
-   Hero Slider
-=========================== */
-
-.hero-slider{
-    height:650px;
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(135deg,#fff5fa,#fde3ef);
-}
 
 
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
+/* Header Icons */
+
+
+.right-header{
+
     display:flex;
-    align-items:center;
-    padding:0 8%;
-    opacity:0;
-    visibility:hidden;
-    transition:1s ease;
-}
-
-
-.slide.active{
-    opacity:1;
-    visibility:visible;
-}
-
-
-.slide .hero-text{
-    max-width:600px;
-}
-
-
-.slide h1{
-    font-size:60px;
-    line-height:1.2;
-    color:#222;
-    margin-bottom:20px;
-    font-weight:700;
-}
-
-
-.slide p{
-    font-size:18px;
-    color:#666;
-    margin-bottom:35px;
-    line-height:1.8;
-}
-
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.hero-slider{
-    height:500px;
-}
-
-.slide{
-    padding:0 25px;
-}
-
-.slide h1{
-    font-size:36px;
-}
-
-.slide p{
-    font-size:15px;
-}
-
-}
-/* ===========================
- Luxury Category Cards
-=========================== */
-
-.categories{
-    padding:90px 8%;
-    background:#fff;
-}
-
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-}
-
-
-.category-card{
-    background:#fff;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.4s;
-    cursor:pointer;
-}
-
-
-.category-card:hover{
-    transform:translateY(-10px);
-}
-
-
-.category-image{
-    overflow:hidden;
-    height:280px;
-}
-
-
-.category-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-
-.category-card:hover img{
-    transform:scale(1.08);
-}
-
-
-.category-card h3{
-    text-align:center;
-    padding:22px;
-    font-size:21px;
-    color:#333;
-}
-
-
-@media(max-width:992px){
-
-.category-grid{
-    grid-template-columns:repeat(2,1fr);
-}
+    gap:22px;
 
 }
 
 
-@media(max-width:576px){
+.right-header i{
 
-.category-grid{
-    grid-template-columns:1fr;
-}
-
-}
-/* ===========================
- Featured Products
-=========================== */
-
-
-.featured-products{
-    padding:90px 8%;
-    background:#fff8fb;
-}
-
-
-.product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-}
-
-
-.product-card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    padding-bottom:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.4s;
-}
-
-
-.product-card:hover{
-    transform:translateY(-10px);
-}
-
-
-
-.product-img{
-    height:300px;
-    position:relative;
-    overflow:hidden;
-}
-
-
-
-.product-img img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.5s;
-}
-
-
-
-.product-card:hover img{
-    transform:scale(1.07);
-}
-
-
-
-.sale{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#d63384;
-    color:white;
-    padding:6px 15px;
-    border-radius:20px;
-    font-size:13px;
-    z-index:2;
-}
-
-
-
-.wishlist{
-    position:absolute;
-    right:15px;
-    top:15px;
-    background:white;
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#d63384;
-    z-index:2;
-}
-
-
-
-.product-card h3{
-    padding:20px 20px 5px;
-    font-size:20px;
-}
-
-
-
-.price{
-    padding:0 20px;
-    color:#d63384;
     font-size:22px;
-    font-weight:700;
-}
-
-
-
-.product-card button{
-
-    margin:20px;
-    width:calc(100% - 40px);
-    height:45px;
-    border:none;
-    background:#222;
-    color:white;
-    border-radius:30px;
     cursor:pointer;
-    transition:.3s;
 
 }
 
 
-.product-card button:hover{
+.right-header i:hover{
 
-    background:#d63384;
-
-}
-
-
-
-@media(max-width:992px){
-
-.product-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-
-
-@media(max-width:576px){
-
-.product-grid{
-grid-template-columns:1fr;
-}
-
-}
-/* ===========================
- Gift Banner
-=========================== */
-
-
-.gift-banner{
-
-margin:90px 8%;
-padding:90px 30px;
-background:linear-gradient(135deg,#fde2ef,#fff);
-border-radius:35px;
-text-align:center;
-
-}
-
-
-.gift-content h2{
-
-font-size:45px;
-margin-bottom:20px;
-
-}
-
-
-.gift-content p{
-
-font-size:18px;
-color:#666;
-margin-bottom:35px;
+    color:#d63384;
 
 }
 
 
 
 /* ===========================
- Reviews
+ Side Menu
 =========================== */
 
-
-.reviews{
-
-padding:90px 8%;
-background:#fff8fb;
-
-}
-
-
-.review-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-
-}
-
-
-.review-card{
-
-background:white;
-padding:35px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.07);
-text-align:center;
-
-}
-
-
-.stars{
-
-color:#d63384;
-font-size:22px;
-margin-bottom:20px;
-
-}
-
-
-.review-card p{
-
-color:#555;
-line-height:1.7;
-
-}
-
-
-.review-card h3{
-
-margin-top:20px;
-
-}
-
-
-
-/* ===========================
- Instagram
-=========================== */
-
-
-.instagram{
-
-padding:90px 8%;
-
-}
-
-
-.instagram-grid{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-
-}
-
-
-.instagram-grid img{
-
-height:300px;
-width:100%;
-object-fit:cover;
-border-radius:20px;
-transition:.4s;
-
-}
-
-
-.instagram-grid img:hover{
-
-transform:scale(1.05);
-
-}
-
-
-
-@media(max-width:768px){
-
-.review-grid,
-.instagram-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.gift-content h2{
-
-font-size:30px;
-
-}
-
-}
-/* ===========================
- Luxury Footer
-=========================== */
-
-
-.footer{
-
-background:#222;
-color:white;
-padding:70px 8% 20px;
-
-}
-
-
-.footer-container{
-
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr;
-gap:40px;
-
-}
-
-
-.footer-box h3{
-
-font-size:22px;
-margin-bottom:25px;
-
-}
-
-
-.footer-box p,
-.footer-box a{
-
-display:block;
-color:#ddd;
-margin-bottom:12px;
-line-height:1.6;
-
-}
-
-
-.footer-box a:hover{
-
-color:#f3a6c5;
-
-}
-
-
-
-/* Social Icons */
-
-
-.social-icons{
-
-display:flex;
-gap:15px;
-margin-top:25px;
-
-}
-
-
-.social-icons a{
-
-width:42px;
-height:42px;
-border-radius:50%;
-background:white;
-color:#d63384;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-
-}
-
-
-
-.social-icons a:hover{
-
-background:#d63384;
-color:white;
-
-}
-
-
-
-/* Footer Bottom */
-
-
-.footer-bottom{
-
-border-top:1px solid rgba(255,255,255,.2);
-margin-top:40px;
-padding-top:20px;
-text-align:center;
-color:#ccc;
-
-}
-
-
-
-/* WhatsApp */
-
-
-.whatsapp-btn{
-
-position:fixed;
-right:25px;
-bottom:25px;
-width:65px;
-height:65px;
-background:#25D366;
-color:white;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:35px;
-z-index:999;
-
-}
-
-
-
-/* Back Top */
-
-
-#topBtn{
-
-position:fixed;
-right:25px;
-bottom:105px;
-width:50px;
-height:50px;
-border:none;
-border-radius:50%;
-background:#d63384;
-color:white;
-cursor:pointer;
-display:none;
-
-}
-
-
-
-@media(max-width:900px){
-
-.footer-container{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-
-
-@media(max-width:600px){
-
-.footer-container{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-
-.social-icons{
-
-justify-content:center;
-
-}
-
-}
-/* ===========================
-   Side Category Menu
-=========================== */
 
 .sidebar{
+
     position:fixed;
     top:0;
     left:-350px;
@@ -1521,46 +199,59 @@ justify-content:center;
     padding-top:30px;
     overflow-y:auto;
     box-shadow:5px 0 25px rgba(0,0,0,.15);
-    transition:.4s ease;
+    transition:.4s;
+
 }
+
 
 
 .sidebar.active{
+
     left:0;
+
 }
+
 
 
 .sidebar-title{
+
     padding:20px 25px;
     border-bottom:1px solid #eee;
-    margin-bottom:10px;
+
 }
+
 
 
 .sidebar-title h2{
-    font-size:24px;
+
     color:#222;
+
 }
+
 
 
 .sidebar a{
+
     display:block;
     padding:15px 25px;
+    border-bottom:1px solid #eee;
     color:#333;
-    font-size:16px;
-    border-bottom:1px solid #f3f3f3;
-    transition:.3s;
+
 }
+
 
 
 .sidebar a:hover{
+
     background:#fdeaf3;
     color:#d63384;
+
 }
 
 
 
-/* Background Overlay */
+/* Overlay */
+
 
 .menu-overlay{
 
@@ -1576,42 +267,621 @@ justify-content:center;
 }
 
 
+
 .menu-overlay.active{
 
     display:block;
 
 }
-.sidebar{
-    position:fixed;
-    top:0;
-    left:-350px;
-    width:320px;
-    height:100vh;
+/* ===========================
+   Hero Section
+=========================== */
+
+
+.hero{
+
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    padding:80px 8%;
+    background:linear-gradient(135deg,#fff7fb,#fde6f0);
+
+}
+
+
+
+.hero-content{
+
+    max-width:600px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
+    color:#222;
+
+}
+
+
+
+.hero p{
+
+    font-size:18px;
+    color:#666;
+    margin-bottom:35px;
+
+}
+
+
+
+.hero-btn{
+
+    display:inline-block;
+    padding:15px 35px;
+    background:#d63384;
+    color:white;
+    border-radius:40px;
+    font-weight:600;
+
+}
+
+
+
+.hero-btn:hover{
+
+    background:#b81d6f;
+
+}
+
+
+
+
+
+/* ===========================
+ Section Title
+=========================== */
+
+
+.title{
+
+    text-align:center;
+    margin-bottom:45px;
+
+}
+
+
+
+.title h2{
+
+    font-size:38px;
+    margin-bottom:10px;
+
+}
+
+
+
+.title p{
+
+    color:#777;
+
+}
+
+
+
+
+
+/* ===========================
+ Categories
+=========================== */
+
+
+.categories{
+
+    padding:90px 8%;
+
+}
+
+
+
+.category-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+
+.category-card{
+
     background:white;
-    z-index:9999;
-    padding-top:30px;
-    overflow-y:auto;
-    transition:0.4s;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+
 }
 
 
-.sidebar.active{
-    left:0;
+
+.category-card:hover{
+
+    transform:translateY(-8px);
+
 }
 
 
-.menu-overlay{
-    position:fixed;
-    top:0;
-    left:0;
+
+.category-card img{
+
     width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.4);
-    z-index:9998;
-    display:none;
+    height:260px;
+    object-fit:cover;
+
 }
 
 
-.menu-overlay.active{
+
+.category-card h3{
+
+    text-align:center;
+    padding:20px;
+    font-size:20px;
+
+}
+
+
+
+
+
+/* ===========================
+ Featured Products
+=========================== */
+
+
+.featured-products{
+
+    padding:90px 8%;
+    background:#fff8fb;
+
+}
+
+
+
+.product-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+
+}
+
+
+
+.product-card{
+
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    padding-bottom:20px;
+    transition:.3s;
+
+}
+
+
+
+.product-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.product-card img{
+
+    width:100%;
+    height:300px;
+    object-fit:cover;
+
+}
+
+
+
+.product-card h3{
+
+    padding:20px 20px 5px;
+    font-size:20px;
+
+}
+
+
+
+.price{
+
+    padding:0 20px;
+    color:#d63384;
+    font-size:22px;
+    font-weight:700;
+
+}
+
+
+
+.product-card button{
+
+    width:calc(100% - 40px);
+    margin:20px;
+    height:45px;
+    border:none;
+    background:#222;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+
+
+.product-card button:hover{
+
+    background:#d63384;
+
+}
+/* ===========================
+ Gift Banner
+=========================== */
+
+
+.gift-banner{
+
+    margin:90px 8%;
+    padding:80px 30px;
+    background:linear-gradient(135deg,#fde3ef,#fff);
+    border-radius:35px;
+    text-align:center;
+
+}
+
+
+.gift-content h2{
+
+    font-size:42px;
+    margin-bottom:20px;
+
+}
+
+
+.gift-content p{
+
+    color:#666;
+    font-size:18px;
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+/* ===========================
+ Reviews
+=========================== */
+
+
+.reviews{
+
+    padding:90px 8%;
+    background:#fff8fb;
+
+}
+
+
+
+.review-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+
+}
+
+
+
+.review-card{
+
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+
+
+.review-card h3{
+
+    color:#d63384;
+    margin-bottom:15px;
+
+}
+
+
+
+.review-card p{
+
+    color:#555;
+    line-height:1.7;
+
+}
+
+
+
+
+
+/* ===========================
+ Footer
+=========================== */
+
+
+.footer{
+
+    background:#222;
+    color:white;
+    padding:70px 8% 25px;
+
+}
+
+
+
+.footer-container{
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+
+}
+
+
+
+.footer-box h3{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.footer-box p,
+.footer-box a{
+
     display:block;
+    color:#ddd;
+    margin-bottom:12px;
+
+}
+
+
+
+.footer-box a:hover{
+
+    color:#f3a6c5;
+
+}
+
+
+
+
+.footer-bottom{
+
+    margin-top:40px;
+    padding-top:20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.2);
+    color:#ccc;
+
+}
+
+
+
+
+
+/* ===========================
+ Social Icons
+=========================== */
+
+
+.social-icons{
+
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+
+}
+
+
+
+.social-icons a{
+
+    width:42px;
+    height:42px;
+    background:white;
+    color:#d63384;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+
+
+
+/* ===========================
+ WhatsApp
+=========================== */
+
+
+.whatsapp-btn{
+
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    z-index:999;
+
+}
+
+
+
+
+
+/* ===========================
+ Back To Top
+=========================== */
+
+
+#topBtn{
+
+    position:fixed;
+    right:25px;
+    bottom:100px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#d63384;
+    color:white;
+    cursor:pointer;
+    display:none;
+
+}
+
+
+
+
+
+/* ===========================
+ Mobile Responsive
+=========================== */
+
+
+@media(max-width:992px){
+
+
+header{
+
+    padding:0 20px;
+
+}
+
+
+
+.search-bar{
+
+    display:none;
+
+}
+
+
+
+.category-grid,
+.product-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+
+.footer-container{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+.hero{
+
+    padding:60px 20px;
+
+}
+
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+
+}
+
+
+
+
+
+@media(max-width:576px){
+
+
+.logo h2{
+
+    display:none;
+
+}
+
+
+
+.right-header{
+
+    gap:12px;
+
+}
+
+
+
+.category-grid,
+.product-grid,
+.footer-container,
+.review-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.hero h1{
+
+    font-size:32px;
+
+}
+
+
+
+.gift-content h2{
+
+    font-size:30px;
+
+}
+
+
 }
