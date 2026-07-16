@@ -389,3 +389,245 @@ header{
 }
 
 }
+/* ===========================
+   Trending Products
+=========================== */
+
+.trending{
+    padding:90px 8%;
+    background:#fff8fb;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 45px rgba(0,0,0,.12);
+}
+
+.product-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:#d63384;
+    color:#fff;
+    padding:7px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.product-card h3{
+    padding:18px 18px 8px;
+    font-size:20px;
+    color:#333;
+}
+
+.price{
+    padding:0 18px;
+    color:#d63384;
+    font-size:22px;
+    font-weight:700;
+}
+
+.product-card button{
+    width:calc(100% - 36px);
+    margin:18px;
+    height:48px;
+    border:none;
+    border-radius:40px;
+    background:#d63384;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.product-card button:hover{
+    background:#b81d6f;
+}
+
+/* ===========================
+   Offer Banner
+=========================== */
+
+.offer-banner{
+    margin:90px 8%;
+    background:linear-gradient(135deg,#ffd9e8,#fff);
+    border-radius:30px;
+    padding:70px;
+    text-align:center;
+}
+
+.offer-banner h2{
+    font-size:42px;
+    color:#222;
+    margin-bottom:20px;
+}
+
+.offer-banner p{
+    color:#666;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* ===========================
+   Instagram
+=========================== */
+
+.instagram{
+    padding:90px 8%;
+}
+
+.instagram-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.instagram-grid img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.instagram-grid img:hover{
+    transform:scale(1.03);
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    background:#222;
+    color:#fff;
+    padding:70px 8% 30px;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-content h3{
+    margin-bottom:20px;
+    color:#fff;
+}
+
+.footer-content p,
+.footer-content a{
+    display:block;
+    color:#ddd;
+    margin-bottom:12px;
+}
+
+.footer-content a:hover{
+    color:#fff;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.15);
+    margin-top:40px;
+    padding-top:20px;
+    color:#bbb;
+}
+
+/* ===========================
+   WhatsApp Button
+=========================== */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    z-index:999;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.product-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.instagram-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.footer-content{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.offer-banner{
+    padding:50px 25px;
+}
+
+.offer-banner h2{
+    font-size:32px;
+}
+
+}
+
+@media(max-width:576px){
+
+.product-grid{
+    grid-template-columns:1fr;
+}
+
+.instagram-grid{
+    grid-template-columns:1fr;
+}
+
+.offer-banner h2{
+    font-size:26px;
+}
+
+.offer-banner p{
+    font-size:15px;
+}
+
+}
