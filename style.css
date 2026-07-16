@@ -631,3 +631,261 @@ footer{
 }
 
 }
+/* ===========================
+   Newsletter
+=========================== */
+
+.newsletter{
+    padding:90px 8%;
+    background:#fdeef5;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:42px;
+    margin-bottom:15px;
+    color:#222;
+}
+
+.newsletter p{
+    color:#666;
+    margin-bottom:30px;
+    font-size:17px;
+}
+
+.newsletter form{
+    max-width:650px;
+    margin:auto;
+    display:flex;
+}
+
+.newsletter input{
+    flex:1;
+    height:60px;
+    border:none;
+    outline:none;
+    padding:0 20px;
+    border-radius:50px 0 0 50px;
+    font-size:16px;
+}
+
+.newsletter button{
+    width:180px;
+    border:none;
+    background:#d63384;
+    color:#fff;
+    border-radius:0 50px 50px 0;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.newsletter button:hover{
+    background:#b81d6f;
+}
+
+/* ===========================
+   Hover Animation
+=========================== */
+
+.category,
+.product-card,
+.instagram-grid img{
+    transition:.35s ease;
+}
+
+.category:hover,
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.instagram-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button,
+.hero-btn{
+    transition:.3s;
+}
+
+button:hover,
+.hero-btn:hover{
+    opacity:.95;
+}
+
+/* ===========================
+   Selection Color
+=========================== */
+
+::selection{
+    background:#d63384;
+    color:#fff;
+}
+/* ===========================
+   Smooth Animation
+=========================== */
+
+.hero-text,
+.hero-image,
+.category,
+.product-card,
+.offer-banner,
+.instagram-grid img{
+    animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ===========================
+   Sidebar Active
+=========================== */
+
+.sidebar.active{
+left:0;
+}
+
+/* ===========================
+   Overlay
+=========================== */
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.4);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:998;
+}
+
+.overlay.show{
+opacity:1;
+visibility:visible;
+}
+
+/* ===========================
+   Footer Social Icons
+=========================== */
+
+.social-icons{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.social-icons a{
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#fff;
+color:#d63384;
+border-radius:50%;
+font-size:18px;
+transition:.3s;
+}
+
+.social-icons a:hover{
+background:#d63384;
+color:#fff;
+}
+
+/* ===========================
+   Back To Top
+=========================== */
+
+#topBtn{
+position:fixed;
+bottom:100px;
+right:25px;
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#d63384;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+display:none;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+z-index:999;
+}
+
+#topBtn:hover{
+background:#b81d6f;
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+header{
+padding:15px;
+}
+
+.logo h2{
+display:none;
+}
+
+.hero{
+padding:50px 20px;
+}
+
+.hero-text h1{
+font-size:32px;
+}
+
+.hero-text p{
+font-size:15px;
+}
+
+.offer-banner{
+margin:50px 20px;
+}
+
+.footer-content{
+text-align:center;
+}
+
+.newsletter form{
+flex-direction:column;
+gap:15px;
+}
+
+.newsletter input{
+border-radius:50px;
+}
+
+.newsletter button{
+width:100%;
+border-radius:50px;
+height:55px;
+}
+
+}
+
+/* ===========================
+   End
+=========================== */
