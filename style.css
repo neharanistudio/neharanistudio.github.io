@@ -941,3 +941,83 @@ header{
 }
 
 }
+/* ===========================
+ Product View Button
+=========================== */
+
+
+.product-btn{
+
+    display:block;
+    width:calc(100% - 40px);
+    margin:20px;
+    padding:13px;
+    background:#d63384;
+    color:white;
+    text-align:center;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+
+.product-btn:hover{
+
+    background:#222;
+
+}
+
+
+
+
+/* Smooth Category Scroll */
+
+section{
+
+    scroll-margin-top:90px;
+
+}
+
+
+
+
+
+/* Better Mobile Header */
+
+@media(max-width:768px){
+
+
+header{
+
+    height:75px;
+
+}
+
+
+.logo img{
+
+    width:45px;
+    height:45px;
+
+}
+
+
+.menu-icon{
+
+    font-size:24px;
+
+}
+
+
+
+.right-header i{
+
+    font-size:18px;
+
+}
+
+
+}
+
+
