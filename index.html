@@ -4,37 +4,64 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Neha Rani Studio</title>
 
-
 <link rel="stylesheet" href="style.css">
-
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
 </head>
-
 
 <body>
 
 
-<!-- Header -->
 
-<header>
+<!-- ==========================
+TOP ANNOUNCEMENT BAR
+=========================== -->
+
+<div class="top-bar">
+
+<div class="top-left">
+
+FREE DELIVERY ON ORDERS ABOVE RS.5000
+
+</div>
+
+<div class="top-right">
+
+<a href="#">Track Order</a>
+
+<span>|</span>
+
+<a href="#">Contact Us</a>
+
+</div>
+
+</div>
 
 
-<div class="left-header">
 
+
+
+<!-- ==========================
+HEADER
+=========================== -->
+
+<header class="header">
+
+<div class="header-left">
 
 <div class="menu-icon">
 
@@ -42,55 +69,47 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
+</div>
 
 
-<div class="logo">
 
-<img src="images/logo/logo.png" alt="Neha Rani Studio">
+<div class="header-center">
+
+<a href="#" class="logo">
+
+<img src="images/logo/logo.png" alt="Logo">
 
 <h2>Neha Rani Studio</h2>
 
+</a>
+
 </div>
 
 
-</div>
 
+<div class="header-right">
 
-
-
-
-<div class="search-bar">
-
-<input type="text" placeholder="Search products...">
-
-
-<button>
+<div class="search-btn">
 
 <i class="fa-solid fa-magnifying-glass"></i>
 
-</button>
-
-
 </div>
 
-
-
-
-
-<div class="right-header">
-
+<div class="wishlist-btn">
 
 <i class="fa-regular fa-heart"></i>
 
+</div>
 
-<i class="fa-solid fa-cart-shopping"></i>
+<div class="cart-btn">
 
+<i class="fa-solid fa-bag-shopping"></i>
 
-<i class="fa-regular fa-user"></i>
-
+<span class="cart-count">0</span>
 
 </div>
 
+</div>
 
 </header>
 
@@ -98,57 +117,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+<!-- ==========================
+NAVIGATION
+=========================== -->
 
-<!-- Menu Overlay -->
+<nav class="main-nav">
 
-<div class="menu-overlay"></div>
+<a href="#">Home</a>
 
+<a href="#">Gift Hampers</a>
 
+<a href="#">Bags</a>
 
+<a href="#">Flowers</a>
 
+<a href="#">Jewellery</a>
 
-<!-- Sidebar Menu -->
+<a href="#">Beauty</a>
 
+<a href="#">Shoes</a>
 
-<nav class="sidebar">
+<a href="#">Accessories</a>
 
-
-<div class="sidebar-title">
-
-<h2>Categories</h2>
-
-</div>
-
-
-
-<a href="#gift">Gift Hampers</a>
-
-<a href="#flowers">Flower Bouquets</a>
-
-<a href="#ribbon">Ribbon Bouquets</a>
-
-<a href="#dresses">Dresses</a>
-
-<a href="#abayas">Abayas</a>
-
-<a href="#bags">Bags</a>
-
-<a href="#shoes">Shoes</a>
-
-<a href="#jewellery">Jewellery</a>
-
-<a href="#beauty">Beauty</a>
-
-<a href="#makeup">Makeup</a>
-
-<a href="#nails">Nails</a>
-
-<a href="#perfumes">Perfumes</a>
-
-<a href="#accessories">Accessories</a>
-
-<a href="#custom">Customized Gifts</a>
-
+<a href="#">Contact</a>
 
 </nav>
 
@@ -156,78 +147,191 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
+<!-- ==========================
+SIDEBAR
+=========================== -->
 
-<!-- Hero Section -->
+<div class="menu-overlay"></div>
+
+<nav class="sidebar">
+
+<h3>Shop Categories</h3>
+
+<a href="#">Gift Hampers</a>
+
+<a href="#">Flowers</a>
+
+<a href="#">Ribbon Bouquets</a>
+
+<a href="#">Bags</a>
+
+<a href="#">Dresses</a>
+
+<a href="#">Shoes</a>
+
+<a href="#">Beauty</a>
+
+<a href="#">Jewellery</a>
+
+<a href="#">Perfumes</a>
+
+<a href="#">Accessories</a>
+
+<a href="#">Customized Gifts</a>
+
+</nav>
+<!-- ==========================
+HERO SLIDER
+=========================== -->
+
+<section class="hero-slider">
+
+<div class="swiper heroSwiper">
+
+<div class="swiper-wrapper">
 
 
-<section class="hero">
+<!-- Slide 1 -->
 
-
+<div class="swiper-slide">
 
 <div class="hero-content">
 
+<div class="hero-text">
 
-<h1>
+<h4>New Collection</h4>
 
-Luxury Fashion & Beautiful Gifts
-
-</h1>
-
-
+<h1>Luxury Gifts<br>Made With Love</h1>
 
 <p>
-
-Discover elegant dresses, handbags, beauty products and premium gifts.
-
+Discover elegant gift hampers, handbags, beauty products and premium accessories.
 </p>
 
-
-
-
-<a href="#categories" class="hero-btn">
-
-Shop Collection
-
+<a href="#" class="hero-btn">
+Shop Now
 </a>
 
-
-
 </div>
-
-
-
-
 
 
 <div class="hero-image">
 
+<img src="images/banner/banner1.png" alt="Banner 1">
 
-<img src="images/banner/banner.jpg" alt="Luxury Collection">
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Slide 2 -->
+
+<div class="swiper-slide">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h4>Exclusive Collection</h4>
+
+<h1>Beautiful Bags<br>& Accessories</h1>
+
+<p>
+Luxury handbags and fashion accessories for every occasion.
+</p>
+
+<a href="#" class="hero-btn">
+Explore Bags
+</a>
+
+</div>
+
+
+<div class="hero-image">
+
+<img src="images/banner/banner2.png" alt="Banner 2">
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- Slide 3 -->
+
+<div class="swiper-slide">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h4>Premium Beauty</h4>
+
+<h1>Beauty & Cosmetics</h1>
+
+<p>
+Discover skincare, makeup and premium beauty essentials.
+</p>
+
+<a href="#" class="hero-btn">
+Shop Beauty
+</a>
+
+</div>
+
+
+<div class="hero-image">
+
+<img src="images/banner/banner3.png" alt="Banner 3">
+
+</div>
+
+</div>
+
+</div>
 
 
 </div>
 
-<!-- Categories Section -->
 
-<section class="categories" id="categories">
+<div class="swiper-pagination"></div>
 
+</div>
 
-<div class="title">
+</section>
+<!-- ==========================
+SHOP BY CATEGORY
+=========================== -->
+
+<section class="category-section">
+
+<div class="section-heading">
 
 <h2>Shop By Category</h2>
 
-<p>Explore our beautiful collections</p>
+<a href="#">View All</a>
 
 </div>
 
 
 
+<div class="swiper categorySwiper">
 
-<div class="category-grid">
+<div class="swiper-wrapper">
 
 
 
-<div class="category-card" id="gift">
+<div class="swiper-slide">
+
+<div class="category-card">
 
 <img src="images/categories/gifts.jpg" alt="Gift Hampers">
 
@@ -235,54 +339,13 @@ Shop Collection
 
 </div>
 
-
-
-
-<div class="category-card" id="flowers">
-
-<img src="images/categories/flowers.jpg" alt="Flowers">
-
-<h3>Flower Bouquets</h3>
-
 </div>
 
 
 
+<div class="swiper-slide">
 
-<div class="category-card" id="ribbon">
-
-<img src="images/categories/ribbon.jpg" alt="Ribbon">
-
-<h3>Ribbon Bouquets</h3>
-
-</div>
-
-
-
-
-<div class="category-card" id="dresses">
-
-<img src="images/categories/dresses.jpg" alt="Dresses">
-
-<h3>Dresses</h3>
-
-</div>
-
-
-
-
-<div class="category-card" id="abayas">
-
-<img src="images/categories/abayas.jpg" alt="Abayas">
-
-<h3>Abayas</h3>
-
-</div>
-
-
-
-
-<div class="category-card" id="bags">
+<div class="category-card">
 
 <img src="images/categories/bags.jpg" alt="Bags">
 
@@ -290,32 +353,41 @@ Shop Collection
 
 </div>
 
+</div>
 
 
 
-<div class="category-card" id="shoes">
+<div class="swiper-slide">
 
-<img src="images/categories/shoes.jpg" alt="Shoes">
+<div class="category-card">
 
-<h3>Shoes</h3>
+<img src="images/categories/dresses.jpg" alt="Dresses">
+
+<h3>Dresses</h3>
+
+</div>
 
 </div>
 
 
 
+<div class="swiper-slide">
 
-<div class="category-card" id="jewellery">
+<div class="category-card">
 
-<img src="images/categories/jewellery.jpg" alt="Jewellery">
+<img src="images/categories/flowers.jpg" alt="Flowers">
 
-<h3>Jewellery</h3>
+<h3>Flowers</h3>
+
+</div>
 
 </div>
 
 
 
+<div class="swiper-slide">
 
-<div class="category-card" id="beauty">
+<div class="category-card">
 
 <img src="images/categories/beauty.jpg" alt="Beauty">
 
@@ -323,43 +395,41 @@ Shop Collection
 
 </div>
 
+</div>
 
 
 
-<div class="category-card" id="makeup">
+<div class="swiper-slide">
 
-<img src="images/categories/makeup.jpg" alt="Makeup">
+<div class="category-card">
 
-<h3>Makeup</h3>
+<img src="images/categories/shoes.jpg" alt="Shoes">
+
+<h3>Shoes</h3>
+
+</div>
 
 </div>
 
 
 
+<div class="swiper-slide">
 
-<div class="category-card" id="nails">
+<div class="category-card">
 
-<img src="images/categories/nails.jpg" alt="Nails">
+<img src="images/categories/jewellery.jpg" alt="Jewellery">
 
-<h3>Nails</h3>
+<h3>Jewellery</h3>
+
+</div>
 
 </div>
 
 
 
+<div class="swiper-slide">
 
-<div class="category-card" id="perfumes">
-
-<img src="images/categories/perfumes.jpg" alt="Perfumes">
-
-<h3>Perfumes</h3>
-
-</div>
-
-
-
-
-<div class="category-card" id="accessories">
+<div class="category-card">
 
 <img src="images/categories/accessories.jpg" alt="Accessories">
 
@@ -367,570 +437,12 @@ Shop Collection
 
 </div>
 
-
-
-
-<div class="category-card" id="custom">
-
-<img src="images/categories/custom.jpg" alt="Custom Gifts">
-
-<h3>Customized Gifts</h3>
-
 </div>
 
 
 
 </div>
 
+</div>
 
 </section>
-
-
-
-
-
-
-
-
-<!-- Featured Products -->
-
-
-<section class="featured-products">
-
-
-<div class="title">
-
-<h2>Featured Products</h2>
-
-<p>Our most loved collections</p>
-
-</div>
-
-
-
-
-
-<div class="product-grid">
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<span>New</span>
-
-<img src="images/products/product1.jpg" alt="Gift Box">
-
-</div>
-
-
-<h3>Luxury Gift Box</h3>
-
-
-<p class="price">
-Rs. 2999
-</p>
-
-
-<a href="#gift" class="product-btn">
-View Collection
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<span>Sale</span>
-
-<img src="images/products/product2.jpg" alt="Hand Bag">
-
-</div>
-
-
-<h3>Elegant Hand Bag</h3>
-
-
-<p class="price">
-Rs. 3999
-</p>
-
-
-<a href="#bags" class="product-btn">
-View Collection
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<img src="images/products/product3.jpg" alt="Dress">
-
-</div>
-
-
-<h3>Beautiful Dress</h3>
-
-
-<p class="price">
-Rs. 4999
-</p>
-
-
-<a href="#dresses" class="product-btn">
-View Collection
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="product-card">
-
-
-<div class="product-image">
-
-<span>Popular</span>
-
-<img src="images/products/product4.jpg" alt="Perfume">
-
-</div>
-
-
-<h3>Premium Perfume</h3>
-
-
-<p class="price">
-Rs. 2499
-</p>
-
-
-<a href="#perfumes" class="product-btn">
-View Collection
-</a>
-
-
-</div>
-
-
-
-
-</div>
-
-
-</section>
-
-</section>
-<!-- Gift Banner -->
-
-<section class="gift-banner">
-
-
-<div class="gift-content">
-
-
-<h2>
-Make Every Moment Special
-</h2>
-
-
-<p>
-Beautiful gifts, fashion and accessories made with love.
-</p>
-
-
-<a href="#categories" class="hero-btn">
-Explore Collection
-</a>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- Customer Reviews -->
-
-
-<section class="reviews">
-
-
-
-<div class="title">
-
-
-<h2>
-What Our Customers Say
-</h2>
-
-
-<p>
-Love from our happy customers
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="review-grid">
-
-
-
-
-
-<div class="review-card">
-
-<h3>★★★★★</h3>
-
-<p>
-Amazing quality and beautiful packaging. Loved my order!
-</p>
-
-<h4>
-- Sarah
-</h4>
-
-</div>
-
-
-
-
-
-
-<div class="review-card">
-
-<h3>★★★★★</h3>
-
-<p>
-Premium products and excellent service.
-</p>
-
-<h4>
-- Ayesha
-</h4>
-
-</div>
-
-
-
-
-
-
-<div class="review-card">
-
-<h3>★★★★★</h3>
-
-<p>
-The gift collection is so elegant and unique.
-</p>
-
-<h4>
-- Fatima
-</h4>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- Footer -->
-
-
-<footer class="footer">
-
-
-<div class="footer-container">
-
-
-
-
-
-
-<div class="footer-box">
-
-
-<h3>
-Neha Rani Studio
-</h3>
-
-
-
-<p>
-Fashion • Gifts • Beauty • Accessories
-</p>
-
-
-
-
-
-<div class="social-icons">
-
-
-
-<a href="https://instagram.com/neharani.studio" target="_blank">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-
-
-
-<a href="https://www.tiktok.com/@neharani.studio" target="_blank">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-
-<a href="https://www.threads.com/@neharani.studio" target="_blank">
-
-<i class="fa-brands fa-threads"></i>
-
-</a>
-
-
-
-
-
-<a href="https://wa.me/923045255325" target="_blank">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="footer-box">
-
-
-<h3>
-Quick Links
-</h3>
-
-
-<a href="#categories">
-Shop Categories
-</a>
-
-
-<a href="#gift">
-Gift Collection
-</a>
-
-
-<a href="#bags">
-Bags
-</a>
-
-
-<a href="#dresses">
-Dresses
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="footer-box">
-
-
-<h3>
-Customer Care
-</h3>
-
-
-
-<a href="#">
-Shipping Policy
-</a>
-
-
-<a href="#">
-Privacy Policy
-</a>
-
-
-<a href="#">
-Terms & Conditions
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="footer-box">
-
-
-<h3>
-Contact
-</h3>
-
-
-<p>
-Pakistan
-</p>
-
-
-<p>
-WhatsApp Orders Available
-</p>
-
-
-<p>
-@neharani.studio
-</p>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="footer-bottom">
-
-© 2026 Neha Rani Studio. All Rights Reserved.
-
-</div>
-
-
-
-</footer>
-
-
-
-
-
-
-
-
-
-<!-- WhatsApp Floating Button -->
-
-
-<a href="https://wa.me/923045255325" 
-target="_blank" 
-class="whatsapp-btn">
-
-
-<i class="fa-brands fa-whatsapp"></i>
-
-
-</a>
-
-
-
-
-
-
-
-<!-- Back To Top Button -->
-
-
-<button id="topBtn">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
-
-
-
-
-
-<script src="script.js"></script>
-
-
-
-</body>
-
-</html>
