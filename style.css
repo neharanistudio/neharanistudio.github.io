@@ -2628,22 +2628,27 @@ font-size:18px;
     font-size:20px !important;
     z-index:1000 !important;
 }
-.swiper-button-next,
-.swiper-button-prev{
+/* PRODUCT SLIDER - MODERN */
 
-    color:#d63384;
-    background:#fff;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
+.productSwiper{
+    overflow: hidden;
 }
 
-.swiper-button-next::after,
-.swiper-button-prev::after{
+.productSwiper .swiper-wrapper{
+    transition-timing-function: linear;
+}
 
-    font-size:18px;
-    font-weight:bold;
+.productSwiper .swiper-slide{
+    cursor: grab;
+}
 
+.productSwiper .swiper-slide:active{
+    cursor: grabbing;
+}
+
+/* Hide arrows completely */
+
+.swiper-button-next,
+.swiper-button-prev{
+    display: none !important;
 }
