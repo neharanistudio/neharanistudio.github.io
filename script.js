@@ -201,41 +201,42 @@ if (topBtn) {
 // ==========================
 
 const searchBtn = document.querySelector(".search-btn");
-
 const searchPopup = document.querySelector(".search-popup");
-
 const closeSearch = document.querySelector(".close-search");
 
-if(searchBtn){
 
-searchBtn.addEventListener("click",()=>{
+if(searchBtn && searchPopup){
 
-searchPopup.classList.add("active");
+    searchBtn.addEventListener("click",()=>{
 
-});
+        searchPopup.classList.add("active");
+
+    });
+
+}
+
+
+if(closeSearch && searchPopup){
+
+    closeSearch.addEventListener("click",()=>{
+
+        searchPopup.classList.remove("active");
+
+    });
 
 }
 
-if(closeSearch){
-
-closeSearch.addEventListener("click",()=>{
-
-searchPopup.classList.remove("active");
-
-});
-
-}
 
 if(searchPopup){
 
-searchPopup.addEventListener("click",(e)=>{
+    searchPopup.addEventListener("click",(e)=>{
 
-if(e.target===searchPopup){
+        if(e.target === searchPopup){
 
-searchPopup.classList.remove("active");
+            searchPopup.classList.remove("active");
 
-}
+        }
 
-});
+    });
 
 }
