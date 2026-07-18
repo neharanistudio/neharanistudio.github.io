@@ -1,21 +1,21 @@
+// ==========================
+// MENU
+// ==========================
+
 const menuIcon = document.querySelector(".menu-icon");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.querySelector(".menu-overlay");
 
+if (menuIcon && sidebar && overlay) {
 
-// Mobile Menu
+    menuIcon.addEventListener("click", () => {
 
-if(menuIcon && sidebar && overlay){
-
-    menuIcon.addEventListener("click", function(){
-
-        sidebar.classList.toggle("active");
-        overlay.classList.toggle("active");
+        sidebar.classList.add("active");
+        overlay.classList.add("active");
 
     });
 
-
-    overlay.addEventListener("click", function(){
+    overlay.addEventListener("click", () => {
 
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
@@ -26,16 +26,13 @@ if(menuIcon && sidebar && overlay){
 
 
 
+// ==========================
+// CLOSE MENU AFTER CLICK
+// ==========================
 
+document.querySelectorAll(".sidebar a").forEach(link => {
 
-// Close menu after clicking category
-
-const sidebarLinks = document.querySelectorAll(".sidebar a");
-
-
-sidebarLinks.forEach(link => {
-
-    link.addEventListener("click", function(){
+    link.addEventListener("click", () => {
 
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
@@ -46,69 +43,31 @@ sidebarLinks.forEach(link => {
 
 
 
-
-
-// Back To Top Button
-
-
-const topBtn = document.getElementById("topBtn");
-
-
-window.addEventListener("scroll", function(){
-
-    if(window.scrollY > 400){
-
-        topBtn.style.display = "block";
-
-    }else{
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-
-
-if(topBtn){
-
-    topBtn.addEventListener("click", function(){
-
-        window.scrollTo({
-
-            top:0,
-            behavior:"smooth"
-
-        });
-
-    });
-
-}
 // ==========================
 // HERO SLIDER
 // ==========================
 
-const heroSwiper = new Swiper(".heroSwiper",{
+new Swiper(".heroSwiper", {
 
-loop:true,
+    loop: true,
 
-speed:900,
+    speed: 900,
 
-autoplay:{
+    autoplay: {
 
-delay:3500,
+        delay: 3500,
 
-disableOnInteraction:false,
+        disableOnInteraction: false,
 
-},
+    },
 
-pagination:{
+    pagination: {
 
-el:".swiper-pagination",
+        el: ".swiper-pagination",
 
-clickable:true,
+        clickable: true,
 
-}
+    }
 
 });
 
@@ -118,79 +77,122 @@ clickable:true,
 // CATEGORY SLIDER
 // ==========================
 
-const categorySwiper = new Swiper(".categorySwiper",{
+new Swiper(".categorySwiper", {
 
-loop:true,
+    loop: true,
 
-spaceBetween:25,
+    spaceBetween: 25,
 
-slidesPerView:2,
+    autoplay: {
 
-autoplay:{
+        delay: 2500,
 
-delay:2500,
+        disableOnInteraction: false,
 
-disableOnInteraction:false,
+    },
 
-},
+    breakpoints: {
 
-breakpoints:{
+        0: {
+            slidesPerView: 2
+        },
 
-576:{
-slidesPerView:2
-},
+        576: {
+            slidesPerView: 2
+        },
 
-768:{
-slidesPerView:3
-},
+        768: {
+            slidesPerView: 3
+        },
 
-992:{
-slidesPerView:4
-},
+        992: {
+            slidesPerView: 4
+        },
 
-1200:{
-slidesPerView:5
-}
+        1200: {
+            slidesPerView: 5
+        }
 
-}
+    }
 
 });
+
+
+
 // ==========================
 // PRODUCT SLIDER
 // ==========================
 
-const productSwiper = new Swiper(".productSwiper",{
+new Swiper(".productSwiper", {
 
-loop:true,
+    loop: true,
 
-spaceBetween:25,
+    spaceBetween: 25,
 
-autoplay:{
+    autoplay: {
 
-delay:3000,
+        delay: 3000,
 
-disableOnInteraction:false,
+        disableOnInteraction: false,
 
-},
+    },
 
-breakpoints:{
+    breakpoints: {
 
-0:{
-slidesPerView:1
-},
+        0: {
+            slidesPerView: 1
+        },
 
-576:{
-slidesPerView:2
-},
+        576: {
+            slidesPerView: 2
+        },
 
-992:{
-slidesPerView:3
-},
+        992: {
+            slidesPerView: 3
+        },
 
-1200:{
-slidesPerView:4
-}
+        1200: {
+            slidesPerView: 4
+        }
 
-}
+    }
 
 });
+
+
+
+// ==========================
+// BACK TO TOP BUTTON
+// ==========================
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        topBtn.style.display = "flex";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+if (topBtn) {
+
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
