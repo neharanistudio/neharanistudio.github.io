@@ -495,9 +495,6 @@ const popupTitle = document.getElementById("popupTitle");
 const popupPrice = document.getElementById("popupPrice");
 const popupWhatsapp = document.getElementById("popupWhatsapp");
 const popupCart = document.querySelector(".popup-cart");
-document.querySelector(".close-product").addEventListener("click", function(){
-    document.querySelector(".product-popup").classList.remove("active");
-});
 
 document.querySelectorAll(".product-card").forEach(card => {
 
