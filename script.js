@@ -352,3 +352,47 @@ if(orderPopup){
     });
 
 }
+// ==========================
+// PRODUCT SEARCH
+// ==========================
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+
+if(searchButton){
+
+searchButton.addEventListener("click",()=>{
+
+let value = searchInput.value.toLowerCase();
+
+let products = document.querySelectorAll(".product-card");
+
+
+products.forEach(product=>{
+
+let name = product.querySelector("h3").innerText.toLowerCase();
+
+
+if(name.includes(value)){
+
+product.parentElement.style.display="block";
+
+}else{
+
+product.parentElement.style.display="none";
+
+}
+
+});
+
+
+document.querySelector("#featured").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+});
+
+}
