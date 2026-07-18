@@ -485,6 +485,46 @@ window.addEventListener("click", (e) => {
 // ==========================
 
 console.log("Neha Rani Studio Ready ❤️");
+// ==========================
+// PRODUCT POPUP
+// ==========================
+
+const popup = document.querySelector(".product-popup");
+const popupImg = document.getElementById("popupImage");
+const popupTitle = document.getElementById("popupTitle");
+const popupPrice = document.getElementById("popupPrice");
+const popupWhatsapp = document.getElementById("popupWhatsapp");
+const closePopup = document.querySelector(".close-popup");
+
+document.querySelectorAll(".product-card").forEach(card => {
+
+    card.addEventListener("click", function(e){
+
+        if(
+            e.target.closest(".add-cart") ||
+            e.target.closest(".wishlist-add")
+        ){
+            return;
+        }
+
+        popupImg.src = card.querySelector("img").src;
+        popupTitle.innerText = card.querySelector("h3").innerText;
+        popupPrice.innerText = card.querySelector(".product-price").innerText;
+
+        popupWhatsapp.href =
+        "https://wa.me/923045255325?text=" +
+        encodeURIComponent(
+            "Hi! I'm interested in buying " +
+            card.querySelector("h3").innerText
+        );
+
+        popup.classList.add("active");
+
+    });
+
+});
+
+
 closePopup.onclick = function () {
     popup.classList.remove("active");
 };
