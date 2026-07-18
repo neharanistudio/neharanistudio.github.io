@@ -439,24 +439,22 @@ const checkoutBtn = document.querySelector(".checkout-btn");
 
 if (checkoutBtn) {
 
-    checkoutBtn.addEventListener("click", (e) => {
+    checkoutBtn.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        if (cart.length === 0) {
+        if(cart.length === 0){
 
             alert("Your cart is empty 🛍️");
             return;
 
         }
 
-        alert("Checkout feature coming soon ❤️");
+        window.open("https://wa.me/923045255325", "_blank");
 
     });
 
 }
-
-
 // ==========================
 // CLOSE PANELS ON OUTSIDE CLICK
 // ==========================
