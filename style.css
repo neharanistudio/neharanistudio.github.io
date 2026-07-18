@@ -2560,3 +2560,23 @@ font-size:18px;
     align-items:center;
     justify-content:center;
 }
+/* FIX WHATSAPP + BACK TO TOP POSITION */
+
+.whatsapp-btn{
+    position:fixed !important;
+    right:30px !important;
+    bottom:30px !important;
+    width:55px;
+    height:55px;
+    z-index:999 !important;
+}
+
+
+#topBtn{
+    position:fixed !important;
+    right:30px !important;
+    bottom:100px !important;
+    width:50px;
+    height:50px;
+    z-index:1000 !important;
+}
