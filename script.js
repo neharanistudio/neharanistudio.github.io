@@ -204,72 +204,13 @@ const searchBtn = document.querySelector(".search-btn");
 const searchPopup = document.querySelector(".search-popup");
 const closeSearch = document.querySelector(".close-search");
 
+searchBtn.onclick = () => {
+    searchPopup.classList.add("active");
+};
 
-if(searchBtn && searchPopup){
-
-    searchBtn.addEventListener("click",()=>{
-
-        searchPopup.classList.add("active");
-
-    });
-
-}
-
-
-if(closeSearch && searchPopup){
-
-    closeSearch.addEventListener("click",()=>{
-
-        searchPopup.classList.remove("active");
-
-    });
-
-}
-
-
-if(searchPopup){
-
-    searchPopup.addEventListener("click",(e)=>{
-
-        if(e.target === searchPopup){
-
-            searchPopup.classList.remove("active");
-
-        }
-
-    });
-
-}
-// ==========================
-// WISHLIST PANEL
-// ==========================
-
-const wishlistBtn = document.querySelector(".wishlist-btn");
-const wishlistPanel = document.querySelector(".wishlist-panel");
-const closeWishlist = document.querySelector(".close-wishlist");
-
-
-if(wishlistBtn && wishlistPanel){
-
-    wishlistBtn.addEventListener("click",()=>{
-
-        wishlistPanel.classList.add("active");
-
-    });
-
-}
-
-
-if(closeWishlist && wishlistPanel){
-
-    closeWishlist.addEventListener("click",()=>{
-
-        wishlistPanel.classList.remove("active");
-
-    });
-
-}
-
+closeSearch.onclick = () => {
+    searchPopup.classList.remove("active");
+};
 
 
 // ==========================
@@ -280,194 +221,110 @@ const cartBtn = document.querySelector(".cart-btn");
 const cartPanel = document.querySelector(".cart-panel");
 const closeCart = document.querySelector(".close-cart");
 
+cartBtn.onclick = () => {
+    cartPanel.classList.add("active");
+};
 
-if(cartBtn && cartPanel){
-
-    cartBtn.addEventListener("click",()=>{
-
-        cartPanel.classList.add("active");
-
-    });
-
-}
-
-
-if(closeCart && cartPanel){
-
-    closeCart.addEventListener("click",()=>{
-
-        cartPanel.classList.remove("active");
-
-    });
-
-}
-
+closeCart.onclick = () => {
+    cartPanel.classList.remove("active");
+};
 
 
 // ==========================
-// TRACK ORDER POPUP
+// WISHLIST PANEL
 // ==========================
 
-const trackOrder = document.querySelector(".top-right a");
+const wishlistBtn = document.querySelector(".wishlist-btn");
+const wishlistPanel = document.querySelector(".wishlist-panel");
+const closeWishlist = document.querySelector(".close-wishlist");
 
-const orderPopup = document.querySelector(".order-popup");
+wishlistBtn.onclick = () => {
+    wishlistPanel.classList.add("active");
+};
 
-const closeOrder = document.querySelector(".close-order");
-
-
-if(trackOrder && orderPopup){
-
-    trackOrder.addEventListener("click",(e)=>{
-
-        e.preventDefault();
-
-        orderPopup.classList.add("active");
-
-    });
-
-}
+closeWishlist.onclick = () => {
+    wishlistPanel.classList.remove("active");
+};
 
 
-if(closeOrder && orderPopup){
-
-    closeOrder.addEventListener("click",()=>{
-
-        orderPopup.classList.remove("active");
-
-    });
-
-}
-
-
-if(orderPopup){
-
-    orderPopup.addEventListener("click",(e)=>{
-
-        if(e.target === orderPopup){
-
-            orderPopup.classList.remove("active");
-
-        }
-
-    });
-
-}
 // ==========================
-// PRODUCT SEARCH
-// ==========================
-
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
-
-if(searchButton){
-
-searchButton.addEventListener("click",()=>{
-
-let value = searchInput.value.toLowerCase();
-
-let products = document.querySelectorAll(".product-card");
-
-
-products.forEach(product=>{
-
-let name = product.querySelector("h3").innerText.toLowerCase();
-
-
-if(name.includes(value)){
-
-product.parentElement.style.display="block";
-
-}else{
-
-product.parentElement.style.display="none";
-
-}
-
-});
-
-
-document.querySelector("#featured").scrollIntoView({
-
-behavior:"smooth"
-
-});
-
-
-});
-
-}
-// ==========================
-// CART & WISHLIST SYSTEM
-// ==========================
-
-let cart = [];
-let wishlist = [];
-
-const cartCount = document.querySelector(".cart-count");
-
-const cartPanelText = document.querySelector(".cart-panel p");
-const wishlistPanelText = document.querySelector(".wishlist-panel p");
-
-
 // ADD TO CART
+// ==========================
+
+let cartCount = 0;
+
+const cartNumber = document.querySelector(".cart-count");
 
 document.querySelectorAll(".add-cart").forEach(button => {
 
-    button.addEventListener("click", function(){
+    button.onclick = () => {
 
-        let product = this.closest(".product-card");
+        cartCount++;
 
-        let name = product.querySelector("h3").innerText;
+        cartNumber.innerHTML = cartCount;
 
-        let price = product.querySelector(".product-price").innerText;
+        alert("Product added to cart 🛍️");
 
-
-        cart.push({
-
-            name:name,
-            price:price
-
-        });
-
-
-        cartCount.innerText = cart.length;
-
-
-        cartPanelText.innerHTML = 
-        cart.map(item => 
-        `${item.name} - ${item.price}`
-        ).join("<br><br>");
-
-
-    });
+    };
 
 });
 
 
+// ==========================
+// TRACK ORDER
+// ==========================
 
-// ADD TO WISHLIST
+const trackLink = document.querySelector(".top-right a");
 
-document.querySelectorAll(".wishlist-add").forEach(button => {
+const orderPopup = document.querySelector(".order-popup");
+const closeOrder = document.querySelector(".close-order");
 
+trackLink.onclick = (e)=>{
 
-    button.addEventListener("click", function(){
+    e.preventDefault();
 
+    orderPopup.classList.add("active");
 
-        let product = this.closest(".product-card");
-
-        let name = product.querySelector("h3").innerText;
-
-
-        wishlist.push(name);
-
-
-        wishlistPanelText.innerHTML = 
-        wishlist.join("<br><br>");
+};
 
 
-        this.innerHTML = '<i class="fa-solid fa-heart"></i>';
+closeOrder.onclick = ()=>{
+
+    orderPopup.classList.remove("active");
+
+};
+
+
+// ==========================
+// BACK TO TOP
+// ==========================
+
+const topBtn = document.getElementById("topBtn");
+
+
+window.onscroll = ()=>{
+
+    if(window.scrollY > 300){
+
+        topBtn.style.display="flex";
+
+    }
+    else{
+
+        topBtn.style.display="none";
+
+    }
+
+};
+
+
+topBtn.onclick=()=>{
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
 
     });
 
-
-});
+};
