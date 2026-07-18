@@ -374,3 +374,155 @@ orderPopup.classList.remove("active");
 }
 
 }
+// ==========================
+// CART SYSTEM
+// ==========================
+
+let cart = [];
+let wishlist = [];
+
+const cartCount = document.querySelector(".cart-count");
+const cartItems = document.querySelector(".cart-items");
+const wishlistItems = document.querySelector(".wishlist-items");
+
+
+// ADD TO CART
+
+document.querySelectorAll(".add-cart").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+let card = button.closest(".product-card");
+
+let name = card.querySelector("h3").innerText;
+let price = card.querySelector(".product-price").innerText;
+let image = card.querySelector("img").src;
+
+
+cart.push({
+name,
+price,
+image
+});
+
+
+cartCount.innerText = cart.length;
+
+showCart();
+
+
+});
+
+});
+
+
+
+// SHOW CART
+
+function showCart(){
+
+cartItems.innerHTML="";
+
+
+cart.forEach(item=>{
+
+
+cartItems.innerHTML += `
+
+<div class="cart-product">
+
+<img src="${item.image}">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`;
+
+});
+
+
+}
+
+
+
+// ==========================
+// WISHLIST SYSTEM
+// ==========================
+
+
+document.querySelectorAll(".wishlist-add").forEach(button=>{
+
+
+button.addEventListener("click",()=>{
+
+
+let card = button.closest(".product-card");
+
+
+let name = card.querySelector("h3").innerText;
+let price = card.querySelector(".product-price").innerText;
+
+
+wishlist.push({
+name,
+price
+});
+
+
+showWishlist();
+
+
+});
+
+});
+
+
+
+function showWishlist(){
+
+wishlistItems.innerHTML="";
+
+
+wishlist.forEach(item=>{
+
+
+wishlistItems.innerHTML += `
+
+<div class="wish-product">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+// ==========================
+// VIEW ALL PRODUCTS
+// ==========================
+
+document.querySelectorAll(".section-heading a").forEach(btn=>{
+
+
+btn.addEventListener("click",(e)=>{
+
+e.preventDefault();
+
+alert("More products coming soon ❤️");
+
+
+});
+
+
+});
