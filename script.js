@@ -527,43 +527,7 @@ categoryLinks.forEach(link => {
 
 });
 
-// ==========================
-// VIEW ALL
-// ==========================
 
-document.getElementById("viewAllProducts").onclick = function(e){
-
-    e.preventDefault();
-
-    products.forEach(product=>{
-        product.style.display="block";
-    });
-
-};
-
-// ==========================
-// VIEW ALL PRODUCTS
-// ==========================
-
-const viewAll = document.getElementById("viewAllProducts");
-
-if (viewAll) {
-
-    viewAll.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        products.forEach(product=>{
-            product.style.display = "block";
-        });
-
-        document.getElementById("featured").scrollIntoView({
-            behavior:"smooth"
-        });
-
-    });
-
-}
 // ==========================
 // PRODUCT POPUP
 // ==========================
