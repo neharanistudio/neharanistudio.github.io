@@ -2785,17 +2785,18 @@ PRODUCT POPUP
 
 .close-product{
     position:absolute;
+    top:15px;
     right:15px;
-    top:10px;
-    background:none;
-    border:none;
-    font-size:25px;
+    width:35px;
+    height:35px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
     cursor:pointer;
-    z-index:10;
-}
-
-.close-product i{
-    color:#333;
+    z-index:99999;
 }
 .popup-cart,
 #popupWhatsapp{
