@@ -295,9 +295,9 @@ let found=false;
 
 
 products.forEach(product=>{
+  
 
-
-let name=product.querySelector("h3").innerText.toLowerCase();
+let name = product.querySelector(".product-info h3").textContent.toLowerCase().trim();
 
 
 
