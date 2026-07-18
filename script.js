@@ -527,102 +527,112 @@ alert("More products coming soon ❤️");
 
 });
 // ==========================
-// CART SYSTEM
+// CART + WISHLIST SYSTEM
 // ==========================
 
 let cart = [];
+let wishlist = [];
 
-const cartBtn = document.querySelector(".cart-btn");
-const cartPanel = document.querySelector(".cart-panel");
-const closeCart = document.querySelector(".close-cart");
 const cartCount = document.querySelector(".cart-count");
+const cartPanel = document.querySelector(".cart-panel");
+const wishlistPanel = document.querySelector(".wishlist-panel");
+
+
+// ADD TO CART
 
 document.querySelectorAll(".add-cart").forEach(button => {
 
-    button.addEventListener("click", function(){
+button.addEventListener("click", function(){
 
-        let card = this.closest(".product-card");
+let card = this.closest(".product-card");
 
-        let productName = card.querySelector("h3").innerText;
-        let productPrice = card.querySelector(".product-price").innerText;
+let product = {
+name: card.querySelector("h3").innerText,
+price: card.querySelector(".product-price").innerText,
+image: card.querySelector("img").src
+};
 
-        cart.push({
-            name: productName,
-            price: productPrice
-        });
 
-        cartCount.innerText = cart.length;
+cart.push(product);
 
-        cartPanel.innerHTML = `
-        <button class="close-cart">
-        <i class="fa-solid fa-xmark"></i>
-        </button>
+cartCount.innerText = cart.length;
 
-        <h2>Your Cart</h2>
+updateCart();
 
-        ${cart.map(item=>`
-        <div class="cart-item">
-        <h4>${item.name}</h4>
-        <p>${item.price}</p>
-        </div>
-        `).join("")}
-
-        <a href="#" class="checkout-btn">
-        Checkout
-        </a>
-        `;
-
-    });
+});
 
 });
 
 
+// SHOW CART
 
-// OPEN CART
+function updateCart(){
 
-cartBtn.addEventListener("click",()=>{
-    cartPanel.classList.add("active");
-});
+cartPanel.innerHTML = `
 
+<button class="close-cart">
+<i class="fa-solid fa-xmark"></i>
+</button>
 
+<h2>Your Cart 🛍️</h2>
 
-// CLOSE CART
+${cart.length === 0 ? 
+"<p>Your cart is empty</p>" :
 
-document.addEventListener("click",(e)=>{
+cart.map(item=>`
 
-if(e.target.closest(".close-cart")){
-cartPanel.classList.remove("active");
+<div class="cart-product">
+
+<img src="${item.image}" width="70">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`).join("")
 }
 
-});
+
+<a href="#" class="checkout-btn">
+Checkout
+</a>
+
+`;
+
+}
 
 
-
-
-// ==========================
-// WISHLIST SYSTEM
-// ==========================
-
-
-let wishlist=[];
-
-const wishlistPanel=document.querySelector(".wishlist-panel");
-
+// WISHLIST
 
 document.querySelectorAll(".wishlist-add").forEach(button=>{
+
 
 button.addEventListener("click",function(){
 
 let card=this.closest(".product-card");
 
-let name=card.querySelector("h3").innerText;
-let price=card.querySelector(".product-price").innerText;
-
 
 wishlist.push({
-name:name,
-price:price
+
+name:card.querySelector("h3").innerText,
+
+price:card.querySelector(".product-price").innerText
+
 });
+
+
+updateWishlist();
+
+
+});
+
+});
+
+
+
+function updateWishlist(){
 
 
 wishlistPanel.innerHTML=`
@@ -631,12 +641,13 @@ wishlistPanel.innerHTML=`
 <i class="fa-solid fa-xmark"></i>
 </button>
 
+
 <h2>Your Wishlist ❤️</h2>
 
 
 ${wishlist.map(item=>`
 
-<div class="cart-item">
+<div class="wish-product">
 
 <h4>${item.name}</h4>
 
@@ -644,28 +655,41 @@ ${wishlist.map(item=>`
 
 </div>
 
+
 `).join("")}
+
 
 `;
 
-});
-
-});
+}
 
 
 
-// OPEN WISHLIST
+// OPEN CLOSE CART
 
-document.querySelector(".wishlist-btn").addEventListener("click",()=>{
+document.addEventListener("click",function(e){
+
+
+if(e.target.closest(".cart-btn")){
+
+cartPanel.classList.add("active");
+
+}
+
+
+if(e.target.closest(".wishlist-btn")){
 
 wishlistPanel.classList.add("active");
 
-});
+}
 
 
-// CLOSE WISHLIST
+if(e.target.closest(".close-cart")){
 
-document.addEventListener("click",(e)=>{
+cartPanel.classList.remove("active");
+
+}
+
 
 if(e.target.closest(".close-wishlist")){
 
@@ -673,24 +697,51 @@ wishlistPanel.classList.remove("active");
 
 }
 
+
 });
 
 
 
+// ==========================
+// SMOOTH CONTACT SCROLL
+// ==========================
+
+document.querySelectorAll('a[href="#contact"]').forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+document.querySelector("#contact").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+});
+
+
 
 // ==========================
-// VIEW ALL PRODUCTS
+// VIEW ALL
 // ==========================
-
 
 document.querySelectorAll(".section-heading a").forEach(btn=>{
+
 
 btn.addEventListener("click",function(e){
 
 e.preventDefault();
 
-alert("All products coming soon ❤️");
+document.querySelector("#featured").scrollIntoView({
+
+behavior:"smooth"
 
 });
+
+});
+
 
 });
