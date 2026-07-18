@@ -6,28 +6,30 @@ const menuIcon = document.querySelector(".menu-icon");
 const sidebar = document.querySelector(".sidebar");
 const overlay = document.querySelector(".menu-overlay");
 
-if (menuIcon && sidebar && overlay) {
+if(menuIcon && sidebar && overlay){
 
-    menuIcon.addEventListener("click", () => {
+    menuIcon.onclick = function(){
         sidebar.classList.add("active");
         overlay.classList.add("active");
-    });
+    };
 
-    overlay.addEventListener("click", () => {
+
+    overlay.onclick = function(){
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
-    });
+    };
 
 }
 
+
 document.querySelectorAll(".sidebar a").forEach(link => {
 
-    link.addEventListener("click", () => {
+    link.onclick = function(){
 
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
 
-    });
+    };
 
 });
 // ==========================
