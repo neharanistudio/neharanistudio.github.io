@@ -25,28 +25,15 @@ document.querySelectorAll(".sidebar a").forEach(link => {
     link.addEventListener("click", function(e){
 
         const target = this.getAttribute("href");
+document.querySelectorAll(".sidebar a").forEach(link => {
+
+    link.addEventListener("click", function(){
 
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
 
-        if(target.startsWith("#")){
-
-            e.preventDefault();
-
-            const section = document.querySelector(target);
-
-            if(section){
-
-                section.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
-                });
-
-            }
-
-        }
-
     });
+
 
 });
 
