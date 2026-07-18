@@ -22,21 +22,14 @@ if (menuIcon && sidebar && overlay) {
 
 document.querySelectorAll(".sidebar a").forEach(link => {
 
-    link.addEventListener("click", function(e){
-
-        const target = this.getAttribute("href");
-document.querySelectorAll(".sidebar a").forEach(link => {
-
-    link.addEventListener("click", function(){
+    link.addEventListener("click", () => {
 
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
 
     });
 
-
 });
-
 // ==========================
 // HERO SLIDER
 // ==========================
