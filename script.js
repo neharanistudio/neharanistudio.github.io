@@ -328,3 +328,78 @@ topBtn.onclick=()=>{
     });
 
 };
+// ==========================
+// PRODUCT SEARCH FUNCTION
+// ==========================
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+
+searchButton.onclick = () => {
+
+    let value = searchInput.value.toLowerCase();
+
+    let products = document.querySelectorAll(".product-card");
+
+    let found = false;
+
+    products.forEach(product => {
+
+        let name = product.querySelector("h3").innerText.toLowerCase();
+
+        if(name.includes(value)){
+
+            product.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+            product.style.transform="scale(1.05)";
+
+            setTimeout(()=>{
+                product.style.transform="";
+            },1000);
+
+            found=true;
+
+        }
+
+    });
+
+
+    if(!found){
+
+        alert("Product not found 😔");
+
+    }
+
+};
+
+
+// ==========================
+// TRACK ORDER FUNCTION
+// ==========================
+
+const trackBtn = document.querySelector(".track-btn");
+const orderInput = document.querySelector(".order-box input");
+
+
+trackBtn.onclick = ()=>{
+
+    let orderId = orderInput.value.trim();
+
+
+    if(orderId===""){
+
+        alert("Please enter Order ID");
+
+    }
+    else{
+
+        alert("Your order ID "+orderId+" is being checked. We will update you soon ❤️");
+
+        orderInput.value="";
+
+    }
+
+};
