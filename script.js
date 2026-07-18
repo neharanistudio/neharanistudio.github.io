@@ -528,16 +528,20 @@ document.querySelectorAll(".product-card").forEach(card => {
 });
 
 
-if(closePopup){
-    closePopup.onclick = function () {
+const closeBtn = document.querySelector(".close-product");
+
+if(closeBtn){
+    closeBtn.onclick = function(){
         popup.classList.remove("active");
     };
 }
+
 popup.onclick = function(e){
     if(e.target === popup){
         popup.classList.remove("active");
     }
 };
+
 document.querySelectorAll('a[href="#contact"]').forEach(link => {
 
     link.addEventListener("click", function(e){
