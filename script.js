@@ -196,3 +196,46 @@ if (topBtn) {
     });
 
 }
+// ==========================
+// SEARCH POPUP
+// ==========================
+
+const searchBtn = document.querySelector(".search-btn");
+
+const searchPopup = document.querySelector(".search-popup");
+
+const closeSearch = document.querySelector(".close-search");
+
+if(searchBtn){
+
+searchBtn.addEventListener("click",()=>{
+
+searchPopup.classList.add("active");
+
+});
+
+}
+
+if(closeSearch){
+
+closeSearch.addEventListener("click",()=>{
+
+searchPopup.classList.remove("active");
+
+});
+
+}
+
+if(searchPopup){
+
+searchPopup.addEventListener("click",(e)=>{
+
+if(e.target===searchPopup){
+
+searchPopup.classList.remove("active");
+
+}
+
+});
+
+}
