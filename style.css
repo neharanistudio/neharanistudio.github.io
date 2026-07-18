@@ -2819,3 +2819,30 @@ PRODUCT POPUP
     background:#25D366;
     color:#fff;
 }
+/* FIX PRODUCT POPUP CLOSE BUTTON */
+
+.close-product{
+    position:absolute !important;
+    top:15px !important;
+    right:15px !important;
+
+    width:35px !important;
+    height:35px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    background:#fff !important;
+    border-radius:50% !important;
+
+    font-size:25px !important;
+    color:#222 !important;
+
+    z-index:99999 !important;
+    cursor:pointer !important;
+}
+
+.close-product i{
+    pointer-events:none;
+}
