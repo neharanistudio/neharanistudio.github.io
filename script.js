@@ -240,3 +240,115 @@ if(searchPopup){
     });
 
 }
+// ==========================
+// WISHLIST PANEL
+// ==========================
+
+const wishlistBtn = document.querySelector(".wishlist-btn");
+const wishlistPanel = document.querySelector(".wishlist-panel");
+const closeWishlist = document.querySelector(".close-wishlist");
+
+
+if(wishlistBtn && wishlistPanel){
+
+    wishlistBtn.addEventListener("click",()=>{
+
+        wishlistPanel.classList.add("active");
+
+    });
+
+}
+
+
+if(closeWishlist && wishlistPanel){
+
+    closeWishlist.addEventListener("click",()=>{
+
+        wishlistPanel.classList.remove("active");
+
+    });
+
+}
+
+
+
+// ==========================
+// CART PANEL
+// ==========================
+
+const cartBtn = document.querySelector(".cart-btn");
+const cartPanel = document.querySelector(".cart-panel");
+const closeCart = document.querySelector(".close-cart");
+
+
+if(cartBtn && cartPanel){
+
+    cartBtn.addEventListener("click",()=>{
+
+        cartPanel.classList.add("active");
+
+    });
+
+}
+
+
+if(closeCart && cartPanel){
+
+    closeCart.addEventListener("click",()=>{
+
+        cartPanel.classList.remove("active");
+
+    });
+
+}
+
+
+
+// ==========================
+// TRACK ORDER POPUP
+// ==========================
+
+const trackOrder = document.querySelector(".top-right a");
+
+const orderPopup = document.querySelector(".order-popup");
+
+const closeOrder = document.querySelector(".close-order");
+
+
+if(trackOrder && orderPopup){
+
+    trackOrder.addEventListener("click",(e)=>{
+
+        e.preventDefault();
+
+        orderPopup.classList.add("active");
+
+    });
+
+}
+
+
+if(closeOrder && orderPopup){
+
+    closeOrder.addEventListener("click",()=>{
+
+        orderPopup.classList.remove("active");
+
+    });
+
+}
+
+
+if(orderPopup){
+
+    orderPopup.addEventListener("click",(e)=>{
+
+        if(e.target === orderPopup){
+
+            orderPopup.classList.remove("active");
+
+        }
+
+    });
+
+}
