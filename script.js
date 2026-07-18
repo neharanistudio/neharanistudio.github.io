@@ -526,3 +526,171 @@ alert("More products coming soon ❤️");
 
 
 });
+// ==========================
+// CART SYSTEM
+// ==========================
+
+let cart = [];
+
+const cartBtn = document.querySelector(".cart-btn");
+const cartPanel = document.querySelector(".cart-panel");
+const closeCart = document.querySelector(".close-cart");
+const cartCount = document.querySelector(".cart-count");
+
+document.querySelectorAll(".add-cart").forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        let card = this.closest(".product-card");
+
+        let productName = card.querySelector("h3").innerText;
+        let productPrice = card.querySelector(".product-price").innerText;
+
+        cart.push({
+            name: productName,
+            price: productPrice
+        });
+
+        cartCount.innerText = cart.length;
+
+        cartPanel.innerHTML = `
+        <button class="close-cart">
+        <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Your Cart</h2>
+
+        ${cart.map(item=>`
+        <div class="cart-item">
+        <h4>${item.name}</h4>
+        <p>${item.price}</p>
+        </div>
+        `).join("")}
+
+        <a href="#" class="checkout-btn">
+        Checkout
+        </a>
+        `;
+
+    });
+
+});
+
+
+
+// OPEN CART
+
+cartBtn.addEventListener("click",()=>{
+    cartPanel.classList.add("active");
+});
+
+
+
+// CLOSE CART
+
+document.addEventListener("click",(e)=>{
+
+if(e.target.closest(".close-cart")){
+cartPanel.classList.remove("active");
+}
+
+});
+
+
+
+
+// ==========================
+// WISHLIST SYSTEM
+// ==========================
+
+
+let wishlist=[];
+
+const wishlistPanel=document.querySelector(".wishlist-panel");
+
+
+document.querySelectorAll(".wishlist-add").forEach(button=>{
+
+button.addEventListener("click",function(){
+
+let card=this.closest(".product-card");
+
+let name=card.querySelector("h3").innerText;
+let price=card.querySelector(".product-price").innerText;
+
+
+wishlist.push({
+name:name,
+price:price
+});
+
+
+wishlistPanel.innerHTML=`
+
+<button class="close-wishlist">
+<i class="fa-solid fa-xmark"></i>
+</button>
+
+<h2>Your Wishlist ❤️</h2>
+
+
+${wishlist.map(item=>`
+
+<div class="cart-item">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`).join("")}
+
+`;
+
+});
+
+});
+
+
+
+// OPEN WISHLIST
+
+document.querySelector(".wishlist-btn").addEventListener("click",()=>{
+
+wishlistPanel.classList.add("active");
+
+});
+
+
+// CLOSE WISHLIST
+
+document.addEventListener("click",(e)=>{
+
+if(e.target.closest(".close-wishlist")){
+
+wishlistPanel.classList.remove("active");
+
+}
+
+});
+
+
+
+
+// ==========================
+// VIEW ALL PRODUCTS
+// ==========================
+
+
+document.querySelectorAll(".section-heading a").forEach(btn=>{
+
+btn.addEventListener("click",function(e){
+
+e.preventDefault();
+
+alert("All products coming soon ❤️");
+
+});
+
+});
