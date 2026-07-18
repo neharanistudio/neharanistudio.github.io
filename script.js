@@ -396,3 +396,78 @@ behavior:"smooth"
 });
 
 }
+// ==========================
+// CART & WISHLIST SYSTEM
+// ==========================
+
+let cart = [];
+let wishlist = [];
+
+const cartCount = document.querySelector(".cart-count");
+
+const cartPanelText = document.querySelector(".cart-panel p");
+const wishlistPanelText = document.querySelector(".wishlist-panel p");
+
+
+// ADD TO CART
+
+document.querySelectorAll(".add-cart").forEach(button => {
+
+    button.addEventListener("click", function(){
+
+        let product = this.closest(".product-card");
+
+        let name = product.querySelector("h3").innerText;
+
+        let price = product.querySelector(".product-price").innerText;
+
+
+        cart.push({
+
+            name:name,
+            price:price
+
+        });
+
+
+        cartCount.innerText = cart.length;
+
+
+        cartPanelText.innerHTML = 
+        cart.map(item => 
+        `${item.name} - ${item.price}`
+        ).join("<br><br>");
+
+
+    });
+
+});
+
+
+
+// ADD TO WISHLIST
+
+document.querySelectorAll(".wishlist-add").forEach(button => {
+
+
+    button.addEventListener("click", function(){
+
+
+        let product = this.closest(".product-card");
+
+        let name = product.querySelector("h3").innerText;
+
+
+        wishlist.push(name);
+
+
+        wishlistPanelText.innerHTML = 
+        wishlist.join("<br><br>");
+
+
+        this.innerHTML = '<i class="fa-solid fa-heart"></i>';
+
+    });
+
+
+});
