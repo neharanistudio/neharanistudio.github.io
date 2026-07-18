@@ -564,3 +564,59 @@ if (viewAll) {
     });
 
 }
+// ==========================
+// PRODUCT POPUP
+// ==========================
+
+const popup = document.querySelector(".product-popup");
+const popupImg = document.getElementById("popupImage");
+const popupTitle = document.getElementById("popupTitle");
+const popupPrice = document.getElementById("popupPrice");
+const popupWhatsapp = document.getElementById("popupWhatsapp");
+const closePopup = document.querySelector(".close-popup");
+
+document.querySelectorAll(".product-card").forEach(card => {
+
+    card.addEventListener("click", function(e){
+
+        // Buttons par click ho to popup na khule
+        if(
+            e.target.closest(".add-cart") ||
+            e.target.closest(".wishlist-add")
+        ){
+            return;
+        }
+
+        const img = card.querySelector("img").src;
+        const title = card.querySelector("h3").innerText;
+        const price = card.querySelector(".product-price").innerText;
+
+        popupImg.src = img;
+        popupTitle.innerText = title;
+        popupPrice.innerText = price;
+
+        popupWhatsapp.href =
+        "https://wa.me/923045255325?text=" +
+        encodeURIComponent(
+            "Hi! I'm interested in buying: " +
+            title +
+            " (" +
+            price +
+            ")"
+        );
+
+        popup.classList.add("active");
+
+    });
+
+});
+
+closePopup.onclick = function(){
+    popup.classList.remove("active");
+};
+
+popup.onclick = function(e){
+    if(e.target === popup){
+        popup.classList.remove("active");
+    }
+};
