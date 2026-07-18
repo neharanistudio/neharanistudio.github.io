@@ -127,44 +127,45 @@ slidesPerView:5
 // PRODUCT SLIDER
 // ==========================
 
+new Swiper(".productSwiper", {
 
-if(document.querySelector(".productSwiper")){
+    loop: true,
 
+    spaceBetween: 25,
 
-new Swiper(".productSwiper",{
+    speed: 600,
 
+    grabCursor: true,
 
-loop:true,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
 
-spaceBetween:25,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
 
+    breakpoints: {
 
-breakpoints:{
+        0: {
+            slidesPerView: 1
+        },
 
+        576: {
+            slidesPerView: 2
+        },
 
-0:{
-slidesPerView:1
-},
+        992: {
+            slidesPerView: 3
+        },
 
+        1200: {
+            slidesPerView: 4
+        }
 
-576:{
-slidesPerView:2
-},
-
-
-992:{
-slidesPerView:3
-},
-
-
-1200:{
-slidesPerView:4
-}
-
-
-}
-
-
+    }
 
 });
 
