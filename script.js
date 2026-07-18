@@ -512,3 +512,16 @@ window.addEventListener("click", (e) => {
 // ==========================
 
 console.log("Neha Rani Studio Ready ❤️");
+document.querySelectorAll('a[href="#contact"]').forEach(link => {
+
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.getElementById("contact").scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+});
