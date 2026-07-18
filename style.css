@@ -2536,3 +2536,33 @@ font-size:18px;
 }
 
 }
+#topBtn{
+    position: fixed !important;
+    right: 30px !important;
+    bottom: 30px !important;
+
+    width: 50px !important;
+    height: 50px !important;
+
+    background: #d63384 !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    font-size: 20px !important;
+    cursor: pointer;
+
+    z-index: 99999 !important;
+}
+
+
+#topBtn i{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
