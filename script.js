@@ -220,30 +220,60 @@ if(closeSearch){
 
 
 // ==========================
-// PRODUCT SEARCH
+// SEARCH POPUP
 // ==========================
 
-const searchInput = document.getElementById("searchInput");
-const searchButton = document.getElementById("searchButton");
+document.addEventListener("DOMContentLoaded",()=>{
 
+const searchBtn = document.querySelector(".search-btn");
+const searchPopup = document.querySelector(".search-popup");
+const closeSearch = document.querySelector(".close-search");
+const searchButton = document.querySelector("#searchButton");
+const searchInput = document.querySelector("#searchInput");
+
+
+if(searchBtn && searchPopup){
+
+searchBtn.onclick = function(){
+    searchPopup.classList.add("active");
+}
+
+}
+
+
+if(closeSearch && searchPopup){
+
+closeSearch.onclick = function(){
+    searchPopup.classList.remove("active");
+}
+
+}
+
+
+// SEARCH PRODUCT
 
 if(searchButton){
 
-searchButton.addEventListener("click",()=>{
+searchButton.onclick=function(){
 
-let text = searchInput.value.toLowerCase();
+let value = searchInput.value.toLowerCase().trim();
 
-let products = document.querySelectorAll(".product-card");
+let products=document.querySelectorAll(".product-card");
 
 let found=false;
 
 
 products.forEach(product=>{
 
-let name = product.querySelector("h3").innerText.toLowerCase();
+let title=product.querySelector("h3").innerText.toLowerCase();
 
 
-if(name.includes(text) && text!==""){
+if(title.includes(value) && value!=""){
+
+found=true;
+
+searchPopup.classList.remove("active");
+
 
 product.scrollIntoView({
 behavior:"smooth",
@@ -251,26 +281,28 @@ block:"center"
 });
 
 
-product.style.border="3px solid #d63384";
+product.style.boxShadow="0 0 20px #d63384";
 
 
 setTimeout(()=>{
-product.style.border="";
+product.style.boxShadow="";
 },2000);
 
 
-found=true;
-
 }
+
 
 });
 
 
-if(!found && text!==""){
+if(!found && value!=""){
 alert("Product not found ❤️");
 }
 
 
-});
+}
 
 }
+
+
+});
