@@ -495,6 +495,8 @@ const popupTitle = document.getElementById("popupTitle");
 const popupPrice = document.getElementById("popupPrice");
 const popupWhatsapp = document.getElementById("popupWhatsapp");
 const popupCart = document.querySelector(".popup-cart");
+let images = [];
+let currentImage = 0;
 
 document.querySelectorAll(".product-card").forEach(card => {
 
@@ -507,7 +509,9 @@ document.querySelectorAll(".product-card").forEach(card => {
             return;
         }
 
-        popupImg.src = card.querySelector("img").src;
+       images = card.dataset.images.split(",");
+currentImage = 0;
+popupImg.src = images[currentImage];
         popupTitle.innerText = card.querySelector("h3").innerText;
         popupPrice.innerText = card.querySelector(".product-price").innerText;
 
