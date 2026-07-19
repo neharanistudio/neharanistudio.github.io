@@ -580,4 +580,48 @@ categoryLinks.forEach(link => {
     }
 
 });
+// ==========================
+// POPUP ADD TO CART
+// ==========================
 
+let currentProduct = null;
+
+document.querySelectorAll(".product-card").forEach(card => {
+
+    card.addEventListener("click", function(e){
+
+        if(e.target.closest(".add-cart") || e.target.closest(".wishlist-add")){
+            return;
+        }
+
+        currentProduct = {
+            name: card.querySelector("h3").innerText,
+            price: card.querySelector(".product-price").innerText,
+            image: card.querySelector("img").src
+        };
+
+    });
+
+});
+
+const popupAddCart = document.getElementById("popupAddCart");
+
+if(popupAddCart){
+
+    popupAddCart.addEventListener("click", function(){
+
+        if(!currentProduct) return;
+
+        cart.push(currentProduct);
+
+        cartCount.textContent = cart.length;
+
+        renderCart();
+
+        popup.classList.remove("active");
+
+        alert("Added to Cart ✅");
+
+    });
+
+}
