@@ -625,3 +625,24 @@ if(popupAddCart){
     });
 
 }
+if (popupCart) {
+
+    popupCart.addEventListener("click", () => {
+
+        cart.push({
+
+            name: popupTitle.innerText,
+            price: popupPrice.innerText,
+            image: popupImg.src
+
+        });
+
+        cartCount.textContent = cart.length;
+
+        renderCart();
+
+        popup.classList.remove("active");
+
+    });
+
+}
