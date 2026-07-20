@@ -14,9 +14,14 @@
 
 <div class="product-detail-page">
 
-<div class="product-detail-image">
+<div class="product-gallery">
 
 <img id="mainProductImage" src="" alt="Product">
+
+<div class="image-buttons">
+<button onclick="prevImage()">❮</button>
+<button onclick="nextImage()">❯</button>
+</div>
 
 </div>
 
@@ -28,71 +33,81 @@
 <h2 id="productPrice"></h2>
 
 
-<div class="product-description">
+<div class="description">
 
-<h3>Description</h3>
+<h3>Product Description</h3>
 
-<p>
-Experience premium quality and elegant design from Neha Rani Studio.
-Our products are carefully selected to bring style, beauty and luxury to your everyday life.
+<p id="productDescription">
+Premium quality product from Neha Rani Studio. 
+Beautiful design with elegant finishing. Perfect for gifting and everyday style.
 </p>
 
 </div>
 
-<button class="product-btn">
+
+<div class="buttons">
+
+<button class="add-cart">
 Add To Cart
 </button>
 
 
-<a id="whatsappBtn" class="hero-btn">
-Order Now
+<a id="whatsappBtn" class="buy-btn">
+Buy Now
 </a>
 
-<h3>Customer Reviews</h3>
+</div>
 
-<div class="reviews-box">
 
-<div class="review-stars">
+
+<div class="delivery-info">
+
+<p>🚚 Delivery Available Across Pakistan</p>
+
+<p>💳 Advance Payment Required</p>
+
+<p>✅ Order Confirmed After Payment</p>
+
+</div>
+
+
+
+<div class="reviews">
+
+<h2>Customer Reviews</h2>
+
+
+<div class="review">
 ⭐⭐⭐⭐⭐
-</div>
-
-<p>
-Amazing quality and beautiful packaging.
-</p>
-
-</div>
-
+<p>"Amazing quality, exactly like pictures."</p>
+<h4>Sarah Khan</h4>
 </div>
 
 
-<script>
-
-let params = new URLSearchParams(window.location.search);
-
-let id = params.get("id");
-
-
-if(id==="gift-box"){
-
-document.getElementById("mainProductImage").src =
-"images/products/product1-1.jpg";
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Packaging was beautiful and product is premium."</p>
+<h4>Ayesha Malik</h4>
+</div>
 
 
-document.getElementById("productName").innerText =
-"Luxury Gift Box";
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Loved my purchase. Highly recommended."</p>
+<h4>Fatima Noor</h4>
+</div>
 
 
-document.getElementById("productPrice").innerText =
-"Rs. 2,999";
+<div class="review">
+⭐⭐⭐⭐⭐
+<p>"Fast response and beautiful product."</p>
+<h4>Hira Ahmed</h4>
+</div>
 
 
-document.getElementById("whatsappBtn").href =
-"https://wa.me/923045255325";
-
-}
-
-</script>
+</div>
 
 
-</body>
-</html>
+</div>
+
+</div>
