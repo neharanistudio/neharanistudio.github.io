@@ -961,44 +961,6 @@ behavior:"smooth"
 
 
 }
-   /* ================= CART PANEL ================= */
-
-
-if(cartBtn){
-
-
-cartBtn.onclick=function(){
-
-
-cartPanel.classList.add("active");
-
-
-};
-
-
-}
-
-
-
-if(closeCart){
-
-
-closeCart.onclick=function(){
-
-
-cartPanel.classList.remove("active");
-
-
-};
-
-
-}
-
-
-
-
-
-
 
 /* ================= WISHLIST ================= */
 
