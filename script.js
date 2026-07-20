@@ -1,152 +1,123 @@
 // ==========================
-// PRODUCT DETAIL PAGE
+// PRODUCT DETAILS PAGE
 // ==========================
 
-let params = new URLSearchParams(window.location.search);
+let urlParams = new URLSearchParams(window.location.search);
 
-let productId = params.get("id");
-
-
-const products = {
-
-"gift-box":{
-
-name:"Luxury Gift Box",
-
-price:"Rs. 2,999",
-
-description:
-"Premium luxury gift box with beautiful packaging. Perfect for birthdays, weddings and special occasions.",
-
-images:[
-
-"images/products/product1-1.jpg",
-"images/products/product1-2.jpg",
-"images/products/product1-3.jpg",
-"images/products/product1-4.jpg"
-
-]
-
-},
+let productId = urlParams.get("id");
 
 
+const productData = {
 
-"hand-bag":{
+    "gift-box": {
 
-name:"Elegant Hand Bag",
+        name: "Luxury Gift Box",
 
-price:"Rs. 3,999",
+        price: "Rs. 2,999",
 
-description:
-"Stylish premium handbag with elegant design.",
+        description:
+        "Premium quality luxury gift box with beautiful packaging. Perfect for birthdays, weddings and special occasions.",
 
-images:[
+        images: [
+            "images/products/product1-1.jpg",
+            "images/products/product1-2.jpg",
+            "images/products/product1-3.jpg",
+            "images/products/product1-4.jpg"
+        ]
 
-"images/products/product2.jpg",
-"images/products/product2-2.jpg",
-"images/products/product2-3.jpg"
-
-]
-
-},
-
-
-
-"dress-1":{
-
-name:"Beautiful Dress",
-
-price:"Rs. 4,999",
-
-description:
-"Luxury fashion dress with premium quality fabric.",
-
-images:[
-
-"images/products/product3.jpg",
-"images/products/product3-2.jpg",
-"images/products/product3-3.jpg"
-
-]
-
-},
+    },
 
 
+    "hand-bag": {
 
-"perfume":{
+        name:"Elegant Hand Bag",
 
-name:"Premium Perfume",
+        price:"Rs. 3,999",
 
-price:"Rs. 2,499",
+        description:
+        "Stylish and premium quality handbag for everyday use.",
 
-description:
-"Long lasting premium fragrance.",
+        images:[
+            "images/products/product2.jpg",
+            "images/products/product2-2.jpg",
+            "images/products/product2-3.jpg"
+        ]
 
-images:[
+    },
 
-"images/products/product4.jpg",
-"images/products/product4-2.jpg"
 
-]
+    "dress-1":{
 
-}
+        name:"Beautiful Dress",
+
+        price:"Rs. 4,999",
+
+        description:
+        "Elegant fashion dress with premium fabric and beautiful design.",
+
+        images:[
+            "images/products/product3.jpg",
+            "images/products/product3-2.jpg",
+            "images/products/product3-3.jpg"
+        ]
+
+    },
+
+
+    "perfume":{
+
+        name:"Premium Perfume",
+
+        price:"Rs. 2,499",
+
+        description:
+        "Long lasting premium fragrance.",
+
+        images:[
+            "images/products/product4.jpg",
+            "images/products/product4-2.jpg"
+        ]
+
+    }
 
 };
 
 
 
-
-let product = products[productId];
-
+let selectedProduct = productData[productId];
 
 
-if(product){
-
-
-let nameBox = document.getElementById("productName");
-let priceBox = document.getElementById("productPrice");
-let imageBox = document.getElementById("mainProductImage");
-let descBox = document.getElementById("productDescription");
-let whatsapp = document.getElementById("whatsappBtn");
+let productImage = document.getElementById("mainProductImage");
+let productName = document.getElementById("productName");
+let productPrice = document.getElementById("productPrice");
+let productDescription = document.getElementById("productDescription");
+let whatsappBtn = document.getElementById("whatsappBtn");
 
 
 
-if(nameBox)
-nameBox.innerText = product.name;
+if(selectedProduct){
+
+
+    productName.innerText = selectedProduct.name;
+
+
+    productPrice.innerText = selectedProduct.price;
+
+
+    productDescription.innerText = selectedProduct.description;
+
+
+    productImage.src = selectedProduct.images[0];
 
 
 
-if(priceBox)
-priceBox.innerText = product.price;
-
-
-
-if(descBox)
-descBox.innerText = product.description;
-
-
-
-if(imageBox)
-imageBox.src = product.images[0];
-
-
-
-if(whatsapp)
-
-whatsapp.href =
-"https://wa.me/923045255325?text=I want to order " 
-+ product.name;
-
+    whatsappBtn.href =
+    "https://wa.me/923045255325?text=I want to order "
+    + selectedProduct.name;
 
 
 }
 
-
-
-
-// ==========================
-// IMAGE SLIDER
-// ==========================
 
 
 let currentImage = 0;
@@ -155,58 +126,52 @@ let currentImage = 0;
 
 function nextImage(){
 
-
-if(!product) return;
-
-
-currentImage++;
+    if(!selectedProduct) return;
 
 
-if(currentImage >= product.images.length){
-
-currentImage = 0;
-
-}
+    currentImage++;
 
 
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
+    if(currentImage >= selectedProduct.images.length){
 
+        currentImage = 0;
+
+    }
+
+
+    productImage.src =
+    selectedProduct.images[currentImage];
 
 }
-
 
 
 
 
 function prevImage(){
 
-
-if(!product) return;
-
-
-currentImage--;
+    if(!selectedProduct) return;
 
 
-if(currentImage < 0){
+    currentImage--;
 
-currentImage = product.images.length - 1;
+
+    if(currentImage < 0){
+
+        currentImage =
+        selectedProduct.images.length - 1;
+
+    }
+
+
+    productImage.src =
+    selectedProduct.images[currentImage];
 
 }
-
-
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
-
-
-}
-
-
 
 
 
 // ==========================
-// ADD TO CART PRODUCT PAGE
+// PRODUCT ADD TO CART
 // ==========================
 
 
@@ -214,44 +179,33 @@ const productAddCart =
 document.getElementById("productAddCart");
 
 
-
 if(productAddCart){
 
 
-productAddCart.addEventListener("click",()=>{
+productAddCart.onclick = function(){
 
 
-let item = {
+cart.push({
 
-name: product.name,
+name:selectedProduct.name,
 
-price: product.price,
+price:selectedProduct.price,
 
-image: product.images[0]
+image:selectedProduct.images[0]
 
-};
+});
 
-
-
-cart.push(item);
-
-
-
-if(cartCount)
 
 cartCount.innerText = cart.length;
-
 
 
 renderCart();
 
 
-
 alert("Added to Cart ✅");
 
 
-
-});
+};
 
 
 }
