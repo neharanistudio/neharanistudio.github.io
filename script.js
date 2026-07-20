@@ -1420,3 +1420,18 @@ alert(name+" Added To Wishlist");
 
 
 }
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+}
+
+});
