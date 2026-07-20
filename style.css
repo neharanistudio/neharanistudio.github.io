@@ -3003,4 +3003,9 @@ grid-template-columns:1fr;
 
 
 }
+.featured-products{
+    display:block !important;
+    opacity:1 !important;
+    visibility:visible !important;
+}
 /* ================= END ================= */
