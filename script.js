@@ -324,14 +324,6 @@ price:price
 
 updateCart();
 
-
-alert(name+" Added To Cart");
-
-
-}
-
-
-
 });
 
 
