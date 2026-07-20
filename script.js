@@ -457,13 +457,6 @@ wishlistItems.innerHTML+=`
 
 });
 
-
-alert("Added To Wishlist");
-
-
-}
-
-
 });
 
 
