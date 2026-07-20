@@ -868,3 +868,22 @@ whatsapp.href=
 
 
 }
+
+
+/* ================= FEATURED PRODUCT FIX ================= */
+
+const featuredSection = document.querySelector(".featured-products");
+
+if(featuredSection){
+
+featuredSection.style.display="block";
+featuredSection.style.opacity="1";
+featuredSection.style.visibility="visible";
+
+}
+
+
+
+/* CLOSE DOM CONTENT LOADED */
+
+});
