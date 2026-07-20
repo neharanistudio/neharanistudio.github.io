@@ -1,223 +1,451 @@
-// ==========================
-// PRODUCT DETAILS PAGE
-// ==========================
-
-let urlParams = new URLSearchParams(window.location.search);
-
-let productId = urlParams.get("id");
+/* ==========================================
+   NEHA RANI STUDIO
+   FINAL SCRIPT.JS
+========================================== */
 
 
-const productData = {
+/* ================= SWIPER ================= */
 
-    "gift-box": {
+new Swiper(".heroSwiper", {
 
-        name: "Luxury Gift Box",
+    loop:true,
 
-        price: "Rs. 2,999",
-
-        description:
-        "Premium quality luxury gift box with beautiful packaging. Perfect for birthdays, weddings and special occasions.",
-
-        images: [
-            "images/products/product1-1.jpg",
-            "images/products/product1-2.jpg",
-            "images/products/product1-3.jpg",
-            "images/products/product1-4.jpg"
-        ]
-
+    autoplay:{
+        delay:4000,
+        disableOnInteraction:false
     },
 
-
-    "hand-bag": {
-
-        name:"Elegant Hand Bag",
-
-        price:"Rs. 3,999",
-
-        description:
-        "Stylish and premium quality handbag for everyday use.",
-
-        images:[
-            "images/products/product2.jpg",
-            "images/products/product2-2.jpg",
-            "images/products/product2-3.jpg"
-        ]
-
+    pagination:{
+        el:".swiper-pagination",
+        clickable:true
     },
 
-
-    "dress-1":{
-
-        name:"Beautiful Dress",
-
-        price:"Rs. 4,999",
-
-        description:
-        "Elegant fashion dress with premium fabric and beautiful design.",
-
-        images:[
-            "images/products/product3.jpg",
-            "images/products/product3-2.jpg",
-            "images/products/product3-3.jpg"
-        ]
-
-    },
-
-
-    "perfume":{
-
-        name:"Premium Perfume",
-
-        price:"Rs. 2,499",
-
-        description:
-        "Long lasting premium fragrance.",
-
-        images:[
-            "images/products/product4.jpg",
-            "images/products/product4-2.jpg"
-        ]
-
-    }
-
-};
-
-
-
-let selectedProduct = productData[productId];
-
-
-let productImage = document.getElementById("mainProductImage");
-let productName = document.getElementById("productName");
-let productPrice = document.getElementById("productPrice");
-let productDescription = document.getElementById("productDescription");
-let whatsappBtn = document.getElementById("whatsappBtn");
-
-
-
-if(selectedProduct){
-
-
-    productName.innerText = selectedProduct.name;
-
-
-    productPrice.innerText = selectedProduct.price;
-
-
-    productDescription.innerText = selectedProduct.description;
-
-
-    productImage.src = selectedProduct.images[0];
-
-
-
-    whatsappBtn.href =
-    "https://wa.me/923045255325?text=I want to order "
-    + selectedProduct.name;
-
-
-}
-
-
-
-let currentImage = 0;
-
-
-
-function nextImage(){
-
-    if(!selectedProduct) return;
-
-
-    currentImage++;
-
-
-    if(currentImage >= selectedProduct.images.length){
-
-        currentImage = 0;
-
-    }
-
-
-    productImage.src =
-    selectedProduct.images[currentImage];
-
-}
-
-
-
-
-function prevImage(){
-
-    if(!selectedProduct) return;
-
-
-    currentImage--;
-
-
-    if(currentImage < 0){
-
-        currentImage =
-        selectedProduct.images.length - 1;
-
-    }
-
-
-    productImage.src =
-    selectedProduct.images[currentImage];
-
-}
-
-
-
-// ==========================
-// PRODUCT ADD TO CART
-// ==========================
-
-
-const productAddCart =
-document.getElementById("productAddCart");
-
-
-if(productAddCart){
-
-
-productAddCart.onclick = function(){
-
-
-cart.push({
-
-name:selectedProduct.name,
-
-price:selectedProduct.price,
-
-image:selectedProduct.images[0]
+    speed:800
 
 });
 
 
-cartCount.innerText = cart.length;
+
+new Swiper(".categorySwiper", {
+
+    slidesPerView:4,
+
+    spaceBetween:25,
+
+    loop:true,
+
+    autoplay:{
+        delay:2500
+    },
 
 
-renderCart();
+    breakpoints:{
+
+        320:{
+            slidesPerView:1.5
+        },
+
+        576:{
+            slidesPerView:2
+        },
+
+        768:{
+            slidesPerView:3
+        },
+
+        992:{
+            slidesPerView:4
+        }
+
+    }
+
+});
 
 
-alert("Added to Cart ✅");
+
+
+/* ================= SIDEBAR ================= */
+
+
+const menuIcon = document.querySelector(".menu-icon");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".menu-overlay");
+
+
+if(menuIcon){
+
+menuIcon.onclick = ()=>{
+
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+
+}
+
+}
+
+
+if(overlay){
+
+overlay.onclick = ()=>{
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+
+}
+
+
+
+
+
+/* ================= SEARCH POPUP ================= */
+
+
+const searchBtn = document.querySelector(".search-btn");
+const searchPopup = document.querySelector(".search-popup");
+const closeSearch = document.querySelector(".close-search");
+
+
+if(searchBtn){
+
+searchBtn.onclick = ()=>{
+
+searchPopup.classList.add("active");
+
+}
+
+}
+
+
+
+if(closeSearch){
+
+closeSearch.onclick = ()=>{
+
+searchPopup.classList.remove("active");
+
+}
+
+}
+
+
+
+
+/* ================= CART ================= */
+
+
+let cart=[];
+
+
+const cartCount=document.querySelector(".cart-count");
+const cartPanel=document.querySelector(".cart-panel");
+const cartBtn=document.querySelector(".cart-btn");
+const closeCart=document.querySelector(".close-cart");
+const cartItems=document.querySelector(".cart-items");
+
+
+
+document.querySelectorAll(".add-cart").forEach(button=>{
+
+
+button.onclick=function(){
+
+
+let card=this.closest(".product-card");
+
+
+let product={
+
+name:card.querySelector("h3").innerText,
+
+price:card.querySelector(".product-price").innerText,
+
+image:card.querySelector("img").src
+
+};
+
+
+
+cart.push(product);
+
+
+updateCart();
+
+
+alert("Product Added To Cart ❤️");
+
+
+}
+
+
+});
+
+
+
+function updateCart(){
+
+
+cartCount.innerText=cart.length;
+
+
+cartItems.innerHTML="";
+
+
+cart.forEach(item=>{
+
+
+cartItems.innerHTML += `
+
+<div class="cart-product">
+
+<img src="${item.image}" width="60">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+
+
+if(cartBtn){
+
+cartBtn.onclick=()=>{
+
+cartPanel.classList.add("active");
+
+}
+
+}
+
+
+
+if(closeCart){
+
+closeCart.onclick=()=>{
+
+cartPanel.classList.remove("active");
+
+}
+
+}
+
+
+
+
+
+
+
+/* ================= WISHLIST ================= */
+
+
+let wishlist=[];
+
+
+const wishlistPanel=document.querySelector(".wishlist-panel");
+const wishlistBtn=document.querySelector(".wishlist-btn");
+const closeWishlist=document.querySelector(".close-wishlist");
+const wishlistItems=document.querySelector(".wishlist-items");
+
+
+
+document.querySelectorAll(".wishlist-add").forEach(btn=>{
+
+
+btn.onclick=function(){
+
+
+let card=this.closest(".product-card");
+
+
+let item={
+
+name:card.querySelector("h3").innerText,
+
+image:card.querySelector("img").src
+
+};
+
+
+
+wishlist.push(item);
+
+
+showWishlist();
+
+
+alert("Added To Wishlist ❤️");
+
+
+}
+
+
+});
+
+
+
+function showWishlist(){
+
+
+wishlistItems.innerHTML="";
+
+
+wishlist.forEach(item=>{
+
+
+wishlistItems.innerHTML +=`
+
+<div>
+
+<img src="${item.image}" width="70">
+
+<h4>${item.name}</h4>
+
+</div>
+
+
+`;
+
+});
+
+
+}
+
+
+
+
+if(wishlistBtn){
+
+wishlistBtn.onclick=()=>{
+
+wishlistPanel.classList.add("active");
+
+}
+
+}
+
+
+
+
+if(closeWishlist){
+
+closeWishlist.onclick=()=>{
+
+wishlistPanel.classList.remove("active");
+
+}
+
+}
+
+
+
+
+
+
+
+/* ================= TRACK ORDER ================= */
+
+
+const trackOrder=document.getElementById("trackOrder");
+const orderPopup=document.querySelector(".order-popup");
+const closeOrder=document.querySelector(".close-order");
+
+
+
+if(trackOrder){
+
+trackOrder.onclick=(e)=>{
+
+e.preventDefault();
+
+orderPopup.classList.add("active");
+
+}
+
+}
+
+
+
+
+if(closeOrder){
+
+closeOrder.onclick=()=>{
+
+orderPopup.classList.remove("active");
+
+}
+
+}
+
+
+
+
+
+
+
+/* ================= BACK TO TOP ================= */
+
+
+const topBtn=document.getElementById("topBtn");
+
+
+window.onscroll=function(){
+
+
+if(window.scrollY>400){
+
+topBtn.style.display="flex";
+
+}
+
+else{
+
+topBtn.style.display="none";
+
+}
 
 
 };
 
 
+
+if(topBtn){
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
 }
-// ================= PRODUCT DETAILS =================
 
-let params = new URLSearchParams(window.location.search);
-
-let productId = params.get("id");
+}
 
 
 
-const products = {
+
+
+
+
+/* ================= PRODUCT DATA ================= */
+
+
+const products={
 
 
 "gift-box":{
@@ -226,14 +454,14 @@ name:"Luxury Gift Box",
 
 price:"Rs. 2,999",
 
-description:
-"Premium quality luxury gift box with beautiful packaging. Perfect for gifting and special occasions.",
-
 images:[
 
 "images/products/product1-1.jpg",
+
 "images/products/product1-2.jpg",
+
 "images/products/product1-3.jpg",
+
 "images/products/product1-4.jpg"
 
 ]
@@ -242,20 +470,17 @@ images:[
 
 
 
-"hand-bag":{
+"bag-1":{
 
 name:"Elegant Hand Bag",
 
 price:"Rs. 3,999",
 
-description:
-"Stylish and elegant handbag with premium finishing.",
-
 images:[
 
 "images/products/product2.jpg",
-"images/products/product2-2.jpg",
-"images/products/product2-3.jpg"
+
+"images/products/product2-2.jpg"
 
 ]
 
@@ -269,14 +494,11 @@ name:"Beautiful Dress",
 
 price:"Rs. 4,999",
 
-description:
-"Premium fashion dress with elegant design.",
-
 images:[
 
 "images/products/product3.jpg",
-"images/products/product3-2.jpg",
-"images/products/product3-3.jpg"
+
+"images/products/product3-2.jpg"
 
 ]
 
@@ -284,18 +506,16 @@ images:[
 
 
 
-"perfume":{
+"perfume-1":{
 
 name:"Premium Perfume",
 
 price:"Rs. 2,499",
 
-description:
-"Long lasting premium fragrance.",
-
 images:[
 
 "images/products/product4.jpg",
+
 "images/products/product4-2.jpg"
 
 ]
@@ -303,40 +523,71 @@ images:[
 }
 
 
-
 };
 
 
 
-let product = products[productId];
-
-let currentImage = 0;
 
 
 
-if(product){
+/* ================= PRODUCT DETAIL PAGE ================= */
 
 
-document.getElementById("productName").innerText = product.name;
+let urlParams=new URLSearchParams(window.location.search);
+
+let id=urlParams.get("id");
 
 
-document.getElementById("productPrice").innerText = product.price;
+let currentProduct=products[id];
 
-
-document.getElementById("productDescription").innerText = product.description;
-
-
-
-document.getElementById("mainProductImage").src =
-product.images[0];
+let currentImage=0;
 
 
 
-document.getElementById("whatsappBtn").href =
+if(currentProduct){
 
-"https://wa.me/923045255325?text=I want to order " 
-+ product.name;
 
+let name=document.getElementById("productName");
+
+let price=document.getElementById("productPrice");
+
+let image=document.getElementById("mainProductImage");
+
+let whatsapp=document.getElementById("whatsappBtn");
+
+
+
+if(name){
+
+name.innerText=currentProduct.name;
+
+}
+
+
+if(price){
+
+price.innerText=currentProduct.price;
+
+}
+
+
+
+if(image){
+
+image.src=currentProduct.images[0];
+
+}
+
+
+
+
+if(whatsapp){
+
+whatsapp.href=
+
+"https://wa.me/923045255325?text=I want to order "+currentProduct.name;
+
+}
 
 
 }
@@ -344,29 +595,27 @@ document.getElementById("whatsappBtn").href =
 
 
 
-
-// ================= IMAGE SLIDER =================
 
 
 function nextImage(){
 
 
-if(!product) return;
+if(!currentProduct)return;
 
 
 currentImage++;
 
 
-if(currentImage >= product.images.length){
+if(currentImage>=currentProduct.images.length){
 
-currentImage = 0;
+currentImage=0;
 
 }
 
 
+document.getElementById("mainProductImage").src=
 
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
+currentProduct.images[currentImage];
 
 
 }
@@ -378,73 +627,90 @@ product.images[currentImage];
 function prevImage(){
 
 
-if(!product) return;
+if(!currentProduct)return;
 
 
 currentImage--;
 
 
-if(currentImage < 0){
+if(currentImage<0){
 
-currentImage = product.images.length - 1;
+currentImage=currentProduct.images.length-1;
+
+}
+
+
+document.getElementById("mainProductImage").src=
+
+currentProduct.images[currentImage];
+
 
 }
 
 
 
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
+
+
+
+
+/* ================= SEARCH ================= */
+
+
+const searchInput=document.getElementById("searchInput");
+
+
+const searchButton=document.getElementById("searchButton");
+
+
+
+if(searchButton){
+
+
+searchButton.onclick=function(){
+
+
+let value=searchInput.value.toLowerCase();
+
+
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+let text=product.innerText.toLowerCase();
+
+
+
+if(text.includes(value)){
+
+
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
 
 
 }
 
 
-
-
-
-// ================= ADD TO CART =================
-
-
-const productAddCart =
-document.getElementById("productAddCart");
-
-
-
-if(productAddCart){
-
-
-productAddCart.onclick = function(){
-
-
-let cart =
-JSON.parse(localStorage.getItem("cart")) || [];
-
-
-
-cart.push({
-
-name:product.name,
-
-price:product.price,
-
-image:product.images[0]
 
 });
 
 
-
-localStorage.setItem(
-"cart",
-JSON.stringify(cart)
-);
+searchPopup.classList.remove("active");
 
 
-
-alert("Added to Cart ✅");
-
-
-};
+}
 
 
 
 }
+
+
+
+
+/* ================= END ================= */
