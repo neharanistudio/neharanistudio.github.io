@@ -1,115 +1,113 @@
 /* ==========================================
    NEHA RANI STUDIO
-   FINAL SCRIPT.JS
+   COMPLETE JAVASCRIPT
 ========================================== */
 
 
 /* ================= SWIPER ================= */
 
-new Swiper(".heroSwiper", {
+if(document.querySelector(".heroSwiper")){
 
-    loop:true,
+new Swiper(".heroSwiper",{
 
-    autoplay:{
-        delay:4000,
-        disableOnInteraction:false
-    },
+loop:true,
 
-    pagination:{
-        el:".swiper-pagination",
-        clickable:true
-    },
+autoplay:{
+delay:3500,
+disableOnInteraction:false
+},
 
-    speed:800
+pagination:{
+el:".swiper-pagination",
+clickable:true
+}
+
+});
+
+}
+
+
+
+if(document.querySelector(".categorySwiper")){
+
+new Swiper(".categorySwiper",{
+
+slidesPerView:4,
+
+spaceBetween:25,
+
+breakpoints:{
+
+320:{
+slidesPerView:2
+},
+
+576:{
+slidesPerView:2
+},
+
+768:{
+slidesPerView:3
+},
+
+992:{
+slidesPerView:4
+}
+
+}
 
 });
 
-
-
-new Swiper(".categorySwiper", {
-
-    slidesPerView:4,
-
-    spaceBetween:25,
-
-    loop:true,
-
-    autoplay:{
-        delay:2500
-    },
-
-
-    breakpoints:{
-
-        320:{
-            slidesPerView:1.5
-        },
-
-        576:{
-            slidesPerView:2
-        },
-
-        768:{
-            slidesPerView:3
-        },
-
-        992:{
-            slidesPerView:4
-        }
-
-    }
-
-});
+}
 
 
 
 
 /* ================= SIDEBAR ================= */
 
-
-const menuIcon = document.querySelector(".menu-icon");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".menu-overlay");
+const menuIcon=document.querySelector(".menu-icon");
+const sidebar=document.querySelector(".sidebar");
+const overlay=document.querySelector(".menu-overlay");
 
 
 if(menuIcon){
 
-menuIcon.onclick = ()=>{
+menuIcon.onclick=()=>{
 
-    sidebar.classList.add("active");
-    overlay.classList.add("active");
+sidebar.classList.add("active");
+overlay.classList.add("active");
+
+}
 
 }
 
-}
 
 
 if(overlay){
 
-overlay.onclick = ()=>{
+overlay.onclick=()=>{
 
-    sidebar.classList.remove("active");
-    overlay.classList.remove("active");
-
-}
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
 
 }
 
+}
 
 
 
 
-/* ================= SEARCH POPUP ================= */
+/* ================= SEARCH ================= */
 
 
-const searchBtn = document.querySelector(".search-btn");
-const searchPopup = document.querySelector(".search-popup");
-const closeSearch = document.querySelector(".close-search");
+const searchBtn=document.querySelector(".search-btn");
+const searchPopup=document.querySelector(".search-popup");
+const closeSearch=document.querySelector(".close-search");
 
 
 if(searchBtn){
 
-searchBtn.onclick = ()=>{
+searchBtn.onclick=()=>{
 
 searchPopup.classList.add("active");
 
@@ -121,13 +119,159 @@ searchPopup.classList.add("active");
 
 if(closeSearch){
 
-closeSearch.onclick = ()=>{
+closeSearch.onclick=()=>{
 
 searchPopup.classList.remove("active");
 
 }
 
 }
+
+
+
+
+/* ================= PRODUCT DATA ================= */
+
+
+const productLinks={
+
+"gift-box":"gift-box",
+
+"bag-1":"hand-bag",
+
+"dress-1":"dress-1",
+
+"perfume-1":"perfume",
+
+"jewelry-1":"watch",
+
+"shoes-1":"shoes"
+
+};
+
+
+
+/* ================= OPEN PRODUCT ================= */
+
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+
+card.addEventListener("click",(e)=>{
+
+
+if(e.target.classList.contains("add-cart")) return;
+
+if(e.target.closest(".wishlist-add")) return;
+
+
+let id=card.dataset.id;
+
+
+if(productLinks[id]){
+
+window.location.href="product.html?id="+productLinks[id];
+
+}
+
+
+});
+
+
+});
+
+
+
+
+
+/* ================= CATEGORY FILTER ================= */
+
+
+document.querySelectorAll(".category-card").forEach(category=>{
+
+
+category.onclick=()=>{
+
+
+let categoryId=category.id;
+
+
+let products=document.querySelectorAll(".product-item");
+
+
+products.forEach(product=>{
+
+
+if(product.dataset.category===categoryId){
+
+
+product.style.display="block";
+
+
+}else{
+
+
+product.style.display="none";
+
+
+}
+
+
+});
+
+
+
+document.querySelector("#featured").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+
+});
+
+
+
+
+
+/* ================= VIEW ALL PRODUCTS ================= */
+
+
+const viewAll=document.querySelector("#viewAllProducts");
+
+
+if(viewAll){
+
+
+viewAll.onclick=(e)=>{
+
+e.preventDefault();
+
+
+document.querySelectorAll(".product-item").forEach(item=>{
+
+item.style.display="block";
+
+});
+
+
+document.querySelector("#featured").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+}
+
+
 
 
 
@@ -139,47 +283,57 @@ let cart=[];
 
 
 const cartCount=document.querySelector(".cart-count");
+
 const cartPanel=document.querySelector(".cart-panel");
-const cartBtn=document.querySelector(".cart-btn");
-const closeCart=document.querySelector(".close-cart");
+
 const cartItems=document.querySelector(".cart-items");
 
+const cartBtn=document.querySelector(".cart-btn");
 
-
-document.querySelectorAll(".add-cart").forEach(button=>{
-
-
-button.onclick=function(){
-
-
-let card=this.closest(".product-card");
-
-
-let product={
-
-name:card.querySelector("h3").innerText,
-
-price:card.querySelector(".product-price").innerText,
-
-image:card.querySelector("img").src
-
-};
+const closeCart=document.querySelector(".close-cart");
 
 
 
-cart.push(product);
+document.querySelectorAll(".add-cart").forEach(btn=>{
+
+
+btn.onclick=(e)=>{
+
+
+e.stopPropagation();
+
+
+let card=btn.closest(".product-card");
+
+
+let name=card.querySelector("h3").innerText;
+
+
+let price=card.querySelector(".product-price").innerText;
+
+
+
+cart.push({
+
+name:name,
+price:price
+
+});
 
 
 updateCart();
 
 
-alert("Product Added To Cart ❤️");
+alert(name+" Added To Cart");
 
 
 }
 
 
+
 });
+
+
 
 
 
@@ -195,19 +349,21 @@ cartItems.innerHTML="";
 cart.forEach(item=>{
 
 
-cartItems.innerHTML += `
+let div=document.createElement("div");
 
-<div class="cart-product">
 
-<img src="${item.image}" width="60">
+div.innerHTML=`
 
-<h4>${item.name}</h4>
+<p>${item.name}</p>
 
-<p>${item.price}</p>
+<span>${item.price}</span>
 
-</div>
+<hr>
 
 `;
+
+
+cartItems.appendChild(div);
 
 
 });
@@ -221,9 +377,12 @@ cartItems.innerHTML += `
 
 if(cartBtn){
 
+
 cartBtn.onclick=()=>{
 
+
 cartPanel.classList.add("active");
+
 
 }
 
@@ -233,15 +392,16 @@ cartPanel.classList.add("active");
 
 if(closeCart){
 
+
 closeCart.onclick=()=>{
+
 
 cartPanel.classList.remove("active");
 
-}
 
 }
 
-
+}
 
 
 
@@ -254,48 +414,32 @@ let wishlist=[];
 
 
 const wishlistPanel=document.querySelector(".wishlist-panel");
-const wishlistBtn=document.querySelector(".wishlist-btn");
-const closeWishlist=document.querySelector(".close-wishlist");
+
 const wishlistItems=document.querySelector(".wishlist-items");
+
+const wishlistBtn=document.querySelector(".wishlist-btn");
+
+const closeWishlist=document.querySelector(".close-wishlist");
+
 
 
 
 document.querySelectorAll(".wishlist-add").forEach(btn=>{
 
 
-btn.onclick=function(){
+btn.onclick=(e)=>{
 
 
-let card=this.closest(".product-card");
+e.stopPropagation();
 
 
-let item={
-
-name:card.querySelector("h3").innerText,
-
-image:card.querySelector("img").src
-
-};
+let card=btn.closest(".product-card");
 
 
-
-wishlist.push(item);
-
-
-showWishlist();
+let name=card.querySelector("h3").innerText;
 
 
-alert("Added To Wishlist ❤️");
-
-
-}
-
-
-});
-
-
-
-function showWishlist(){
+wishlist.push(name);
 
 
 wishlistItems.innerHTML="";
@@ -304,50 +448,54 @@ wishlistItems.innerHTML="";
 wishlist.forEach(item=>{
 
 
-wishlistItems.innerHTML +=`
+wishlistItems.innerHTML+=`
 
-<div>
-
-<img src="${item.image}" width="70">
-
-<h4>${item.name}</h4>
-
-</div>
-
+<p>❤️ ${item}</p>
 
 `;
 
 });
 
 
+alert("Added To Wishlist");
+
+
 }
+
+
+});
+
 
 
 
 
 if(wishlistBtn){
 
+
 wishlistBtn.onclick=()=>{
+
 
 wishlistPanel.classList.add("active");
 
-}
 
 }
 
+}
 
 
 
 if(closeWishlist){
 
+
 closeWishlist.onclick=()=>{
+
 
 wishlistPanel.classList.remove("active");
 
-}
 
 }
 
+}
 
 
 
@@ -357,38 +505,109 @@ wishlistPanel.classList.remove("active");
 /* ================= TRACK ORDER ================= */
 
 
-const trackOrder=document.getElementById("trackOrder");
+const trackBtn=document.querySelector("#trackOrder");
+
 const orderPopup=document.querySelector(".order-popup");
+
 const closeOrder=document.querySelector(".close-order");
 
 
 
-if(trackOrder){
+if(trackBtn){
 
-trackOrder.onclick=(e)=>{
+
+trackBtn.onclick=(e)=>{
+
 
 e.preventDefault();
 
+
 orderPopup.classList.add("active");
 
-}
 
 }
 
+}
 
 
 
 if(closeOrder){
 
+
 closeOrder.onclick=()=>{
+
 
 orderPopup.classList.remove("active");
 
-}
 
 }
 
+}
 
+
+
+
+
+
+
+/* ================= SEARCH PRODUCTS ================= */
+
+
+const searchInput=document.querySelector("#searchInput");
+
+const searchButton=document.querySelector("#searchButton");
+
+
+
+if(searchButton){
+
+
+searchButton.onclick=()=>{
+
+
+let value=searchInput.value.toLowerCase();
+
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+let name=product.innerText.toLowerCase();
+
+
+
+if(name.includes(value)){
+
+
+product.style.display="block";
+
+
+}else{
+
+
+product.style.display="none";
+
+
+}
+
+
+});
+
+
+
+searchPopup.classList.remove("active");
+
+
+document.querySelector("#featured").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+}
 
 
 
@@ -397,32 +616,37 @@ orderPopup.classList.remove("active");
 /* ================= BACK TO TOP ================= */
 
 
-const topBtn=document.getElementById("topBtn");
+const topBtn=document.querySelector("#topBtn");
 
 
-window.onscroll=function(){
+window.onscroll=()=>{
 
 
-if(window.scrollY>400){
+if(window.scrollY>300){
+
 
 topBtn.style.display="flex";
 
-}
 
-else{
+}else{
+
 
 topBtn.style.display="none";
 
+
 }
 
 
-};
+}
+
 
 
 
 if(topBtn){
 
+
 topBtn.onclick=()=>{
+
 
 window.scrollTo({
 
@@ -432,17 +656,22 @@ behavior:"smooth"
 
 });
 
-}
 
 }
 
+}
 
 
 
 
+/* ================= PRODUCT PAGE ================= */
 
 
-/* ================= PRODUCT DATA ================= */
+let params=new URLSearchParams(window.location.search);
+
+
+let productId=params.get("id");
+
 
 
 const products={
@@ -455,6 +684,8 @@ name:"Luxury Gift Box",
 price:"Rs. 2,999",
 
 images:[
+
+"images/products/product1.jpg",
 
 "images/products/product1-1.jpg",
 
@@ -469,8 +700,7 @@ images:[
 },
 
 
-
-"bag-1":{
+"hand-bag":{
 
 name:"Elegant Hand Bag",
 
@@ -487,7 +717,6 @@ images:[
 },
 
 
-
 "dress-1":{
 
 name:"Beautiful Dress",
@@ -496,17 +725,14 @@ price:"Rs. 4,999",
 
 images:[
 
-"images/products/product3.jpg",
-
-"images/products/product3-2.jpg"
+"images/products/product3.jpg"
 
 ]
 
 },
 
 
-
-"perfume-1":{
+"perfume":{
 
 name:"Premium Perfume",
 
@@ -514,9 +740,37 @@ price:"Rs. 2,499",
 
 images:[
 
-"images/products/product4.jpg",
+"images/products/product4.jpg"
 
-"images/products/product4-2.jpg"
+]
+
+},
+
+
+"watch":{
+
+name:"Luxury Watch",
+
+price:"Rs. 5,499",
+
+images:[
+
+"images/products/product5.jpg"
+
+]
+
+},
+
+
+"shoes":{
+
+name:"Ladies Shoes",
+
+price:"Rs. 3,499",
+
+images:[
+
+"images/products/product6.jpg"
 
 ]
 
@@ -528,94 +782,48 @@ images:[
 
 
 
-
-
-/* ================= PRODUCT DETAIL PAGE ================= */
-
-
-let urlParams=new URLSearchParams(window.location.search);
-
-let id=urlParams.get("id");
-
-
-let currentProduct=products[id];
-
 let currentImage=0;
 
 
+if(productId && products[productId]){
 
-if(currentProduct){
+
+let product=products[productId];
 
 
-let name=document.getElementById("productName");
+let name=document.querySelector("#productName");
 
-let price=document.getElementById("productPrice");
+let price=document.querySelector("#productPrice");
 
-let image=document.getElementById("mainProductImage");
-
-let whatsapp=document.getElementById("whatsappBtn");
-
+let image=document.querySelector("#mainProductImage");
 
 
 if(name){
 
-name.innerText=currentProduct.name;
+name.innerText=product.name;
 
-}
+price.innerText=product.price;
 
-
-if(price){
-
-price.innerText=currentProduct.price;
-
-}
-
-
-
-if(image){
-
-image.src=currentProduct.images[0];
+image.src=product.images[0];
 
 }
 
 
 
-
-if(whatsapp){
-
-whatsapp.href=
-
-"https://wa.me/923045255325?text=I want to order "+currentProduct.name;
-
-}
-
-
-}
-
-
-
-
-
-
-function nextImage(){
-
-
-if(!currentProduct)return;
+window.nextImage=()=>{
 
 
 currentImage++;
 
 
-if(currentImage>=currentProduct.images.length){
+if(currentImage>=product.images.length){
 
 currentImage=0;
 
 }
 
 
-document.getElementById("mainProductImage").src=
-
-currentProduct.images[currentImage];
+image.src=product.images[currentImage];
 
 
 }
@@ -623,11 +831,7 @@ currentProduct.images[currentImage];
 
 
 
-
-function prevImage(){
-
-
-if(!currentProduct)return;
+window.prevImage=()=>{
 
 
 currentImage--;
@@ -635,77 +839,12 @@ currentImage--;
 
 if(currentImage<0){
 
-currentImage=currentProduct.images.length-1;
+currentImage=product.images.length-1;
 
 }
 
 
-document.getElementById("mainProductImage").src=
-
-currentProduct.images[currentImage];
-
-
-}
-
-
-
-
-
-
-
-/* ================= SEARCH ================= */
-
-
-const searchInput=document.getElementById("searchInput");
-
-
-const searchButton=document.getElementById("searchButton");
-
-
-
-if(searchButton){
-
-
-searchButton.onclick=function(){
-
-
-let value=searchInput.value.toLowerCase();
-
-
-
-document.querySelectorAll(".product-item").forEach(product=>{
-
-
-let text=product.innerText.toLowerCase();
-
-
-
-if(text.includes(value)){
-
-
-product.style.display="block";
-
-
-}
-
-else{
-
-
-product.style.display="none";
-
-
-}
-
-
-
-});
-
-
-searchPopup.classList.remove("active");
-
-
-}
-
+image.src=product.images[currentImage];
 
 
 }
@@ -713,4 +852,18 @@ searchPopup.classList.remove("active");
 
 
 
-/* ================= END ================= */
+let whatsapp=document.querySelector("#whatsappBtn");
+
+
+if(whatsapp){
+
+
+whatsapp.href=
+
+"https://wa.me/923045255325?text=I want to order "+product.name;
+
+
+}
+
+
+}
