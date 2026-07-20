@@ -1,6 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Product Details - Neha Rani Studio</title>
 
@@ -10,53 +14,71 @@
 
 </head>
 
+
 <body>
 
-<div class="product-detail-page">
+
+<!-- PRODUCT DETAILS -->
+
+<section class="product-detail-page">
+
 
 <div class="product-gallery">
 
+
 <img id="mainProductImage" src="" alt="Product">
 
+
 <div class="image-buttons">
+
 <button onclick="prevImage()">❮</button>
+
 <button onclick="nextImage()">❯</button>
-</div>
 
 </div>
+
+
+</div>
+
+
+
 
 
 <div class="product-detail-info">
 
+
 <h1 id="productName"></h1>
+
 
 <h2 id="productPrice"></h2>
 
 
+<div class="rating">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+
+
 <div class="description">
+
 
 <h3>Product Description</h3>
 
+
 <p id="productDescription">
-Premium quality product from Neha Rani Studio. 
-Beautiful design with elegant finishing. Perfect for gifting and everyday style.
+
+Premium quality product from Neha Rani Studio.
+Beautiful design with elegant finishing.
+Perfect for gifting and everyday style.
+
 </p>
 
-</div>
-
-
-<div class="buttons">
-
-<button class="add-cart">
-Add To Cart
-</button>
-
-
-<a id="whatsappBtn" class="buy-btn">
-Buy Now
-</a>
 
 </div>
+
+
 
 
 
@@ -72,55 +94,423 @@ Buy Now
 
 
 
-<div class="reviews">
+
+
+<div class="buttons">
+
+
+<button class="add-cart" id="productAddCart">
+
+Add To Cart
+
+</button>
+
+
+
+<a id="whatsappBtn" 
+class="buy-btn"
+target="_blank">
+
+Buy Now
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- REVIEWS -->
+
+
+<section class="reviews">
+
 
 <h2>Customer Reviews</h2>
 
 
+<div class="review-grid">
+
+
+<div class="review-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Amazing quality and beautiful packaging.
+Loved my purchase.
+</p>
+
+<h4>
+Sarah Khan
+</h4>
+
+</div>
+
+
+
+
+
+<div class="review-card">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+Product exactly same as shown.
+Highly recommended.
+</p>
+
+<h4>
+Ayesha Malik
+</h4>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- RELATED PRODUCTS -->
+
+
 <section class="related-products">
+
 
 <h2>You May Also Like</h2>
 
+
 <div class="related-grid">
 
+
+
 <div class="related-card">
-<img src="images/products/product1-1.jpg">
-<h3>Luxury Gift Box</h3>
-<p>Rs. 2999</p>
+
+<img src="images/products/product1.jpg">
+
+<h3>
+Luxury Gift Box
+</h3>
+
+<p>
+Rs. 2,999
+</p>
+
+<a href="product.html?id=gift-box">
+View Product
+</a>
+
 </div>
 
 
+
+
+
 <div class="related-card">
+
 <img src="images/products/product2.jpg">
-<h3>Elegant Hand Bag</h3>
-<p>Rs. 3999</p>
+
+<h3>
+Elegant Hand Bag
+</h3>
+
+<p>
+Rs. 3,999
+</p>
+
+<a href="product.html?id=hand-bag">
+View Product
+</a>
+
 </div>
 
 
+
+
+
 <div class="related-card">
+
 <img src="images/products/product3.jpg">
-<h3>Beautiful Dress</h3>
-<p>Rs. 4999</p>
+
+<h3>
+Beautiful Dress
+</h3>
+
+<p>
+Rs. 4,999
+</p>
+
+<a href="product.html?id=dress-1">
+View Product
+</a>
+
 </div>
+
+
 
 
 <div class="related-card">
+
 <img src="images/products/product4.jpg">
-<h3>Premium Perfume</h3>
-<p>Rs. 2499</p>
-</div>
+
+<h3>
+Premium Perfume
+</h3>
+
+<p>
+Rs. 2,499
+</p>
+
+<a href="product.html?id=perfume">
+View Product
+</a>
 
 </div>
+
+
+
+</div>
+
 
 </section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer class="footer">
+
+
+<div class="footer-container">
+
+
+
+<div class="footer-box">
+
+
+<div class="footer-logo">
+
+
+<img src="images/logo/logo.png">
+
+
+<h2>
+Neha Rani Studio
+</h2>
+
+
+</div>
+
+
+
+<p>
+Luxury Fashion, Gift Hampers, Bags, Beauty Products & Accessories.
+</p>
+
+
+
+
+<div class="social-icons">
+
+
+<a href="https://instagram.com/neharani.studio">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+
+<a href="#">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+
+<a href="#">
+<i class="fa-brands fa-tiktok"></i>
+</a>
+
+
+<a href="https://wa.me/923045255325">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+Categories
+</h3>
+
+
+<a href="#">
+Dresses
+</a>
+
+<a href="#">
+Bags
+</a>
+
+<a href="#">
+Jewellery
+</a>
+
+<a href="#">
+Gift Hampers
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+Quick Links
+</h3>
+
+
+<a href="index.html">
+Home
+</a>
+
+
+<a href="#">
+Shop
+</a>
+
+
+<a href="#">
+Contact
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="footer-box">
+
+
+<h3>
+Contact
+</h3>
+
+
+<p>
+📍 Pakistan
+</p>
+
+
+<p>
+📱 WhatsApp Orders
+</p>
+
+
+<p>
+📧 Instagram DM
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+
+© 2026 Neha Rani Studio. All Rights Reserved.
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- WHATSAPP FLOAT -->
+
+
+<a href="https://wa.me/923045255325"
+class="whatsapp-btn"
+target="_blank">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+
+</a>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+
 <script>
+
 
 let params = new URLSearchParams(window.location.search);
 
-let id = params.get("id");
+
+let productId = params.get("id");
 
 
-let products = {
+
+const products = {
+
 
 "gift-box":{
 
@@ -129,71 +519,176 @@ name:"Luxury Gift Box",
 price:"Rs. 2,999",
 
 images:[
+
 "images/products/product1-1.jpg",
 "images/products/product1-2.jpg",
-"images/products/product1-3.jpg",
-"images/products/product1-4.jpg"
+"images/products/product1-3.jpg"
+
+]
+
+},
+
+
+
+"hand-bag":{
+
+name:"Elegant Hand Bag",
+
+price:"Rs. 3,999",
+
+images:[
+
+"images/products/product2.jpg",
+"images/products/product2-2.jpg"
+
+]
+
+},
+
+
+
+"dress-1":{
+
+name:"Beautiful Dress",
+
+price:"Rs. 4,999",
+
+images:[
+
+"images/products/product3.jpg",
+"images/products/product3-2.jpg"
+
+]
+
+},
+
+
+
+"perfume":{
+
+name:"Premium Perfume",
+
+price:"Rs. 2,499",
+
+images:[
+
+"images/products/product4.jpg"
+
 ]
 
 }
+
+
 
 };
 
 
 
-let product = products[id];
-
-
-if(product){
-
-document.getElementById("productName").innerText = product.name;
-
-document.getElementById("productPrice").innerText = product.price;
-
-document.getElementById("mainProductImage").src = product.images[0];
-
-
-document.getElementById("whatsappBtn").href =
-"https://wa.me/923045255325?text=I want to order " + product.name;
-
-}
-
+let product = products[productId];
 
 
 let currentImage = 0;
 
 
+
+if(product){
+
+
+document.getElementById("productName").innerText = product.name;
+
+
+document.getElementById("productPrice").innerText = product.price;
+
+
+document.getElementById("mainProductImage").src = product.images[0];
+
+
+
+document.getElementById("whatsappBtn").href =
+
+"https://wa.me/923045255325?text=I want to order " 
++ product.name;
+
+
+
+}
+
+
+
+
+
+
 function nextImage(){
+
+
+if(!product) return;
+
 
 currentImage++;
 
+
 if(currentImage >= product.images.length){
+
 currentImage = 0;
+
 }
+
+
 
 document.getElementById("mainProductImage").src =
 product.images[currentImage];
 
+
 }
+
+
+
+
 
 
 
 function prevImage(){
 
+
+if(!product) return;
+
+
 currentImage--;
 
+
 if(currentImage < 0){
+
 currentImage = product.images.length - 1;
+
 }
+
+
 
 document.getElementById("mainProductImage").src =
 product.images[currentImage];
 
+
 }
+
+
+
+
+
+
+document.getElementById("productAddCart").onclick=function(){
+
+
+alert("Product added to cart 🛒");
+
+
+};
+
 
 
 </script>
 
 
+
 </body>
+
 </html>
