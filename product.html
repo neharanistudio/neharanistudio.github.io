@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Product | Neha Rani Studio</title>
+<title>Product Details - Neha Rani Studio</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -14,159 +10,85 @@
 
 </head>
 
-
 <body>
 
+<div class="product-detail-page">
 
-<header class="header">
+<div class="product-detail-image">
 
-<div class="header-left">
-<a href="index.html">
-<i class="fa-solid fa-arrow-left"></i>
-</a>
-</div>
-
-
-<div class="header-center">
-
-<h2>Neha Rani Studio</h2>
+<img id="mainProductImage" src="" alt="Product">
 
 </div>
 
 
-<div class="header-right">
+<div class="product-detail-info">
 
-<i class="fa-solid fa-cart-shopping"></i>
+<h1 id="productName"></h1>
 
-</div>
-
-</header>
-
-
-
-<section class="single-product">
-
-
-<div class="product-gallery">
-
-
-<img id="mainProductImage" src="images/products/product1-1.jpg">
-
-
-<div class="small-images">
-
-<img src="images/products/product1-1.jpg">
-<img src="images/products/product1-2.jpg">
-<img src="images/products/product1-3.jpg">
-<img src="images/products/product1-4.jpg">
-
-</div>
-
-
-</div>
-
-
-
-<div class="product-details">
-
-
-<h1 id="productName">
-Luxury Gift Box
-</h1>
-
-
-<h2 id="productPrice">
-Rs. 2,999
-</h2>
-
-
-
-<div class="stars">
-⭐⭐⭐⭐⭐
-</div>
-
+<h2 id="productPrice"></h2>
 
 
 <p>
-
 Premium quality product from Neha Rani Studio.
 Beautiful design with luxury finishing.
-Perfect for gifting and special occasions.
-
 </p>
 
 
-
-<div class="options">
-
-<h3>Select Option</h3>
-
-<button>Small</button>
-<button>Medium</button>
-<button>Large</button>
-
-</div>
-
-
-
-<button class="add-product-cart">
-
-Add To Cart 🛒
-
+<button class="product-btn">
+Add To Cart
 </button>
 
 
-
-<a class="whatsapp-product"
-href="https://wa.me/923045255325"
-target="_blank">
-
-Buy On WhatsApp
-
+<a id="whatsappBtn" class="hero-btn">
+Buy on WhatsApp
 </a>
 
 
+<h3>Customer Reviews</h3>
 
 <div class="reviews-box">
 
-<h2>Customer Reviews</h2>
+⭐⭐⭐⭐⭐
 
-<p>⭐⭐⭐⭐⭐ Amazing quality and packaging.</p>
-
-<p>⭐⭐⭐⭐⭐ Loved the product.</p>
-
-</div>
-
-
+<p>
+Amazing quality and beautiful packaging.
+</p>
 
 </div>
 
 
-</section>
+</div>
 
+</div>
 
 
 <script>
 
+let params = new URLSearchParams(window.location.search);
 
-let smallImages=document.querySelectorAll(".small-images img");
-
-let mainImage=document.getElementById("mainProductImage");
+let id = params.get("id");
 
 
-smallImages.forEach(img=>{
+if(id==="gift-box"){
 
-img.onclick=function(){
+document.getElementById("mainProductImage").src =
+"images/products/product1-1.jpg";
 
-mainImage.src=this.src;
+
+document.getElementById("productName").innerText =
+"Luxury Gift Box";
+
+
+document.getElementById("productPrice").innerText =
+"Rs. 2,999";
+
+
+document.getElementById("whatsappBtn").href =
+"https://wa.me/923045255325";
 
 }
 
-});
-
-
 </script>
-
 
 
 </body>
