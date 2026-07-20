@@ -1411,3 +1411,50 @@ behavior:"smooth"
 
 
 }
+/* ================= PRODUCT PAGE CART & WISHLIST ================= */
+
+
+const detailAddCart=document.querySelector("#detailAddCart");
+
+
+if(detailAddCart){
+
+
+detailAddCart.onclick=function(){
+
+
+let name=document.querySelector("#productName").innerText;
+
+let price=document.querySelector("#productPrice").innerText;
+
+
+alert(name+" Added To Cart");
+
+
+};
+
+
+}
+
+
+
+
+const detailWishlist=document.querySelector("#detailWishlist");
+
+
+if(detailWishlist){
+
+
+detailWishlist.onclick=function(){
+
+
+let name=document.querySelector("#productName").innerText;
+
+
+alert(name+" Added To Wishlist");
+
+
+};
+
+
+}
