@@ -297,71 +297,119 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ================= WISHLIST ================= */
+  /* ================= WISHLIST ================= */
 
-    let wishlist = [];
+let wishlist = [];
 
-    const wishlistBtn = document.querySelector(".wishlist-btn");
-    const wishlistPanel = document.querySelector(".wishlist-panel");
-    const closeWishlist = document.querySelector(".close-wishlist");
-    const wishlistItems = document.querySelector(".wishlist-items");
+const wishlistBtn = document.querySelector(".wishlist-btn");
+const wishlistPanel = document.querySelector(".wishlist-panel");
+const closeWishlist = document.querySelector(".close-wishlist");
+const wishlistItems = document.querySelector(".wishlist-items");
 
-    function updateWishlist() {
 
-        if (!wishlistItems) return;
+function updateWishlist(){
 
-        wishlistItems.innerHTML = "";
+    if(!wishlistItems) return;
 
-        wishlist.forEach(item => {
+    wishlistItems.innerHTML="";
 
-            wishlistItems.innerHTML += `
-            <div class="wishlist-product">
-                ❤️ ${item}
-            </div>
-            `;
+    wishlist.forEach(item=>{
 
-        });
-
-    }
-
-    document.querySelectorAll(".wishlist-add").forEach(btn => {
-
-        btn.addEventListener("click", (e) => {
-
-            e.stopPropagation();
-
-            const card = btn.closest(".product-card");
-
-            if (!card) return;
-
-            wishlist.push(card.querySelector("h3").innerText);
-
-            updateWishlist();
-
-        });
+        wishlistItems.innerHTML += `
+        <div class="wishlist-product">
+        ❤️ ${item}
+        </div>
+        `;
 
     });
 
-    if (wishlistBtn && wishlistPanel) {
+}
 
-        wishlistBtn.addEventListener("click", () => {
 
-            wishlistPanel.classList.add("active");
 
-        });
+// Home page wishlist
 
-    }
+document.querySelectorAll(".wishlist-add").forEach(btn=>{
 
-    if (closeWishlist) {
+    btn.addEventListener("click",(e)=>{
 
-        closeWishlist.addEventListener("click", () => {
+        e.stopPropagation();
 
-            wishlistPanel.classList.remove("active");
+        let card = btn.closest(".product-card");
 
-        });
+        if(card){
 
-    }
+            let name = card.querySelector("h3").innerText;
 
+            wishlist.push(name);
+
+            btn.classList.toggle("liked");
+
+        }
+
+        updateWishlist();
+
+    });
+
+});
+
+
+
+// Product detail page wishlist
+
+const detailWishlist = document.querySelector("#detailWishlist");
+
+
+if(detailWishlist){
+
+    detailWishlist.addEventListener("click",()=>{
+
+
+        let name = document.querySelector("#productName").innerText;
+
+
+        if(name){
+
+            wishlist.push(name);
+
+            detailWishlist.classList.add("liked");
+
+            detailWishlist.innerHTML="♥ Wishlist Added";
+
+        }
+
+
+        updateWishlist();
+
+
+    });
+
+}
+
+
+
+
+if(wishlistBtn && wishlistPanel){
+
+    wishlistBtn.addEventListener("click",()=>{
+
+        wishlistPanel.classList.add("active");
+
+    });
+
+}
+
+
+
+if(closeWishlist){
+
+    closeWishlist.addEventListener("click",()=>{
+
+        wishlistPanel.classList.remove("active");
+
+    });
+
+}
 
     /* ================= TRACK ORDER ================= */
 
@@ -731,26 +779,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mainImage.src = product.images[currentImage];
 
-/* PRODUCT PAGE WISHLIST BUTTON */
 
-const detailWishlist = document.querySelector("#detailWishlist");
-
-if(detailWishlist){
-
-    detailWishlist.addEventListener("click", function(){
-
-        this.classList.toggle("active");
-
-        if(this.classList.contains("active")){
-
-            this.innerHTML = "♥";
-
-        }else{
-
-            this.innerHTML = "♡";
-
-        }
-
-    });
-
-}
