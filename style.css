@@ -3056,13 +3056,4 @@ grid-template-columns:1fr;
     text-decoration:none;
     cursor:pointer;
 }
-#detailWishlist.active{
-    color:#e91e63;
-    border-color:#e91e63;
-}
-
-#detailWishlist{
-    font-size:30px;
-    cursor:pointer;
-}
 /* ================= END ================= */
