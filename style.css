@@ -3056,4 +3056,14 @@ grid-template-columns:1fr;
     text-decoration:none;
     cursor:pointer;
 }
+.wishlist-add.liked,
+#detailWishlist.liked{
+    color:#ff4f8b;
+    border-color:#ff4f8b;
+}
+
+.wishlist-add.liked::first-letter,
+#detailWishlist.liked::first-letter{
+    color:#ff4f8b;
+}
 /* ================= END ================= */
