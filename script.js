@@ -731,12 +731,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
             mainImage.src = product.images[currentImage];
 
+/* PRODUCT PAGE WISHLIST BUTTON */
 
-        };
+const detailWishlist = document.querySelector("#detailWishlist");
 
+if(detailWishlist){
 
+    detailWishlist.addEventListener("click", function(){
 
-    }
+        this.classList.toggle("active");
 
+        if(this.classList.contains("active")){
 
-});
+            this.innerHTML = "♥";
+
+        }else{
+
+            this.innerHTML = "♡";
+
+        }
+
+    });
+
+}
