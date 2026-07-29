@@ -779,7 +779,8 @@ if(closeWishlist){
 
             mainImage.src = product.images[currentImage];
            
-</script>
+        };
 
-</body>
-</html>
+    }
+
+});
