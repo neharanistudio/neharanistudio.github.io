@@ -182,7 +182,7 @@ window.location.href="product.html?id="+productLinks[id];
 /* ================= CART ================= */
 
 
-let cart=[];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
 const cartCount=document.querySelector(".cart-count");
@@ -192,7 +192,6 @@ const cartItems=document.querySelector(".cart-items");
 
 
 function updateCart(){
-
 
 if(cartCount){
 
@@ -228,10 +227,12 @@ cartItems.innerHTML+=`
 
 
 }
+   
+// ADD THIS
+localStorage.setItem("cart", JSON.stringify(cart));
 
 
 }
-
 
 
 
@@ -1183,48 +1184,93 @@ alert("Product added to cart 🛒");
 
 
 
-/* ================= DETAIL WISHLIST HEART ================= */
+/* ================= WISHLIST SYSTEM ================= */
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+const wishlistItems = document.querySelector(".wishlist-items");
+const wishlistBtn = document.querySelector(".wishlist-btn");
+const wishlistPanel = document.querySelector(".wishlist-panel");
+const closeWishlist = document.querySelector(".close-wishlist");
 
 
-const detailWishlist=document.querySelector("#detailWishlist");
+function updateWishlist(){
 
+    if(!wishlistItems) return;
 
+    wishlistItems.innerHTML="";
 
-if(detailWishlist){
+    wishlist.forEach(item=>{
 
+        wishlistItems.innerHTML += `
+        <div class="wishlist-product">
+            ❤️ ${item}
+        </div>
+        `;
 
-detailWishlist.onclick=(e)=>{
+    });
 
-
-e.preventDefault();
-
-
-
-detailWishlist.classList.toggle("liked");
-
-
-
-const icon=detailWishlist.querySelector("i");
-
-
-
-if(icon){
-
-
-icon.classList.toggle("fa-regular");
-
-icon.classList.toggle("fa-solid");
-
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
 }
 
 
 
-};
+document.querySelectorAll(".wishlist-add").forEach(btn=>{
+
+    btn.onclick=(e)=>{
+
+        e.stopPropagation();
+
+        let card = btn.closest(".product-card");
+
+        if(card){
+
+            let name = card.querySelector("h3").innerText;
 
 
+            if(!wishlist.includes(name)){
 
-}
+                wishlist.push(name);
+
+            }
+
+
+            btn.classList.toggle("liked");
+
+
+        }
+
+
+        updateWishlist();
+
+    };
 
 
 });
+
+
+
+if(wishlistBtn && wishlistPanel){
+
+wishlistBtn.onclick=()=>{
+
+wishlistPanel.classList.add("active");
+
+updateWishlist();
+
+};
+
+}
+
+
+
+if(closeWishlist){
+
+closeWishlist.onclick=()=>{
+
+wishlistPanel.classList.remove("active");
+
+};
+
+}
