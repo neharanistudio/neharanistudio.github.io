@@ -363,50 +363,21 @@ cartPanel.classList.remove("active");
 
 
 updateCart();
-   /* ================= CHECKOUT WHATSAPP ================= */
+/* ================= CHECKOUT WHATSAPP ================= */
 
-
-function getCartTotal(){
-
-let total=0;
-
-
-cart.forEach(item=>{
-
-
-let price=parseInt(
-item.price.replace(/[^0-9]/g,"")
-);
-
-
-total += price * item.qty;
-
-
-});
-
-
-return total;
-
-}
-
-
-
-
-
-const checkoutBtn=document.querySelector(".checkout-btn");
+const checkoutBtn = document.querySelector(".checkout-btn");
 
 
 if(checkoutBtn){
 
 
-checkoutBtn.onclick=(e)=>{
+checkoutBtn.addEventListener("click",(e)=>{
 
 
 e.preventDefault();
 
 
-
-if(cart.length===0){
+if(cart.length === 0){
 
 alert("Your cart is empty 🛒");
 
@@ -416,21 +387,20 @@ return;
 
 
 
-let message=
-"Assalam o Alaikum 🌸%0A%0A"+
-"I want to order from Neha Rani Studio:%0A%0A";
+let message = 
+"Assalam o Alaikum 🌸\n\n"+
+"I want to order from Neha Rani Studio:\n\n";
 
 
 
 cart.forEach(item=>{
 
 
-message +=
-
+message += 
 "🛍 Product: "+item.name+
-"%0AQuantity: "+item.qty+
-"%0APrice: "+item.price+
-"%0A%0A";
+"\nQuantity: "+item.qty+
+"\nPrice: "+item.price+
+"\n\n";
 
 
 });
@@ -438,24 +408,21 @@ message +=
 
 
 message +=
-
-"💰 Total: Rs. "+
-getCartTotal()+
-"%0A%0AKindly confirm my order 🤍";
+"Please confirm my order 🤍";
 
 
 
-window.open(
-
-"https://wa.me/923045255325?text="+message,
-
-"_blank"
-
-);
+let whatsappURL =
+"https://wa.me/923045255325?text="+
+encodeURIComponent(message);
 
 
 
-};
+window.location.href = whatsappURL;
+
+
+
+});
 
 
 }
