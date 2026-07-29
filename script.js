@@ -977,3 +977,28 @@ behavior:"smooth"
 
 
 }); 
+/* ================= PRODUCT WISHLIST HEART ================= */
+
+const detailWishlist = document.querySelector("#detailWishlist");
+
+if(detailWishlist){
+
+    detailWishlist.addEventListener("click", (e)=>{
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        detailWishlist.classList.toggle("liked");
+
+        const heart = detailWishlist.querySelector("i");
+
+        if(heart){
+
+            heart.classList.toggle("fa-regular");
+            heart.classList.toggle("fa-solid");
+
+        }
+
+    });
+
+}
