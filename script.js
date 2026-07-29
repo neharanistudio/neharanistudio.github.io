@@ -513,11 +513,9 @@ price:"Rs. 2,999",
 
 images:[
 
-"images/products/product1.jpg",
-
-"images/products/product1-1.jpg",
-
-"images/products/product1-2.jpg"
+"images/product1-1.jpg",
+"images/product1-2.jpg",
+"images/product1-3.jpg"
 
 ]
 
@@ -533,9 +531,7 @@ price:"Rs. 3,999",
 
 images:[
 
-"images/products/product2.jpg",
-
-"images/products/product2-2.jpg"
+"images/bags.jpg"
 
 ]
 
@@ -551,14 +547,11 @@ price:"Rs. 4,999",
 
 images:[
 
-"images/products/product3.jpg",
-
-"images/products/product3-2.jpg"
+"images/dresses.jpg"
 
 ]
 
 },
-
 
 
 "perfume":{
@@ -569,13 +562,12 @@ price:"Rs. 2,499",
 
 images:[
 
-"images/products/product4.jpg"
+"images/perfumes.jpg"
 
 ]
 
 },
-
-
+   
 
 "watch":{
 
@@ -585,12 +577,11 @@ price:"Rs. 5,499",
 
 images:[
 
-"images/products/product5.jpg"
+"images/jewellery.jpg"
 
 ]
 
 },
-
 
 
 "shoes":{
@@ -601,15 +592,11 @@ price:"Rs. 3,499",
 
 images:[
 
-"images/products/product6.jpg"
+"images/shoes.jpg"
 
 ]
 
 }
-
-
-
-};
 
 
 
