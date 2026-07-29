@@ -476,6 +476,70 @@ updateCart();
 
 }
 
+   /* ================= CHECKOUT BUTTON ================= */
+
+const checkoutBtn = document.querySelector(".checkout-btn");
+
+
+if(checkoutBtn){
+
+
+checkoutBtn.onclick = (e)=>{
+
+
+e.preventDefault();
+
+
+
+if(cart.length === 0){
+
+alert("Your cart is empty 🛒");
+
+return;
+
+}
+
+
+
+let message =
+"Assalam o Alaikum 🌸%0A%0A"+
+"I want to order from Neha Rani Studio:%0A%0A";
+
+
+
+cart.forEach(item=>{
+
+
+message +=
+"🛍 "+item.name+
+"%0AQty: "+item.qty+
+"%0APrice: "+item.price+
+"%0A%0A";
+
+
+});
+
+
+
+message += "Thank you 🤍";
+
+
+
+window.open(
+
+"https://wa.me/923045255325?text="+message,
+
+"_blank"
+
+);
+
+
+
+};
+
+
+}
+
 
 
 if(closeCart){
