@@ -5,782 +5,1019 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* ================= HERO SWIPER ================= */
 
-    if (document.querySelector(".heroSwiper")) {
+/* ================= HERO SWIPER ================= */
 
-        new Swiper(".heroSwiper", {
-            loop: true,
+if(document.querySelector(".heroSwiper")){
 
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false
-            },
+new Swiper(".heroSwiper",{
 
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true
-            }
+loop:true,
 
-        });
+autoplay:{
+delay:3500,
+disableOnInteraction:false
+},
 
-    }
+pagination:{
+el:".swiper-pagination",
+clickable:true
+}
 
-
-    /* ================= CATEGORY SWIPER ================= */
-
-    if (document.querySelector(".categorySwiper")) {
-
-        new Swiper(".categorySwiper", {
-
-            slidesPerView: 4,
-
-            spaceBetween: 20,
-
-            breakpoints: {
-
-                320: {
-                    slidesPerView: 2
-                },
-
-                576: {
-                    slidesPerView: 2
-                },
-
-                768: {
-                    slidesPerView: 3
-                },
-
-                992: {
-                    slidesPerView: 4
-                }
-
-            }
-
-        });
-
-    }
-
-
-    /* ================= SIDEBAR ================= */
-
-    const menuBtn = document.querySelector(".menu-icon");
-    const sidebar = document.querySelector(".sidebar");
-    const overlay = document.querySelector(".menu-overlay");
-
-    if (menuBtn && sidebar && overlay) {
-
-        menuBtn.addEventListener("click", () => {
-
-            sidebar.classList.add("active");
-            overlay.classList.add("active");
-
-        });
-
-        overlay.addEventListener("click", () => {
-
-            sidebar.classList.remove("active");
-            overlay.classList.remove("active");
-
-        });
-
-    }
-
-
-    /* ================= SEARCH POPUP ================= */
-
-    const searchBtn = document.querySelector(".search-btn");
-    const searchPopup = document.querySelector(".search-popup");
-    const closeSearch = document.querySelector(".close-search");
-
-    if (searchBtn) {
-
-        searchBtn.addEventListener("click", () => {
-
-            searchPopup.classList.add("active");
-
-        });
-
-    }
-
-    if (closeSearch) {
-
-        closeSearch.addEventListener("click", () => {
-
-            searchPopup.classList.remove("active");
-
-        });
-
-    }
-
-
-    /* ================= PRODUCT LINKS ================= */
-
-    const productLinks = {
-
-        "gift-box": "gift-box",
-
-        "bag-1": "hand-bag",
-
-        "dress-1": "dress-1",
-
-        "perfume-1": "perfume",
-
-        "jewelry-1": "watch",
-
-        "shoes-1": "shoes"
-
-    };
-
-
-    /* ================= PRODUCT OPEN ================= */
-
-    document.querySelectorAll(".product-card").forEach(card => {
-
-        card.addEventListener("click", (e) => {
-
-            if (e.target.closest(".add-cart")) return;
-
-            if (e.target.closest(".wishlist-add")) return;
-
-            const id = card.dataset.id;
-
-            if (productLinks[id]) {
-
-                window.location.href =
-                    "product.html?id=" + productLinks[id];
-
-            }
-
-        });
-
-    });
-
-
-    /* ================= CATEGORY FILTER ================= */
-
-    document.querySelectorAll(".category-card").forEach(category => {
-
-        category.addEventListener("click", () => {
-
-            const id = category.id;
-
-            document.querySelectorAll(".product-item").forEach(product => {
-
-                if (product.dataset.category === id) {
-
-                    product.style.display = "block";
-
-                } else {
-
-                    product.style.display = "none";
-
-                }
-
-            });
-
-            document.querySelector(".featured-products")
-                .scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
-        });
-
-    });
-
-
-    /* ================= VIEW ALL ================= */
-
-    const viewAll = document.querySelector("#viewAllProducts");
-
-    if (viewAll) {
-
-        viewAll.addEventListener("click", (e) => {
-
-            e.preventDefault();
-
-            document.querySelectorAll(".product-item")
-                .forEach(product => {
-
-                    product.style.display = "block";
-
-                });
-
-            document.querySelector(".featured-products")
-                .scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
-        });
-
-    }
-       /* ================= CART ================= */
-
-    let cart = [];
-
-    const cartBtn = document.querySelector(".cart-btn");
-    const cartPanel = document.querySelector(".cart-panel");
-    const closeCart = document.querySelector(".close-cart");
-    const cartItems = document.querySelector(".cart-items");
-    const cartCount = document.querySelector(".cart-count");
-
-    function updateCart() {
-
-        if (cartCount) {
-            cartCount.innerText = cart.length;
-        }
-
-        if (cartItems) {
-
-            cartItems.innerHTML = "";
-
-            cart.forEach(item => {
-
-                cartItems.innerHTML += `
-                <div class="cart-product">
-                    <h4>${item.name}</h4>
-                    <p>${item.price}</p>
-                </div>
-                `;
-
-            });
-
-        }
-
-    }
-
-    document.querySelectorAll(".add-cart").forEach(btn => {
-
-        btn.addEventListener("click", (e) => {
-
-            e.stopPropagation();
-
-            const card = btn.closest(".product-card");
-
-            if (!card) return;
-
-            cart.push({
-
-                name: card.querySelector("h3").innerText,
-                price: card.querySelector(".product-price").innerText
-
-            });
-
-            updateCart();
-
-        });
-
-    });
-
-    if (cartBtn && cartPanel) {
-
-        cartBtn.addEventListener("click", () => {
-
-            cartPanel.classList.add("active");
-
-        });
-
-    }
-
-    if (closeCart) {
-
-        closeCart.addEventListener("click", () => {
-
-            cartPanel.classList.remove("active");
-
-        });
-
-    }
-
-
-  /* ================= WISHLIST ================= */
-
-let wishlist = [];
-
-const wishlistBtn = document.querySelector(".wishlist-btn");
-const wishlistPanel = document.querySelector(".wishlist-panel");
-const closeWishlist = document.querySelector(".close-wishlist");
-const wishlistItems = document.querySelector(".wishlist-items");
-
-
-function updateWishlist(){
-
-    if(!wishlistItems) return;
-
-    wishlistItems.innerHTML="";
-
-    wishlist.forEach(item=>{
-
-        wishlistItems.innerHTML += `
-        <div class="wishlist-product">
-        ❤️ ${item}
-        </div>
-        `;
-
-    });
+});
 
 }
 
 
 
-// Home page wishlist
+/* ================= CATEGORY SWIPER ================= */
 
-document.querySelectorAll(".wishlist-add").forEach(btn=>{
 
-    btn.addEventListener("click",(e)=>{
+if(document.querySelector(".categorySwiper")){
 
-        e.stopPropagation();
 
-        let card = btn.closest(".product-card");
+new Swiper(".categorySwiper",{
 
-        if(card){
+slidesPerView:4,
 
-            let name = card.querySelector("h3").innerText;
+spaceBetween:20,
 
-            wishlist.push(name);
 
-            btn.classList.toggle("liked");
+breakpoints:{
 
-        }
 
-        updateWishlist();
+320:{
+slidesPerView:2
+},
 
-    });
+
+576:{
+slidesPerView:2
+},
+
+
+768:{
+slidesPerView:3
+},
+
+
+992:{
+slidesPerView:4
+}
+
+
+}
+
+
+});
+
+
+}
+
+
+
+
+/* ================= SIDEBAR ================= */
+
+
+const menuBtn=document.querySelector(".menu-icon");
+const sidebar=document.querySelector(".sidebar");
+const overlay=document.querySelector(".menu-overlay");
+
+
+if(menuBtn && sidebar && overlay){
+
+
+menuBtn.onclick=()=>{
+
+sidebar.classList.add("active");
+overlay.classList.add("active");
+
+};
+
+
+overlay.onclick=()=>{
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+};
+
+
+}
+
+
+
+
+
+/* ================= PRODUCT OPEN ================= */
+
+
+const productLinks={
+
+
+"gift-box":"gift-box",
+
+"bag-1":"hand-bag",
+
+"dress-1":"dress-1",
+
+"perfume-1":"perfume",
+
+"jewelry-1":"watch",
+
+"shoes-1":"shoes"
+
+
+};
+
+
+
+document.querySelectorAll(".product-card").forEach(card=>{
+
+
+card.onclick=(e)=>{
+
+
+if(e.target.closest(".wishlist-add")) return;
+
+if(e.target.closest(".add-cart")) return;
+
+
+
+let id=card.dataset.id;
+
+
+if(productLinks[id]){
+
+
+window.location.href=
+"product.html?id="+productLinks[id];
+
+
+}
+
+
+
+};
+
 
 });
 
 
 
-// Product detail page wishlist
+/* ================= CART START ================= */
 
-const detailWishlist = document.querySelector("#detailWishlist");
+
+let cart=[];
+
+
+const cartCount=document.querySelector(".cart-count");
+
+const cartItems=document.querySelector(".cart-items");
+
+
+function updateCart(){
+
+
+if(cartCount){
+
+cartCount.innerText=cart.length;
+
+}
+
+
+
+if(cartItems){
+
+
+cartItems.innerHTML="";
+
+
+cart.forEach(item=>{
+
+
+cartItems.innerHTML+=`
+
+<div class="cart-product">
+
+<h4>${item.name}</h4>
+
+<p>${item.price}</p>
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+}
+
+
+
+
+document.querySelectorAll(".add-cart").forEach(btn=>{
+
+
+btn.onclick=(e)=>{
+
+
+e.stopPropagation();
+
+
+
+let card=btn.closest(".product-card");
+
+
+
+if(card){
+
+
+cart.push({
+
+name:card.querySelector("h3").innerText,
+
+price:card.querySelector(".product-price").innerText
+
+});
+
+
+updateCart();
+
+
+}
+
+
+
+};
+
+
+});
+/* ================= CART PANEL ================= */
+
+
+const cartBtn=document.querySelector(".cart-btn");
+const cartPanel=document.querySelector(".cart-panel");
+const closeCart=document.querySelector(".close-cart");
+
+
+if(cartBtn && cartPanel){
+
+
+cartBtn.onclick=()=>{
+
+cartPanel.classList.add("active");
+
+};
+
+
+}
+
+
+if(closeCart){
+
+
+closeCart.onclick=()=>{
+
+cartPanel.classList.remove("active");
+
+};
+
+
+}
+
+
+
+
+
+/* ================= WISHLIST ================= */
+
+
+let wishlist=[];
+
+
+const wishlistBtn=document.querySelector(".wishlist-btn");
+const wishlistPanel=document.querySelector(".wishlist-panel");
+const closeWishlist=document.querySelector(".close-wishlist");
+const wishlistItems=document.querySelector(".wishlist-items");
+
+
+
+function updateWishlist(){
+
+
+if(!wishlistItems) return;
+
+
+wishlistItems.innerHTML="";
+
+
+
+wishlist.forEach(item=>{
+
+
+wishlistItems.innerHTML+=`
+
+<div class="wishlist-product">
+
+❤️ ${item}
+
+</div>
+
+`;
+
+
+});
+
+
+}
+
+
+
+
+
+document.querySelectorAll(".wishlist-add").forEach(btn=>{
+
+
+btn.onclick=(e)=>{
+
+
+e.stopPropagation();
+
+
+
+let card=btn.closest(".product-card");
+
+
+
+if(card){
+
+
+let name=card.querySelector("h3").innerText;
+
+
+wishlist.push(name);
+
+
+
+btn.classList.add("liked");
+
+
+
+}
+
+
+
+updateWishlist();
+
+
+
+};
+
+
+
+});
+
+
+
+
+
+
+/* PRODUCT PAGE WISHLIST */
+
+
+const detailWishlist=document.querySelector("#detailWishlist");
 
 
 if(detailWishlist){
 
-    detailWishlist.addEventListener("click",()=>{
+
+detailWishlist.onclick=()=>{
 
 
-        let name = document.querySelector("#productName").innerText;
+let name=document.querySelector("#productName").innerText;
 
 
-        if(name){
 
-            wishlist.push(name);
-
-            detailWishlist.classList.add("liked");
-
-            detailWishlist.innerHTML="♥ Wishlist Added";
-
-        }
+if(name){
 
 
-        updateWishlist();
+wishlist.push(name);
 
 
-    });
+detailWishlist.classList.add("liked");
+
+
+detailWishlist.innerHTML="♥ Wishlist Added";
+
 
 }
+
+
+updateWishlist();
+
+
+
+};
+
+
+}
+
+
+
 
 
 
 
 if(wishlistBtn && wishlistPanel){
 
-    wishlistBtn.addEventListener("click",()=>{
 
-        wishlistPanel.classList.add("active");
+wishlistBtn.onclick=()=>{
 
-    });
+
+wishlistPanel.classList.add("active");
+
+
+};
+
 
 }
+
 
 
 
 if(closeWishlist){
 
-    closeWishlist.addEventListener("click",()=>{
 
-        wishlistPanel.classList.remove("active");
+closeWishlist.onclick=()=>{
 
-    });
+
+wishlistPanel.classList.remove("active");
+
+
+};
+
 
 }
 
-    /* ================= TRACK ORDER ================= */
 
-    const trackBtn = document.querySelector("#trackOrder");
-    const orderPopup = document.querySelector(".order-popup");
-    const closeOrder = document.querySelector(".close-order");
 
-    if (trackBtn && orderPopup) {
 
-        trackBtn.addEventListener("click", (e) => {
 
-            e.preventDefault();
 
-            orderPopup.classList.add("active");
 
-        });
+/* ================= WHATSAPP ================= */
 
-    }
 
-    if (closeOrder) {
+const whatsappBtn=document.querySelector("#whatsappBtn");
 
-        closeOrder.addEventListener("click", () => {
 
-            orderPopup.classList.remove("active");
 
-        });
+if(whatsappBtn){
 
-    }
-       /* ================= SEARCH PRODUCTS ================= */
 
-    const searchInput = document.querySelector("#searchInput");
-    const searchButton = document.querySelector("#searchButton");
+let params=new URLSearchParams(window.location.search);
 
+let id=params.get("id");
 
-    if (searchButton) {
 
-        searchButton.addEventListener("click", () => {
 
+whatsappBtn.onclick=()=>{
 
-            let value = searchInput.value.toLowerCase();
 
+window.open(
 
-            document.querySelectorAll(".product-item")
-            .forEach(product => {
+"https://wa.me/923045255325?text=I want to order this product",
 
+"_blank"
 
-                let name = product.innerText.toLowerCase();
+);
 
 
-                if (name.includes(value)) {
+};
 
-                    product.style.display = "block";
 
-                } else {
 
-                    product.style.display = "none";
+}
 
-                }
 
 
-            });
 
 
-            if (searchPopup) {
 
-                searchPopup.classList.remove("active");
 
-            }
+/* ================= PRODUCT PAGE ================= */
 
 
-            const featured = document.querySelector(".featured-products");
 
+const params=new URLSearchParams(window.location.search);
 
-            if (featured) {
 
-                featured.scrollIntoView({
+const productId=params.get("id");
 
-                    behavior:"smooth"
 
-                });
 
-            }
+const products={
 
 
-        });
 
-    }
+"gift-box":{
 
 
+name:"Luxury Gift Box",
 
+price:"Rs. 2,999",
 
-    /* ================= BACK TO TOP ================= */
+images:[
 
+"images/products/product1.jpg",
 
-    const topBtn = document.querySelector("#topBtn");
+"images/products/product1-1.jpg",
 
+"images/products/product1-2.jpg",
 
-    if (topBtn) {
+"images/products/product1-3.jpg"
 
+]
 
-        window.addEventListener("scroll", () => {
 
+},
 
-            if (window.scrollY > 300) {
 
 
-                topBtn.style.display = "flex";
 
+"hand-bag":{
 
-            } else {
 
+name:"Elegant Hand Bag",
 
-                topBtn.style.display = "none";
+price:"Rs. 3,999",
 
+images:[
 
-            }
+"images/products/product2.jpg",
 
+"images/products/product2-2.jpg",
 
-        });
+"images/products/product2-3.jpg"
 
+]
 
 
-        topBtn.addEventListener("click", () => {
+},
 
 
-            window.scrollTo({
 
-                top:0,
 
-                behavior:"smooth"
+"dress-1":{
 
-            });
 
+name:"Beautiful Dress",
 
-        });
+price:"Rs. 4,999",
 
+images:[
 
-    }
+"images/products/product3.jpg",
 
+"images/products/product3-2.jpg"
 
+]
 
 
+},
 
-    /* ================= WHATSAPP ================= */
 
 
-    const whatsappBtn = document.querySelector(".whatsapp-btn");
 
+"perfume":{
 
-    if (whatsappBtn) {
 
+name:"Premium Perfume",
 
-        whatsappBtn.addEventListener("click", () => {
+price:"Rs. 2,499",
 
+images:[
 
-            window.open(
+"images/products/product4.jpg"
 
-                "https://wa.me/923045255325",
+]
 
-                "_blank"
 
-            );
+},
 
 
-        });
 
 
-    }
+"watch":{
 
 
+name:"Luxury Watch",
 
+price:"Rs. 5,499",
 
+images:[
 
-    /* ================= PRODUCT PAGE ================= */
+"images/products/product5.jpg"
 
+]
 
-    const params = new URLSearchParams(window.location.search);
 
+},
 
-    const productId = params.get("id");
 
 
 
-    const products = {
+"shoes":{
 
 
-        "gift-box": {
+name:"Ladies Shoes",
 
-            name:"Luxury Gift Box",
+price:"Rs. 3,499",
 
-            price:"Rs. 2,999",
+images:[
 
-            images:[
+"images/products/product6.jpg"
 
-                "images/products/product1.jpg",
+]
 
-                "images/products/product1-1.jpg",
 
-                "images/products/product1-2.jpg",
+}
 
-                "images/products/product1-3.jpg",
 
-                "images/products/product1-4.jpg"
 
-            ]
+};
 
-        },
 
 
-        "hand-bag": {
 
-            name:"Elegant Hand Bag",
+let currentImage=0;
 
-            price:"Rs. 3,999",
 
-            images:[
+let currentProduct=null;
 
-                "images/products/product2.jpg",
 
-                "images/products/product2-2.jpg",
 
-                "images/products/product2-3.jpg"
+if(productId && products[productId]){
 
-            ]
 
-        },
+currentProduct=products[productId];
 
 
-        "dress-1": {
 
-            name:"Beautiful Dress",
+let name=document.querySelector("#productName");
 
-            price:"Rs. 4,999",
+let price=document.querySelector("#productPrice");
 
-            images:[
+let image=document.querySelector("#mainProductImage");
 
-                "images/products/product3.jpg"
 
-            ]
 
-        },
+if(name){
 
+name.innerText=currentProduct.name;
 
-        "perfume": {
+}
 
-            name:"Premium Perfume",
 
-            price:"Rs. 2,499",
 
-            images:[
+if(price){
 
-                "images/products/product4.jpg"
+price.innerText=currentProduct.price;
 
-            ]
+}
 
-        },
 
 
-        "watch": {
+if(image){
 
-            name:"Luxury Watch",
+image.src=currentProduct.images[0];
 
-            price:"Rs. 5,499",
+}
 
-            images:[
 
-                "images/products/product5.jpg"
 
-            ]
+window.nextImage=()=>{
 
-        },
 
+currentImage++;
 
-        "shoes": {
 
-            name:"Ladies Shoes",
+if(currentImage>=currentProduct.images.length){
 
-            price:"Rs. 3,499",
+currentImage=0;
 
-            images:[
+}
 
-                "images/products/product6.jpg"
 
-            ]
+image.src=currentProduct.images[currentImage];
 
-        }
 
+};
 
-    };
 
 
 
-    let currentImage = 0;
+window.prevImage=()=>{
 
 
+currentImage--;
 
-    if(productId && products[productId]){
 
+if(currentImage<0){
 
-        let product = products[productId];
+currentImage=currentProduct.images.length-1;
 
+}
 
 
-        const nameBox = document.querySelector("#productName");
+image.src=currentProduct.images[currentImage];
 
-        const priceBox = document.querySelector("#productPrice");
 
-        const mainImage = document.querySelector("#mainProductImage");
+};
 
 
 
-        if(nameBox){
+}
+   /* ================= DETAIL PAGE ADD CART ================= */
 
-            nameBox.innerText = product.name;
 
-        }
+const detailAddCart=document.querySelector("#detailAddCart");
 
 
-        if(priceBox){
+if(detailAddCart){
 
-            priceBox.innerText = product.price;
 
-        }
+detailAddCart.onclick=()=>{
 
 
-        if(mainImage){
+if(currentProduct){
 
-            mainImage.src = product.images[0];
 
-        }
+cart.push({
 
+name:currentProduct.name,
 
-
-
-        window.nextImage = function(){
-
-
-            currentImage++;
-
-
-            if(currentImage >= product.images.length){
-
-                currentImage = 0;
-
-            }
-
-
-            mainImage.src = product.images[currentImage];
-
-
-        };
-
-
-
-        window.prevImage = function(){
-
-
-            currentImage--;
-
-
-            if(currentImage < 0){
-
-                currentImage = product.images.length - 1;
-
-            }
-
-
-            mainImage.src = product.images[currentImage];
-           
-        };
-
-    }
+price:currentProduct.price
 
 });
+
+
+updateCart();
+
+
+alert("Product added to cart 🛒");
+
+
+}
+
+
+
+};
+
+
+
+}
+
+
+
+
+
+
+/* ================= SEARCH PRODUCTS ================= */
+
+
+const searchInput=document.querySelector("#searchInput");
+
+const searchButton=document.querySelector("#searchButton");
+
+
+
+if(searchButton && searchInput){
+
+
+
+searchButton.onclick=()=>{
+
+
+let value=searchInput.value.toLowerCase();
+
+
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+let text=product.innerText.toLowerCase();
+
+
+
+if(text.includes(value)){
+
+
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
+
+
+}
+
+
+
+});
+
+
+
+if(searchPopup){
+
+
+searchPopup.classList.remove("active");
+
+
+}
+
+
+
+};
+
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= SEARCH POPUP ================= */
+
+
+const searchBtn=document.querySelector(".search-btn");
+
+const searchPopup=document.querySelector(".search-popup");
+
+const closeSearch=document.querySelector(".close-search");
+
+
+
+if(searchBtn && searchPopup){
+
+
+searchBtn.onclick=()=>{
+
+
+searchPopup.classList.add("active");
+
+
+};
+
+
+}
+
+
+
+if(closeSearch){
+
+
+closeSearch.onclick=()=>{
+
+
+searchPopup.classList.remove("active");
+
+
+};
+
+
+}
+
+
+
+
+
+
+
+/* ================= TRACK ORDER ================= */
+
+
+const trackBtn=document.querySelector("#trackOrder");
+
+const orderPopup=document.querySelector(".order-popup");
+
+const closeOrder=document.querySelector(".close-order");
+
+
+
+if(trackBtn && orderPopup){
+
+
+trackBtn.onclick=(e)=>{
+
+
+e.preventDefault();
+
+
+orderPopup.classList.add("active");
+
+
+};
+
+
+}
+
+
+
+if(closeOrder){
+
+
+closeOrder.onclick=()=>{
+
+
+orderPopup.classList.remove("active");
+
+
+};
+
+
+}
+
+
+
+
+
+
+
+/* ================= BACK TO TOP ================= */
+
+
+const topBtn=document.querySelector("#topBtn");
+
+
+
+if(topBtn){
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY>300){
+
+
+topBtn.style.display="flex";
+
+
+}
+
+else{
+
+
+topBtn.style.display="none";
+
+
+}
+
+
+
+});
+
+
+
+
+
+topBtn.onclick=()=>{
+
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+
+};
+
+
+
+}
+
+
+
+
+
+
+}); 
