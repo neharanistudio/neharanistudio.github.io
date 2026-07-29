@@ -979,18 +979,15 @@ behavior:"smooth"
 }); 
 /* ================= PRODUCT WISHLIST HEART ================= */
 
-const detailWishlist = document.querySelector("#detailWishlist");
+document.querySelectorAll(".wishlist-add").forEach(btn => {
 
-if(detailWishlist){
+    btn.onclick = (e) => {
 
-    detailWishlist.addEventListener("click", (e)=>{
-
-        e.preventDefault();
         e.stopPropagation();
 
-        detailWishlist.classList.toggle("liked");
+        btn.classList.toggle("liked");
 
-        const heart = detailWishlist.querySelector("i");
+        let heart = btn.querySelector("i");
 
         if(heart){
 
@@ -999,6 +996,6 @@ if(detailWishlist){
 
         }
 
-    });
+    };
 
-}
+});
