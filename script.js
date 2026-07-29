@@ -371,13 +371,13 @@ const checkoutBtn = document.querySelector(".checkout-btn");
 if(checkoutBtn){
 
 
-checkoutBtn.addEventListener("click",(e)=>{
+checkoutBtn.onclick=(e)=>{
 
 
 e.preventDefault();
 
 
-if(cart.length === 0){
+if(cart.length===0){
 
 alert("Your cart is empty 🛒");
 
@@ -386,19 +386,18 @@ return;
 }
 
 
-
-let message = 
+let message =
 "Assalam o Alaikum 🌸\n\n"+
 "I want to order from Neha Rani Studio:\n\n";
 
 
 
-cart.forEach(item=>{
+cart.forEach((item,index)=>{
 
 
-message += 
-"🛍 Product: "+item.name+
-"\nQuantity: "+item.qty+
+message +=
+(index+1)+". 🛍 "+item.name+
+"\nQty: "+item.qty+
 "\nPrice: "+item.price+
 "\n\n";
 
@@ -408,25 +407,23 @@ message +=
 
 
 message +=
-"Please confirm my order 🤍";
+"Thank you 🤍\nPlease confirm my order.";
 
 
 
-let whatsappURL =
+let url =
 "https://wa.me/923045255325?text="+
 encodeURIComponent(message);
 
 
 
-window.location.href = whatsappURL;
+window.location.href=url;
 
 
-
-});
+};
 
 
 }
-
 
 
 
