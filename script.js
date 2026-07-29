@@ -879,45 +879,43 @@ return;
 
 
 
-let message="Assalam o Alaikum! I want to order:%0A%0A";
+let message =
+`Assalam o Alaikum Neha Rani Studio 🌸
 
+I want to order these products:
+
+`;
 
 
 cart.forEach(item=>{
 
 
 message +=
-"• "+item.name+
-" x "+item.qty+
-" - "+item.price+
-"%0A";
+`🛍 Product: ${item.name}
+Quantity: ${item.qty}
+Price: ${item.price}
+
+`;
 
 
 });
 
 
-
 message +=
-"%0ATotal: Rs. "+
-getCartTotal();
+`Total Amount: Rs. ${getCartTotal()}
+
+Kindly confirm my order.
+Thank you 🤍`;
 
 
 
 window.open(
 
-"https://wa.me/923045255325?text="+message,
+"https://wa.me/923045255325?text="+encodeURIComponent(message),
 
 "_blank"
 
 );
-
-
-};
-
-
-}
-
-
 
 
 
