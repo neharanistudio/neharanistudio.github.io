@@ -606,7 +606,6 @@ images:[
 };   
 
 
-
 let currentProduct=null;
 
 let currentImage=0;
