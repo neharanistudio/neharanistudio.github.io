@@ -296,99 +296,55 @@ cartPanel.classList.remove("active");
 
 
 
-/* ================= WISHLIST ================= */
+/* ================= WISHLIST HEART ================= */
 
+document.querySelectorAll(".wishlist-add").forEach(btn => {
 
-let wishlist=[];
+    btn.onclick = (e) => {
 
+        e.stopPropagation();
 
-const wishlistBtn=document.querySelector(".wishlist-btn");
-const wishlistPanel=document.querySelector(".wishlist-panel");
-const closeWishlist=document.querySelector(".close-wishlist");
-const wishlistItems=document.querySelector(".wishlist-items");
+        btn.classList.toggle("liked");
 
+        let heart = btn.querySelector("i");
 
+        if(heart){
 
-function updateWishlist(){
+            heart.classList.toggle("fa-regular");
+            heart.classList.toggle("fa-solid");
 
+        }
 
-if(!wishlistItems) return;
-
-
-wishlistItems.innerHTML="";
-
-
-
-wishlist.forEach(item=>{
-
-
-wishlistItems.innerHTML+=`
-
-<div class="wishlist-product">
-
-❤️ ${item}
-
-</div>
-
-`;
-
-
-});
-
-
-}
-
-
-
-
-
-document.querySelectorAll(".wishlist-add").forEach(btn=>{
-
-
-btn.onclick=(e)=>{
-
-
-e.stopPropagation();
-
-
-
-let card=btn.closest(".product-card");
-
-
-
-if(card){
-
-
-let name=card.querySelector("h3").innerText;
-
-
-wishlist.push(name);
-
-
-
-btn.classList.add("liked");
-
-
-
-}
-
-
-
-updateWishlist();
-
-
-
-};
-
-
+    };
 
 });
 
 
 
+const detailWishlist = document.querySelector("#detailWishlist");
 
 
+if(detailWishlist){
 
+    detailWishlist.onclick = () => {
+
+        detailWishlist.classList.toggle("liked");
+
+
+        let heart = detailWishlist.querySelector("i");
+
+
+        if(heart){
+
+            heart.classList.toggle("fa-regular");
+            heart.classList.toggle("fa-solid");
+
+        }
+
+    };
+
+}
+   
 /* PRODUCT PAGE WISHLIST */
 
 
