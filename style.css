@@ -3066,4 +3066,28 @@ grid-template-columns:1fr;
 #detailWishlist.liked::first-letter{
     color:#ff4f8b;
 }
+.wishlist-add{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:2px solid #d63384;
+    background:white;
+    color:#d63384;
+    font-size:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+
+.wishlist-add.liked{
+    background:#d63384;
+    color:white;
+}
+
+
+.wishlist-add span{
+    display:none;
+}
 /* ================= END ================= */
