@@ -985,9 +985,12 @@ currentProduct.images[currentImage];
 
 const buyBtn = document.querySelector("#whatsappBtn");
 
+
 if(buyBtn && currentProduct){
 
+
 buyBtn.onclick = (e)=>{
+
 
 e.preventDefault();
 
@@ -1002,6 +1005,7 @@ currentProduct.price+
 "\n\nPlease confirm my order 🤍";
 
 
+
 window.open(
 
 "https://wa.me/923045255325?text="+
@@ -1014,12 +1018,8 @@ encodeURIComponent(message),
 
 };
 
-}
-
 
 }
-
-
 
 
 
