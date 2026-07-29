@@ -983,29 +983,38 @@ currentProduct.images[currentImage];
 /* BUY NOW WHATSAPP */
 
 
-const buyBtn=
-document.querySelector("#whatsappBtn");
+const buyBtn = document.querySelector("#whatsappBtn");
+
+if(buyBtn && currentProduct){
+
+buyBtn.onclick = (e)=>{
+
+e.preventDefault();
 
 
+let message =
+"Assalam o Alaikum 🌸\n\n"+
+"I want to order this product from Neha Rani Studio:\n\n"+
+"🛍 Product: "+
+currentProduct.name+
+"\n💰 Price: "+
+currentProduct.price+
+"\n\nPlease confirm my order 🤍";
 
-if(buyBtn){
 
-
-
-buyBtn.href=
+window.open(
 
 "https://wa.me/923045255325?text="+
+encodeURIComponent(message),
 
-encodeURIComponent(
-
-"Assalam o Alaikum Neha Rani Studio 🌸\n\nI want to order: "+currentProduct.name
+"_blank"
 
 );
 
 
+};
 
 }
-
 
 
 }
