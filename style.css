@@ -3790,3 +3790,50 @@ body{
 }
 
 }  
+/* ================= CATEGORY CIRCLE DESIGN ================= */
+
+.category-card{
+    background:transparent;
+    box-shadow:none;
+    text-align:center;
+}
+
+
+.category-card img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:auto;
+    transition:.3s;
+}
+
+
+.category-card:hover img{
+    transform:scale(1.08);
+}
+
+
+.category-card h3{
+    margin-top:15px;
+    padding:0;
+    font-size:17px;
+    font-weight:600;
+}
+
+
+
+/* Mobile */
+
+@media(max-width:576px){
+
+.category-card img{
+    width:120px;
+    height:120px;
+}
+
+.category-card h3{
+    font-size:15px;
+}
+
+}
