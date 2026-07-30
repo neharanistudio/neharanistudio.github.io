@@ -3736,4 +3736,57 @@ body{
 }
 
 }
-   
+ /* ===== EMERGENCY MOBILE LAYOUT FIX ===== */
+
+@media(max-width:768px){
+
+.featured-products{
+    width:100%;
+    padding:40px 15px !important;
+}
+
+
+.products-wrapper{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:15px !important;
+    width:100% !important;
+}
+
+
+.product-item{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+}
+
+
+.product-card{
+    width:100% !important;
+}
+
+
+.product-image img{
+    width:100% !important;
+}
+
+
+.category-section,
+.categorySwiper,
+.swiper{
+    width:100% !important;
+    max-width:100% !important;
+}
+
+
+.policy-page{
+    width:100% !important;
+    padding:80px 15px 30px !important;
+}
+
+
+.policy-box{
+    width:100% !important;
+}
+
+}  
