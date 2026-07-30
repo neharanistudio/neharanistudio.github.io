@@ -3264,3 +3264,38 @@ footer .footer-logo h2{
 .social-icons{
     justify-content:center;
 }
+/* FINAL FOOTER LOGO CENTER OVERRIDE */
+
+.footer .footer-box:first-child{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    text-align:center !important;
+}
+
+
+.footer .footer-logo{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    justify-content:center !important;
+}
+
+
+.footer .footer-logo img{
+    width:60px !important;
+    height:60px !important;
+    margin:0 auto 10px auto !important;
+    display:block !important;
+}
+
+
+.footer .footer-logo h2{
+    text-align:center !important;
+}
+
+
+.footer .social-icons{
+    justify-content:center !important;
+    width:100%;
+}
