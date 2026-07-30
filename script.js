@@ -501,110 +501,59 @@ const productId=params.get("id");
 
 
 
-const products={
-
-
+const products = {
 
 "gift-box":{
-
 name:"Luxury Gift Box",
-
 price:"Rs. 2,999",
-
 images:[
-
 "images/product1-1.jpg",
 "images/product1-2.jpg",
 "images/product1-3.jpg"
-
 ]
-
-}
-
-};   
-
+},
 
 "hand-bag":{
-
 name:"Elegant Hand Bag",
-
 price:"Rs. 3,999",
-
 images:[
-
 "images/bags.jpg"
-
 ]
-
-}
-
-};   
-
+},
 
 "dress-1":{
-
 name:"Beautiful Dress",
-
 price:"Rs. 4,999",
-
 images:[
-
 "images/dresses.jpg"
-
 ]
-
-}
-
-};   
+},
 
 "perfume":{
-
 name:"Premium Perfume",
-
 price:"Rs. 2,499",
-
 images:[
-
 "images/perfumes.jpg"
-
 ]
-
-}
-
-};   
+},
 
 "watch":{
-
 name:"Luxury Watch",
-
 price:"Rs. 5,499",
-
 images:[
-
 "images/jewellery.jpg"
-
 ]
-
-}
-
-};   
+},
 
 "shoes":{
-
 name:"Ladies Shoes",
-
 price:"Rs. 3,499",
-
 images:[
-
 "images/shoes.jpg"
-
 ]
-
 }
 
-};   
-
+};
 
 let currentProduct=null;
 
