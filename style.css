@@ -3207,3 +3207,36 @@ PRODUCT POPUP
     color:#fff;
     white-space:nowrap;
 }
+/* HARD FOOTER LOGO RESET */
+
+footer .footer-box:first-child{
+    display:block !important;
+    text-align:left !important;
+}
+
+
+footer .footer-logo{
+    all:unset;
+    display:flex !important;
+    align-items:center !important;
+    gap:12px !important;
+    margin-bottom:20px !important;
+}
+
+
+footer .footer-logo img{
+    all:unset;
+    display:block !important;
+    width:55px !important;
+    height:55px !important;
+    object-fit:contain !important;
+    border-radius:0 !important;
+}
+
+
+footer .footer-logo h2{
+    all:unset;
+    color:white !important;
+    font-size:22px !important;
+    font-weight:700 !important;
+}
