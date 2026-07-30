@@ -3613,3 +3613,91 @@ body{
 }
 
 }
+/* ===== FINAL MOBILE WEBSITE FIX ===== */
+
+@media(max-width:768px){
+
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+
+
+/* Products Fix */
+
+.products-wrapper{
+    display:grid !important;
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:15px !important;
+}
+
+
+.product-item{
+    width:100% !important;
+}
+
+
+.product-card{
+    width:100% !important;
+}
+
+
+
+/* Category Fix */
+
+.categorySwiper .swiper-wrapper{
+    display:flex !important;
+}
+
+
+.category-card{
+    width:100% !important;
+}
+
+
+
+/* Policy Pages */
+
+.policy-page{
+    padding:80px 15px 30px !important;
+}
+
+
+.policy-box{
+    width:100% !important;
+    padding:25px !important;
+    margin:auto !important;
+}
+
+
+.policy-box h1{
+    font-size:24px !important;
+    margin-bottom:25px !important;
+}
+
+
+.policy-box p{
+    line-height:1.8 !important;
+}
+
+
+
+/* Back Button */
+
+.back-btn{
+    display:flex !important;
+    position:fixed !important;
+    top:20px !important;
+    left:20px !important;
+    width:40px !important;
+    height:40px !important;
+    background:#d63384 !important;
+    color:white !important;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    z-index:99999;
+}
+
+}
+   
