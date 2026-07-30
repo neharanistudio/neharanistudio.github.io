@@ -3144,3 +3144,24 @@ PRODUCT POPUP
     font-size:20px !important;
     margin:0;
 }
+/* FOOTER LOGO FIX */
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+
+.footer-logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+
+.footer-logo h2{
+    margin:0;
+    font-size:22px;
+}
