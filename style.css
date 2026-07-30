@@ -1454,38 +1454,29 @@ border-bottom:1px solid rgba(255,255,255,.12);
 
 
 
-/* Footer Logo */
+/* Footer Logo Fix */
 
 .footer-logo{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-margin-bottom:20px;
-
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
 }
+
 
 .footer-logo img{
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    border-radius:0;
 }
 
+
 .footer-logo h2{
-
-font-size:26px;
-
-font-weight:700;
-
-color:#fff;
-
+    font-size:24px;
+    font-weight:700;
+    color:#fff;
+    margin:0;
 }
 
 
