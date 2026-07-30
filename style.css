@@ -3340,3 +3340,155 @@ footer .footer-logo h2{
 .footer .social-icons{
     justify-content:flex-start !important;
 }
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+
+body{
+overflow-x:hidden;
+}
+
+
+/* Header */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 15px;
+}
+
+
+
+/* Navigation */
+
+.main-nav{
+display:none;
+}
+
+
+
+/* Hero */
+
+.hero-content{
+display:flex;
+flex-direction:column;
+text-align:center;
+}
+
+
+.hero-text h1{
+font-size:32px;
+}
+
+
+.hero-image img{
+width:100%;
+}
+
+
+
+/* Categories */
+
+.categorySwiper{
+width:100%;
+}
+
+
+.category-card{
+width:100%;
+}
+
+
+.category-card img{
+width:100%;
+height:150px;
+object-fit:cover;
+}
+
+
+
+
+/* Products */
+
+.products-wrapper{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+
+}
+
+
+.product-item{
+
+width:100%;
+
+}
+
+
+
+.product-image img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+
+
+
+/* Offer */
+
+.offer-content{
+
+display:flex;
+flex-direction:column;
+
+}
+
+
+.offer-image img{
+
+width:100%;
+
+}
+
+
+
+/* Reviews */
+
+.review-grid{
+
+display:flex;
+flex-direction:column;
+
+}
+
+
+
+/* Footer */
+
+.footer-container{
+
+display:flex;
+flex-direction:column;
+
+}
+
+
+
+/* Policy Pages */
+
+.policy-box{
+
+width:90%;
+margin:auto;
+
+}
+
+
+
+}
