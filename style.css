@@ -3049,3 +3049,39 @@ PRODUCT POPUP
 .footer-box p{
     margin-bottom:12px;
 }
+/* LOGO CENTER FIX */
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+.header-center{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+
+.logo img{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+}
+
+
+.logo h2{
+    font-size:22px;
+    margin:0;
+    white-space:nowrap;
+}
