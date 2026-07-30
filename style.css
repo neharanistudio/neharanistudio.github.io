@@ -3034,3 +3034,18 @@ PRODUCT POPUP
 }
 
 }
+.footer-box h3{
+    margin-bottom:20px;
+}
+
+
+.footer-box a{
+    display:block;
+    margin-bottom:12px;
+    text-decoration:none;
+}
+
+
+.footer-box p{
+    margin-bottom:12px;
+}
