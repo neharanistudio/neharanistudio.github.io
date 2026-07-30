@@ -3240,3 +3240,27 @@ footer .footer-logo h2{
     font-size:22px !important;
     font-weight:700 !important;
 }
+/* FOOTER LOGO CENTER */
+
+.footer-box:first-child{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+
+.footer-logo{
+    justify-content:center !important;
+    align-items:center !important;
+}
+
+
+.footer-logo img{
+    margin:auto !important;
+}
+
+
+.social-icons{
+    justify-content:center;
+}
