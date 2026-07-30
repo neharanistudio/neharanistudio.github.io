@@ -3184,3 +3184,26 @@ PRODUCT POPUP
     font-size:22px;
     line-height:1;
 }
+/* FORCE FOOTER LOGO FIX */
+
+.footer .footer-logo{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:10px !important;
+}
+
+
+.footer .footer-logo img{
+    width:50px !important;
+    height:50px !important;
+    object-fit:contain !important;
+    border-radius:0 !important;
+}
+
+
+.footer .footer-logo h2{
+    margin:0 !important;
+    font-size:22px !important;
+    color:#fff !important;
+}
