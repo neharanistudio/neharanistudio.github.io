@@ -3165,3 +3165,8 @@ PRODUCT POPUP
     margin:0;
     font-size:22px;
 }
+
+   
+.footer-box:first-child{
+    text-align:left;
+}
