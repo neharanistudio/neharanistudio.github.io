@@ -3299,3 +3299,44 @@ footer .footer-logo h2{
     justify-content:center !important;
     width:100%;
 }
+/* ===== FINAL FOOTER LOGO FIX ===== */
+
+.footer .footer-container{
+    align-items:start;
+}
+
+.footer .footer-box:first-child{
+    display:block !important;
+    text-align:left !important;
+}
+
+
+.footer .footer-logo{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:12px !important;
+}
+
+
+.footer .footer-logo img{
+    width:55px !important;
+    height:55px !important;
+    object-fit:contain !important;
+    border-radius:50% !important;
+    margin:0 !important;
+}
+
+
+.footer .footer-logo h2{
+    color:#fff !important;
+    font-size:22px !important;
+    margin:0 !important;
+    white-space:nowrap;
+}
+
+
+.footer .social-icons{
+    justify-content:flex-start !important;
+}
