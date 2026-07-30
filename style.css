@@ -3700,4 +3700,40 @@ body{
 }
 
 }
+ /* FINAL PRODUCT GRID FIX */
+
+.products-wrapper{
+    display:grid !important;
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:30px !important;
+}
+
+
+.product-item{
+    width:100% !important;
+}
+
+
+.product-card{
+    width:100% !important;
+}
+
+
+@media(max-width:768px){
+
+.products-wrapper{
+    grid-template-columns:repeat(2,1fr) !important;
+    gap:15px !important;
+}
+
+}
+
+
+@media(max-width:480px){
+
+.products-wrapper{
+    grid-template-columns:1fr !important;
+}
+
+}
    
