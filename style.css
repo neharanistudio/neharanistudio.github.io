@@ -3170,3 +3170,26 @@ PRODUCT POPUP
 .footer-box:first-child{
     text-align:left;
 }
+/* FOOTER BRAND LOGO */
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+
+.footer-logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+
+.footer-logo h2{
+    margin:0;
+    font-size:22px;
+    line-height:1;
+}
