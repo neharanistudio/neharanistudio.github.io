@@ -417,7 +417,7 @@ encodeURIComponent(message);
 
 
 
-window.location.href=url;
+window.location.href="payment.html";
 
 
 };
