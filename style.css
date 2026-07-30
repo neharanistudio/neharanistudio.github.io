@@ -3492,3 +3492,59 @@ margin:auto;
 
 
 }
+@media screen and (max-width:768px){
+
+.container,
+.products-wrapper,
+.footer-container,
+.offer-content,
+.hero-content{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.products-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+
+.product-item{
+    width:100%;
+}
+
+
+.product-card{
+    width:100%;
+}
+
+
+.product-card img{
+    width:100%;
+    height:auto;
+}
+
+
+.categorySwiper{
+    width:100%;
+}
+
+
+.review-grid{
+    display:flex;
+    flex-direction:column;
+}
+
+
+.policy-box{
+    width:90%;
+}
+
+
+body{
+    overflow-x:hidden;
+}
+
+}
