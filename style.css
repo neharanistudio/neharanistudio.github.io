@@ -3548,3 +3548,68 @@ body{
 }
 
 }
+/* Mobile Policy Pages Fix */
+
+.policy-page{
+    padding: 30px 15px;
+}
+
+
+.policy-box{
+    width:100%;
+    max-width:600px;
+    margin:auto;
+    padding:25px 20px;
+    box-sizing:border-box;
+}
+
+
+.policy-box h1{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+
+.policy-box h3{
+    margin-top:20px;
+    margin-bottom:8px;
+}
+
+
+.policy-box p{
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+
+/* Back Button */
+
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#111;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    z-index:999;
+}
+
+
+@media(max-width:768px){
+
+.policy-page{
+    padding:70px 15px 30px;
+}
+
+
+.policy-box{
+    padding:20px 15px;
+}
+
+}
