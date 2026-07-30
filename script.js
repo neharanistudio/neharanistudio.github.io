@@ -742,9 +742,6 @@ cart.push(product);
 updateCart();
 
 
-alert("Product added to cart 🛒");
-
-
 }
 
 
