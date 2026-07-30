@@ -3085,3 +3085,53 @@ PRODUCT POPUP
     margin:0;
     white-space:nowrap;
 }
+/* ===== FINAL LOGO CENTER FIX ===== */
+
+.header{
+    position:relative;
+    height:80px;
+}
+
+
+.header-left{
+    position:absolute;
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+
+.header-right{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+
+.header-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+
+
+.header-center .logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.header-center .logo img{
+    width:45px !important;
+    height:45px !important;
+    object-fit:contain;
+}
+
+
+.header-center .logo h2{
+    font-size:20px !important;
+    margin:0;
+}
