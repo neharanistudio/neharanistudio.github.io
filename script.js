@@ -1170,7 +1170,7 @@ product.innerText.toLowerCase();
 if(text.includes(value)){
 
 
-product.style.display="block";
+product.style.display="";
 
 
 }
