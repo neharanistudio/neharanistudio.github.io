@@ -3316,3 +3316,35 @@ color:#e45b99 !important;
 
 
 }
+/* ===== MOBILE CATEGORY NAME FIX ONLY ===== */
+
+@media(max-width:768px){
+
+.category-card{
+    height:auto !important;
+    overflow:visible !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+}
+
+
+.category-card img{
+    width:75px !important;
+    height:75px !important;
+    border-radius:50% !important;
+}
+
+
+.category-card h3{
+    display:block !important;
+    position:static !important;
+    margin-top:10px !important;
+    width:90px !important;
+    height:auto !important;
+    overflow:visible !important;
+    text-align:center !important;
+    font-size:12px !important;
+}
+
+}
