@@ -3431,3 +3431,18 @@ color:#e45b99 !important;
 .sidebar.active{
     left:0 !important;
 }
+.sidebar{
+position:fixed !important;
+top:0 !important;
+left:-300px !important;
+width:280px !important;
+height:100vh !important;
+background:white !important;
+z-index:99999 !important;
+transition:.3s ease !important;
+}
+
+
+.sidebar.active{
+left:0 !important;
+}
