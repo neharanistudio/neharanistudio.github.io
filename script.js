@@ -743,64 +743,38 @@ window.open(
    /* ================= DETAIL ADD CART ================= */
 
 
-const detailAddCart=document.querySelector("#detailAddCart");
+const detailAddCart = document.querySelector("#detailAddCart");
 
+if (detailAddCart) {
 
-if(detailAddCart){
+    detailAddCart.addEventListener("click", function (e) {
 
+        e.preventDefault();
 
-detailAddCart.onclick=()=>{
+        if (!currentProduct) return;
 
+        let product = {
+            name: currentProduct.name,
+            price: currentProduct.price,
+            image: currentProduct.images[0],
+            qty: 1
+        };
 
-if(currentProduct){
+        let exist = cart.find(item => item.name === product.name);
 
+        if (exist) {
+            exist.qty++;
+        } else {
+            cart.push(product);
+        }
 
-let product={
+        updateCart();
 
-name:currentProduct.name,
+        alert("Product added to cart 🛒");
 
-price:currentProduct.price,
-
-image:currentProduct.images[0],
-
-qty:1
-
-};
-
-
-
-let exist=
-cart.find(
-(item)=>item.name===product.name
-);
-
-
-
-if(exist){
-
-exist.qty++;
+    });
 
 }
-
-else{
-
-cart.push(product);
-
-}
-
-
-
-updateCart();
-
-
-}
-
-
-};
-
-
-}
-
 
 
 
