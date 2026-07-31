@@ -1,32 +1,39 @@
-/*=========================================
+/* =========================================
    NEHA RANI STUDIO
-   PART 1 - GLOBAL STYLE
-==========================================*/
+   NEW LUXURY PINK THEME CSS
+   PART 1
+========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-:root{
-
---primary:#ff4f9a;
---primary-light:#ffe6f1;
---secondary:#ff7eb8;
---dark:#222;
---gray:#666;
---light:#fafafa;
---white:#fff;
---border:#ececec;
---shadow:0 10px 30px rgba(0,0,0,.08);
---radius:18px;
-
-}
+/* ========== GOOGLE RESET ========== */
 
 *{
-
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+:root{
+
+--pink:#f8a8c9;
+
+--dark-pink:#e85d97;
+
+--light-pink:#fff0f6;
+
+--soft:#fff8fb;
+
+--text:#333;
+
+--white:#ffffff;
+
+--shadow:0 8px 25px rgba(232,93,151,0.15);
 
 }
+
+
 
 html{
 
@@ -34,217 +41,64 @@ scroll-behavior:smooth;
 
 }
 
+
 body{
 
-font-family:'Poppins',sans-serif;
-background:#fff8fb;
-color:var(--dark);
+background:var(--soft);
+
+color:var(--text);
+
 overflow-x:hidden;
-line-height:1.6;
 
 }
+
+
 
 img{
 
 max-width:100%;
+
 display:block;
 
 }
 
+
+
 a{
 
 text-decoration:none;
+
 color:inherit;
 
 }
 
+
+
 button{
 
-font-family:'Poppins',sans-serif;
-cursor:pointer;
 border:none;
-outline:none;
-transition:.3s;
 
-}
+cursor:pointer;
 
-input{
-
-font-family:'Poppins',sans-serif;
-outline:none;
-
-}
-
-ul{
-
-list-style:none;
-
-}
-
-section{
-
-padding:80px 7%;
-
-}
-
-.container{
-
-max-width:1400px;
-margin:auto;
+font-family:inherit;
 
 }
 
 
-/*================ Scroll Bar ================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#ffeaf3;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:var(--primary);
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#e13f86;
-
-}
 
 
-/*================ Common Buttons ================*/
+/* =====================================
+   TOP BAR
+===================================== */
 
-.hero-btn,
-.product-btn,
-.checkout-btn,
-.track-btn,
-.search-submit,
-.payment-whatsapp,
-.policy-contact{
-
-display:inline-flex;
-align-items:center;
-justify-content:center;
-
-padding:14px 32px;
-
-background:var(--primary);
-
-color:#fff;
-
-border-radius:50px;
-
-font-weight:600;
-
-transition:.35s;
-
-box-shadow:0 10px 25px rgba(255,79,154,.25);
-
-}
-
-.hero-btn:hover,
-.product-btn:hover,
-.checkout-btn:hover,
-.track-btn:hover,
-.search-submit:hover,
-.payment-whatsapp:hover,
-.policy-contact:hover{
-
-background:#e13f86;
-
-transform:translateY(-4px);
-
-}
-
-
-/*================ Section Heading ================*/
-
-.section-heading{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:45px;
-
-gap:20px;
-
-}
-
-.section-heading h2{
-
-font-size:36px;
-font-weight:700;
-color:#222;
-
-}
-
-.section-heading a{
-
-color:var(--primary);
-font-weight:600;
-
-}
-
-.section-heading a:hover{
-
-text-decoration:underline;
-
-}
-
-
-/*================ Mobile ================*/
-
-@media(max-width:768px){
-
-section{
-
-padding:55px 20px;
-
-}
-
-.section-heading{
-
-flex-direction:column;
-text-align:center;
-
-}
-
-.section-heading h2{
-
-font-size:28px;
-
-}
-
-}
-/*=========================================
-   NEHA RANI STUDIO
-   PART 2 - HEADER & NAVBAR
-==========================================*/
-
-
-/*========== TOP BAR ==========*/
 
 .top-bar{
 
-background:linear-gradient(90deg,#ff4f9a,#ff7eb8);
+height:38px;
 
-color:#fff;
+background:var(--dark-pink);
 
-padding:12px 7%;
+color:white;
 
 display:flex;
 
@@ -252,49 +106,37 @@ justify-content:space-between;
 
 align-items:center;
 
-font-size:14px;
+padding:0 5%;
+
+font-size:12px;
 
 font-weight:500;
 
 }
 
-.top-left{
 
-letter-spacing:.5px;
-
-}
 
 .top-right{
 
 display:flex;
 
-align-items:center;
-
-gap:15px;
-
-}
-
-.top-right a{
-
-transition:.3s;
-
-}
-
-.top-right a:hover{
-
-opacity:.8;
+gap:10px;
 
 }
 
 
 
-/*========== HEADER ==========*/
+
+/* =====================================
+   HEADER
+===================================== */
+
 
 .header{
 
-background:#fff;
+height:85px;
 
-padding:18px 7%;
+background:white;
 
 display:flex;
 
@@ -302,25 +144,53 @@ align-items:center;
 
 justify-content:space-between;
 
+padding:0 5%;
+
 position:sticky;
 
 top:0;
 
-z-index:999;
+z-index:1000;
 
-box-shadow:0 8px 25px rgba(0,0,0,.05);
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
 
 }
 
 
 
 .header-left,
-.header-center,
 .header-right{
 
 display:flex;
 
 align-items:center;
+
+gap:18px;
+
+}
+
+
+
+.menu-icon{
+
+font-size:24px;
+
+color:var(--dark-pink);
+
+cursor:pointer;
+
+}
+
+
+
+
+.header-center{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
 
 }
 
@@ -332,7 +202,7 @@ display:flex;
 
 align-items:center;
 
-gap:15px;
+gap:10px;
 
 }
 
@@ -340,11 +210,13 @@ gap:15px;
 
 .logo img{
 
-width:60px;
+width:55px;
 
-height:60px;
+height:55px;
 
 object-fit:contain;
+
+border-radius:50%;
 
 }
 
@@ -352,67 +224,35 @@ object-fit:contain;
 
 .logo h2{
 
-font-size:28px;
+font-size:22px;
 
 font-weight:700;
 
-color:var(--primary);
+color:var(--dark-pink);
+
+white-space:nowrap;
 
 }
 
 
 
-.header-right{
 
-gap:18px;
+.header-right i{
+
+font-size:22px;
+
+color:#555;
+
+cursor:pointer;
 
 }
 
 
 
-.menu-icon,
-.search-btn,
-.wishlist-btn,
+
 .cart-btn{
 
-width:48px;
-
-height:48px;
-
-border-radius:50%;
-
-background:#fff;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-font-size:19px;
-
-transition:.35s;
-
 position:relative;
-
-border:1px solid #f1f1f1;
-
-}
-
-
-
-.menu-icon:hover,
-.search-btn:hover,
-.wishlist-btn:hover,
-.cart-btn:hover{
-
-background:var(--primary);
-
-color:#fff;
-
-transform:translateY(-4px);
-
-box-shadow:0 12px 25px rgba(255,79,154,.25);
 
 }
 
@@ -422,53 +262,52 @@ box-shadow:0 12px 25px rgba(255,79,154,.25);
 
 position:absolute;
 
-top:-6px;
+top:-10px;
 
-right:-5px;
+right:-10px;
 
-background:#ff2f6f;
+background:var(--dark-pink);
 
-color:#fff;
+color:white;
 
 font-size:11px;
 
-font-weight:600;
+width:18px;
 
-width:20px;
+height:18px;
 
-height:20px;
+border-radius:50%;
 
 display:flex;
 
 align-items:center;
 
 justify-content:center;
-
-border-radius:50%;
 
 }
 
 
 
-/*========== NAVIGATION ==========*/
+/* =====================================
+   NAVIGATION
+===================================== */
+
 
 .main-nav{
 
-background:#fff;
+background:white;
 
 display:flex;
 
 justify-content:center;
 
-align-items:center;
+gap:35px;
 
-gap:45px;
+padding:15px;
 
-padding:18px;
+border-top:1px solid #eee;
 
-border-top:1px solid #f3f3f3;
-
-border-bottom:1px solid #f3f3f3;
+border-bottom:1px solid #eee;
 
 }
 
@@ -476,37 +315,9 @@ border-bottom:1px solid #f3f3f3;
 
 .main-nav a{
 
-font-weight:600;
+font-size:14px;
 
-font-size:15px;
-
-position:relative;
-
-transition:.35s;
-
-}
-
-
-
-.main-nav a::after{
-
-content:"";
-
-position:absolute;
-
-left:0;
-
-bottom:-8px;
-
-width:0;
-
-height:3px;
-
-background:var(--primary);
-
-transition:.35s;
-
-border-radius:20px;
+font-weight:500;
 
 }
 
@@ -514,51 +325,35 @@ border-radius:20px;
 
 .main-nav a:hover{
 
-color:var(--primary);
+color:var(--dark-pink);
 
 }
 
 
 
-.main-nav a:hover::after{
-
-width:100%;
-
-}
-
-
-
-/*========== MOBILE ==========*/
-
-@media(max-width:991px){
-
-.logo h2{
-
-font-size:22px;
-
-}
-
-.main-nav{
-
-display:none;
-
-}
-
-}
-
+/* =====================================
+   MOBILE HEADER
+===================================== */
 
 
 @media(max-width:768px){
 
+
 .top-bar{
 
-flex-direction:column;
+height:32px;
 
-gap:8px;
+font-size:10px;
 
-text-align:center;
+padding:0 15px;
 
-padding:12px;
+}
+
+
+
+.top-right{
+
+display:none;
 
 }
 
@@ -566,7 +361,9 @@ padding:12px;
 
 .header{
 
-padding:15px;
+height:70px;
+
+padding:0 15px;
 
 }
 
@@ -574,9 +371,9 @@ padding:15px;
 
 .logo img{
 
-width:46px;
+width:42px;
 
-height:46px;
+height:42px;
 
 }
 
@@ -584,7 +381,7 @@ height:46px;
 
 .logo h2{
 
-font-size:18px;
+font-size:15px;
 
 }
 
@@ -592,38 +389,44 @@ font-size:18px;
 
 .header-right{
 
-gap:10px;
+gap:12px;
 
 }
 
 
 
-.menu-icon,
-.search-btn,
-.wishlist-btn,
-.cart-btn{
+.header-right i{
 
-width:42px;
-
-height:42px;
-
-font-size:17px;
+font-size:19px;
 
 }
 
+
+
+.main-nav{
+
+display:none;
+
 }
-/*=========================================
-  NEHA RANI STUDIO
-  PART 3 - HERO SECTION
-==========================================*/
+
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 2
+   HERO + CATEGORY CIRCLES
+========================================= */
+
+
+/* ========== HERO SECTION ========== */
+
 
 .hero-slider{
 
-padding:70px 7%;
+padding:20px 5%;
 
-background:linear-gradient(135deg,#fff8fb,#ffe6f1);
-
-overflow:hidden;
+background:var(--soft);
 
 }
 
@@ -633,11 +436,7 @@ overflow:hidden;
 
 border-radius:30px;
 
-background:#fff;
-
-box-shadow:0 20px 45px rgba(0,0,0,.08);
-
-padding:50px;
+overflow:hidden;
 
 }
 
@@ -645,13 +444,21 @@ padding:50px;
 
 .hero-content{
 
+min-height:430px;
+
+background:linear-gradient(
+135deg,
+#fff0f6,
+#ffffff
+);
+
 display:flex;
 
 align-items:center;
 
 justify-content:space-between;
 
-gap:60px;
+padding:50px;
 
 }
 
@@ -659,7 +466,7 @@ gap:60px;
 
 .hero-text{
 
-flex:1;
+width:45%;
 
 }
 
@@ -667,23 +474,11 @@ flex:1;
 
 .hero-subtitle{
 
-display:inline-block;
-
-background:#ffd8e8;
-
-color:#ff2f7f;
-
-padding:10px 22px;
-
-border-radius:40px;
-
-font-weight:600;
-
-margin-bottom:25px;
+color:var(--dark-pink);
 
 font-size:14px;
 
-letter-spacing:1px;
+font-weight:600;
 
 }
 
@@ -691,13 +486,11 @@ letter-spacing:1px;
 
 .hero-text h1{
 
-font-size:58px;
+font-size:48px;
 
-font-weight:800;
+line-height:1.2;
 
-line-height:1.15;
-
-margin-bottom:20px;
+margin:15px 0;
 
 color:#222;
 
@@ -707,13 +500,11 @@ color:#222;
 
 .hero-text p{
 
-font-size:17px;
-
 color:#666;
 
-max-width:520px;
+line-height:1.7;
 
-margin-bottom:35px;
+margin-bottom:25px;
 
 }
 
@@ -721,29 +512,17 @@ margin-bottom:35px;
 
 .hero-btn{
 
-padding:15px 36px;
-
-border-radius:50px;
-
-background:linear-gradient(90deg,#ff4f9a,#ff77b7);
-
-color:#fff;
-
-font-weight:600;
-
 display:inline-block;
 
-transition:.35s;
+background:var(--dark-pink);
 
-}
+color:white;
 
+padding:14px 35px;
 
+border-radius:30px;
 
-.hero-btn:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 20px 35px rgba(255,79,154,.30);
+font-weight:600;
 
 }
 
@@ -751,13 +530,7 @@ box-shadow:0 20px 35px rgba(255,79,154,.30);
 
 .hero-image{
 
-flex:1;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
+width:45%;
 
 }
 
@@ -767,83 +540,179 @@ align-items:center;
 
 width:100%;
 
-max-width:520px;
+height:350px;
 
-animation:floatImage 4s ease-in-out infinite;
-
-}
-
-
-
-@keyframes floatImage{
-
-0%{
-
-transform:translateY(0px);
-
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
+object-fit:contain;
 
 }
 
 
-
-/*========== Swiper Pagination ==========*/
-
-.swiper-pagination{
-
-margin-top:25px;
-
-position:relative !important;
-
-}
-
-
-
-.swiper-pagination-bullet{
-
-width:12px;
-
-height:12px;
-
-background:#ffc5db;
-
-opacity:1;
-
-}
 
 
 
 .swiper-pagination-bullet-active{
 
-background:#ff4f9a;
-
-width:30px;
-
-border-radius:20px;
+background:var(--dark-pink)!important;
 
 }
 
 
 
-/*========== Tablet ==========*/
 
-@media(max-width:992px){
+
+/* =================================
+   SHOP BY CATEGORY
+================================= */
+
+
+.category-section{
+
+padding:35px 5%;
+
+background:white;
+
+}
+
+
+
+.section-heading{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+
+
+.section-heading h2{
+
+font-size:28px;
+
+color:#222;
+
+}
+
+
+
+.section-heading a{
+
+color:var(--dark-pink);
+
+font-size:14px;
+
+}
+
+
+
+
+
+/* horizontal scrolling */
+
+.categorySwiper{
+
+overflow:hidden;
+
+}
+
+
+
+.categorySwiper .swiper-wrapper{
+
+display:flex;
+
+}
+
+
+
+.categorySwiper .swiper-slide{
+
+width:auto!important;
+
+flex-shrink:0;
+
+}
+
+
+
+
+
+.category-card{
+
+width:95px;
+
+height:95px;
+
+border-radius:50%;
+
+overflow:hidden;
+
+background:var(--light-pink);
+
+padding:5px;
+
+box-shadow:var(--shadow);
+
+cursor:pointer;
+
+}
+
+
+
+.category-card img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:50%;
+
+}
+
+
+
+
+/* hide category names */
+
+.category-card h3{
+
+display:none;
+
+}
+
+
+
+
+/* =================================
+ MOBILE HERO
+================================= */
+
+
+@media(max-width:768px){
+
+
+
+.hero-slider{
+
+padding:15px;
+
+}
+
+
 
 .hero-content{
 
-flex-direction:column-reverse;
+min-height:250px;
+
+padding:20px;
+
+display:block;
 
 text-align:center;
 
@@ -851,43 +720,17 @@ text-align:center;
 
 
 
-.hero-text p{
+.hero-text{
 
-margin:auto;
-
-margin-bottom:30px;
+width:100%;
 
 }
 
 
 
-.hero-image img{
+.hero-subtitle{
 
-max-width:420px;
-
-}
-
-}
-
-
-
-/*========== Mobile ==========*/
-
-@media(max-width:768px){
-
-.hero-slider{
-
-padding:25px 15px;
-
-}
-
-
-
-.heroSwiper{
-
-padding:25px;
-
-border-radius:20px;
+font-size:11px;
 
 }
 
@@ -895,7 +738,9 @@ border-radius:20px;
 
 .hero-text h1{
 
-font-size:34px;
+font-size:26px;
+
+margin:10px 0;
 
 }
 
@@ -903,7 +748,9 @@ font-size:34px;
 
 .hero-text p{
 
-font-size:15px;
+font-size:13px;
+
+display:none;
 
 }
 
@@ -911,9 +758,19 @@ font-size:15px;
 
 .hero-btn{
 
-padding:13px 28px;
+padding:10px 25px;
 
-font-size:14px;
+font-size:13px;
+
+}
+
+
+
+.hero-image{
+
+width:100%;
+
+margin-top:15px;
 
 }
 
@@ -921,515 +778,68 @@ font-size:14px;
 
 .hero-image img{
 
-max-width:280px;
+height:150px;
 
 }
 
-}
-/*=========================================
-  NEHA RANI STUDIO
-  PART 4 - SHOP BY CATEGORY
-==========================================*/
+
 
 .category-section{
-
-background:#fff;
-
-padding:80px 7%;
-
-}
-
-.categorySwiper{
-
-padding:15px 5px 30px;
-
-}
-
-.category-card{
-
-background:#fff;
-
-border-radius:25px;
 
 padding:25px 15px;
 
-text-align:center;
-
-cursor:pointer;
-
-transition:.35s;
-
-box-shadow:0 10px 30px rgba(0,0,0,.07);
-
-border:1px solid #f3f3f3;
-
-height:250px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-
-align-items:center;
-
 }
 
-.category-card:hover{
 
-transform:translateY(-8px);
 
-box-shadow:0 20px 45px rgba(255,79,154,.18);
+.section-heading h2{
 
-}
-
-.category-card img{
-
-width:140px;
-
-height:140px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:6px solid #ffe6f1;
-
-transition:.35s;
-
-}
-
-.category-card:hover img{
-
-transform:scale(1.08);
-
-border-color:#ff4f9a;
-
-}
-
-.category-card h3{
-
-margin-top:18px;
-
-font-size:17px;
-
-font-weight:600;
-
-color:#333;
-
-transition:.3s;
-
-}
-
-.category-card:hover h3{
-
-color:#ff4f9a;
-
-}
-
-/* Swiper spacing */
-
-.categorySwiper .swiper-slide{
-
-display:flex;
-
-justify-content:center;
-
-}
-
-/* Tablet */
-
-@media(max-width:992px){
-
-.category-card{
-
-height:220px;
-
-padding:20px;
-
-}
-
-.category-card img{
-
-width:120px;
-
-height:120px;
-
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.category-section{
-
-padding:55px 20px;
-
-}
-
-.category-card{
-
-height:185px;
-
-padding:15px;
-
-border-radius:20px;
-
-}
-
-.category-card img{
-
-width:90px;
-
-height:90px;
-
-border-width:4px;
-
-}
-
-.category-card h3{
-
-font-size:14px;
-
-margin-top:12px;
-
-}
-
-}
-/*=========================================
-  NEHA RANI STUDIO
-  PART 5 - FEATURED PRODUCTS
-==========================================*/
-
-.featured-products{
-background:#fff8fb;
-padding:80px 7%;
-}
-
-.products-wrapper{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.product-item{
-display:block;
-}
-
-.product-card{
-background:#fff;
-border-radius:22px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-transition:.35s;
-cursor:pointer;
-position:relative;
-height:100%;
-}
-
-.product-card:hover{
-transform:translateY(-8px);
-box-shadow:0 22px 45px rgba(255,79,154,.18);
-}
-
-.product-image{
-position:relative;
-overflow:hidden;
-background:#fff;
-}
-
-.product-image img{
-width:100%;
-height:320px;
-object-fit:cover;
-transition:.4s;
-}
-
-.product-card:hover .product-image img{
-transform:scale(1.08);
-}
-
-.product-tag{
-position:absolute;
-top:15px;
-left:15px;
-background:#ff4f9a;
-color:#fff;
-padding:7px 14px;
-font-size:13px;
-font-weight:600;
-border-radius:30px;
-z-index:2;
-}
-
-.product-info{
-padding:22px;
-text-align:center;
-}
-
-.product-info h3{
 font-size:20px;
-font-weight:600;
-margin-bottom:10px;
-color:#222;
-}
-
-.product-price{
-font-size:22px;
-font-weight:700;
-color:#ff4f9a;
-margin-bottom:20px;
-}
-
-.product-actions{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-}
-
-.wishlist-add{
-width:48px;
-height:48px;
-border-radius:50%;
-background:#fff0f6;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-color:#ff4f9a;
-transition:.35s;
-}
-
-.wishlist-add:hover{
-background:#ff4f9a;
-color:#fff;
-transform:scale(1.08);
-}
-
-.wishlist-add.liked{
-background:#ff4f9a;
-color:#fff;
-}
-
-.product-btn{
-flex:1;
-height:48px;
-border-radius:40px;
-background:#ff4f9a;
-color:#fff;
-font-size:15px;
-font-weight:600;
-transition:.35s;
-}
-
-.product-btn:hover{
-background:#e43b83;
-transform:translateY(-2px);
-}
-
-/* Tablet */
-
-@media(max-width:992px){
-
-.products-wrapper{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:20px;
 
 }
 
+
+
+.category-card{
+
+width:75px;
+
+height:75px;
+
 }
 
-/* Mobile */
 
-@media(max-width:768px){
+
+.categorySwiper{
+
+overflow:visible;
+
+}
+
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 3
+   PRODUCTS SECTION
+========================================= */
+
+
+/* ========== FEATURED PRODUCTS ========== */
+
 
 .featured-products{
 
-padding:55px 20px;
+padding:40px 5%;
+
+background:var(--soft);
 
 }
+
+
 
 .products-wrapper{
-
-grid-template-columns:repeat(2,1fr);
-
-gap:15px;
-
-}
-
-.product-image img{
-
-height:180px;
-
-}
-
-.product-info{
-
-padding:15px;
-
-}
-
-.product-info h3{
-
-font-size:15px;
-
-}
-
-.product-price{
-
-font-size:18px;
-
-}
-
-.product-btn{
-
-height:42px;
-font-size:13px;
-
-}
-
-.wishlist-add{
-
-width:42px;
-height:42px;
-font-size:15px;
-
-}
-
-}
-
-@media(max-width:480px){
-
-.products-wrapper{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-}
-/*=========================================
-  NEHA RANI STUDIO
-  PART 6 - OFFER + REVIEWS + FOOTER
-==========================================*/
-
-
-/*========== OFFER BANNER ==========*/
-
-.offer-banner{
-
-padding:80px 7%;
-
-background:#fff;
-
-}
-
-
-
-.offer-content{
-
-background:linear-gradient(135deg,#ffe5f0,#fff);
-
-border-radius:35px;
-
-padding:50px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:40px;
-
-overflow:hidden;
-
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-}
-
-
-
-.offer-text{
-
-flex:1;
-
-}
-
-
-
-.offer-subtitle{
-
-color:#ff4f9a;
-
-font-weight:600;
-
-font-size:15px;
-
-}
-
-
-
-.offer-text h2{
-
-font-size:38px;
-
-line-height:1.2;
-
-margin:15px 0;
-
-}
-
-
-
-.offer-text p{
-
-color:#666;
-
-margin-bottom:30px;
-
-}
-
-
-
-.offer-image{
-
-flex:1;
-
-display:flex;
-
-justify-content:center;
-
-}
-
-
-
-.offer-image img{
-
-max-width:450px;
-
-border-radius:25px;
-
-}
-
-
-
-/*========== REVIEWS ==========*/
-
-
-.reviews{
-
-background:#fff8fb;
-
-}
-
-
-
-.review-grid{
 
 display:grid;
 
@@ -1441,29 +851,299 @@ gap:25px;
 
 
 
-.review-card{
 
-background:#fff;
+/* PRODUCT CARD */
 
-padding:30px;
 
-border-radius:25px;
+.product-card{
 
-box-shadow:0 10px 25px rgba(0,0,0,.06);
+background:white;
 
-text-align:center;
+border-radius:22px;
 
-transition:.35s;
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:.3s;
+
+height:100%;
 
 }
 
 
 
-.review-card:hover{
+.product-card:hover{
 
-transform:translateY(-8px);
+transform:translateY(-5px);
 
-box-shadow:0 20px 40px rgba(255,79,154,.15);
+}
+
+
+
+
+
+.product-image{
+
+height:270px;
+
+position:relative;
+
+background:#fff5fa;
+
+}
+
+
+
+.product-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+
+
+
+.product-tag{
+
+position:absolute;
+
+top:12px;
+
+left:12px;
+
+background:var(--dark-pink);
+
+color:white;
+
+padding:5px 12px;
+
+font-size:11px;
+
+border-radius:20px;
+
+z-index:2;
+
+}
+
+
+
+
+
+.product-info{
+
+padding:18px;
+
+}
+
+
+
+.product-info h3{
+
+font-size:16px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.product-price{
+
+color:var(--dark-pink);
+
+font-size:18px;
+
+font-weight:700;
+
+}
+
+
+
+
+
+.product-actions{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+
+
+.wishlist-add{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#fff0f6;
+
+color:var(--dark-pink);
+
+font-size:18px;
+
+}
+
+
+
+
+.wishlist-add.liked{
+
+background:var(--dark-pink);
+
+color:white;
+
+}
+
+
+
+
+.product-btn{
+
+flex:1;
+
+background:var(--dark-pink);
+
+color:white;
+
+border-radius:25px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+
+
+
+/* =================================
+   OFFER BANNER
+================================= */
+
+
+.offer-banner{
+
+padding:50px 5%;
+
+}
+
+
+
+.offer-content{
+
+background:linear-gradient(
+135deg,
+#ffe5f0,
+#fff
+);
+
+border-radius:30px;
+
+padding:40px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+
+
+.offer-text{
+
+width:50%;
+
+}
+
+
+
+.offer-subtitle{
+
+color:var(--dark-pink);
+
+font-weight:600;
+
+}
+
+
+
+.offer-text h2{
+
+font-size:35px;
+
+margin:15px 0;
+
+}
+
+
+
+.offer-image{
+
+width:40%;
+
+}
+
+
+
+.offer-image img{
+
+width:100%;
+
+height:300px;
+
+object-fit:contain;
+
+}
+
+
+
+/* =================================
+   REVIEWS
+================================= */
+
+
+.reviews{
+
+padding:50px 5%;
+
+background:white;
+
+}
+
+
+
+.review-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:20px;
+
+}
+
+
+
+.review-card{
+
+background:#fff5fa;
+
+padding:25px;
+
+border-radius:20px;
 
 }
 
@@ -1471,9 +1151,7 @@ box-shadow:0 20px 40px rgba(255,79,154,.15);
 
 .stars{
 
-color:#ffb400;
-
-font-size:22px;
+color:#ffc107;
 
 margin-bottom:15px;
 
@@ -1481,38 +1159,179 @@ margin-bottom:15px;
 
 
 
-.review-card p{
-
-color:#666;
-
-font-size:14px;
-
-margin-bottom:15px;
-
-}
 
 
+/* =================================
+ MOBILE PRODUCTS
+================================= */
 
-.review-card h4{
 
-color:#ff4f9a;
+@media(max-width:992px){
 
-font-size:16px;
+
+.products-wrapper{
+
+grid-template-columns:repeat(3,1fr);
 
 }
 
 
 
-/*========== FOOTER ==========*/
+.review-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+.featured-products{
+
+padding:30px 12px;
+
+}
+
+
+
+.products-wrapper{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+
+
+.product-image{
+
+height:170px;
+
+}
+
+
+
+.product-info{
+
+padding:12px;
+
+}
+
+
+
+.product-info h3{
+
+font-size:13px;
+
+}
+
+
+
+.product-price{
+
+font-size:15px;
+
+}
+
+
+
+.product-actions{
+
+gap:6px;
+
+}
+
+
+
+.wishlist-add{
+
+width:35px;
+
+height:35px;
+
+}
+
+
+
+.product-btn{
+
+font-size:11px;
+
+height:35px;
+
+}
+
+
+
+.offer-content{
+
+display:block;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+
+
+.offer-text,
+.offer-image{
+
+width:100%;
+
+}
+
+
+
+.offer-text h2{
+
+font-size:24px;
+
+}
+
+
+
+.offer-image img{
+
+height:180px;
+
+}
+
+
+
+.review-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 4
+   FOOTER + POPUPS
+========================================= */
+
+
+/* ========== FOOTER ========== */
 
 
 .footer{
 
-background:#222;
+background:#22151c;
 
-color:#fff;
+color:white;
 
-padding:70px 7% 20px;
+padding:60px 5% 20px;
 
 }
 
@@ -1522,9 +1341,9 @@ padding:70px 7% 20px;
 
 display:grid;
 
-grid-template-columns:2fr 1fr 1fr 1fr;
+grid-template-columns:repeat(4,1fr);
 
-gap:40px;
+gap:35px;
 
 }
 
@@ -1536,7 +1355,7 @@ display:flex;
 
 align-items:center;
 
-gap:12px;
+gap:10px;
 
 margin-bottom:20px;
 
@@ -1546,19 +1365,35 @@ margin-bottom:20px;
 
 .footer-logo img{
 
-width:60px;
+width:55px;
 
-height:60px;
+height:55px;
+
+border-radius:50%;
 
 }
 
 
 
-.footer-logo h2{
+.footer-box h3{
 
-color:#ff7eb8;
+color:#f8a8c9;
 
-font-size:25px;
+margin-bottom:18px;
+
+}
+
+
+
+.footer-box a{
+
+display:block;
+
+margin:10px 0;
+
+color:#ddd;
+
+font-size:14px;
 
 }
 
@@ -1570,41 +1405,7 @@ color:#ddd;
 
 font-size:14px;
 
-}
-
-
-
-.footer-box h3{
-
-color:#ff7eb8;
-
-margin-bottom:20px;
-
-font-size:20px;
-
-}
-
-
-
-.footer-box a{
-
-display:block;
-
-color:#ddd;
-
-margin-bottom:12px;
-
-transition:.3s;
-
-}
-
-
-
-.footer-box a:hover{
-
-color:#ff4f9a;
-
-padding-left:5px;
+line-height:1.8;
 
 }
 
@@ -1624,11 +1425,13 @@ margin-top:20px;
 
 .social-icons a{
 
-width:40px;
+width:38px;
 
-height:40px;
+height:38px;
 
-background:#333;
+background:#fff0f6;
+
+color:#e85d97;
 
 border-radius:50%;
 
@@ -1638,50 +1441,38 @@ align-items:center;
 
 justify-content:center;
 
-font-size:18px;
-
-}
-
-
-
-.social-icons a:hover{
-
-background:#ff4f9a;
-
-color:#fff;
-
 }
 
 
 
 .footer-bottom{
 
-border-top:1px solid #444;
+text-align:center;
 
-margin-top:40px;
+margin-top:35px;
 
 padding-top:20px;
 
-text-align:center;
+border-top:1px solid #444;
 
-color:#bbb;
-
-font-size:14px;
+font-size:13px;
 
 }
 
 
 
-/*========== WHATSAPP BUTTON ==========*/
+
+
+/* ========== WHATSAPP BUTTON ========== */
 
 
 .whatsapp-btn{
 
 position:fixed;
 
-right:25px;
+right:20px;
 
-bottom:25px;
+bottom:20px;
 
 width:60px;
 
@@ -1689,7 +1480,7 @@ height:60px;
 
 background:#25d366;
 
-color:#fff;
+color:white;
 
 border-radius:50%;
 
@@ -1703,246 +1494,15 @@ font-size:30px;
 
 z-index:999;
 
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-
-transition:.3s;
+box-shadow:0 5px 20px rgba(0,0,0,.2);
 
 }
 
 
 
-.whatsapp-btn:hover{
 
-transform:scale(1.1);
 
-}
-
-
-
-/*========== BACK TO TOP ==========*/
-
-
-#topBtn{
-
-position:fixed;
-
-right:25px;
-
-bottom:100px;
-
-width:45px;
-
-height:45px;
-
-border-radius:50%;
-
-background:#ff4f9a;
-
-color:#fff;
-
-display:none;
-
-align-items:center;
-
-justify-content:center;
-
-z-index:999;
-
-}
-
-
-
-/*========== RESPONSIVE ==========*/
-
-
-@media(max-width:1100px){
-
-.review-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.footer-container{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-
-
-@media(max-width:768px){
-
-
-.offer-content{
-
-flex-direction:column;
-
-padding:30px;
-
-text-align:center;
-
-}
-
-
-.offer-text h2{
-
-font-size:28px;
-
-}
-
-
-.review-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.footer-container{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-
-.social-icons{
-
-justify-content:center;
-
-}
-
-
-.whatsapp-btn{
-
-width:55px;
-
-height:55px;
-
-right:18px;
-
-bottom:20px;
-
-}
-
-
-}
-/*=========================================
-  NEHA RANI STUDIO
-  PART 7 - CART + WISHLIST + POPUPS
-==========================================*/
-
-
-/*========== OVERLAY ==========*/
-
-.menu-overlay{
-
-position:fixed;
-
-inset:0;
-
-background:rgba(0,0,0,.45);
-
-z-index:998;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.3s;
-
-}
-
-
-.menu-overlay.active{
-
-opacity:1;
-
-visibility:visible;
-
-}
-
-
-
-/*========== SIDEBAR MENU ==========*/
-
-
-.sidebar{
-
-position:fixed;
-
-top:0;
-
-left:-320px;
-
-width:300px;
-
-height:100vh;
-
-background:#fff;
-
-z-index:999;
-
-padding:40px 25px;
-
-transition:.4s;
-
-overflow-y:auto;
-
-box-shadow:10px 0 30px rgba(0,0,0,.15);
-
-}
-
-
-.sidebar.active{
-
-left:0;
-
-}
-
-
-.sidebar h3{
-
-color:#ff4f9a;
-
-font-size:24px;
-
-margin-bottom:25px;
-
-}
-
-
-.sidebar a{
-
-display:block;
-
-padding:14px 0;
-
-border-bottom:1px solid #eee;
-
-font-weight:500;
-
-transition:.3s;
-
-}
-
-
-.sidebar a:hover{
-
-color:#ff4f9a;
-
-padding-left:10px;
-
-}
-
-
-
-/*========== CART & WISHLIST PANEL ==========*/
+/* ========== CART PANEL ========== */
 
 
 .cart-panel,
@@ -1950,27 +1510,28 @@ padding-left:10px;
 
 position:fixed;
 
+right:-400px;
+
 top:0;
 
-right:-420px;
-
-width:400px;
+width:350px;
 
 height:100vh;
 
-background:#fff;
+background:white;
 
-z-index:1000;
+z-index:2000;
 
 padding:30px;
 
-transition:.4s;
+box-shadow:-5px 0 25px rgba(0,0,0,.15);
 
-box-shadow:-10px 0 30px rgba(0,0,0,.15);
+transition:.4s;
 
 overflow-y:auto;
 
 }
+
 
 
 .cart-panel.active,
@@ -1981,23 +1542,9 @@ right:0;
 }
 
 
-.cart-panel h2,
-.wishlist-panel h2{
-
-font-size:28px;
-
-color:#ff4f9a;
-
-margin-bottom:25px;
-
-}
-
-
 
 .close-cart,
-.close-wishlist,
-.close-search,
-.close-order{
+.close-wishlist{
 
 position:absolute;
 
@@ -2005,23 +1552,27 @@ right:20px;
 
 top:20px;
 
-width:35px;
+font-size:25px;
 
-height:35px;
+background:none;
 
-border-radius:50%;
-
-background:#ffe8f1;
-
-color:#ff4f9a;
-
-font-size:18px;
+color:#333;
 
 }
 
 
 
-/*========== CART PRODUCTS ==========*/
+.cart-panel h2,
+.wishlist-panel h2{
+
+margin-top:40px;
+
+color:var(--dark-pink);
+
+}
+
+
+
 
 
 .cart-product{
@@ -2037,37 +1588,34 @@ border-bottom:1px solid #eee;
 }
 
 
+
 .cart-product img{
 
-width:80px;
+width:70px;
 
-height:80px;
-
-border-radius:12px;
+height:70px;
 
 object-fit:cover;
 
-}
-
-
-.cart-product h4{
-
-font-size:15px;
+border-radius:10px;
 
 }
+
+
 
 
 .qty-box{
 
 display:flex;
 
-align-items:center;
-
 gap:10px;
 
-margin:10px 0;
+align-items:center;
+
+margin-top:10px;
 
 }
+
 
 
 .qty-box button{
@@ -2078,59 +1626,50 @@ height:25px;
 
 border-radius:50%;
 
-background:#ff4f9a;
-
-color:#fff;
+background:var(--light-pink);
 
 }
+
+
+
 
 
 .remove-cart,
 .remove-wishlist{
 
+margin-top:10px;
+
+color:#e85d97;
+
 background:none;
-
-color:#ff4f9a;
-
-font-size:13px;
 
 }
 
 
 
-/*========== CHECKOUT BUTTON ==========*/
 
 
 .checkout-btn{
 
 width:100%;
 
-margin-top:25px;
+padding:14px;
+
+background:#25d366;
+
+color:white;
+
+border-radius:30px;
+
+margin-top:20px;
 
 }
 
 
 
-/*========== WISHLIST ITEM ==========*/
 
 
-.wishlist-product{
-
-padding:15px;
-
-border-bottom:1px solid #eee;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-}
-
-
-
-/*========== SEARCH POPUP ==========*/
+/* ========== SEARCH POPUP ========== */
 
 
 .search-popup,
@@ -2142,29 +1681,22 @@ inset:0;
 
 background:rgba(0,0,0,.5);
 
-z-index:1001;
-
-display:flex;
+display:none;
 
 align-items:center;
 
 justify-content:center;
 
-opacity:0;
-
-visibility:hidden;
-
-transition:.3s;
+z-index:3000;
 
 }
+
 
 
 .search-popup.active,
 .order-popup.active{
 
-opacity:1;
-
-visibility:visible;
+display:flex;
 
 }
 
@@ -2173,27 +1705,30 @@ visibility:visible;
 .search-box,
 .order-box{
 
-background:#fff;
+background:white;
 
-width:450px;
+width:90%;
+
+max-width:450px;
 
 padding:35px;
 
 border-radius:25px;
-
-position:relative;
 
 text-align:center;
 
 }
 
 
-.search-box h2,
-.order-box h2{
 
-color:#ff4f9a;
+.close-search,
+.close-order{
 
-margin-bottom:25px;
+float:right;
+
+background:none;
+
+font-size:25px;
 
 }
 
@@ -2204,85 +1739,54 @@ margin-bottom:25px;
 
 width:100%;
 
-padding:15px 20px;
+padding:15px;
 
 border:1px solid #ddd;
 
-border-radius:50px;
+border-radius:30px;
 
-margin-bottom:15px;
+margin:20px 0;
 
 }
+
+
 
 
 
 .search-submit,
 .track-btn{
 
-width:100%;
+background:var(--dark-pink);
+
+color:white;
+
+padding:13px 30px;
+
+border-radius:30px;
 
 }
 
 
 
-/*========== MOBILE ==========*/
 
 
-@media(max-width:600px){
-
-.cart-panel,
-.wishlist-panel{
-
-width:100%;
-
-right:-100%;
-
-}
+/* ========== MOBILE FOOTER ========== */
 
 
-.sidebar{
-
-width:85%;
-
-}
+@media(max-width:768px){
 
 
-.search-box,
-.order-box{
+.footer{
 
-width:90%;
-
-padding:25px;
-
-}
-
-}
-/*=========================================
-  NEHA RANI STUDIO
-  PART 8 - INNER PAGES + FINAL RESPONSIVE
-==========================================*/
-
-
-/*========== PRODUCT DETAIL PAGE ==========*/
-
-
-.product-detail-page{
-
-padding:70px 7%;
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:50px;
-
-background:#fff;
+padding:40px 20px 20px;
 
 }
 
 
 
-.product-gallery{
+.footer-container{
+
+grid-template-columns:1fr;
 
 text-align:center;
 
@@ -2290,21 +1794,84 @@ text-align:center;
 
 
 
-.product-gallery img{
+.social-icons{
+
+justify-content:center;
+
+}
+
+
+
+.cart-panel,
+.wishlist-panel{
+
+width:90%;
+
+}
+
+
+
+.whatsapp-btn{
+
+width:55px;
+
+height:55px;
+
+font-size:26px;
+
+}
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 5
+   PRODUCT DETAIL PAGE
+========================================= */
+
+
+/* ========== PRODUCT DETAIL ========== */
+
+
+.product-detail-page{
+
+padding:50px 5%;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:50px;
+
+background:white;
+
+}
+
+
+
+.product-gallery{
+
+position:relative;
+
+text-align:center;
+
+}
+
+
+
+.product-gallery>img{
 
 width:100%;
 
 max-width:500px;
 
-height:500px;
+height:520px;
 
 object-fit:cover;
 
-border-radius:30px;
+border-radius:25px;
 
 box-shadow:var(--shadow);
-
-margin:auto;
 
 }
 
@@ -2316,11 +1883,12 @@ display:flex;
 
 justify-content:center;
 
-gap:20px;
+gap:15px;
 
-margin-top:25px;
+margin-top:20px;
 
 }
+
 
 
 .image-buttons button{
@@ -2331,19 +1899,24 @@ height:45px;
 
 border-radius:50%;
 
-background:var(--primary);
+background:var(--dark-pink);
 
-color:#fff;
+color:white;
 
-font-size:20px;
+font-size:22px;
 
 }
 
 
 
+
+
+/* PRODUCT INFO */
+
+
 .product-detail-info h1{
 
-font-size:42px;
+font-size:38px;
 
 margin-bottom:15px;
 
@@ -2353,11 +1926,11 @@ margin-bottom:15px;
 
 .product-detail-info h2{
 
-color:var(--primary);
+color:var(--dark-pink);
 
 font-size:28px;
 
-margin-bottom:20px;
+margin-bottom:15px;
 
 }
 
@@ -2365,11 +1938,11 @@ margin-bottom:20px;
 
 .rating{
 
-color:#ffb400;
+color:#ffc107;
 
 font-size:22px;
 
-margin-bottom:25px;
+margin:15px 0;
 
 }
 
@@ -2379,13 +1952,7 @@ margin-bottom:25px;
 
 margin:25px 0;
 
-}
-
-
-
-.description h3{
-
-margin-bottom:10px;
+line-height:1.7;
 
 }
 
@@ -2393,15 +1960,25 @@ margin-bottom:10px;
 
 .delivery-info{
 
-background:#fff5fa;
+background:var(--light-pink);
 
 padding:20px;
 
 border-radius:20px;
 
-margin-bottom:25px;
+margin:25px 0;
 
 }
+
+
+
+.delivery-info p{
+
+margin:8px 0;
+
+}
+
+
 
 
 
@@ -2409,23 +1986,23 @@ margin-bottom:25px;
 
 display:flex;
 
-gap:15px;
+gap:12px;
 
-flex-wrap:wrap;
+align-items:center;
 
 }
 
 
 
-.buy-btn{
+#detailAddCart{
 
-padding:14px 35px;
+background:var(--dark-pink);
 
-background:#25d366;
+color:white;
 
-color:#fff;
+padding:15px 30px;
 
-border-radius:50px;
+border-radius:30px;
 
 font-weight:600;
 
@@ -2435,24 +2012,52 @@ font-weight:600;
 
 #detailWishlist{
 
-width:55px;
+background:#fff0f6;
 
-height:55px;
+color:var(--dark-pink);
 
 }
 
 
 
-/*========== RELATED PRODUCTS ==========*/
+.buy-btn{
+
+background:#25d366;
+
+color:white;
+
+padding:15px 30px;
+
+border-radius:30px;
+
+font-weight:600;
+
+}
+
+
+
+
+/* ========== RELATED PRODUCTS ========== */
 
 
 .related-products{
 
-background:#fff8fb;
+padding:50px 5%;
 
-padding:70px 7%;
+background:var(--soft);
 
 }
+
+
+
+.related-products h2{
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
 
 
 .related-grid{
@@ -2461,24 +2066,26 @@ display:grid;
 
 grid-template-columns:repeat(4,1fr);
 
-gap:25px;
+gap:20px;
 
 }
+
 
 
 .related-card{
 
-background:#fff;
+background:white;
 
-padding:20px;
+padding:15px;
 
 border-radius:20px;
 
-text-align:center;
-
 box-shadow:var(--shadow);
 
+text-align:center;
+
 }
+
 
 
 .related-card img{
@@ -2494,29 +2101,36 @@ border-radius:15px;
 }
 
 
+
 .related-card h3{
 
-margin:15px 0 8px;
+font-size:16px;
+
+margin:15px 0 5px;
 
 }
 
 
+
 .related-card p{
 
-color:var(--primary);
+color:var(--dark-pink);
 
 font-weight:700;
 
 }
 
 
+
 .related-card a{
 
 display:inline-block;
 
-margin-top:15px;
+margin-top:10px;
 
-color:var(--primary);
+color:var(--dark-pink);
+
+font-size:14px;
 
 font-weight:600;
 
@@ -2524,28 +2138,190 @@ font-weight:600;
 
 
 
-/*========== POLICY PAGES ==========*/
 
 
-.policy-page{
+/* ========== REVIEWS ========== */
 
-min-height:70vh;
 
-padding:70px 7%;
+.reviews{
 
-background:#fff8fb;
+padding:50px 5%;
+
+background:white;
 
 }
 
 
 
-.policy-box{
+.reviews>h2{
 
-background:#fff;
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+
+
+
+/* ========== MOBILE PRODUCT PAGE ========== */
+
+
+@media(max-width:768px){
+
+
+.product-detail-page{
+
+display:block;
+
+padding:25px 15px;
+
+}
+
+
+
+.product-gallery>img{
+
+height:350px;
+
+border-radius:20px;
+
+}
+
+
+
+.product-detail-info{
+
+text-align:center;
+
+margin-top:25px;
+
+}
+
+
+
+.product-detail-info h1{
+
+font-size:25px;
+
+}
+
+
+
+.product-detail-info h2{
+
+font-size:22px;
+
+}
+
+
+
+.description{
+
+font-size:14px;
+
+}
+
+
+
+.buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+
+
+#detailAddCart,
+.buy-btn{
+
+padding:12px 20px;
+
+font-size:13px;
+
+}
+
+
+
+#detailWishlist{
+
+width:45px;
+
+height:45px;
+
+}
+
+
+
+.related-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+}
+
+
+
+.related-card{
+
+padding:10px;
+
+}
+
+
+
+.related-card img{
+
+height:160px;
+
+}
+
+
+
+.related-card h3{
+
+font-size:13px;
+
+}
+
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 6
+   INNER PAGES DESIGN
+========================================= */
+
+
+/* ========== COMMON INNER PAGE ========== */
+
+
+.policy-page,
+.payment-page{
+
+padding:50px 5%;
+
+background:var(--soft);
+
+min-height:70vh;
+
+}
+
+
+
+.policy-box,
+.payment-box{
 
 max-width:900px;
 
 margin:auto;
+
+background:white;
 
 padding:45px;
 
@@ -2557,13 +2333,14 @@ box-shadow:var(--shadow);
 
 
 
-.policy-box h1{
+.policy-box h1,
+.payment-box h1{
 
 text-align:center;
 
-color:var(--primary);
+font-size:36px;
 
-font-size:38px;
+color:var(--dark-pink);
 
 margin-bottom:30px;
 
@@ -2571,38 +2348,138 @@ margin-bottom:30px;
 
 
 
-.policy-box h3{
+.policy-box h3,
+.payment-box h3{
 
-color:#ff4f9a;
+color:var(--dark-pink);
 
 margin-top:25px;
 
 margin-bottom:10px;
 
+font-size:20px;
+
 }
 
 
 
-.policy-box p{
+.policy-box p,
+.payment-box p{
 
 color:#666;
 
 line-height:1.8;
 
+font-size:15px;
+
 }
 
 
 
-/*========== FAQ ==========*/
+
+
+/* ========== CONTACT PAGE ========== */
+
+
+.contact-info{
+
+background:var(--light-pink);
+
+padding:25px;
+
+border-radius:20px;
+
+margin:25px 0;
+
+}
+
+
+
+.contact-info h3{
+
+color:var(--dark-pink);
+
+}
+
+
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+
+
+.social-icons a{
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#fff0f6;
+
+color:var(--dark-pink);
+
+font-size:20px;
+
+}
+
+
+
+
+
+/* ========== WHATSAPP BUTTON PAGE ========== */
+
+
+.policy-contact{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+background:#25d366;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:30px;
+
+margin-top:25px;
+
+font-weight:600;
+
+}
+
+
+
+
+
+/* ========== FAQ ========== */
 
 
 .faq-item{
 
-background:#fff8fb;
+background:#fff5fa;
 
 padding:20px;
 
-border-radius:18px;
+border-radius:20px;
 
 margin-bottom:15px;
 
@@ -2612,16 +2489,28 @@ margin-bottom:15px;
 
 .faq-item h3{
 
-margin:0 0 10px;
+margin:0;
+
+font-size:17px;
 
 }
 
 
 
-/*========== CONTACT INFO ==========*/
+.faq-item p{
+
+margin-top:10px;
+
+}
 
 
-.contact-info{
+
+
+
+/* ========== PAYMENT BOX ========== */
+
+
+.payment-method{
 
 background:#fff5fa;
 
@@ -2629,56 +2518,7 @@ padding:25px;
 
 border-radius:20px;
 
-margin:25px 0;
-
-}
-
-
-
-/*========== PAYMENT PAGE ==========*/
-
-
-.payment-page{
-
-background:#fff8fb;
-
-padding:70px 7%;
-
-}
-
-
-
-.payment-box{
-
-max-width:700px;
-
-margin:auto;
-
-background:#fff;
-
-padding:40px;
-
-border-radius:30px;
-
-box-shadow:var(--shadow);
-
-text-align:center;
-
-}
-
-
-
-.payment-method{
-
-background:#fff5fa;
-
-padding:20px;
-
-border-radius:18px;
-
 margin:20px 0;
-
-text-align:left;
 
 }
 
@@ -2686,112 +2526,568 @@ text-align:left;
 
 .payment-note{
 
-margin:25px 0;
+background:#fff0f6;
 
-color:#666;
-
-}
-
-
-
-/*========== FINAL MOBILE FIX ==========*/
-
-
-@media(max-width:992px){
-
-
-.product-detail-page{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
-}
-
-
-.related-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-.product-detail-info h1{
-
-font-size:32px;
-
-}
-
-
-}
-
-
-@media(max-width:600px){
-
-
-.product-detail-page{
-
-padding:45px 20px;
-
-}
-
-
-.product-gallery img{
-
-height:320px;
-
-}
-
-
-.product-detail-info h1{
-
-font-size:26px;
-
-}
-
-
-.product-detail-info h2{
-
-font-size:22px;
-
-}
-
-
-.buttons{
-
-justify-content:center;
-
-}
-
-
-.related-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.policy-page,
-.payment-page{
-
-padding:40px 20px;
-
-}
-
-
-.policy-box,
-.payment-box{
-
-padding:25px;
+padding:20px;
 
 border-radius:20px;
 
 }
 
 
-.policy-box h1{
 
-font-size:28px;
+
+
+.payment-whatsapp{
+
+display:inline-flex;
+
+background:#25d366;
+
+color:white;
+
+padding:14px 30px;
+
+border-radius:30px;
+
+margin-top:20px;
+
+}
+
+
+
+
+
+/* ========== HEADER INNER PAGES ========== */
+
+
+.header .logo{
+
+justify-content:center;
+
+}
+
+
+
+
+
+/* ========== MOBILE INNER PAGES ========== */
+
+
+@media(max-width:768px){
+
+
+.policy-page,
+.payment-page{
+
+padding:30px 15px;
+
+}
+
+
+
+.policy-box,
+.payment-box{
+
+padding:25px 20px;
+
+border-radius:22px;
+
+}
+
+
+
+.policy-box h1,
+.payment-box h1{
+
+font-size:26px;
+
+}
+
+
+
+.policy-box h3,
+.payment-box h3{
+
+font-size:17px;
+
+}
+
+
+
+.policy-box p,
+.payment-box p{
+
+font-size:14px;
+
+}
+
+
+
+.social-icons{
+
+justify-content:center;
+
+}
+
+
+}
+/* =========================================
+   NEHA RANI STUDIO
+   PART 7 FINAL
+   MOBILE + FINAL POLISH
+========================================= */
+
+
+/* ========== GLOBAL FIXES ========== */
+
+
+section{
+
+overflow:hidden;
+
+}
+
+
+
+.container{
+
+width:100%;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+
+
+
+
+/* Smooth cards */
+
+
+.product-card,
+.category-card,
+.review-card,
+.related-card{
+
+transition:.3s ease;
+
+}
+
+
+
+
+
+.product-card:hover,
+.review-card:hover,
+.related-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+/* Remove unwanted horizontal scroll */
+
+
+html,
+body{
+
+max-width:100%;
+
+overflow-x:hidden;
+
+}
+
+
+
+
+
+/* Better buttons */
+
+
+button,
+a{
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+
+
+
+
+/* ========== CATEGORY MOBILE SCROLL ========== */
+
+
+.categorySwiper{
+
+cursor:grab;
+
+}
+
+
+
+.categorySwiper:active{
+
+cursor:grabbing;
+
+}
+
+
+
+
+/* ========== MOBILE FINAL DESIGN ========== */
+
+
+@media(max-width:768px){
+
+
+
+/* header */
+
+
+.header-center{
+
+position:static;
+
+transform:none;
+
+}
+
+
+
+.header{
+
+justify-content:space-between;
+
+}
+
+
+
+.logo h2{
+
+display:block;
+
+font-size:14px;
+
+}
+
+
+
+
+
+/* hero */
+
+
+.hero-content{
+
+border-radius:25px;
+
+}
+
+
+
+.heroSwiper{
+
+border-radius:25px;
+
+}
+
+
+
+
+
+/* section headings */
+
+
+.section-heading{
+
+margin-bottom:18px;
+
+}
+
+
+
+.section-heading h2{
+
+font-size:19px;
+
+}
+
+
+
+
+/* category */
+
+
+.category-card{
+
+width:72px;
+
+height:72px;
+
+}
+
+
+
+
+/* products */
+
+
+.product-item{
+
+width:100%;
+
+}
+
+
+
+.product-card{
+
+border-radius:18px;
+
+}
+
+
+
+.product-image{
+
+height:160px;
+
+}
+
+
+
+.product-info{
+
+padding:10px;
+
+}
+
+
+
+
+/* cart button */
+
+
+.product-btn{
+
+min-height:35px;
+
+}
+
+
+
+
+/* footer */
+
+
+.footer-box{
+
+margin-bottom:15px;
+
+}
+
+
+
+
+
+}
+
+
+
+/* ========== SMALL MOBILE 320px ========== */
+
+
+@media(max-width:380px){
+
+
+
+.logo h2{
+
+font-size:12px;
+
+}
+
+
+
+.header-right{
+
+gap:8px;
+
+}
+
+
+
+.header-right i{
+
+font-size:17px;
+
+}
+
+
+
+.category-card{
+
+width:65px;
+
+height:65px;
+
+}
+
+
+
+.products-wrapper{
+
+gap:8px;
+
+}
+
+
+
+.product-image{
+
+height:145px;
+
+}
+
+
+
+.product-info h3{
+
+font-size:12px;
+
+}
+
+
+
+.product-price{
+
+font-size:14px;
+
+}
+
+
+
+}
+
+
+
+
+
+/* ========== LOADING IMAGE FIX ========== */
+
+
+img{
+
+background:#fff5fa;
+
+}
+
+
+
+
+
+/* ========== ANIMATION ========== */
+
+
+.hero-content,
+.product-card,
+.category-card{
+
+animation:fadeUp .5s ease;
+
+}
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* ========== TOP BUTTON ========== */
+
+
+#topBtn{
+
+position:fixed;
+
+bottom:90px;
+
+right:20px;
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:var(--dark-pink);
+
+color:white;
+
+display:none;
+
+align-items:center;
+
+justify-content:center;
+
+z-index:999;
+
+}
+
+
+
+
+
+/* ========== DESKTOP LARGE ========== */
+
+
+@media(min-width:1200px){
+
+
+.products-wrapper{
+
+grid-template-columns:repeat(5,1fr);
+
+}
+
+
+
+.category-card{
+
+width:110px;
+
+height:110px;
 
 }
 
