@@ -185,6 +185,56 @@ behavior:"smooth"
 
 
 });
+
+   // Mobile sidebar category click fix
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+let category = this.getAttribute("href").replace("#","");
+
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+if(product.dataset.category === category){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
+
+
+});
+
+
+
+document.querySelector(".sidebar")?.classList.remove("active");
+
+document.querySelector(".menu-overlay")?.classList.remove("active");
+
+
+
+setTimeout(()=>{
+
+document.querySelector("#featured")?.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+},200);
+
+
+});
+
+});
    
 /* ================= CART SYSTEM ================= */
 
