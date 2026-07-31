@@ -770,7 +770,6 @@ if (detailAddCart) {
 
         updateCart();
 
-        alert("Product added to cart 🛒");
 
     });
 
