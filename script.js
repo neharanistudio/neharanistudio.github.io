@@ -104,16 +104,23 @@ overlay.classList.remove("active");
 
 
 
-/* ================= SIDEBAR CATEGORY CLICK ================= */
+/* ================= SIDEBAR PRODUCT FILTER ================= */
 
 
 document.querySelectorAll(".sidebar a").forEach(link=>{
 
 
-link.addEventListener("click",()=>{
+link.addEventListener("click",function(e){
 
 
-// close menu after click
+e.preventDefault();
+
+
+let selectedCategory = this.getAttribute("href").replace("#","");
+
+
+
+// close menu
 
 if(sidebar && overlay){
 
@@ -125,28 +132,45 @@ overlay.classList.remove("active");
 
 
 
-// move to category
+// show matching products
 
-let target = link.getAttribute("href");
-
-
-if(target && target.startsWith("#")){
+document.querySelectorAll(".product-item").forEach(product=>{
 
 
-let section = document.querySelector(target);
+if(product.dataset.category === selectedCategory){
 
 
-if(section){
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
+
+
+}
+
+
+});
+
+
+
+// go to featured products
+
+let featured=document.querySelector("#featured");
+
+
+if(featured){
 
 
 setTimeout(()=>{
 
+featured.scrollIntoView({
 
-section.scrollIntoView({
-
-behavior:"smooth",
-
-block:"start"
+behavior:"smooth"
 
 });
 
@@ -157,16 +181,11 @@ block:"start"
 }
 
 
-}
-
-
-
 });
 
 
 });
-
-
+   
 /* ================= CART SYSTEM ================= */
 
 
