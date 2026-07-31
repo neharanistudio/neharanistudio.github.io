@@ -2804,9 +2804,35 @@ window.location.href =
 
 });
 
+// ===== SIDEBAR OPEN CLOSE =====
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".menu-overlay");
 
 
+if(menuBtn){
 
+menuBtn.addEventListener("click",()=>{
+
+sidebar.classList.add("active");
+overlay.classList.add("active");
+
+});
+
+}
+
+
+if(overlay){
+
+overlay.addEventListener("click",()=>{
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+});
+
+}
 
 
 
