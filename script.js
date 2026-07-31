@@ -31,44 +31,25 @@ clickable:true
 }
 
 
+/* ================= SIDEBAR MENU FINAL ================= */
 
-/* ================= CATEGORY SWIPER ================= */
+
+const menuBtn = document.querySelector(".menu-icon");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".menu-overlay");
 
 
-if(document.querySelector(".categorySwiper")){
 
-new Swiper(".categorySwiper",{
+if(menuBtn && sidebar && overlay){
 
-slidesPerView:4,
-spaceBetween:20,
 
-breakpoints:{
+menuBtn.addEventListener("click",()=>{
 
-320:{
-slidesPerView:2
-},
+sidebar.classList.add("active");
 
-576:{
-slidesPerView:2
-},
-
-768:{
-slidesPerView:3
-},
-
-992:{
-slidesPerView:4
-}
-
-}
+overlay.classList.add("active");
 
 });
-
-}
-
-
-
-v
 
 
 
@@ -84,6 +65,139 @@ overlay.classList.remove("active");
 
 }
 
+
+
+/* ================= SIDEBAR PRODUCT FILTER ================= */
+
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+
+link.addEventListener("click",function(e){
+
+
+e.preventDefault();
+
+
+let selectedCategory = this.getAttribute("href").replace("#","");
+
+
+
+// close menu
+
+if(sidebar && overlay){
+
+sidebar.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+
+
+// show matching products
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+if(product.dataset.category === selectedCategory){
+
+
+product.style.display="block";
+
+
+}
+
+else{
+
+
+product.style.display="none";
+
+
+}
+
+
+});
+
+
+
+// go to featured products
+
+let featured=document.querySelector("#featured");
+
+
+if(featured){
+
+
+setTimeout(()=>{
+
+featured.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+},200);
+
+
+}
+
+
+});
+
+
+});
+
+   // Mobile sidebar category click fix
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+link.addEventListener("click",function(e){
+
+e.preventDefault();
+
+let category = this.getAttribute("href").replace("#","");
+
+
+document.querySelectorAll(".product-item").forEach(product=>{
+
+
+if(product.dataset.category === category){
+
+product.style.display="block";
+
+}else{
+
+product.style.display="none";
+
+}
+
+
+});
+
+
+
+document.querySelector(".sidebar")?.classList.remove("active");
+
+document.querySelector(".menu-overlay")?.classList.remove("active");
+
+
+
+setTimeout(()=>{
+
+document.querySelector("#featured")?.scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+},200);
+
+
+});
+
+});
    
 /* ================= CART SYSTEM ================= */
 
