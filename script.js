@@ -1446,23 +1446,27 @@ behavior:"smooth"
 
 
 
-/* ================= CATEGORY FILTER ================= */
+/* ================= CATEGORY FILTER FINAL ================= */
 
 
 document.querySelectorAll(".category-card").forEach(category=>{
 
 
-category.onclick=()=>{
+category.addEventListener("click",()=>{
 
 
-let id=category.id;
+let selectedCategory = category.id;
 
 
 
 document.querySelectorAll(".product-item").forEach(product=>{
 
 
-if(product.dataset.category===id){
+let productCategory = product.dataset.category;
+
+
+
+if(productCategory === selectedCategory){
 
 
 product.style.display="block";
@@ -1479,35 +1483,55 @@ product.style.display="none";
 }
 
 
+
+});
+
+
+
+// close sidebar if open
+
+if(sidebar && overlay){
+
+sidebar.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+
+
+// move to products section
+
+let productsSection=document.querySelector("#featured");
+
+
+if(productsSection){
+
+
+setTimeout(()=>{
+
+
+productsSection.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+
 });
 
 
-
-
-let section=
-document.querySelector(".featured-products");
-
-
-
-if(section){
-
-
-section.scrollIntoView({
-
-behavior:"smooth"
-
-});
+},200);
 
 
 }
 
 
 
-};
+});
 
 
 });
-
 
 
 
