@@ -464,12 +464,6 @@ message +=
 
 
 
-let url =
-"https://wa.me/923045255325?text="+
-encodeURIComponent(message);
-
-
-
 window.location.href="payment.html";
 
 
