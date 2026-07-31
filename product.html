@@ -668,24 +668,6 @@ product.images[currentImage];
 
 }
 
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-let exist = cart.find(item => item.name === product.name);
-
-if(exist){
-exist.qty++;
-}
-else{
-cart.push(product);
-}
-
-localStorage.setItem("cart", JSON.stringify(cart));
-
-};
-
-
-
 </script>
 
 
