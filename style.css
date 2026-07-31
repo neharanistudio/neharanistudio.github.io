@@ -3413,3 +3413,21 @@ color:#e45b99 !important;
 .menu-overlay.active{
     display:block;
 }
+.sidebar{
+    position:fixed !important;
+    top:0 !important;
+    left:-350px !important;
+    width:280px !important;
+    height:100vh !important;
+    background:white !important;
+    z-index:999999 !important;
+    padding:30px 20px !important;
+    overflow-y:auto !important;
+    display:block !important;
+    transition:0.4s ease !important;
+}
+
+
+.sidebar.active{
+    left:0 !important;
+}
