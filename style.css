@@ -3376,3 +3376,40 @@ color:#e45b99 !important;
 .sidebar.active{
     left: 0 !important;
 }
+/* ===== SIDEBAR OPEN FIX ===== */
+
+.sidebar{
+    position:fixed !important;
+    top:0 !important;
+    left:-300px !important;
+    width:280px !important;
+    height:100vh !important;
+    background:#fff !important;
+    z-index:99999 !important;
+    padding:30px 20px !important;
+    box-shadow:5px 0 20px rgba(0,0,0,.15);
+    transition:.3s ease !important;
+    overflow-y:auto;
+}
+
+
+.sidebar.active{
+    left:0 !important;
+}
+
+
+.menu-overlay{
+    position:fixed !important;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    z-index:99998;
+    display:none;
+}
+
+
+.menu-overlay.active{
+    display:block;
+}
