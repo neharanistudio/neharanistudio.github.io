@@ -464,7 +464,7 @@ message +=
 
 
 
-window.location.href="payment.html";
+window.open(url, "_blank");
 
 
 };
