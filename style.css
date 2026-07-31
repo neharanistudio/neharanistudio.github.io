@@ -3316,13 +3316,23 @@ color:#e45b99 !important;
 
 
 }
-/* ===== MOBILE CATEGORY NAME FIX ONLY ===== */
+/* ===== FINAL MOBILE CATEGORY FIX ===== */
 
 @media(max-width:768px){
 
+.categorySwiper{
+    padding-bottom:40px !important;
+    overflow:hidden !important;
+}
+
+
 .category-card{
-    height:auto !important;
+
+    width:85px !important;
+    height:115px !important;
+    border-radius:0 !important;
     overflow:visible !important;
+    background:transparent !important;
     display:flex !important;
     flex-direction:column !important;
     align-items:center !important;
@@ -3330,21 +3340,25 @@ color:#e45b99 !important;
 
 
 .category-card img{
+
     width:75px !important;
     height:75px !important;
     border-radius:50% !important;
+    object-fit:cover !important;
+
 }
 
 
 .category-card h3{
+
     display:block !important;
-    position:static !important;
     margin-top:10px !important;
     width:90px !important;
     height:auto !important;
-    overflow:visible !important;
-    text-align:center !important;
     font-size:12px !important;
+    text-align:center !important;
+    color:#333 !important;
+
 }
 
 }
