@@ -68,25 +68,7 @@ slidesPerView:4
 
 
 
-/* ================= SIDEBAR MENU FINAL ================= */
-
-
-const menuBtn = document.querySelector(".menu-icon");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".menu-overlay");
-
-
-
-if(menuBtn && sidebar && overlay){
-
-
-menuBtn.addEventListener("click",()=>{
-
-sidebar.classList.add("active");
-
-overlay.classList.add("active");
-
-});
+v
 
 
 
