@@ -31,40 +31,41 @@ clickable:true
 }
 
 
-/* ================= SIDEBAR MENU FINAL ================= */
+/* ================= SIDEBAR FILTER ================= */
 
+document.querySelectorAll(".sidebar a").forEach(link=>{
 
-const menuBtn = document.querySelector(".menu-icon");
-const sidebar = document.querySelector(".sidebar");
-const overlay = document.querySelector(".menu-overlay");
+    link.addEventListener("click",function(e){
 
+        e.preventDefault();
 
+        let category=this.dataset.category;
 
-if(menuBtn && sidebar && overlay){
+        // Menu Close
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
 
+        document.querySelectorAll(".product-item").forEach(product=>{
 
-menuBtn.addEventListener("click",()=>{
+            if(category==="all"){
+                product.style.display="block";
+            }
+            else if(product.dataset.category===category){
+                product.style.display="block";
+            }
+            else{
+                product.style.display="none";
+            }
 
-sidebar.classList.add("active");
+        });
 
-overlay.classList.add("active");
+        document.querySelector("#featured").scrollIntoView({
+            behavior:"smooth"
+        });
+
+    });
 
 });
-
-
-
-
-overlay.addEventListener("click",()=>{
-
-sidebar.classList.remove("active");
-
-overlay.classList.remove("active");
-
-});
-
-
-}
-
 
 
 /* ================= SIDEBAR MENU ================= */
