@@ -1458,37 +1458,28 @@ category.addEventListener("click",()=>{
 let selectedCategory = category.id;
 
 
-
 document.querySelectorAll(".product-item").forEach(product=>{
 
 
 let productCategory = product.dataset.category;
 
 
-
 if(productCategory === selectedCategory){
 
-
 product.style.display="block";
-
 
 }
 
 else{
 
-
 product.style.display="none";
 
-
 }
-
 
 
 });
 
 
-
-// close sidebar if open
 
 if(sidebar && overlay){
 
@@ -1500,16 +1491,12 @@ overlay.classList.remove("active");
 
 
 
-// move to products section
-
 let productsSection=document.querySelector("#featured");
 
 
 if(productsSection){
 
-
 setTimeout(()=>{
-
 
 productsSection.scrollIntoView({
 
@@ -1517,12 +1504,10 @@ behavior:"smooth",
 
 block:"start"
 
-
 });
 
 
 },200);
-
 
 }
 
@@ -1532,7 +1517,6 @@ block:"start"
 
 
 });
-
 
 
 
