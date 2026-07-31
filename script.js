@@ -68,33 +68,103 @@ slidesPerView:4
 
 
 
-/* ================= SIDEBAR ================= */
+/* ================= SIDEBAR MENU FINAL ================= */
 
 
-const menuBtn=document.querySelector(".menu-icon");
-const sidebar=document.querySelector(".sidebar");
-const overlay=document.querySelector(".menu-overlay");
+const menuBtn = document.querySelector(".menu-icon");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".menu-overlay");
+
 
 
 if(menuBtn && sidebar && overlay){
 
-menuBtn.onclick=()=>{
+
+menuBtn.addEventListener("click",()=>{
 
 sidebar.classList.add("active");
+
 overlay.classList.add("active");
 
-};
+});
 
 
-overlay.onclick=()=>{
+
+
+overlay.addEventListener("click",()=>{
 
 sidebar.classList.remove("active");
+
 overlay.classList.remove("active");
 
-};
+});
+
 
 }
 
+
+
+/* ================= SIDEBAR CATEGORY CLICK ================= */
+
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+
+link.addEventListener("click",()=>{
+
+
+// close menu after click
+
+if(sidebar && overlay){
+
+sidebar.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+
+
+// move to category
+
+let target = link.getAttribute("href");
+
+
+if(target && target.startsWith("#")){
+
+
+let section = document.querySelector(target);
+
+
+if(section){
+
+
+setTimeout(()=>{
+
+
+section.scrollIntoView({
+
+behavior:"smooth",
+
+block:"start"
+
+});
+
+
+},200);
+
+
+}
+
+
+}
+
+
+
+});
+
+
+});
 
 
 /* ================= CART SYSTEM ================= */
