@@ -743,365 +743,56 @@ window.open(
    /* ================= DETAIL ADD CART ================= */
 
 
-const detailAddCart = document.querySelector("#detailAddCart");
+function updateWishlist(){
 
-if (detailAddCart) {
+    if(wishlistItems){
 
-    detailAddCart.addEventListener("click", function (e) {
+        wishlistItems.innerHTML="";
 
-        e.preventDefault();
+        wishlist.forEach((item,index)=>{
 
-        if (!currentProduct) return;
+            wishlistItems.innerHTML += `
+            <div class="wishlist-product">
+                <span>❤️ ${item.name}</span>
+                <button class="remove-wishlist" data-index="${index}">
+                    Remove
+                </button>
+            </div>`;
+        });
 
-        let product = {
-            name: currentProduct.name,
-            price: currentProduct.price,
-            image: currentProduct.images[0],
-            qty: 1
-        };
+    }
 
-        let exist = cart.find(item => item.name === product.name);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
 
-        if (exist) {
-            exist.qty++;
-        } else {
-            cart.push(product);
+    // Home page hearts
+    document.querySelectorAll(".wishlist-add").forEach(btn=>{
+
+        let card = btn.closest(".product-card");
+
+        if(!card) return;
+
+        let name = card.querySelector("h3").innerText;
+
+        if(wishlist.find(item=>item.name===name)){
+            btn.classList.add("liked");
+        }else{
+            btn.classList.remove("liked");
         }
-
-        updateCart();
-
 
     });
 
-}
+    // Product page heart
+    if(detailWishlist && currentProduct){
 
+        if(wishlist.find(item=>item.name===currentProduct.name)){
+            detailWishlist.classList.add("liked");
+        }else{
+            detailWishlist.classList.remove("liked");
+        }
 
-
-
-
-
-/* ================= WISHLIST SYSTEM ================= */
-
-
-let wishlist=
-JSON.parse(localStorage.getItem("wishlist")) || [];
-
-
-
-const wishlistItems=
-document.querySelector(".wishlist-items");
-
-
-const wishlistBtn=
-document.querySelector(".wishlist-btn");
-
-
-const wishlistPanel=
-document.querySelector(".wishlist-panel");
-
-
-const closeWishlist=
-document.querySelector(".close-wishlist");
-
-
-
-
-
-function updateWishlist(){
-
-
-if(!wishlistItems) return;
-
-
-
-wishlistItems.innerHTML="";
-
-
-
-wishlist.forEach((item,index)=>{
-
-
-wishlistItems.innerHTML+=`
-
-<div class="wishlist-product">
-
-
-<span>
-❤️ ${item.name}
-</span>
-
-
-<button class="remove-wishlist" data-index="${index}">
-Remove
-</button>
-
-
-</div>
-
-`;
-
-
-});
-
-
-
-localStorage.setItem(
-"wishlist",
-JSON.stringify(wishlist)
-);
-
-
+    }
 
 }
-
-
-
-
-
-/* HOME HEART */
-
-
-document.querySelectorAll(".wishlist-add").forEach(btn=>{
-
-
-btn.onclick=(e)=>{
-
-
-e.stopPropagation();
-
-
-
-let card=
-btn.closest(".product-card");
-
-
-
-if(card){
-
-
-let item={
-
-
-name:
-card.querySelector("h3").innerText,
-
-
-price:
-card.querySelector(".product-price").innerText,
-
-
-image:
-card.querySelector("img").src
-
-
-};
-
-
-
-let exist=
-wishlist.find(
-(x)=>x.name===item.name
-);
-
-
-
-if(exist){
-
-
-wishlist=
-wishlist.filter(
-(x)=>x.name!==item.name
-);
-
-
-
-btn.classList.remove("liked");
-
-
-}
-
-else{
-
-
-wishlist.push(item);
-
-
-btn.classList.add("liked");
-
-
-}
-
-
-
-updateWishlist();
-
-
-}
-
-
-
-};
-
-
-});
-
-
-
-
-
-
-
-
-/* DETAIL HEART */
-
-
-const detailWishlist=
-document.querySelector("#detailWishlist");
-
-
-
-if(detailWishlist){
-
-
-detailWishlist.onclick=()=>{
-
-
-if(currentProduct){
-
-
-let exist=
-wishlist.find(
-(x)=>x.name===currentProduct.name
-);
-
-
-
-if(exist){
-
-
-wishlist=
-wishlist.filter(
-(x)=>x.name!==currentProduct.name
-);
-
-
-
-detailWishlist.classList.remove("liked");
-
-
-}
-
-else{
-
-
-wishlist.push({
-
-
-name:currentProduct.name,
-
-price:currentProduct.price,
-
-image:currentProduct.images[0]
-
-
-});
-
-
-
-detailWishlist.classList.add("liked");
-
-
-}
-
-
-
-updateWishlist();
-
-
-}
-
-
-};
-
-
-}
-
-
-
-
-
-
-/* WISHLIST OPEN */
-
-
-if(wishlistBtn && wishlistPanel){
-
-
-wishlistBtn.onclick=()=>{
-
-
-wishlistPanel.classList.add("active");
-
-
-updateWishlist();
-
-
-};
-
-
-}
-
-
-
-
-if(closeWishlist){
-
-
-closeWishlist.onclick=()=>{
-
-
-wishlistPanel.classList.remove("active");
-
-
-};
-
-
-}
-
-
-
-
-
-
-/* REMOVE WISHLIST */
-
-
-if(wishlistItems){
-
-
-wishlistItems.addEventListener("click",(e)=>{
-
-
-if(e.target.classList.contains("remove-wishlist")){
-
-
-let index=e.target.dataset.index;
-
-
-wishlist.splice(index,1);
-
-
-updateWishlist();
-
-
-}
-
-
-});
-
-
-}
-
 
 
 
