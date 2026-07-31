@@ -640,29 +640,6 @@ flex-shrink:0;
 
 
 
-
-.category-card{
-
-width:95px;
-
-height:95px;
-
-border-radius:50%;
-
-overflow:hidden;
-
-background:var(--light-pink);
-
-padding:5px;
-
-box-shadow:var(--shadow);
-
-cursor:pointer;
-
-}
-
-
-
 /* ================= SHOP BY CATEGORY FIX ================= */
 
 .category-section{
