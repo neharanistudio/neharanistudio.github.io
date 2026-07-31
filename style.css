@@ -3093,3 +3093,123 @@ height:110px;
 
 
 }
+/* ================= SIDEBAR FIX ================= */
+
+.sidebar{
+
+position:fixed;
+
+top:0;
+left:-320px;
+
+width:280px;
+
+height:100vh;
+
+background:#fff;
+
+z-index:9999;
+
+padding:30px 20px;
+
+box-shadow:5px 0 20px rgba(0,0,0,.15);
+
+transition:.4s ease;
+
+overflow-y:auto;
+
+}
+
+
+
+.sidebar.active{
+
+left:0;
+
+}
+
+
+
+.sidebar h3{
+
+font-size:22px;
+
+color:#e85d9e;
+
+margin-bottom:25px;
+
+}
+
+
+
+.sidebar a{
+
+display:block;
+
+padding:12px 10px;
+
+font-size:16px;
+
+color:#333;
+
+text-decoration:none;
+
+border-bottom:1px solid #f5d9e6;
+
+}
+
+
+
+.sidebar a:hover{
+
+background:#fff0f7;
+
+color:#e85d9e;
+
+}
+
+
+
+
+/* dark background when menu open */
+
+.menu-overlay{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.4);
+
+z-index:9998;
+
+display:none;
+
+}
+
+
+
+.menu-overlay.active{
+
+display:block;
+
+}
+
+
+
+/* mobile menu button */
+
+.menu-icon{
+
+cursor:pointer;
+
+font-size:25px;
+
+color:#e85d9e;
+
+}
