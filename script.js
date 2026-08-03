@@ -1278,9 +1278,7 @@ if(detailAddCart){
 
 detailAddCart.onclick = function(){
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-let product = {
+let newProduct = {
 
 name: document.getElementById("productName").innerText,
 
@@ -1293,7 +1291,10 @@ qty:1
 };
 
 
-let exist = cart.find(item=>item.name===product.name);
+let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let exist = cartData.find(item=>item.name===newProduct.name);
 
 
 if(exist){
@@ -1302,20 +1303,20 @@ exist.qty++;
 
 }else{
 
-cart.push(product);
+cartData.push(newProduct);
 
 }
 
 
-localStorage.setItem("cart", JSON.stringify(cart));
-
-updateCart();
+localStorage.setItem("cart", JSON.stringify(cartData));
 
 alert("Added To Cart 🛒");
 
 };
 
 }
+
+
 
 
 
@@ -1326,10 +1327,7 @@ if(detailWishlist){
 
 detailWishlist.onclick=function(){
 
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-
-let product={
+let newProduct = {
 
 name: document.getElementById("productName").innerText,
 
@@ -1340,10 +1338,20 @@ image: document.getElementById("mainProductImage").src
 };
 
 
-wishlist.push(product);
+let wishlistData = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 
-localStorage.setItem("wishlist",JSON.stringify(wishlist));
+let exist = wishlistData.find(item=>item.name===newProduct.name);
+
+
+if(!exist){
+
+wishlistData.push(newProduct);
+
+}
+
+
+localStorage.setItem("wishlist", JSON.stringify(wishlistData));
 
 
 alert("Added To Wishlist ❤️");
