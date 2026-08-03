@@ -8,44 +8,57 @@
 
 <title>Neha Rani Studio | Luxury Fashion & Gifts</title>
 
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Luxury Fashion, Gift Hampers, Dresses, Bags, Beauty Products & Accessories in Pakistan.">
 
+<meta name="keywords" content="Neha Rani Studio, Gift Hampers, Dresses, Bags, Beauty, Makeup, Accessories, Pakistan">
+
+<meta name="author" content="Neha Rani Studio">
+
+<meta name="theme-color" content="#e85d97">
+
+<link rel="icon" href="images/logo/logo.png">
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
 
 </head>
-
-
 <body>
-
 
 <!-- ================= TOP BAR ================= -->
 
 <div class="top-bar">
 
-<div class="top-left">
-FREE DELIVERY ON ORDERS ABOVE RS.5000
-</div>
+    <div class="top-left">
+        🚚 FREE DELIVERY ON ORDERS ABOVE RS. 5000
+    </div>
 
+    <div class="top-right">
 
-<div class="top-right">
+        <a href="#" id="trackOrder">
+            Track Order
+        </a>
 
-<a href="#" id="trackOrder">
-Track Order
-</a>
+        <span>|</span>
 
-<span>|</span>
+        <a href="contact.html">
+            Contact
+        </a>
 
-<a href="#contact">
-Contact
-</a>
-
-</div>
+    </div>
 
 </div>
 
@@ -53,152 +66,182 @@ Contact
 
 <!-- ================= HEADER ================= -->
 
-
 <header class="header">
 
+    <!-- Left -->
 
-<div class="header-left">
+    <div class="header-left">
 
-<div class="menu-icon" id="menuBtn">
+        <button class="menu-icon"
+                id="menuBtn"
+                type="button"
+                aria-label="Open Menu">
 
-<i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>
 
-</div>
-</div>
+        </button>
 
-
-
-<div class="header-center">
-
-<a href="#" class="logo">
-
-<img src="images/logo/logo.png" alt="Neha Rani Studio">
-
-<h2>
-Neha Rani Studio
-</h2>
-
-</a>
-
-</div>
+    </div>
 
 
 
+    <!-- Center Logo -->
 
-<div class="header-right">
+    <div class="header-center">
 
+        <a href="index.html" class="logo">
 
-<div class="search-btn">
+            <img src="images/logo/logo.png"
+                 alt="Neha Rani Studio Logo">
 
-<i class="fa-solid fa-magnifying-glass"></i>
+            <h2>
+                Neha Rani Studio
+            </h2>
 
-</div>
+        </a>
 
-
-
-<div class="wishlist-btn">
-
-<i class="fa-regular fa-heart"></i>
-
-</div>
-
+    </div>
 
 
-<div class="cart-btn">
 
-<i class="fa-solid fa-bag-shopping"></i>
+    <!-- Right Icons -->
 
-<span class="cart-count">
-0
-</span>
+    <div class="header-right">
 
-</div>
+        <button class="search-btn"
+                type="button"
+                aria-label="Search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </button>
 
 
-</div>
 
+        <button class="wishlist-btn"
+                type="button"
+                aria-label="Wishlist">
+
+            <i class="fa-regular fa-heart"></i>
+
+        </button>
+
+
+
+        <button class="cart-btn"
+                type="button"
+                aria-label="Shopping Cart">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span class="cart-count">
+                0
+            </span>
+
+        </button>
+
+    </div>
 
 </header>
-
-
-
-
 <!-- ================= NAVIGATION ================= -->
-  
+
 <nav class="main-nav">
 
+    <a href="index.html">Home</a>
 
-<a href="index.html">
-Home
-</a>
+    <a href="#categories">Categories</a>
 
+    <a href="#featured-products">Products</a>
 
-<a href="index.html#categories">
-Categories
-</a>
+    <a href="#reviews">Reviews</a>
 
+    <a href="about.html">About Us</a>
 
-<a href="index.html#featured">
-Products
-</a>
-
-
-<a href="index.html#reviews">
-Reviews
-</a>
-
-
-<a href="contact.html">
-Contact
-</a>
-
-
-<a href="about.html">
-About Us
-</a>
-
+    <a href="contact.html">Contact</a>
 
 </nav>
 
 
 
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <h3>Neha Rani Studio</h3>
+
+    <a href="#" data-category="all">
+        <i class="fa-solid fa-border-all"></i>
+        All Products
+    </a>
+
+    <a href="#" data-category="gift-hampers">
+        <i class="fa-solid fa-gift"></i>
+        Gift Hampers
+    </a>
+
+    <a href="#" data-category="ribbon-bouquets">
+        <i class="fa-solid fa-ribbon"></i>
+        Ribbon Bouquets
+    </a>
+
+    <a href="#" data-category="dresses">
+        <i class="fa-solid fa-shirt"></i>
+        Dresses
+    </a>
+
+    <a href="#" data-category="abayas">
+        <i class="fa-solid fa-person-dress"></i>
+        Abayas
+    </a>
+
+    <a href="#" data-category="bags">
+        <i class="fa-solid fa-bag-shopping"></i>
+        Bags
+    </a>
+
+    <a href="#" data-category="shoes">
+        <i class="fa-solid fa-shoe-prints"></i>
+        Shoes
+    </a>
+
+    <a href="#" data-category="jewelry">
+        <i class="fa-regular fa-gem"></i>
+        Jewelry
+    </a>
+
+    <a href="#" data-category="beauty">
+        <i class="fa-solid fa-spa"></i>
+        Beauty
+    </a>
+
+    <a href="#" data-category="makeup">
+        <i class="fa-solid fa-paintbrush"></i>
+        Makeup
+    </a>
+
+    <a href="#" data-category="perfumes">
+        <i class="fa-solid fa-spray-can-sparkles"></i>
+        Perfumes
+    </a>
+
+    <a href="#" data-category="accessories">
+        <i class="fa-solid fa-glasses"></i>
+        Accessories
+    </a>
+
+    <a href="#" data-category="customized-gifts">
+        <i class="fa-solid fa-box-open"></i>
+        Customized Gifts
+    </a>
+
+</aside>
 
 
-<div class="sidebar">
-<h3>Neha Rani Studio</h3>
 
-<a href="#featured-products" data-filter="gift-hampers">Gift Hampers</a>
-
-<a href="#featured-products" data-filter="ribbon-bouquets">Ribbon Bouquets</a>
-
-<a href="#featured-products" data-filter="dresses">Dresses</a>
-
-<a href="#featured-products" data-filter="abayas">Abayas</a>
-
-<a href="#featured-products" data-filter="bags">Bags</a>
-
-<a href="#featured-products" data-filter="shoes">Shoes</a>
-
-<a href="#featured-products" data-filter="jewelry">Jewelry</a>
-
-<a href="#featured-products" data-filter="beauty">Beauty</a>
-
-<a href="#featured-products" data-filter="makeup">Makeup</a>
-
-<a href="#featured-products" data-filter="perfumes">Perfumes</a>
-
-<a href="#featured-products" data-filter="accessories">Accessories</a>
-
-<a href="#featured-products" data-filter="customized-gifts">Customized Gifts</a>
-
-</div>
+<!-- ================= MENU OVERLAY ================= -->
 
 <div class="menu-overlay"></div>
-
-<section class="hero-slider">
-
 <!-- ================= HERO SECTION ================= -->
-
 
 <section class="hero-slider">
 
@@ -210,8 +253,9 @@ About Us
 
 
 
-<div class="swiper-slide">
+<!-- SLIDE 1 -->
 
+<div class="swiper-slide">
 
 <div class="hero-content">
 
@@ -235,7 +279,7 @@ Discover elegant dresses, handbags, beauty products and premium accessories.
 </p>
 
 
-<a href="#featured" class="hero-btn">
+<a href="#featured-products" class="hero-btn">
 Shop Now
 </a>
 
@@ -246,22 +290,21 @@ Shop Now
 
 <div class="hero-image">
 
-
-<img src="images/banner/banner1.png" alt="Luxury Fashion">
-
-
-</div>
-
-
+<img src="images/banner/banner1.png"
+alt="Luxury Fashion Collection">
 
 </div>
 
 
 </div>
 
+</div>
 
 
 
+
+
+<!-- SLIDE 2 -->
 
 <div class="swiper-slide">
 
@@ -288,7 +331,7 @@ Upgrade your style with our latest handbags and accessories.
 </p>
 
 
-<a href="#featured" class="hero-btn">
+<a href="#featured-products" class="hero-btn">
 Explore Collection
 </a>
 
@@ -299,12 +342,8 @@ Explore Collection
 
 <div class="hero-image">
 
-
-<img src="images/banner/banner2.png" alt="Premium Bags">
-
-
-</div>
-
+<img src="images/banner/banner2.png"
+alt="Premium Bags">
 
 </div>
 
@@ -312,8 +351,15 @@ Explore Collection
 </div>
 
 
+</div>
 
 
+
+
+
+
+
+<!-- SLIDE 3 -->
 
 <div class="swiper-slide">
 
@@ -340,7 +386,7 @@ Premium beauty products, perfumes and customized gifts.
 </p>
 
 
-<a href="#featured" class="hero-btn">
+<a href="#featured-products" class="hero-btn">
 View Products
 </a>
 
@@ -352,12 +398,8 @@ View Products
 <div class="hero-image">
 
 
-<img src="images/banner/banner3.png" alt="Beauty Collection">
-
-
-</div>
-
-
+<img src="images/banner/banner3.png"
+alt="Beauty Collection">
 
 </div>
 
@@ -365,10 +407,16 @@ View Products
 </div>
 
 
+</div>
+
+
+
 
 </div>
 
 
+
+<!-- Pagination -->
 
 <div class="swiper-pagination"></div>
 
@@ -378,7 +426,6 @@ View Products
 
 </section>
 <!-- ================= SHOP BY CATEGORY ================= -->
-
 
 <section class="category-section" id="categories">
 
@@ -390,12 +437,13 @@ Shop By Category
 </h2>
 
 
-<a href="#">
+<a href="#featured-products">
 View All
 </a>
 
 
 </div>
+
 
 
 
@@ -406,11 +454,15 @@ View All
 
 
 
+<!-- CATEGORY 1 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="gift">
+<div class="category-card"
+data-category="gift-hampers">
 
-<img src="images/categories/gifts.jpg" alt="Gift Hampers">
+<img src="images/categories/gifts.jpg"
+alt="Gift Hampers">
 
 <h3>
 Gift Hampers
@@ -423,28 +475,16 @@ Gift Hampers
 
 
 
-<div class="swiper-slide">
 
-<div class="category-card" id="flowers">
-
-<img src="images/categories/flowers.jpg" alt="Flower Bouquets">
-
-<h3>
-Flower Bouquets
-</h3>
-
-</div>
-
-</div>
-
-
-
+<!-- CATEGORY 2 -->
 
 <div class="swiper-slide">
 
-<div class="category-card" id="ribbon">
+<div class="category-card"
+data-category="ribbon-bouquets">
 
-<img src="images/categories/ribbon.jpg" alt="Ribbon Bouquets">
+<img src="images/categories/ribbon.jpg"
+alt="Ribbon Bouquets">
 
 <h3>
 Ribbon Bouquets
@@ -457,11 +497,16 @@ Ribbon Bouquets
 
 
 
+
+<!-- CATEGORY 3 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="dresses">
+<div class="category-card"
+data-category="dresses">
 
-<img src="images/categories/dresses.jpg" alt="Dresses">
+<img src="images/categories/dresses.jpg"
+alt="Dresses">
 
 <h3>
 Dresses
@@ -474,11 +519,16 @@ Dresses
 
 
 
+
+<!-- CATEGORY 4 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="abayas">
+<div class="category-card"
+data-category="abayas">
 
-<img src="images/categories/abayas.jpg" alt="Abayas">
+<img src="images/categories/abayas.jpg"
+alt="Abayas">
 
 <h3>
 Abayas
@@ -491,11 +541,16 @@ Abayas
 
 
 
+
+<!-- CATEGORY 5 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="bags">
+<div class="category-card"
+data-category="bags">
 
-<img src="images/categories/bags.jpg" alt="Bags">
+<img src="images/categories/bags.jpg"
+alt="Bags">
 
 <h3>
 Bags
@@ -508,11 +563,16 @@ Bags
 
 
 
+
+<!-- CATEGORY 6 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="shoes">
+<div class="category-card"
+data-category="shoes">
 
-<img src="images/categories/shoes.jpg" alt="Shoes">
+<img src="images/categories/shoes.jpg"
+alt="Shoes">
 
 <h3>
 Shoes
@@ -525,14 +585,19 @@ Shoes
 
 
 
+
+<!-- CATEGORY 7 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="jewellery">
+<div class="category-card"
+data-category="jewelry">
 
-<img src="images/categories/jewellery.jpg" alt="Jewellery">
+<img src="images/categories/jewellery.jpg"
+alt="Jewelry">
 
 <h3>
-Jewellery
+Jewelry
 </h3>
 
 </div>
@@ -542,11 +607,16 @@ Jewellery
 
 
 
+
+<!-- CATEGORY 8 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="beauty">
+<div class="category-card"
+data-category="beauty">
 
-<img src="images/categories/beauty.jpg" alt="Beauty">
+<img src="images/categories/beauty.jpg"
+alt="Beauty">
 
 <h3>
 Beauty
@@ -559,11 +629,16 @@ Beauty
 
 
 
+
+<!-- CATEGORY 9 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="makeup">
+<div class="category-card"
+data-category="makeup">
 
-<img src="images/categories/makeup.jpg" alt="Makeup">
+<img src="images/categories/makeup.jpg"
+alt="Makeup">
 
 <h3>
 Makeup
@@ -576,11 +651,16 @@ Makeup
 
 
 
+
+<!-- CATEGORY 10 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="perfumes">
+<div class="category-card"
+data-category="perfumes">
 
-<img src="images/categories/perfumes.jpg" alt="Perfumes">
+<img src="images/categories/perfumes.jpg"
+alt="Perfumes">
 
 <h3>
 Perfumes
@@ -593,11 +673,16 @@ Perfumes
 
 
 
+
+<!-- CATEGORY 11 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="accessories">
+<div class="category-card"
+data-category="accessories">
 
-<img src="images/categories/accessories.jpg" alt="Accessories">
+<img src="images/categories/accessories.jpg"
+alt="Accessories">
 
 <h3>
 Accessories
@@ -610,11 +695,16 @@ Accessories
 
 
 
+
+<!-- CATEGORY 12 -->
+
 <div class="swiper-slide">
 
-<div class="category-card" id="custom">
+<div class="category-card"
+data-category="customized-gifts">
 
-<img src="images/categories/custom.jpg" alt="Customized Gifts">
+<img src="images/categories/custom.jpg"
+alt="Customized Gifts">
 
 <h3>
 Customized Gifts
@@ -632,14 +722,7 @@ Customized Gifts
 
 
 </section>
-
-
-
-
-
-
 <!-- ================= FEATURED PRODUCTS ================= -->
-
 
 <section class="featured-products" id="featured-products">
 
@@ -661,15 +744,11 @@ View All
 
 
 
-
 <div class="products-wrapper">
 
 
 
-
-
 <!-- PRODUCT 1 -->
-
 
 <div class="product-item" data-category="gift-hampers">
 
@@ -679,14 +758,12 @@ View All
 
 <div class="product-image">
 
-
 <span class="product-tag">
 New
 </span>
 
-
-<img src="images/products/product1.jpg" alt="Luxury Gift Box">
-
+<img src="images/products/product1.jpg"
+alt="Luxury Gift Box">
 
 </div>
 
@@ -709,7 +786,8 @@ Rs. 2,999
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -717,7 +795,8 @@ Rs. 2,999
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -739,8 +818,8 @@ Add To Cart
 
 
 
-<!-- PRODUCT 2 -->
 
+<!-- PRODUCT 2 -->
 
 <div class="product-item" data-category="bags">
 
@@ -750,13 +829,13 @@ Add To Cart
 
 <div class="product-image">
 
-
 <span class="product-tag">
 Sale
 </span>
 
 
-<img src="images/products/product2.jpg" alt="Elegant Hand Bag">
+<img src="images/products/product2.jpg"
+alt="Elegant Hand Bag">
 
 
 </div>
@@ -776,10 +855,12 @@ Rs. 3,999
 </p>
 
 
+
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -787,7 +868,8 @@ Rs. 3,999
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -809,8 +891,8 @@ Add To Cart
 
 
 
-<!-- PRODUCT 3 -->
 
+<!-- PRODUCT 3 -->
 
 <div class="product-item" data-category="dresses">
 
@@ -821,7 +903,8 @@ Add To Cart
 <div class="product-image">
 
 
-<img src="images/products/product3.jpg" alt="Beautiful Dress">
+<img src="images/products/product3.jpg"
+alt="Beautiful Dress">
 
 
 </div>
@@ -845,7 +928,8 @@ Rs. 4,999
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -853,7 +937,8 @@ Rs. 4,999
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -875,8 +960,9 @@ Add To Cart
 
 
 
-<!-- PRODUCT 4 -->
 
+
+<!-- PRODUCT 4 -->
 
 <div class="product-item" data-category="perfumes">
 
@@ -892,7 +978,8 @@ Popular
 </span>
 
 
-<img src="images/products/product4.jpg" alt="Premium Perfume">
+<img src="images/products/product4.jpg"
+alt="Premium Perfume">
 
 
 </div>
@@ -916,7 +1003,8 @@ Rs. 2,499
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -924,7 +1012,8 @@ Rs. 2,499
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -946,8 +1035,8 @@ Add To Cart
 
 
 
-<!-- PRODUCT 5 -->
 
+<!-- PRODUCT 5 -->
 
 <div class="product-item" data-category="jewelry">
 
@@ -963,7 +1052,8 @@ New
 </span>
 
 
-<img src="images/products/product5.jpg" alt="Luxury Watch">
+<img src="images/products/product5.jpg"
+alt="Luxury Jewelry">
 
 
 </div>
@@ -987,7 +1077,8 @@ Rs. 5,499
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -995,7 +1086,8 @@ Rs. 5,499
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -1017,8 +1109,8 @@ Add To Cart
 
 
 
+
 <!-- PRODUCT 6 -->
-  
 
 <div class="product-item" data-category="shoes">
 
@@ -1029,7 +1121,8 @@ Add To Cart
 <div class="product-image">
 
 
-<img src="images/products/product6.jpg" alt="Ladies Shoes">
+<img src="images/products/product6.jpg"
+alt="Ladies Shoes">
 
 
 </div>
@@ -1053,7 +1146,8 @@ Rs. 3,499
 <div class="product-actions">
 
 
-<button class="wishlist-add">
+<button class="wishlist-add"
+type="button">
 
 <i class="fa-regular fa-heart"></i>
 
@@ -1061,7 +1155,8 @@ Rs. 3,499
 
 
 
-<button class="product-btn add-cart">
+<button class="product-btn add-cart"
+type="button">
 
 Add To Cart
 
@@ -1086,7 +1181,6 @@ Add To Cart
 
 </section>
 <!-- ================= LUXURY OFFER BANNER ================= -->
-
 
 <section class="offer-banner">
 
@@ -1113,7 +1207,7 @@ Discover elegant gift hampers, handbags, dresses, beauty products and premium ac
 
 
 
-<a href="#featured" class="hero-btn">
+<a href="#featured-products" class="hero-btn">
 Shop Collection
 </a>
 
@@ -1122,10 +1216,12 @@ Shop Collection
 
 
 
+
 <div class="offer-image">
 
 
-<img src="images/banner/offer.png" alt="Luxury Collection">
+<img src="images/banner/offer.png"
+alt="Luxury Collection">
 
 
 </div>
@@ -1168,62 +1264,95 @@ View All
 
 
 
+
 <div class="review-grid">
 
 
 
+<!-- REVIEW 1 -->
+
 <div class="review-card">
+
 
 <div class="stars">
 ★★★★★
 </div>
+
 
 <p>
 Beautiful dress quality was amazing. Fabric was exactly as shown in pictures. Loved it!
 </p>
 
+
 <h4>
 Hira Ahmed
 </h4>
 
+
 </div>
 
 
+
+
+
+
+<!-- REVIEW 2 -->
+
 <div class="review-card">
+
 
 <div class="stars">
 ★★★★★
 </div>
+
 
 <p>
 The gift packaging was so elegant. Perfect for my sister's birthday.
 </p>
 
+
 <h4>
 Maham Ali
 </h4>
 
+
 </div>
 
 
+
+
+
+
+
+<!-- REVIEW 3 -->
+
 <div class="review-card">
+
 
 <div class="stars">
 ★★★★★
 </div>
 
+
 <p>
 Amazing shopping experience. Fast response and premium quality products.
 </p>
+
 
 <h4>
 Zoya Khan
 </h4>
 
+
 </div>
 
 
 
+
+
+
+
+<!-- REVIEW 4 -->
 
 <div class="review-card">
 
@@ -1247,18 +1376,12 @@ Fatima Noor
 
 
 
+
 </div>
 
 
 </section>
-
-
-
-
-
-
 <!-- ================= FOOTER ================= -->
-
 
 <footer class="footer" id="contact">
 
@@ -1267,13 +1390,16 @@ Fatima Noor
 
 
 
+<!-- FOOTER ABOUT -->
+
 <div class="footer-box">
 
 
-<a href="#" class="footer-logo">
+<a href="index.html" class="footer-logo">
 
 
-<img src="images/logo/logo.png" alt="Logo">
+<img src="images/logo/logo.png"
+alt="Neha Rani Studio Logo">
 
 
 <h2>
@@ -1285,8 +1411,10 @@ Neha Rani Studio
 
 
 
+
 <p>
-Luxury Fashion, Gift Hampers, Bags, Beauty Products & Accessories. We bring elegance to every occasion.
+Luxury Fashion, Gift Hampers, Bags, Beauty Products & Accessories.
+We bring elegance to every occasion.
 </p>
 
 
@@ -1295,39 +1423,72 @@ Luxury Fashion, Gift Hampers, Bags, Beauty Products & Accessories. We bring eleg
 <div class="social-icons">
 
 
-<a href="https://instagram.com/neharani.studio" target="_blank">
+<a href="https://instagram.com/neharani.studio"
+target="_blank"
+aria-label="Instagram">
+
 <i class="fa-brands fa-instagram"></i>
+
 </a>
 
 
-<a href="https://www.facebook.com/share/1ENFDg64BN/" target="_blank">
+
+
+<a href="https://www.facebook.com/share/1ENFDg64BN/"
+target="_blank"
+aria-label="Facebook">
+
 <i class="fa-brands fa-facebook"></i>
+
 </a>
 
 
-<a href="https://www.tiktok.com/@neharani.studio" target="_blank">
+
+
+<a href="https://www.tiktok.com/@neharani.studio"
+target="_blank"
+aria-label="TikTok">
+
 <i class="fa-brands fa-tiktok"></i>
+
 </a>
 
 
-<a href="https://www.threads.com/@neharani.studio" target="_blank">
+
+
+<a href="https://www.threads.com/@neharani.studio"
+target="_blank"
+aria-label="Threads">
+
 <i class="fa-brands fa-threads"></i>
+
 </a>
 
 
-<a href="https://wa.me/923045255325" target="_blank">
+
+
+<a href="https://wa.me/923045255325"
+target="_blank"
+aria-label="WhatsApp">
+
 <i class="fa-brands fa-whatsapp"></i>
+
 </a>
 
 
-</div>
-
 
 </div>
 
 
+</div>
 
 
+
+
+
+
+
+<!-- CATEGORIES -->
 
 
 <div class="footer-box">
@@ -1338,29 +1499,37 @@ Categories
 </h3>
 
 
-<a href="#gift">
+
+<a href="#categories">
 Gift Hampers
 </a>
 
 
-<a href="#bags">
+<a href="#categories">
 Bags
 </a>
 
 
-<a href="#dresses">
+<a href="#categories">
 Dresses
 </a>
 
 
-<a href="#beauty">
+<a href="#categories">
 Beauty
 </a>
 
 
-<a href="#jewellery">
-Jewellery
+<a href="#categories">
+Jewelry
 </a>
+
+
+
+<a href="#categories">
+Accessories
+</a>
+
 
 
 </div>
@@ -1370,53 +1539,76 @@ Jewellery
 
 
 
+
+
+<!-- QUICK LINKS -->
+
+
 <div class="footer-box">
+
 
 <h3>
 Quick Links
 </h3>
 
+
+
 <a href="index.html">
 Home
 </a>
+
 
 <a href="#categories">
 Categories
 </a>
 
-<a href="#featured">
+
+<a href="#featured-products">
 Products
 </a>
+
 
 <a href="#reviews">
 Reviews
 </a>
 
+
 <a href="about.html">
 About Us
 </a>
+
 
 <a href="faq.html">
 FAQ
 </a>
 
+
 <a href="shipping.html">
 Shipping Information
 </a>
+
 
 <a href="payment.html">
 Payment Methods
 </a>
 
+
 <a href="contact.html">
 Contact Us
 </a>
+
+
 
 </div>
 
 
 
 
+
+
+
+
+<!-- CONTACT -->
 
 
 <div class="footer-box">
@@ -1427,9 +1619,11 @@ Contact
 </h3>
 
 
+
 <p>
 📍 Pakistan
 </p>
+
 
 
 <p>
@@ -1437,18 +1631,25 @@ Contact
 </p>
 
 
+
 <p>
 📧 DM on Instagram & Facebook
 </p>
 
 
-</div>
-
-
 
 </div>
 
 
+
+</div>
+
+
+
+
+
+
+<!-- FOOTER BOTTOM -->
 
 
 <div class="footer-bottom">
@@ -1464,24 +1665,14 @@ Contact
 
 
 </footer>
-
-
-
-
-
-
-
-
-<!-- ================= WHATSAPP BUTTON ================= -->
-
+<!-- ================= FLOAT WHATSAPP BUTTON ================= -->
 
 <a href="https://wa.me/923045255325"
 class="whatsapp-btn"
-target="_blank">
-
+target="_blank"
+aria-label="WhatsApp">
 
 <i class="fa-brands fa-whatsapp"></i>
-
 
 </a>
 
@@ -1499,11 +1690,13 @@ target="_blank">
 <div class="search-box">
 
 
-<button class="close-search">
+<button class="close-search"
+type="button">
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
 
 
 <h2>
@@ -1511,21 +1704,36 @@ Search Products
 </h2>
 
 
-<input type="text" id="searchInput" placeholder="Search products...">
 
 
-<button class="search-submit" id="searchButton">
+<input type="text"
+id="searchInput"
+placeholder="Search products...">
+
+
+
+
+
+<button class="search-submit"
+id="searchButton"
+type="button">
+
 
 <i class="fa-solid fa-magnifying-glass"></i>
+
 Search
+
 
 </button>
 
 
+
 </div>
 
 
 </div>
+
+
 
 
 
@@ -1538,11 +1746,15 @@ Search
 <div class="cart-panel">
 
 
-<button class="close-cart">
+
+<button class="close-cart"
+type="button">
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
+
 
 
 <h2>
@@ -1550,13 +1762,9 @@ Your Cart
 </h2>
 
 
-<div class="cart-items"></div>
 
 
-<button class="checkout-btn">
-Checkout
-</button>
-
+<div class="cart-items">
 
 </div>
 
@@ -1564,19 +1772,31 @@ Checkout
 
 
 
+<button class="checkout-btn"
+type="button">
+
+Checkout
+
+</button>
 
 
+
+</div>
 <!-- ================= WISHLIST PANEL ================= -->
 
 
 <div class="wishlist-panel">
 
 
-<button class="close-wishlist">
+
+<button class="close-wishlist"
+type="button">
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
+
 
 
 <h2>
@@ -1584,7 +1804,12 @@ Your Wishlist
 </h2>
 
 
-<div class="wishlist-items"></div>
+
+
+<div class="wishlist-items">
+
+</div>
+
 
 
 </div>
@@ -1594,20 +1819,29 @@ Your Wishlist
 
 
 
-<!-- ================= ORDER POPUP ================= -->
+
+
+
+<!-- ================= ORDER TRACK POPUP ================= -->
 
 
 <div class="order-popup">
 
 
+
 <div class="order-box">
 
 
-<button class="close-order">
+
+<button class="close-order"
+type="button">
 
 <i class="fa-solid fa-xmark"></i>
 
 </button>
+
+
+
 
 
 <h2>
@@ -1615,18 +1849,32 @@ Track Your Order
 </h2>
 
 
-<input type="text" placeholder="Enter Order ID">
 
 
-<button class="track-btn">
+<input type="text"
+placeholder="Enter Order ID">
+
+
+
+
+
+<button class="track-btn"
+type="button">
+
 Track Order
+
 </button>
 
 
+
+
 </div>
 
 
 </div>
+
+
+
 
 
 
@@ -1636,9 +1884,12 @@ Track Order
 <!-- ================= BACK TO TOP ================= -->
 
 
-<button id="topBtn">
+<button id="topBtn"
+type="button">
+
 
 <i class="fa-solid fa-arrow-up"></i>
+
 
 </button>
 
@@ -1647,10 +1898,14 @@ Track Order
 
 
 
-<!-- ================= SCRIPTS ================= -->
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 <script src="script.js"></script>
 
