@@ -557,20 +557,17 @@ const closeCart=document.querySelector(".close-cart");
 
 if(cartBtn && cartPanel){
 
-
 cartBtn.onclick=()=>{
 
+cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 cartPanel.classList.add("active");
 
 updateCart();
 
-
 };
 
-
 }
-
 
 
 if(closeCart){
