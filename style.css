@@ -3045,41 +3045,24 @@ height:110px;
 /* ================= SIDEBAR FINAL FIX ================= */
 
 .sidebar{
-
-position:fixed !important;
-
-top:0 !important;
-
-left:-320px !important;
-
-width:280px !important;
-
-height:100vh !important;
-
-background:#ffffff !important;
-
-z-index:99999 !important;
-
-padding:30px 20px !important;
-
-box-shadow:5px 0 20px rgba(0,0,0,0.15);
-
-transition:0.4s ease !important;
-
-overflow-y:auto !important;
-
-display:block !important;
-
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    z-index: 99999;
+    padding: 25px;
+    overflow-y: auto;
+    box-shadow: 5px 0 25px rgba(0,0,0,.15);
+    transition: left .35s ease;
 }
 
 
 
 .sidebar.active{
-
-left:0 !important;
-
+    left:0;
 }
-
 
 
 .sidebar h3{
@@ -3097,63 +3080,42 @@ font-weight:600;
 
 
 .sidebar a{
-
-display:block !important;
-
-padding:12px 10px;
-
-font-size:16px;
-
-color:#333;
-
-text-decoration:none;
-
-border-bottom:1px solid #f5d9e6;
-
+    display:block;
+    padding:14px 10px;
+    color:#333;
+    border-bottom:1px solid #f3f3f3;
+    transition:.3s;
 }
 
 
 
 .sidebar a:hover{
-
-background:#fff0f7;
-
-color:#e85d9e;
-
+    color:var(--dark-pink);
+    padding-left:18px;
+    background:#fff5fa;
 }
-
 
 
 
 /* Background when menu opens */
 
 .menu-overlay{
-
-position:fixed !important;
-
-top:0;
-
-left:0;
-
-width:100%;
-
-height:100%;
-
-background:rgba(0,0,0,0.4);
-
-z-index:99998;
-
-display:none;
-
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:99998;
 }
 
 
 
 .menu-overlay.active{
-
-display:block !important;
-
+    opacity:1;
+    visibility:visible;
 }
+
 
 
 
