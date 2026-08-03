@@ -1284,3 +1284,45 @@ window.location.href =
 
 
 });
+// PRODUCT PAGE ADD TO CART
+
+const detailCartBtn = document.getElementById("detailAddCart");
+
+if(detailCartBtn){
+
+detailCartBtn.addEventListener("click",()=>{
+
+alert("Product added to cart");
+
+});
+
+}
+
+
+// PRODUCT PAGE WISHLIST
+
+const detailWishlistBtn = document.getElementById("detailWishlist");
+
+if(detailWishlistBtn){
+
+detailWishlistBtn.addEventListener("click",()=>{
+
+alert("Added to wishlist");
+
+});
+
+}
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+if(whatsappBtn){
+
+whatsappBtn.addEventListener("click",()=>{
+
+window.open(
+"https://wa.me/923045255325?text=I want to order this product",
+"_blank"
+);
+
+});
+
+}
