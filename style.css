@@ -2316,3 +2316,27 @@ body{
     cursor:pointer;
 
 }
+/* IMAGE SLIDER BUTTONS BELOW IMAGE */
+
+.image-buttons{
+
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+
+}
+
+
+.image-buttons button{
+
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#e85d97;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+
+}
