@@ -1273,3 +1273,82 @@ window.location.href =
 
 
 });
+/* ===== PRODUCT DETAIL BUTTONS ===== */
+
+const detailAddCart = document.getElementById("detailAddCart");
+
+if(detailAddCart){
+
+detailAddCart.onclick = function(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+let product = {
+
+name: document.getElementById("productName").innerText,
+
+price: document.getElementById("productPrice").innerText,
+
+image: document.getElementById("mainProductImage").src,
+
+qty:1
+
+};
+
+
+let exist = cart.find(item=>item.name===product.name);
+
+
+if(exist){
+
+exist.qty++;
+
+}else{
+
+cart.push(product);
+
+}
+
+
+localStorage.setItem("cart",JSON.stringify(cart));
+
+alert("Added To Cart 🛒");
+
+};
+
+}
+
+
+
+const detailWishlist = document.getElementById("detailWishlist");
+
+
+if(detailWishlist){
+
+detailWishlist.onclick=function(){
+
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+
+let product={
+
+name: document.getElementById("productName").innerText,
+
+price: document.getElementById("productPrice").innerText,
+
+image: document.getElementById("mainProductImage").src
+
+};
+
+
+wishlist.push(product);
+
+
+localStorage.setItem("wishlist",JSON.stringify(wishlist));
+
+
+alert("Added To Wishlist ❤️");
+
+};
+
+}
