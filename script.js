@@ -569,7 +569,6 @@ updateCart();
 
 }
 
-
 if(closeCart){
 
 
