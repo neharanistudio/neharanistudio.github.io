@@ -598,24 +598,22 @@ cartPanel.classList.remove("active");
 const checkoutBtn=document.querySelector(".checkout-btn");
 
 
-
 if(checkoutBtn){
 
 
 checkoutBtn.onclick=()=>{
 
 
+let cart=JSON.parse(localStorage.getItem("cart")) || [];
+
 
 if(cart.length===0){
-
 
 alert("Your cart is empty 🛒");
 
 return;
 
-
 }
-
 
 
 let message=
@@ -623,13 +621,10 @@ let message=
 "I want to order from Neha Rani Studio:\n\n";
 
 
-
-
 cart.forEach((item,index)=>{
 
 
 message+=
-
 (index+1)+". 🛍 "+item.name+
 "\nQty: "+item.qty+
 "\nPrice: "+item.price+
@@ -639,9 +634,7 @@ message+=
 });
 
 
-
 message+="Please confirm my order 🤍";
-
 
 
 window.open(
@@ -652,7 +645,6 @@ encodeURIComponent(message),
 "_blank"
 
 );
-
 
 
 };
