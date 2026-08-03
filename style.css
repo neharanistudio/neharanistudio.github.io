@@ -2303,13 +2303,6 @@ body{
 }
 /* SLIDER BUTTONS UNDER IMAGE CENTER */
 
-.product-gallery{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-
 .image-buttons{
 
     display:flex;
