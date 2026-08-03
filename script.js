@@ -1310,13 +1310,10 @@ cart.push(product);
 }
 
 
-localStorage.setItem("cart",JSON.stringify(cart));
+localStorage.setItem("cart", JSON.stringify(cart));
 
-   if(typeof updateCart === "function"){
-    updateCart();
-}
+updateCart();
 
-   
 alert("Added To Cart 🛒");
 
 };
