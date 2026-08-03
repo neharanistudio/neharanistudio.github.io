@@ -2334,32 +2334,24 @@ body{
 
 .image-buttons{
 
-    position:absolute;
-    top:50%;
-    left:0;
-    right:0;
-    transform:translateY(-50%);
-
+    position:static;
     display:flex;
-    justify-content:space-between;
-
-    padding:0 20px;
-    z-index:5;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
 
 }
+
 
 
 .image-buttons button{
 
     width:45px;
     height:45px;
-
     border-radius:50%;
     border:none;
-
     background:#e85d97;
     color:white;
-
     font-size:22px;
     cursor:pointer;
 
