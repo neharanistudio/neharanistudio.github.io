@@ -780,9 +780,11 @@ cart.push(item);
 
 localStorage.setItem("cart", JSON.stringify(cart));
 
+if(typeof updateCart === "function"){
+    updateCart();
+}
 
 alert("Product Added To Cart 🛒");
-
 
 };
 
@@ -797,11 +799,35 @@ if(detailWish){
 
 detailWish.onclick = ()=>{
 
-alert("Added To Wishlist ❤️");
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
+
+let item = {
+name: product.name,
+price: product.price,
+image: product.images[0]
 };
 
+
+let exist = wishlist.find(x=>x.name === item.name);
+
+
+if(!exist){
+
+wishlist.push(item);
+
 }
+
+
+localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+
+if(typeof updateWishlist === "function"){
+    updateWishlist();
+}
+
+
+alert("Added To Wishlist ❤️");
 
 
 
