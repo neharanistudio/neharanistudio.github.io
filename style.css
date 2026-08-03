@@ -2316,30 +2316,36 @@ body{
     cursor:pointer;
 
 }
-/* SLIDER BUTTONS EXACT CENTER */
+/* PRODUCT IMAGE SLIDER BUTTONS CENTER */
 
 .product-gallery{
     position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
 }
 
 
-#mainProductImage{
-    display:block;
+.product-gallery #mainProductImage{
+
     width:100%;
+    height:100%;
+    object-fit:cover;
+
 }
 
 
 .image-buttons{
+
     position:absolute;
     top:50%;
-    left:50%;
-    transform:translate(-50%, -50%);
+    left:0;
+    right:0;
+    transform:translateY(-50%);
+
     display:flex;
-    gap:15px;
-    z-index:10;
+    justify-content:space-between;
+
+    padding:0 20px;
+    z-index:5;
+
 }
 
 
@@ -2347,10 +2353,14 @@ body{
 
     width:45px;
     height:45px;
+
     border-radius:50%;
     border:none;
+
     background:#e85d97;
     color:white;
+
     font-size:22px;
+    cursor:pointer;
 
 }
