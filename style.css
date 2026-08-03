@@ -2184,3 +2184,120 @@ body{
 }
 
 }
+/* ================= RELATED PRODUCTS ================= */
+
+.related-products{
+
+    background:#fff8fb;
+    padding:60px 5%;
+
+}
+
+
+.related-products h2{
+
+    text-align:center;
+    font-size:32px;
+    margin-bottom:40px;
+    color:#222;
+
+}
+
+
+
+.related-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+
+
+.related-card{
+
+    background:white;
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.related-card img{
+
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px;
+
+}
+
+
+
+.related-card h3{
+
+    margin:15px 0 8px;
+    font-size:20px;
+    color:#222;
+
+}
+
+
+
+.related-card p{
+
+    color:#e85d97;
+    font-weight:700;
+    font-size:18px;
+
+}
+
+
+
+.related-card a{
+
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 25px;
+    background:#e85d97;
+    color:white;
+    border-radius:25px;
+    text-decoration:none;
+
+}
+
+
+
+@media(max-width:768px){
+
+.related-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.related-card img{
+
+    height:180px;
+
+}
+
+}
+
+
+@media(max-width:480px){
+
+.related-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
