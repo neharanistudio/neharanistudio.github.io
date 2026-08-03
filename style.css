@@ -2317,21 +2317,6 @@ body{
 
 }
 /* PRODUCT IMAGE SLIDER BUTTONS CENTER */
-
-.product-gallery{
-    position:relative;
-}
-
-
-.product-gallery #mainProductImage{
-
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-}
-
-
 .image-buttons{
 
     position:static;
