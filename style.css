@@ -2301,3 +2301,38 @@ body{
 }
 
 }
+/* PRODUCT IMAGE SLIDER BUTTONS CENTER */
+
+.product-gallery{
+    position:relative;
+}
+
+
+.image-buttons{
+
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    transform:translateY(-50%);
+    display:flex;
+    justify-content:space-between;
+    padding:0 15px;
+    pointer-events:none;
+
+}
+
+
+.image-buttons button{
+
+    pointer-events:auto;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    border:none;
+    background:#e85d97;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+
+}
