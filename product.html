@@ -654,7 +654,8 @@ images:[
 
 
 };
-  
+
+
 
 const params = new URLSearchParams(window.location.search);
 
@@ -686,8 +687,33 @@ document.getElementById("whatsappBtn").href =
 + product.name;
 
 
+}
+
+
+
+function nextImage(){
+
+
+if(!product) return;
+
+
+currentImage++;
+
+
+if(currentImage >= product.images.length){
+
+currentImage = 0;
 
 }
+
+
+document.getElementById("mainProductImage").src =
+product.images[currentImage];
+
+
+}
+
+
 
 function prevImage(){
 
@@ -705,9 +731,14 @@ currentImage = product.images.length - 1;
 }
 
 
-
 document.getElementById("mainProductImage").src =
 product.images[currentImage];
 
 
 }
+
+
+</script>
+
+
+<script src="script.js"></script>
