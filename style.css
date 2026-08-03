@@ -2303,6 +2303,16 @@ body{
 }
 /* SLIDER BUTTONS UNDER IMAGE CENTER */
 
+.product-gallery{
+
+    width:45%;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
 .image-buttons{
 
     display:flex;
