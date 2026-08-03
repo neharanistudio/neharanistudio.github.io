@@ -825,21 +825,17 @@ updateWishlist();
 
 if(wishlistBtn && wishlistPanel){
 
-
 wishlistBtn.onclick=()=>{
 
+wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
 wishlistPanel.classList.add("active");
 
-
 updateWishlist();
-
 
 };
 
-
 }
-
 
 
 
