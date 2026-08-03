@@ -2303,26 +2303,6 @@ body{
 }
 /* PRODUCT IMAGE SLIDER BUTTONS CENTER */
 
-.product-gallery{
-    position:relative;
-}
-
-
-.image-buttons{
-
-    position:absolute;
-    top:50%;
-    left:0;
-    width:100%;
-    transform:translateY(-50%);
-    display:flex;
-    justify-content:space-between;
-    padding:0 15px;
-    pointer-events:none;
-
-}
-
-
 .image-buttons button{
 
     pointer-events:auto;
