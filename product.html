@@ -745,7 +745,85 @@ product.images[currentImage];
 
 
 }
+// ================= PRODUCT DETAIL BUTTONS =================
 
+const detailCart = document.getElementById("detailAddCart");
+
+if(detailCart){
+
+detailCart.onclick = ()=>{
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+let item = {
+name: product.name,
+price: product.price,
+image: product.images[0],
+qty: 1
+};
+
+
+let exist = cart.find(x=>x.name === item.name);
+
+
+if(exist){
+
+exist.qty++;
+
+}else{
+
+cart.push(item);
+
+}
+
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+
+alert("Product Added To Cart 🛒");
+
+
+};
+
+}
+
+
+
+
+const detailWish = document.getElementById("detailWishlist");
+
+if(detailWish){
+
+detailWish.onclick = ()=>{
+
+alert("Added To Wishlist ❤️");
+
+};
+
+}
+
+
+
+
+
+const buyBtn = document.getElementById("whatsappBtn");
+
+if(buyBtn){
+
+buyBtn.onclick = ()=>{
+
+window.open(
+
+"https://wa.me/923045255325?text=I want to order " + product.name,
+
+"_blank"
+
+);
+
+};
+
+}
 </script>
 
 
