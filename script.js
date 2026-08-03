@@ -1315,13 +1315,11 @@ cart.push(item);
 
 localStorage.setItem("cart",JSON.stringify(cart));
 
+if(typeof updateCart === "function"){
+    updateCart();
+}
 
 alert("Added To Cart 🛒");
-
-
-};
-
-}
 
 
 
