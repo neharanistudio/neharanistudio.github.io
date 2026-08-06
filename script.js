@@ -1265,6 +1265,7 @@ window.location.href =
 
 
 });
+
 /* ===== PRODUCT DETAIL BUTTONS ===== */
 
 const detailAddCart = document.getElementById("detailAddCart");
@@ -1285,12 +1286,9 @@ qty:1
 
 };
 
-
 let cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
-
 let exist = cartData.find(item=>item.name===newProduct.name);
-
 
 if(exist){
 
@@ -1302,15 +1300,18 @@ cartData.push(newProduct);
 
 }
 
-
 localStorage.setItem("cart", JSON.stringify(cartData));
+
+/* 👇 Ye 3 lines add karo */
+cart = cartData;
+
+updateCart();
 
 alert("Added To Cart 🛒");
 
 };
 
 }
-
 
 
 
