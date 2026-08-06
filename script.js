@@ -1270,49 +1270,40 @@ window.location.href =
 
 const detailAddCart = document.getElementById("detailAddCart");
 
-if(detailAddCart){
+if (detailAddCart) {
 
-detailAddCart.onclick = function(){
+    detailAddCart.onclick = function () {
 
-let newProduct = {
+        let newProduct = {
+            name: document.getElementById("productName").innerText,
+            price: document.getElementById("productPrice").innerText,
+            image: document.getElementById("mainProductImage").src,
+            qty: 1
+        };
 
-name: document.getElementById("productName").innerText,
+        let cartData = JSON.parse(localStorage.getItem("cart")) || [];
 
-price: document.getElementById("productPrice").innerText,
+        let exist = cartData.find(item => item.name === newProduct.name);
 
-image: document.getElementById("mainProductImage").src,
+        if (exist) {
+            exist.qty++;
+        } else {
+            cartData.push(newProduct);
+        }
 
-qty:1
+        localStorage.setItem("cart", JSON.stringify(cartData));
 
-};
+        // Cart count update
+        const cartCount = document.querySelector(".cart-count");
+        if (cartCount) {
+            cartCount.innerText = cartData.reduce((total, item) => total + item.qty, 0);
+        }
 
-let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+        alert("Added To Cart 🛒");
 
-let exist = cartData.find(item=>item.name===newProduct.name);
-
-if(exist){
-
-exist.qty++;
-
-}else{
-
-cartData.push(newProduct);
-
-}
-
-localStorage.setItem("cart", JSON.stringify(cartData));
-
-/* 👇 Ye 3 lines add karo */
-cart = cartData;
-
-updateCart();
-
-alert("Added To Cart 🛒");
-
-};
+    };
 
 }
-
 
 
 
