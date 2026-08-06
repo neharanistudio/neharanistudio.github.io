@@ -531,12 +531,12 @@ updateCart();
 
 updateCart();
 
-
+/* 👈 YAHAN CURSOR RAKHO */
 
 console.log("Neha Rani Studio JS Part 1 Loaded ✅");
 
-
 });
+
 /* ==========================================
    NEHA RANI STUDIO
    CLEAN SCRIPT.JS PART 2
