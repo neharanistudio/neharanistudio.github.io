@@ -3,768 +3,687 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Product Details - Neha Rani Studio</title>
+    <title>Product Details | Neha Rani Studio</title>
 
-<link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
 
+<!-- ================= TOP BAR ================= -->
 
-<!-- PRODUCT DETAILS -->
+<div class="top-bar">
+
+    <span>✨ Welcome to Neha Rani Studio</span>
+
+    <div class="top-right">
+
+        <a href="#">Track Order</a>
+
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+</div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="header-left">
+
+        <button id="menuBtn" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+    <div class="header-center">
+
+        <a href="index.html" class="logo">
+
+            <img src="images/logo/logo.png" alt="Neha Rani Studio">
+
+            <h2>Neha Rani Studio</h2>
+
+        </a>
+
+    </div>
+
+    <div class="header-right">
+
+        <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button class="wishlist-btn">
+            <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <button class="cart-btn">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <span class="cart-count">0</span>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="main-nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#categories">Categories</a>
+
+    <a href="index.html#featured-products">Shop</a>
+
+    <a href="about.html">About Us</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <h3>Shop Categories</h3>
+
+    <a href="#" data-category="all">
+        All Products
+    </a>
+
+    <a href="#" data-category="gift-hampers">
+        Gift Hampers
+    </a>
+
+    <a href="#" data-category="ribbon-bouquets">
+        Ribbon Bouquets
+    </a>
+
+    <a href="#" data-category="dresses">
+        Dresses
+    </a>
+
+    <a href="#" data-category="abayas">
+        Abayas
+    </a>
+
+    <a href="#" data-category="bags">
+        Bags
+    </a>
+
+    <a href="#" data-category="shoes">
+        Shoes
+    </a>
+
+    <a href="#" data-category="jewelry">
+        Jewelry
+    </a>
+
+    <a href="#" data-category="beauty">
+        Beauty
+    </a>
+
+    <a href="#" data-category="makeup">
+        Makeup
+    </a>
+
+    <a href="#" data-category="perfumes">
+        Perfumes
+    </a>
+
+    <a href="#" data-category="accessories">
+        Accessories
+    </a>
+
+    <a href="#" data-category="customized-gifts">
+        Customized Gifts
+    </a>
+
+</div>
+
+<div class="menu-overlay"></div>
+<!-- ================= PRODUCT DETAILS ================= -->
 
 <section class="product-detail-page">
 
+    <!-- PRODUCT GALLERY -->
 
-<div class="product-gallery">
+    <div class="product-gallery">
 
+        <img
+            id="mainProductImage"
+            src=""
+            alt="Product Image"
+        >
 
-<img id="mainProductImage" src="" alt="Product">
-<div class="product-thumbnails" id="productThumbnails"></div>
+        <div
+            class="product-thumbnails"
+            id="productThumbnails">
+        </div>
 
-<div class="image-buttons">
+        <div class="image-buttons">
 
-<button onclick="prevImage()">❮</button>
+            <button
+                type="button"
+                onclick="prevImage()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-<button onclick="nextImage()">❯</button>
+            <button
+                type="button"
+                onclick="nextImage()">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
-</div>
+        </div>
 
-
-</div>
-
-
-
-
-
-<div class="product-detail-info">
-
-
-<h1 id="productName"></h1>
-
-
-<h2 id="productPrice"></h2>
-
-
-<div class="rating">
-
-⭐⭐⭐⭐⭐
-
-</div>
+    </div>
 
 
+    <!-- PRODUCT INFORMATION -->
 
-<div class="description">
+    <div class="product-detail-info">
 
+        <span class="product-badge">
+            Premium Collection
+        </span>
 
-<h3>Product Description</h3>
+        <h1 id="productName">
+            Loading Product...
+        </h1>
 
+        <h2 id="productPrice">
+            Rs. 0
+        </h2>
 
-<p id="productDescription">
+        <div class="rating">
 
-Premium quality product from Neha Rani Studio.
-Beautiful design with elegant finishing.
-Perfect for gifting and everyday style.
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
 
-</p>
+            <span>(5.0 Reviews)</span>
 
-
-</div>
-
-
-
-
-
-<div class="delivery-info">
-
-<p>🚚 Delivery Available Across Pakistan</p>
-
-<p>💳 Advance Payment Required</p>
-
-<p>✅ Order Confirmed After Payment</p>
-
-</div>
+        </div>
 
 
+        <div class="description">
+
+            <h3>Product Description</h3>
+
+            <p id="productDescription">
+
+                Premium quality product from
+                <strong>Neha Rani Studio.</strong>
+
+                Beautiful finishing, luxury packaging,
+                elegant design and premium quality.
+
+                Perfect for gifting and personal use.
+
+            </p>
+
+        </div>
 
 
-<div class="buttons">
+        <div class="delivery-info">
 
-<button class="add-cart" id="detailAddCart">
-🛒 Add To Cart
-</button>
+            <p>🚚 Delivery Available All Over Pakistan</p>
 
+            <p>💳 Advance Payment Required</p>
 
-<button class="wishlist-add" id="detailWishlist">
-<i class="fa-regular fa-heart"></i>
-</button>
+            <p>📦 Secure Packing & Fast Dispatch</p>
 
+            <p>✅ 100% Original Product</p>
 
-<button id="whatsappBtn" class="buy-btn">
-💬 Buy Now
-</button>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="buttons">
 
+            <button
+                id="detailAddCart"
+                class="add-cart">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add To Cart
+
+            </button>
+
+
+            <button
+                id="detailWishlist"
+                class="wishlist-add">
+
+                <i class="fa-regular fa-heart"></i>
+
+            </button>
+
+
+            <a
+                href="#"
+                id="whatsappBtn"
+                class="buy-btn">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Buy Now
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
-  
 <!-- ================= CART PANEL ================= -->
 
 <div class="cart-panel">
 
-<button class="close-cart" type="button">
-<i class="fa-solid fa-xmark"></i>
-</button>
+    <button class="close-cart" type="button">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
 
-<h2>Your Cart</h2>
+    <h2>Your Cart</h2>
 
-<div class="cart-items"></div>
+    <div class="cart-items"></div>
 
-<button class="checkout-btn" type="button">
-Checkout
-</button>
+    <button class="checkout-btn" type="button">
+        <i class="fa-brands fa-whatsapp"></i>
+        Checkout on WhatsApp
+    </button>
 
 </div>
+
+
 
 <!-- ================= WISHLIST PANEL ================= -->
 
 <div class="wishlist-panel">
 
-<button class="close-wishlist" type="button">
-<i class="fa-solid fa-xmark"></i>
-</button>
+    <button class="close-wishlist" type="button">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
 
-<h2>Your Wishlist</h2>
+    <h2>Your Wishlist</h2>
 
-<div class="wishlist-items"></div>
+    <div class="wishlist-items"></div>
 
 </div>
 
 
-<!-- REVIEWS -->
 
+<!-- ================= SEARCH POPUP ================= -->
+
+<div class="search-popup">
+
+    <div class="search-box">
+
+        <button class="close-search" type="button">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Search Products</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button
+            id="searchButton"
+            class="search-submit"
+            type="button">
+
+            Search
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= TRACK ORDER POPUP ================= -->
+
+<div class="order-popup">
+
+    <div class="order-box">
+
+        <button class="close-order" type="button">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <h2>Track Your Order</h2>
+
+        <input
+            type="text"
+            placeholder="Enter Order ID"
+        >
+
+        <button
+            class="track-btn"
+            type="button">
+
+            Track Order
+
+        </button>
+
+    </div>
+
+</div>
+<!-- ================= CUSTOMER REVIEWS ================= -->
 
 <section class="reviews">
 
+    <div class="section-heading">
 
-<h2>Customer Reviews</h2>
+        <h2>Customer Reviews</h2>
 
+    </div>
 
-<div class="review-grid">
+    <div class="review-grid">
 
+        <div class="review-card">
 
-<div class="review-card">
+            <div class="stars">
+                ★★★★★
+            </div>
 
-<div class="stars">
-★★★★★
-</div>
+            <p>
+                Amazing quality and beautiful packaging.
+                The product was exactly as shown.
+                Highly recommended!
+            </p>
 
-<p>
-Amazing quality and beautiful packaging.
-Loved my purchase.
-</p>
+            <h4>Sarah Khan</h4>
 
-<h4>
-Sarah Khan
-</h4>
-
-</div>
-
-
+        </div>
 
 
+        <div class="review-card">
 
-<div class="review-card">
+            <div class="stars">
+                ★★★★★
+            </div>
 
-<div class="stars">
-★★★★★
-</div>
+            <p>
+                Very premium quality and fast delivery.
+                I will definitely order again.
+            </p>
 
-<p>
-Product exactly same as shown.
-Highly recommended.
-</p>
+            <h4>Ayesha Malik</h4>
 
-<h4>
-Ayesha Malik
-</h4>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="review-card">
 
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Excellent customer service and luxury
+                packaging. Loved everything.
+            </p>
+
+            <h4>Hina Ali</h4>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                One of the best online shopping
+                experiences. Highly satisfied.
+            </p>
+
+            <h4>Mahnoor Ahmed</h4>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-
-
-
-<!-- RELATED PRODUCTS -->
-
+<!-- ================= RELATED PRODUCTS ================= -->
 
 <section class="related-products">
 
+    <div class="section-heading">
 
-<h2>You May Also Like</h2>
+        <h2>You May Also Like</h2>
 
+    </div>
 
-<div class="related-grid">
+    <div class="related-grid" id="relatedProducts">
 
+        <!-- Product 1 -->
 
+        <div class="related-card">
 
-<div class="related-card">
+            <img src="images/product1-1.jpg" alt="Gift Hamper">
 
-<img src="images/product1-1.jpg">
+            <h3>Luxury Gift Hamper</h3>
 
-<h3>
-Luxury Gift Box
-</h3>
+            <p>Rs. 2,999</p>
 
-<p>
-Rs. 2,999
-</p>
+            <a href="product.html?id=gift-hamper">
+                View Product
+            </a>
 
-<a href="product.html?id=gift-box">
-View Product
-</a>
+        </div>
 
-</div>
 
+        <!-- Product 2 -->
 
+        <div class="related-card">
 
+            <img src="images/bags.jpg" alt="Hand Bag">
 
+            <h3>Elegant Hand Bag</h3>
 
-<div class="related-card">
+            <p>Rs. 3,999</p>
 
-<img src="images/bags.jpg">
+            <a href="product.html?id=hand-bag">
+                View Product
+            </a>
 
-<h3>
-Elegant Hand Bag
-</h3>
+        </div>
 
-<p>
-Rs. 3,999
-</p>
 
-<a href="product.html?id=hand-bag">
-View Product
-</a>
+        <!-- Product 3 -->
 
-</div>
+        <div class="related-card">
 
+            <img src="images/dresses.jpg" alt="Dress">
 
+            <h3>Premium Dress</h3>
 
+            <p>Rs. 4,999</p>
 
+            <a href="product.html?id=dress-1">
+                View Product
+            </a>
 
-<div class="related-card">
+        </div>
 
-<img src="images/dresses.jpg">
 
-<h3>
-Beautiful Dress
-</h3>
+        <!-- Product 4 -->
 
-<p>
-Rs. 4,999
-</p>
+        <div class="related-card">
 
-<a href="product.html?id=dress-1">
-View Product
-</a>
+            <img src="images/perfumes.jpg" alt="Perfume">
 
-</div>
+            <h3>Luxury Perfume</h3>
 
+            <p>Rs. 2,499</p>
 
+            <a href="product.html?id=perfume">
+                View Product
+            </a>
 
+        </div>
 
-
-<div class="related-card">
-
-<img src="images/perfumes.jpg">
-
-<h3>
-Premium Perfume
-</h3>
-
-<p>
-Rs. 2,499
-</p>
-
-<a href="product.html?id=perfume">
-View Product
-</a>
-
-</div>
-
-
-
-
-
-<div class="related-card">
-
-<img src="images/jewellery.jpg">
-
-<h3>
-Luxury Jewellery
-</h3>
-
-<p>
-Rs. 5,499
-</p>
-
-<a href="product.html?id=watch">
-View Product
-</a>
-
-</div>
-
-
-
-
-
-<div class="related-card">
-
-<img src="images/shoes.jpg">
-
-<h3>
-Ladies Shoes
-</h3>
-
-<p>
-Rs. 3,499
-</p>
-
-<a href="product.html?id=shoes">
-View Product
-</a>
-
-</div>
-
-
-
-
-</div>
-
+    </div>
 
 </section>
-
-
-
-
-
-
-<!-- FOOTER -->
-
+<!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
+    <div class="footer-container">
 
-<div class="footer-container">
+        <!-- Logo -->
 
+        <div class="footer-box">
 
+            <div class="footer-logo">
 
-<div class="footer-box">
+                <img src="images/logo/logo.png" alt="Neha Rani Studio">
 
+                <h2>Neha Rani Studio</h2>
 
-<div class="footer-logo">
+            </div>
 
+            <p>
+                Luxury Fashion, Gift Hampers, Ribbon Bouquets,
+                Dresses, Abayas, Bags, Shoes, Jewelry,
+                Beauty, Makeup, Perfumes, Accessories &
+                Customized Gifts.
+            </p>
 
-<img src="images/logo/logo.png">
+            <div class="social-icons">
 
+                <a href="https://instagram.com/neharani.studio" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
 
-<h2>
-Neha Rani Studio
-</h2>
+                <a href="#" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
+                <a href="#" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
 
-</div>
+                <a href="https://wa.me/923045255325" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
 
+            </div>
 
+        </div>
 
-<p>
-Luxury Fashion, Gift Hampers, Bags, Beauty Products & Accessories.
-</p>
 
+        <!-- Categories -->
 
+        <div class="footer-box">
 
+            <h3>Categories</h3>
 
-<div class="social-icons">
+            <a href="#">Gift Hampers</a>
+            <a href="#">Ribbon Bouquets</a>
+            <a href="#">Dresses</a>
+            <a href="#">Abayas</a>
+            <a href="#">Bags</a>
+            <a href="#">Shoes</a>
+            <a href="#">Jewelry</a>
 
+        </div>
 
-<a href="https://instagram.com/neharani.studio">
-<i class="fa-brands fa-instagram"></i>
-</a>
 
+        <!-- Quick Links -->
 
-<a href="#">
-<i class="fa-brands fa-facebook"></i>
-</a>
+        <div class="footer-box">
 
+            <h3>Quick Links</h3>
 
-<a href="#">
-<i class="fa-brands fa-tiktok"></i>
-</a>
+            <a href="index.html">Home</a>
+            <a href="index.html#featured-products">Shop</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
 
+        </div>
 
-<a href="https://wa.me/923045255325">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
 
+        <!-- Contact -->
 
-</div>
+        <div class="footer-box">
 
+            <h3>Contact</h3>
 
-</div>
+            <p>📍 Pakistan</p>
 
+            <p>📱 WhatsApp Orders</p>
 
+            <p>📧 Instagram DM</p>
 
+            <p>🚚 Delivery All Over Pakistan</p>
 
+        </div>
 
+    </div>
 
-<div class="footer-box">
 
+    <div class="footer-bottom">
 
-<h3>
-Categories
-</h3>
+        <p>
 
+            © 2026 Neha Rani Studio.
+            All Rights Reserved.
 
-<a href="#">
-Dresses
-</a>
+        </p>
 
-<a href="#">
-Bags
-</a>
-
-<a href="#">
-Jewellery
-</a>
-
-<a href="#">
-Gift Hampers
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="footer-box">
-
-<h3>
-Quick Links
-</h3>
-
-
-<a href="index.html">
-Home
-</a>
-
-
-<a href="index.html#categories">
-Shop
-</a>
-
-
-<a href="index.html#featured">
-Collections
-</a>
-
-
-<a href="about.html">
-About Us
-</a>
-
-
-<a href="index.html#reviews">
-Reviews
-</a>
-
-
-<a href="contact.html">
-Contact
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div class="footer-box">
-
-
-<h3>
-Contact
-</h3>
-
-
-<p>
-📍 Pakistan
-</p>
-
-
-<p>
-📱 WhatsApp Orders
-</p>
-
-
-<p>
-📧 Instagram DM
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-<div class="footer-bottom">
-
-
-© 2026 Neha Rani Studio. All Rights Reserved.
-
-
-</div>
-
+    </div>
 
 </footer>
 
 
 
-
-
-
-
-<!-- WHATSAPP FLOAT -->
-
+<!-- ================= WHATSAPP FLOAT ================= -->
 
 <a href="https://wa.me/923045255325"
-class="whatsapp-btn"
-target="_blank">
+   class="whatsapp-btn"
+   target="_blank">
 
-
-<i class="fa-brands fa-whatsapp"></i>
-
+    <i class="fab fa-whatsapp"></i>
 
 </a>
-
-
-
-
-
-<script src="script.js"></script>
-
-<script>
-
-const products = {
-
-
-"gift-box":{
-
-name:"Luxury Gift Box",
-
-price:"Rs. 2,999",
-
-images:[
-
-"images/product1-1.jpg",
-"images/product1-2.jpg",
-"images/product1-3.jpg",
-"images/product1-4.jpg"
-
-]
-
-},
-
-
-
-"hand-bag":{
-
-name:"Elegant Hand Bag",
-
-price:"Rs. 3,999",
-
-images:[
-
-"images/bags.jpg"
-
-]
-
-},
-
-
-
-"dress-1":{
-
-name:"Beautiful Dress",
-
-price:"Rs. 4,999",
-
-images:[
-
-"images/dresses.jpg"
-
-]
-
-},
-
-
-
-"perfume":{
-
-name:"Premium Perfume",
-
-price:"Rs. 2,499",
-
-images:[
-
-"images/perfumes.jpg"
-
-]
-
-},
-
-
-
-"watch":{
-
-name:"Luxury Jewellery",
-
-price:"Rs. 5,499",
-
-images:[
-
-"images/jewellery.jpg"
-
-]
-
-},
-
-
-
-"shoes":{
-
-name:"Ladies Shoes",
-
-price:"Rs. 3,499",
-
-images:[
-
-"images/shoes.jpg"
-
-]
-
-}
-
-
-};
-
-
-
-const params = new URLSearchParams(window.location.search);
-
-const productId = params.get("id");
-
-let product = products[productId];
-
-
-let currentImage = 0;
-
-
-
-if(product){
-
-
-document.getElementById("productName").innerText = product.name;
-
-
-document.getElementById("productPrice").innerText = product.price;
-
-
-document.getElementById("mainProductImage").src = product.images[0];
-
-
-
-document.getElementById("whatsappBtn").href =
-
-"https://wa.me/923045255325?text=I want to order " 
-+ product.name;
-
-
-}
-
-
-
-function nextImage(){
-
-
-if(!product) return;
-
-
-currentImage++;
-
-
-if(currentImage >= product.images.length){
-
-currentImage = 0;
-
-}
-
-
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
-
-
-}
-
-
-
-function prevImage(){
-
-
-if(!product) return;
-
-
-currentImage--;
-
-
-if(currentImage < 0){
-
-currentImage = product.images.length - 1;
-
-}
-
-
-document.getElementById("mainProductImage").src =
-product.images[currentImage];
-
-
-}
-
-
-</script>
