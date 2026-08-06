@@ -687,3 +687,209 @@
     <i class="fab fa-whatsapp"></i>
 
 </a>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+<script>
+
+const products = {
+
+    "gift-hamper": {
+        name: "Luxury Gift Hamper",
+        price: "Rs. 2,999",
+        description: "Premium luxury gift hamper with elegant packaging.",
+        images: [
+            "images/product1-1.jpg",
+            "images/product1-2.jpg",
+            "images/product1-3.jpg",
+            "images/product1-4.jpg"
+        ]
+    },
+
+    "ribbon-bouquet": {
+        name: "Ribbon Bouquet",
+        price: "Rs. 3,499",
+        description: "Beautiful handmade ribbon bouquet.",
+        images: [
+            "images/ribbon-bouquet.jpg"
+        ]
+    },
+
+    "dress-1": {
+        name: "Premium Dress",
+        price: "Rs. 4,999",
+        description: "Elegant premium dress for every occasion.",
+        images: [
+            "images/dresses.jpg"
+        ]
+    },
+
+    "abaya": {
+        name: "Luxury Abaya",
+        price: "Rs. 5,999",
+        description: "Premium quality abaya collection.",
+        images: [
+            "images/abayas.jpg"
+        ]
+    },
+
+    "bag": {
+        name: "Elegant Hand Bag",
+        price: "Rs. 3,999",
+        description: "Luxury ladies handbag.",
+        images: [
+            "images/bags.jpg"
+        ]
+    },
+
+    "shoes": {
+        name: "Ladies Shoes",
+        price: "Rs. 3,499",
+        description: "Comfortable stylish ladies shoes.",
+        images: [
+            "images/shoes.jpg"
+        ]
+    },
+
+    "jewelry": {
+        name: "Luxury Jewelry",
+        price: "Rs. 5,499",
+        description: "Premium jewelry collection.",
+        images: [
+            "images/jewellery.jpg"
+        ]
+    },
+
+    "beauty": {
+        name: "Beauty Products",
+        price: "Rs. 2,199",
+        description: "Original beauty products.",
+        images: [
+            "images/beauty.jpg"
+        ]
+    },
+
+    "makeup": {
+        name: "Makeup Kit",
+        price: "Rs. 4,299",
+        description: "Professional makeup collection.",
+        images: [
+            "images/makeup.jpg"
+        ]
+    },
+
+    "perfume": {
+        name: "Premium Perfume",
+        price: "Rs. 2,499",
+        description: "Long lasting luxury fragrance.",
+        images: [
+            "images/perfumes.jpg"
+        ]
+    },
+
+    "accessories": {
+        name: "Fashion Accessories",
+        price: "Rs. 1,999",
+        description: "Premium accessories collection.",
+        images: [
+            "images/accessories.jpg"
+        ]
+    },
+
+    "customized-gift": {
+        name: "Customized Gift",
+        price: "Rs. 3,799",
+        description: "Customized gift made with love.",
+        images: [
+            "images/customized-gift.jpg"
+        ]
+    }
+
+};
+
+
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+const product = products[productId];
+
+let currentImage = 0;
+
+if(product){
+
+    document.getElementById("productName").innerText = product.name;
+    document.getElementById("productPrice").innerText = product.price;
+    document.getElementById("productDescription").innerText = product.description;
+
+    document.getElementById("mainProductImage").src = product.images[0];
+
+    const thumbs = document.getElementById("productThumbnails");
+
+    product.images.forEach((img,index)=>{
+
+        thumbs.innerHTML += `
+        <img src="${img}"
+             onclick="changeImage(${index})">
+        `;
+
+    });
+
+    document.getElementById("whatsappBtn").href =
+    "https://wa.me/923045255325?text=" +
+    encodeURIComponent(
+        "Assalam o Alaikum 🌸\n\nI want to order:\n\n" +
+        product.name +
+        "\nPrice: " +
+        product.price
+    );
+
+}
+
+
+function changeImage(index){
+
+    currentImage=index;
+
+    document.getElementById("mainProductImage").src =
+    product.images[index];
+
+}
+
+
+function nextImage(){
+
+    if(!product) return;
+
+    currentImage++;
+
+    if(currentImage>=product.images.length){
+
+        currentImage=0;
+
+    }
+
+    changeImage(currentImage);
+
+}
+
+
+function prevImage(){
+
+    if(!product) return;
+
+    currentImage--;
+
+    if(currentImage<0){
+
+        currentImage=product.images.length-1;
+
+    }
+
+    changeImage(currentImage);
+
+}
+
+</script>
+
+</body>
+</html>
