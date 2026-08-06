@@ -641,3 +641,130 @@ if (topBtn) {
     });
 
 }
+/* ==========================================
+   PHASE 2.1
+   MENU • SIDEBAR • HERO • CATEGORY SWIPER
+========================================== */
+
+/* ========== SIDEBAR ========== */
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".menu-overlay");
+
+if(menuBtn){
+
+menuBtn.addEventListener("click",()=>{
+
+sidebar.classList.add("active");
+overlay.classList.add("active");
+
+});
+
+}
+
+if(overlay){
+
+overlay.addEventListener("click",()=>{
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+});
+
+}
+
+/* Close sidebar after clicking any link */
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+link.addEventListener("click",()=>{
+
+sidebar.classList.remove("active");
+overlay.classList.remove("active");
+
+});
+
+});
+
+
+/* ========== HERO SLIDER ========== */
+
+const heroSwiper = new Swiper(".heroSwiper",{
+
+loop:true,
+
+speed:800,
+
+spaceBetween:0,
+
+autoplay:{
+
+delay:4000,
+
+disableOnInteraction:false,
+
+},
+
+pagination:{
+
+el:".swiper-pagination",
+
+clickable:true,
+
+},
+
+});
+
+
+/* ========== CATEGORY SLIDER ========== */
+
+const categorySwiper = new Swiper(".categorySwiper",{
+
+slidesPerView:6,
+
+spaceBetween:20,
+
+freeMode:true,
+
+breakpoints:{
+
+0:{
+slidesPerView:4,
+spaceBetween:12
+},
+
+480:{
+slidesPerView:4.5,
+spaceBetween:14
+},
+
+768:{
+slidesPerView:6,
+spaceBetween:18
+},
+
+1024:{
+slidesPerView:8,
+spaceBetween:20
+}
+
+}
+
+});
+
+
+/* ========== ACTIVE CATEGORY ========== */
+
+document.querySelectorAll(".sidebar a").forEach(item=>{
+
+item.addEventListener("click",()=>{
+
+document.querySelectorAll(".sidebar a")
+.forEach(a=>a.classList.remove("active"));
+
+item.classList.add("active");
+
+});
+
+});
