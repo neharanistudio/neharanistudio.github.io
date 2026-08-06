@@ -1214,57 +1214,27 @@ updateWishlist();
 console.log("Neha Rani Studio JS Part 2 Loaded ✅");
 /* ================= PRODUCT PAGE OPEN ================= */
 
-
-const productLinks = {
-
-"gift-box":"gift-box",
-
-"bag-1":"hand-bag",
-
-"dress-1":"dress-1",
-
-"perfume-1":"perfume",
-
-"jewelry-1":"watch",
-
-"shoes-1":"shoes"
-
-};
-
-
-
-document.querySelectorAll(".product-card")
-.forEach(card=>{
-
+document.querySelectorAll(".product-card").forEach(card=>{
 
 card.addEventListener("click",(e)=>{
 
 
-if(e.target.closest(".add-cart")) return;
-
-if(e.target.closest(".wishlist-add")) return;
-
+if(e.target.closest("button")) return;
 
 
 let id = card.dataset.id;
 
 
+if(id){
 
-if(productLinks[id]){
-
-
-window.location.href =
-"product.html?id="+productLinks[id];
-
+window.location.href = "product.html?id=" + id;
 
 }
 
 
-
 });
 
-
-});
+});\
 
 /* ===== PRODUCT DETAIL BUTTONS ===== */
 
