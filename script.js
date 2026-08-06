@@ -1291,15 +1291,15 @@ if (detailAddCart) {
             cartData.push(newProduct);
         }
 
-        localStorage.setItem("cart", JSON.stringify(cartData));
+     localStorage.setItem("cart", JSON.stringify(cartData));
 
-        // Cart count update
-        const cartCount = document.querySelector(".cart-count");
-        if (cartCount) {
-            cartCount.innerText = cartData.reduce((total, item) => total + item.qty, 0);
-        }
+const cartCount = document.querySelector(".cart-count");
 
-        alert("Added To Cart 🛒");
+if (cartCount) {
+    cartCount.innerText = cartData.reduce((total, item) => total + item.qty, 0);
+}
+
+alert("Added To Cart 🛒");
 
     };
 
