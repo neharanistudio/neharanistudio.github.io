@@ -174,3 +174,19 @@
   }
   .product-floating-actions #floatingProductWhatsApp i{font-size:24px}
 }
+
+/* Product details WhatsApp action: recognizable official WhatsApp logo */
+.product-detail-page #whatsappBtn.whatsapp-logo-only{
+  width:52px!important;height:52px!important;min-width:52px!important;
+  padding:0!important;border:0!important;border-radius:50%!important;
+  display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  background:#25D366!important;color:#fff!important;
+  box-shadow:0 5px 16px rgba(37,211,102,.24)!important;
+  text-decoration:none!important;font-size:0!important;
+}
+.product-detail-page #whatsappBtn.whatsapp-logo-only i{
+  color:#fff!important;font-size:27px!important;line-height:1!important;
+}
+.product-detail-page #whatsappBtn.whatsapp-logo-only:hover{
+  background:#1ebe5d!important;color:#fff!important;transform:translateY(-2px);
+}
