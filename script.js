@@ -1317,7 +1317,7 @@ if(searchBtn && searchPopup){
 if(closeSearch){
 
 closeSearch.addEventListener("click",()=>{
-
+if(searchPopup){
 searchPopup.classList.remove("active");
 
 searchInput.value="";
