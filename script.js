@@ -318,16 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.remove("menu-open");
     }
     if (event.target.closest("#topBtn")) window.scrollTo({ top: 0, behavior: "smooth" });
-    if (event.target.closest("#trackOrder")) {
-      event.preventDefault(); $(".order-popup")?.classList.add("active");
-    }
-    if (event.target.closest(".close-order")) $(".order-popup")?.classList.remove("active");
-    if (event.target.closest(".track-btn")) {
-      const trackingNumber = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
-      const result = $("#trackingResult");
-      if (!trackingNumber) { if (result) result.textContent = "Please enter your courier tracking number."; return; }
-      if (result) result.textContent = "Tracking number: " + trackingNumber + ". Live courier status is not connected yet. Please tell us which courier you use so we can connect its tracking service.";
-    }
   });
 
   const mobileSearchInput = $("#mobileSearchInput");
@@ -360,7 +350,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "Escape") {
       closePanel(cartPanel); closePanel(wishlistPanel); closeSearchPopup();
       sidebar?.classList.remove("active"); menuOverlay?.classList.remove("active");
-      $(".order-popup")?.classList.remove("active");
       document.body.classList.remove("menu-open");
     }
   });
