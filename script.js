@@ -189,24 +189,34 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#featured-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const normalizeSearch = function (value) {
-    return String(value || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, " ").replace(/\\s+/g, " ");
+    return String(value || "").toLowerCase().trim()
+      .replace(/&/g, " and ")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   };
   const filterBySearch = function (term) {
     const value = normalizeSearch(term);
     const words = value.split(" ").filter(Boolean);
-    const items = $(".product-item");
+    const items = $$(".product-item");
     let matches = 0;
     items.forEach(function (item) {
-      const category = normalizeSearch(item.dataset.category || "");
       const card = $(".product-card", item);
+      const image = $("img", card || item);
+      const category = normalizeSearch(item.dataset.category || "");
       const name = normalizeSearch($("h3", card || item)?.textContent || "");
-      const searchable = category + " " + name;
-      const categoryMatch = value && (category === value || category.replace(/s$/, "") === value.replace(/s$/, ""));
-      const textMatch = words.length > 0 && words.every(function (word) { return searchable.includes(word); });
-      const visible = !value || categoryMatch || textMatch;
+      const alt = normalizeSearch(image?.alt || "");
+      const id = normalizeSearch(card?.dataset.id || "");
+      const searchable = [category, name, alt, id].join(" ");
+      const visible = !value || words.every(function (word) {
+        return searchable.includes(word);
+      });
+      item.hidden = !visible;
       item.style.display = visible ? "" : "none";
       if (visible && value) matches++;
     });
+    const empty = $("#noSearchResults");
+    if (empty) empty.hidden = matches > 0 || !value;
     return matches;
   };
   const submitProductSearch = function (term) {
