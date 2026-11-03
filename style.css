@@ -2920,3 +2920,75 @@ body{color:var(--ink);background:#fff;font-family:'Poppins',sans-serif}
  .hero-image img{max-height:220px}
  .section-heading h2{font-size:26px}
 }
+
+
+/* S2-inspired storefront layout — keep Neha Rani Studio's own pink identity */
+:root{
+ --primary:#e85d97;
+ --primary-dark:#cf3f7c;
+ --soft-pink:#fff0f6;
+ --ink:#282126;
+ --muted:#71666b;
+}
+body{background:#fff;color:#292329}
+.top-bar{background:#e85d97;color:#fff;border:0}
+.top-bar a{color:#fff}
+.header{background:#fff;box-shadow:0 2px 14px rgba(90,35,60,.06);border:0}
+.logo h2,.footer-logo h2{color:#d84e89}
+.main-nav{background:#fff;border-top:1px solid #f9e5ed;border-bottom:1px solid #f9e5ed}
+.main-nav a{color:#3c3338}
+.main-nav a:hover,.section-heading>a:hover{color:#e85d97}
+.search-btn,.cart-btn,.wishlist-btn,.menu-icon{background:#fff0f6;color:#d84e89;border:1px solid #f8d6e4}
+.hero-slider{background:#fff0f6;padding:0 0 34px}
+.hero-content{min-height:460px;width:min(1380px,94%);padding:30px 2.5%;background:transparent}
+.hero-text h1{color:#2e252a;font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:-1.5px}
+.hero-text p{color:#665b60}
+.hero-subtitle,.offer-subtitle{color:#df4f8b}
+.hero-btn,.product-btn{background:#e85d97;color:#fff;border:1px solid #e85d97;border-radius:0}
+.hero-btn:hover,.product-btn:hover{background:#cf3f7c;border-color:#cf3f7c}
+.category-section{background:#fff}
+.section-heading h2{font-family:'Poppins',sans-serif;font-weight:600;color:#30272c;letter-spacing:-.7px}
+.category-card{border:0;border-radius:0;padding:0 0 12px;background:#fff;box-shadow:none}
+.category-card img{border-radius:0;aspect-ratio:1/1;object-fit:cover}
+.category-card h3{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;color:#3e3439;text-align:center;padding-top:10px}
+.category-card:hover{transform:translateY(-3px);box-shadow:none}
+.featured-products{background:#fff}
+.products-wrapper{width:min(1380px,94%);gap:18px}
+.product-card{border:0;border-radius:0;background:#fff;box-shadow:none}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(70,30,48,.08)}
+.product-image{background:#fff0f6;border-radius:0;overflow:hidden}
+.product-image img{transition:transform .45s ease}
+.product-card:hover .product-image img{transform:scale(1.035)}
+.product-info{text-align:left;padding:14px 4px}
+.product-info h3{font-family:'Poppins',sans-serif;font-size:14px;font-weight:500;color:#30272c}
+.product-price{color:#d84e89;font-size:15px;font-weight:600}
+.product-tag{background:#e85d97;color:#fff;border-radius:0}
+.wishlist-add{background:#fff0f6;color:#d84e89;border:0;border-radius:0}
+.offer-banner{padding:38px 0 58px}
+.offer-content{background:#fff0f6;border:0;border-radius:0;padding:clamp(24px,5vw,64px);width:min(1380px,94%)}
+.offer-text h2{font-family:'Poppins',sans-serif;font-weight:600;color:#30272c}
+.offer-text p{color:#665b60}
+.reviews{background:#fff}
+.review-card{border:1px solid #f7dce7;border-radius:0;box-shadow:none;background:#fff}
+.review-card h4{font-family:'Poppins',sans-serif}
+.stars{color:#e85d97}
+.footer{background:#fff0f6;border-top:1px solid #f7dce7}
+.footer-box h3{font-family:'Poppins',sans-serif;font-weight:600;color:#3d3037}
+.footer-box p,.footer-box a{color:#695a62}
+.footer .social-icons a{background:#fff;color:#e85d97;border:1px solid #f4cddd;border-radius:50%}
+.footer .social-icons a:hover{background:#e85d97;color:#fff}
+.footer-bottom{background:#e85d97;color:#fff}
+.sidebar{background:#fff}
+.sidebar a.active,.sidebar a:hover{background:#fff0f6;color:#d84e89}
+.cart-panel,.wishlist-panel{border-color:#f6dce6}
+@media(max-width:768px){
+ .hero-slider{padding:0 0 24px}
+ .hero-content{width:100%;padding:24px 5%;min-height:0}
+ .hero-text h1{font-size:clamp(30px,8vw,42px);letter-spacing:-.8px}
+ .category-section,.featured-products,.reviews{padding-top:42px;padding-bottom:42px}
+ .products-wrapper{width:92%;gap:12px}
+ .product-info{padding:10px 2px}
+ .product-info h3{font-size:12px}
+ .product-price{font-size:13px}
+ .offer-content{width:92%;padding:25px 18px}
+}
