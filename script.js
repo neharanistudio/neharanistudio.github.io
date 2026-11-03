@@ -26,19 +26,19 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const products = {
-    "gift-box": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/products/product1.jpg", category: "Gift Hampers" },
-    "gift-hamper": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/products/product1.jpg", category: "Gift Hampers" },
+    "gift-box": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/product1-1.jpg", images: ["images/product1-1.jpg","images/product1-2.jpg","images/product1-3.jpg","images/product1-4.jpg"], category: "Gift Hampers" },
+    "gift-hamper": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/product1-1.jpg", images: ["images/product1-1.jpg","images/product1-2.jpg","images/product1-3.jpg","images/product1-4.jpg"], category: "Gift Hampers" },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/categories/ribbon.jpg", category: "Ribbon Bouquets" },
-    "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/products/product2.jpg", category: "Bags" },
-    "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/products/product2.jpg", category: "Bags" },
-    "dress-1": { id: "dress-1", name: "Beautiful Dress", price: "Rs. 4,999", image: "images/products/product3.jpg", category: "Dresses" },
-    "perfume-1": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/products/product4.jpg", category: "Perfumes" },
-    "perfume": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/products/product4.jpg", category: "Perfumes" },
-    "jewelry-1": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/products/product5.jpg", category: "Jewelry" },
-    "jewelry": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/products/product5.jpg", category: "Jewelry" },
-    "shoes-1": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/products/product6.jpg", category: "Shoes" },
-    "shoes": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/products/product6.jpg", category: "Shoes" },
-    "abaya": { id: "abaya", name: "Luxury Abaya", price: "Rs. 5,999", image: "images/categories/abayas.jpg", category: "Abayas" }
+    "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
+    "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
+    "dress-1": { id: "dress-1", name: "Beautiful Dress", price: "Rs. 4,999", image: "images/dresses.jpg", images: ["images/dresses.jpg"], category: "Dresses" },
+    "perfume-1": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
+    "perfume": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
+    "jewelry-1": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/jewellery.jpg", images: ["images/jewellery.jpg"], category: "Jewelry" },
+    "jewelry": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/jewellery.jpg", images: ["images/jewellery.jpg"], category: "Jewelry" },
+    "shoes-1": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/shoes.jpg", images: ["images/shoes.jpg"], category: "Shoes" },
+    "shoes": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/shoes.jpg", images: ["images/shoes.jpg"], category: "Shoes" },
+    "abaya": { id: "abaya", name: "Luxury Abaya", price: "Rs. 5,999", image: "images/abayas.jpg", images: ["images/abayas.jpg"], category: "Abayas" }
   };
 
   const cartPanel = $(".cart-panel");
@@ -133,43 +133,45 @@ document.addEventListener("DOMContentLoaded", function () {
     openPanel(wishlistPanel);
   };
 
-  // Populate the product detail page from its query-string product ID.
+  // Product details: working gallery and quick-order header.
   const productName = $("#productName");
-  if (productName) {
-    const requestedId = new URLSearchParams(window.location.search).get("id") || "gift-box";
-    const detailProduct = products[requestedId] || products[requestedId.toLowerCase()];
-    const image = $("#mainProductImage");
-    const price = $("#productPrice");
-    const description = $("#productDescription");
-    if (detailProduct) {
-      productName.textContent = detailProduct.name;
-      if (price) price.textContent = detailProduct.price;
-      if (image) { image.src = detailProduct.image; image.alt = detailProduct.name; }
-      if (description) description.textContent = detailProduct.name + " from our " + detailProduct.category +
-        " collection. Contact us on WhatsApp for availability, delivery details and ordering assistance.";
-      const thumbs = $("#productThumbnails");
-      if (thumbs) thumbs.innerHTML = '<button type="button" class="product-thumb active"><img src="' +
-        escapeHTML(detailProduct.image) + '" alt="' + escapeHTML(detailProduct.name) + '"></button>';
-      const detailAdd = $("#detailAddCart");
-      if (detailAdd) detailAdd.addEventListener("click", function () { addToCart(Object.assign({}, detailProduct)); });
-      const detailWish = $("#detailWishlist");
-      if (detailWish) detailWish.addEventListener("click", function () { addToWishlist(Object.assign({}, detailProduct)); });
-      const buyNow = $("#whatsappBtn");
-      if (buyNow) buyNow.href = "https://wa.me/923045255325?text=" + encodeURIComponent(
-        "Assalam-o-Alaikum, I would like to order " + detailProduct.name + " (" + detailProduct.price +
-        "). Please share availability and delivery details."
-      );
-    } else {
-      productName.textContent = "Product not found";
-      if (description) description.textContent = "This product link may be outdated. Please return to the homepage to browse available products.";
-    }
+  let detailProduct = null, detailImages = [], detailImageIndex = 0;
+  const mainImage = $("#mainProductImage"), thumbnails = $("#productThumbnails");
+  const renderGallery = function () {
+    if (!mainImage || !detailImages.length) return;
+    detailImageIndex = (detailImageIndex + detailImages.length) % detailImages.length;
+    mainImage.src = detailImages[detailImageIndex];
+    mainImage.alt = (detailProduct ? detailProduct.name : "Product") + " photo " + (detailImageIndex + 1);
+    if (thumbnails) thumbnails.innerHTML = detailImages.map(function(src,index) {
+      return '<button type="button" class="product-thumb'+(index===detailImageIndex?' active':'')+'" data-gallery-index="'+index+'" aria-label="View photo '+(index+1)+'"><img src="'+escapeHTML(src)+'" alt=""></button>';
+    }).join("");
+    $$(".image-buttons button").forEach(function(btn){btn.disabled=detailImages.length<2;});
+  };
+  const showDetailImage = function(index){if(!detailImages.length)return;detailImageIndex=(index+detailImages.length)%detailImages.length;renderGallery();};
+  window.prevImage=function(){showDetailImage(detailImageIndex-1);};
+  window.nextImage=function(){showDetailImage(detailImageIndex+1);};
+  if(productName){
+    const requestedId=new URLSearchParams(window.location.search).get("id")||"gift-box";
+    detailProduct=products[requestedId]||products[requestedId.toLowerCase()];
+    const price=$("#productPrice"),description=$("#productDescription");
+    if(detailProduct){
+      productName.textContent=detailProduct.name;
+      if(price)price.textContent=detailProduct.price;
+      detailImages=detailProduct.images||[detailProduct.image];renderGallery();
+      if(description)description.textContent=detailProduct.name+" from our "+detailProduct.category+" collection. Contact us on WhatsApp for availability, delivery details and ordering assistance.";
+      const detailAdd=$("#detailAddCart");
+      if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
+      const detailWish=$("#detailWishlist");
+      if(detailWish)detailWish.addEventListener("click",function(){addToWishlist(Object.assign({},detailProduct));});
+      const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+"). Please share availability and delivery details.";
+      const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp");
+      if(buyNow)buyNow.href="https://wa.me/923045255325?text="+encodeURIComponent(message);
+      if(headerWA)headerWA.href="https://wa.me/923045255325?text="+encodeURIComponent(message);
+    }else{productName.textContent="Product not found";if(description)description.textContent="This product link may be outdated. Please return to the homepage to browse available products.";}
   }
-
-  let detailImageIndex = 0;
-  const mainImage = $("#mainProductImage");
-  window.prevImage = function () { if (mainImage) detailImageIndex = Math.max(0, detailImageIndex - 1); };
-  window.nextImage = function () { if (mainImage) detailImageIndex = detailImageIndex + 1; };
-
+  if(thumbnails)thumbnails.addEventListener("click",function(event){const thumb=event.target.closest("[data-gallery-index]");if(thumb)showDetailImage(Number(thumb.dataset.galleryIndex));});
+  const topAddCart=$("#topAddCart");
+  if(topAddCart)topAddCart.addEventListener("click",function(){if(detailProduct)addToCart(Object.assign({},detailProduct));});
   const closeSearchPopup = function () {
     if (searchPopup) searchPopup.classList.remove("active");
     if (searchInput) searchInput.value = "";
