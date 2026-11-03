@@ -2764,3 +2764,11 @@ body.menu-open, body.panel-open { overflow: hidden; }
 .order-box input { width: 100%; height: 46px; border: 1px solid #e7d4dd; border-radius: 10px; padding: 0 12px; margin: 18px 0 12px; }
 .order-box .track-btn { width: 100%; min-height: 44px; border-radius: 30px; color: #fff; background: var(--primary); }
 .close-order { position: absolute; right: 12px; top: 12px; width: 34px; height: 34px; border-radius: 50%; color: var(--primary); background: var(--light); }
+
+/* Customer review cards: compact layout, no stretched horizontal text */
+#reviews .review-grid{width:min(1080px,92%);grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+#reviews .review-card{padding:20px 22px;border-radius:18px;min-width:0;display:flex;flex-direction:column;justify-content:center}
+#reviews .review-card p{font-size:13px;line-height:1.55;margin:8px 0 12px;overflow-wrap:anywhere}
+#reviews .review-card h4{font-size:14px;margin-top:auto}
+#reviews .stars{font-size:18px;margin-bottom:4px}
+@media(max-width:600px){#reviews{padding:34px 0!important}#reviews .review-grid{grid-template-columns:1fr;gap:10px}#reviews .review-card{padding:16px 18px;text-align:left}#reviews .stars{font-size:16px}#reviews .review-card p{font-size:13px}}
