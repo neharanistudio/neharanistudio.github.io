@@ -143,6 +143,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     </div>
 
 </header>
+<div class="mobile-search-bar" role="search"><input type="search" id="mobileSearchInput" placeholder="Search all products..." aria-label="Search all products"><button type="button" class="mobile-search-submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></div>
 <!-- ================= NAVIGATION ================= -->
 
 <nav class="main-nav">
@@ -1853,7 +1854,7 @@ Track Your Order
 
 <input type="text"
 id="trackingNumber"
-placeholder="Enter Order ID">
+placeholder="Enter courier tracking number">
 
 
 
@@ -1864,13 +1865,8 @@ type="button">
 Track Order
 
 </button>
-
-
-
-
+<p id="trackingResult" class="tracking-result" aria-live="polite"></p>
 </div>
-
-
 </div>
 
 
