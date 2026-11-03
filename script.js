@@ -164,8 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if(description)description.textContent=detailProduct.name+" from our "+detailProduct.category+" collection. Contact us on WhatsApp for availability, delivery details and ordering assistance.";
       const detailAdd=$("#detailAddCart");
       if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
-      const detailWish=$("#detailWishlist");
-      if(detailWish)detailWish.addEventListener("click",function(){addToWishlist(Object.assign({},detailProduct));});
       const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+"). Please share availability and delivery details.";
       const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp");
       if(buyNow)buyNow.href="https://wa.me/923045255325?text="+encodeURIComponent(message);
@@ -175,10 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if(thumbnails)thumbnails.addEventListener("click",function(event){const thumb=event.target.closest("[data-gallery-index]");if(thumb)showDetailImage(Number(thumb.dataset.galleryIndex));});
   const topAddCart=$("#topAddCart"), floatingAddCart=$("#floatingAddCart"), floatingWishlist=$("#floatingWishlist");
   const addCurrentProductToCart=function(){if(detailProduct)addToCart(Object.assign({},detailProduct));};
-  const addCurrentProductToWishlist=function(){if(detailProduct)addToWishlist(Object.assign({},detailProduct));};
   if(topAddCart)topAddCart.addEventListener("click",addCurrentProductToCart);
   if(floatingAddCart)floatingAddCart.addEventListener("click",addCurrentProductToCart);
-  if(floatingWishlist)floatingWishlist.addEventListener("click",addCurrentProductToWishlist);
   const closeSearchPopup = function () {
     if (searchPopup) searchPopup.classList.remove("active");
   };
@@ -256,10 +252,14 @@ document.addEventListener("DOMContentLoaded", function () {
       addToCart(productFromCard(addButton.closest(".product-card")));
       return;
     }
-    const wishButton = event.target.closest(".wishlist-add");
-    if (wishButton && !wishButton.id) {
-      event.preventDefault(); event.stopPropagation();
-      addToWishlist(productFromCard(wishButton.closest(".product-card")));
+    const wishButton = event.target.closest(".wishlist-add, #floatingWishlist");
+    if (wishButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const product = wishButton.id === "floatingWishlist" || wishButton.id === "detailWishlist"
+        ? detailProduct
+        : productFromCard(wishButton.closest(".product-card"));
+      addToWishlist(product ? Object.assign({}, product) : null);
       return;
     }
     const removeCart = event.target.closest(".remove-cart");
@@ -357,8 +357,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   document.addEventListener("click", function (event) {
-    if (cartPanel?.classList.contains("active") && !cartPanel.contains(event.target) && !event.target.closest(".cart-btn")) closePanel(cartPanel);
-    if (wishlistPanel?.classList.contains("active") && !wishlistPanel.contains(event.target) && !event.target.closest(".wishlist-btn")) closePanel(wishlistPanel);
+    const clickedWishlistControl = event.target.closest(".wishlist-btn, .wishlist-add, #detailWishlist, #floatingWishlist");
+    const clickedCartControl = event.target.closest(".cart-btn, .add-cart, #detailAddCart, #topAddCart, #floatingAddCart");
+    if (cartPanel?.classList.contains("active") && !cartPanel.contains(event.target) && !clickedCartControl) closePanel(cartPanel);
+    if (wishlistPanel?.classList.contains("active") && !wishlistPanel.contains(event.target) && !clickedWishlistControl) closePanel(wishlistPanel);
   });
 
   if (window.Swiper) {
