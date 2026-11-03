@@ -165,9 +165,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const detailAdd=$("#detailAddCart");
       if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
       const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+"). Please share availability and delivery details.";
-      const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp");
-      if(buyNow)buyNow.href="https://wa.me/923045255325?text="+encodeURIComponent(message);
-      if(headerWA)headerWA.href="https://wa.me/923045255325?text="+encodeURIComponent(message);
+      const orderMessage=message+"\nProduct link: "+window.location.href;
+      const waHref="https://wa.me/923045255325?text="+encodeURIComponent(orderMessage);
+      const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp"),floatingWA=$("#floatingProductWhatsApp");
+      if(buyNow)buyNow.href=waHref;
+      if(headerWA)headerWA.href=waHref;
+      if(floatingWA)floatingWA.href=waHref;
     }else{productName.textContent="Product not found";if(description)description.textContent="This product link may be outdated. Please return to the homepage to browse available products.";}
   }
   if(thumbnails)thumbnails.addEventListener("click",function(event){const thumb=event.target.closest("[data-gallery-index]");if(thumb)showDetailImage(Number(thumb.dataset.galleryIndex));});
@@ -289,6 +292,7 @@ document.addEventListener("DOMContentLoaded", function () {
       submitProductSearch(searchInput ? searchInput.value : "");
       closeSearchPopup();
     }
+    if (event.target.closest(".mobile-search-submit")) runSearchFromMobile();
     if (event.target.closest("#viewAllProducts")) {
       event.preventDefault();
       filterProducts("all");
@@ -319,18 +323,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (event.target.closest(".close-order")) $(".order-popup")?.classList.remove("active");
     if (event.target.closest(".track-btn")) {
-      const query = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
-      if (!query) {
-        const result = $("#trackingResult");
-        if (result) result.textContent = "Please enter a product name or category, such as Shoes or Bags.";
-        else alert("Please enter a product name or category.");
-        return;
-      }
-      $(".order-popup")?.classList.remove("active");
-      submitProductSearch(query);
+      const trackingNumber = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
+      const result = $("#trackingResult");
+      if (!trackingNumber) { if (result) result.textContent = "Please enter your courier tracking number."; return; }
+      if (result) result.textContent = "Tracking number: " + trackingNumber + ". Live courier status is not connected yet. Please tell us which courier you use so we can connect its tracking service.";
     }
   });
 
+  const mobileSearchInput = $("#mobileSearchInput");
+  const runSearchFromMobile = function () {
+    const query = mobileSearchInput ? mobileSearchInput.value : "";
+    submitProductSearch(query);
+    if (searchInput) searchInput.value = query;
+  };
+  if (mobileSearchInput) mobileSearchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") { event.preventDefault(); runSearchFromMobile(); }
+  });
   if (searchInput) {
     searchInput.addEventListener("input", function () { filterBySearch(searchInput.value); });
     searchInput.addEventListener("keydown", function (event) {
