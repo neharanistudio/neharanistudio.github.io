@@ -248,3 +248,19 @@
  .product-detail-page{margin:14px auto;padding:12px;gap:16px}
  .product-floating-actions{right:10px}
 }
+
+
+/* Product-specific highlights (not customer testimonials) */
+.product-highlights-section{padding:42px 0!important;background:#fff8fb}
+.product-highlights-heading{width:min(900px,92%);margin:0 auto 24px;text-align:center}
+.product-highlights-heading .section-eyebrow{display:inline-block;margin-bottom:7px;color:#d84d88;font-size:11px;font-weight:700;letter-spacing:2px}
+.product-highlights-heading h2{margin:0 0 8px;color:#33272e;font-size:27px}
+.product-highlights-heading p{margin:0;color:#796d73;font-size:13px;line-height:1.7}
+.product-reviews .review-grid{width:min(1000px,92%);grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.product-highlight-card{padding:23px 20px!important;text-align:left!important;border:1px solid #f5dce7;box-shadow:0 8px 22px rgba(120,55,85,.05)}
+.product-highlight-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;margin-bottom:12px;border-radius:50%;background:#fff0f6;color:#d84d88;font-size:22px}
+.product-highlight-card p{margin:0 0 12px!important;color:#71666b;font-size:13px!important;line-height:1.75!important}
+.product-highlight-card h4{color:#b83f78!important;font-size:14px!important}
+.product-collection-note{display:flex;align-items:center;gap:9px;margin:0 0 22px;color:#9b5574;font-size:13px}
+.product-collection-note i{color:#e85d97;font-size:16px}
+@media(max-width:768px){.product-reviews .review-grid{grid-template-columns:1fr;gap:11px}.product-highlight-card{padding:18px!important}.product-highlights-section{padding:30px 0!important}.product-highlights-heading h2{font-size:23px}}
