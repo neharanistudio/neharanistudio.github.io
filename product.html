@@ -30,9 +30,10 @@
   <a class="product-header-whatsapp" href="https://wa.me/923045255325" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
  </div>
 </header>
+<div class="mobile-search-bar" role="search"><input type="search" id="mobileSearchInput" placeholder="Search all products..." aria-label="Search all products"><button type="button" class="mobile-search-submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button></div>
 
 
-<div class="product-floating-actions" aria-label="Quick product actions"><button type="button" id="floatingAddCart" aria-label="Add this product to cart"><i class="fa-solid fa-cart-plus"></i><span>Add to Cart</span></button><button type="button" id="floatingWishlist" aria-label="Add this product to wishlist"><i class="fa-regular fa-heart"></i><span>Wishlist</span></button></div>
+<div class="product-floating-actions" aria-label="Quick product actions"><button type="button" id="floatingAddCart" aria-label="Add this product to cart"><i class="fa-solid fa-cart-plus"></i><span>Add to Cart</span></button><button type="button" id="floatingWishlist" aria-label="Add this product to wishlist"><i class="fa-regular fa-heart"></i><span>Wishlist</span></button><a href="https://wa.me/923045255325" target="_blank" rel="noopener" id="floatingProductWhatsApp" aria-label="Order this product on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a></div>
 <!-- ================= PRODUCT DETAILS ================= -->
 
 <section class="product-detail-page">
@@ -436,7 +437,7 @@
 
 <div class="order-popup" role="dialog" aria-modal="true" aria-label="Track your order"><div class="order-box">
 <button class="close-order" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><h2>Track Your Order</h2>
-<p>Enter a product name or category to find matching items in our store.</p><input type="text" id="trackingNumber" placeholder="Enter Order ID">
+<p>Enter the tracking number provided with your order. Live tracking needs your courier service.</p><input type="text" id="trackingNumber" placeholder="Enter courier tracking number">
 <button class="track-btn" type="button">Track Order</button><p id="trackingResult" class="tracking-result" aria-live="polite"></p></div></div>
 </body>
 </html>
