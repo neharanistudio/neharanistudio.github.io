@@ -157,3 +157,20 @@
  .product-floating-actions #floatingProductWhatsApp{width:48px;height:48px}
  .product-floating-actions #floatingProductWhatsApp i{font-size:21px}
 }
+
+/* Product-page floating WhatsApp action: show only the official logo */
+.product-floating-actions #floatingProductWhatsApp{
+  width:54px;height:54px;min-width:54px;min-height:54px;
+  padding:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.product-floating-actions #floatingProductWhatsApp span{display:none!important}
+.product-floating-actions #floatingProductWhatsApp i{
+  display:block;color:#fff!important;font-size:27px;line-height:1;
+}
+@media(max-width:600px){
+  .product-floating-actions #floatingProductWhatsApp{
+    width:48px;height:48px;min-width:48px;min-height:48px;
+  }
+  .product-floating-actions #floatingProductWhatsApp i{font-size:24px}
+}
