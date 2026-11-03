@@ -3437,3 +3437,81 @@ img{max-width:100%}
   .footer-box > a:not(.footer-logo), .footer-box p { font-size: 11px !important; }
   .product-actions .add-cart { min-height: 40px !important; font-size: 10px !important; }
 }
+
+
+/* Pretty blush-pink collection shortcut pills */
+.collection-shortcuts{
+  width:min(1320px,94%);
+  margin:4px auto 8px;
+  padding:16px 4px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:11px;
+  overflow:visible;
+}
+.collection-shortcuts a{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px 9px 10px;
+  border:1px solid #f3d6e2;
+  border-radius:999px;
+  background:linear-gradient(135deg,#fffafd 0%,#fff1f7 100%);
+  color:#765466;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:.15px;
+  white-space:nowrap;
+  text-decoration:none;
+  box-shadow:0 3px 12px rgba(190,91,132,.07);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease,background .22s ease,color .22s ease;
+}
+.collection-shortcuts a span{
+  display:grid;
+  place-items:center;
+  flex:0 0 27px;
+  width:27px;
+  height:27px;
+  border:1px solid #f4d2e0;
+  border-radius:50%;
+  background:#fff;
+  color:#df6599;
+  font-size:15px;
+  line-height:1;
+  box-shadow:0 2px 6px rgba(190,91,132,.08);
+}
+.collection-shortcuts a:hover,
+.collection-shortcuts a:focus-visible{
+  color:#c43f79;
+  border-color:#eaa8c5;
+  background:linear-gradient(135deg,#fff1f7,#ffe3ef);
+  box-shadow:0 7px 18px rgba(190,91,132,.15);
+  transform:translateY(-3px);
+  outline:none;
+}
+.collection-shortcuts a:active{transform:scale(.97)}
+@media(max-width:768px){
+ .collection-shortcuts{
+   width:100%;
+   margin:0;
+   padding:13px 14px 18px;
+   justify-content:flex-start;
+   flex-wrap:nowrap;
+   gap:9px;
+   overflow-x:auto;
+   overflow-y:hidden;
+   scroll-snap-type:x proximity;
+   -webkit-overflow-scrolling:touch;
+   scrollbar-width:none;
+ }
+ .collection-shortcuts::-webkit-scrollbar{display:none}
+ .collection-shortcuts a{
+   scroll-snap-align:start;
+   padding:7px 12px 7px 8px;
+   font-size:11px;
+ }
+ .collection-shortcuts a span{width:25px;height:25px;flex-basis:25px;font-size:14px}
+}
