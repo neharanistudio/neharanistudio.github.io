@@ -1308,20 +1308,10 @@ const searchPopup = document.querySelector(".search-popup");
 const closeSearch = document.querySelector(".close-search");
 const searchInput = document.getElementById("searchInput");
 
-if(searchBtn){
-
-searchBtn.addEventListener("click",()=>{
-
-searchPopup.classList.add("active");
-
-setTimeout(()=>{
-
-searchInput.focus();
-
-},200);
-
-});
-
+if(searchBtn && searchPopup){
+    searchBtn.addEventListener("click",()=>{
+        searchPopup.classList.add("active");
+    });
 }
 
 if(closeSearch){
