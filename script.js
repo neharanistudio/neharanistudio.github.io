@@ -266,6 +266,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("click", function (event) {
+    const buyNowButton = event.target.closest(".buy-now");
+    if (buyNowButton) {
+      event.preventDefault(); event.stopPropagation();
+      const product = productFromCard(buyNowButton.closest(".product-card"));
+      if (product) {
+        const message = "Assalam-o-Alaikum Neha Rani Studio! I would like to buy " + product.name + " (" + product.price + "). Please confirm availability and delivery details.";
+        window.open("https://wa.me/923045255325?text=" + encodeURIComponent(message), "_blank", "noopener");
+      }
+      return;
+    }
     const addButton = event.target.closest(".add-cart");
     if (addButton && !addButton.id) {
       event.preventDefault(); event.stopPropagation();
