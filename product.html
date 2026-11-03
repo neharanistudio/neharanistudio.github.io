@@ -22,7 +22,7 @@
 <!-- STORE HEADER -->
 <div class="product-topbar"><span>🚚 Nationwide Delivery Across Pakistan</span><div><a href="#" id="trackOrder">Track Order</a><span>|</span><a href="index.html">Home</a></div></div>
 <header class="product-site-header">
- <a href="index.html" class="product-site-logo"><img src="images/logo/logo.png" alt="Neha Rani Studio"><span>Neha Rani Studio</span></a>
+ <a href="index.html" class="product-site-logo"><img src="images/logo.png" alt="Neha Rani Studio"><span>Neha Rani Studio</span></a>
  <div class="product-header-actions">
   <button type="button" class="product-header-add" id="topAddCart"><i class="fa-solid fa-cart-plus"></i><span>Add to Cart</span></button>
   <button type="button" class="cart-btn" aria-label="Open cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></button>
@@ -31,6 +31,7 @@
 </header>
 
 
+<div class="product-floating-actions" aria-label="Quick product actions"><button type="button" id="floatingAddCart" aria-label="Add this product to cart"><i class="fa-solid fa-cart-plus"></i><span>Add to Cart</span></button><button type="button" id="floatingWishlist" aria-label="Add this product to wishlist"><i class="fa-regular fa-heart"></i><span>Wishlist</span></button></div>
 <!-- ================= PRODUCT DETAILS ================= -->
 
 <section class="product-detail-page">
@@ -261,7 +262,7 @@
 
         <!-- Gift Hamper -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/product1-1.jpg" alt="Gift Hamper">
 
@@ -273,11 +274,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Ribbon Bouquet -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/ribbon-bouquet.jpg" alt="Ribbon Bouquet">
 
@@ -289,11 +290,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Premium Dress -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/dresses.jpg" alt="Dress">
 
@@ -305,11 +306,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Luxury Abaya -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/abayas.jpg" alt="Abaya">
 
@@ -321,11 +322,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Hand Bag -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/bags.jpg" alt="Bag">
 
@@ -333,15 +334,15 @@
 
             <p>Rs. 3,999</p>
 
-            <a href="product.html?id=bag">
+            <a href="product.html?id=bag-1">
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Ladies Shoes -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/shoes.jpg" alt="Shoes">
 
@@ -353,11 +354,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Luxury Jewelry -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/jewellery.jpg" alt="Jewelry">
 
@@ -369,11 +370,11 @@
                 View Product
             </a>
 
-        </div>
+        </a>
 
         <!-- Premium Perfume -->
 
-        <div class="related-card">
+        <a class="related-card related-card-link"
 
             <img src="images/perfumes.jpg" alt="Perfume">
 
@@ -387,7 +388,7 @@
 
         </div>
 
-    </div>
+    </a>
 
 </section>
 <!-- ================= CART PANEL ================= -->
@@ -438,7 +439,7 @@
 
             <div class="footer-logo">
 
-                <img src="images/logo/logo.png" alt="Logo">
+                <img src="images/logo.png" alt="Logo">
 
                 <h2>Neha Rani Studio</h2>
 
@@ -510,7 +511,7 @@
 
             <p>📍 Pakistan</p>
 
-            <p>📱 WhatsApp Orders</p>
+            <a class="footer-whatsapp-link" href="https://wa.me/923045255325" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Contact Us on WhatsApp</a>
 
             <p>📧 Instagram DM</p>
 
@@ -556,6 +557,6 @@
 <div class="order-popup" role="dialog" aria-modal="true" aria-label="Track your order"><div class="order-box">
 <button class="close-order" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><h2>Track Your Order</h2>
 <p>Enter your order ID and message us on WhatsApp for an update.</p><input type="text" id="trackingNumber" placeholder="Enter Order ID">
-<button class="track-btn" type="button">Track Order</button></div></div>
+<button class="track-btn" type="button">Track Order</button><p id="trackingResult" class="tracking-result" aria-live="polite"></p></div></div>
 </body>
 </html>
