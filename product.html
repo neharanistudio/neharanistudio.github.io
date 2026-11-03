@@ -19,6 +19,17 @@
 </head>
 
 <body>
+<!-- STORE HEADER -->
+<div class="product-topbar"><span>🚚 Nationwide Delivery Across Pakistan</span><div><a href="#" id="trackOrder">Track Order</a><span>|</span><a href="index.html">Home</a></div></div>
+<header class="product-site-header">
+ <a href="index.html" class="product-site-logo"><img src="images/logo/logo.png" alt="Neha Rani Studio"><span>Neha Rani Studio</span></a>
+ <div class="product-header-actions">
+  <button type="button" class="product-header-add" id="topAddCart"><i class="fa-solid fa-cart-plus"></i><span>Add to Cart</span></button>
+  <button type="button" class="cart-btn" aria-label="Open cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count">0</span></button>
+  <a class="product-header-whatsapp" href="https://wa.me/923045255325" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+ </div>
+</header>
+
 
 <!-- ================= PRODUCT DETAILS ================= -->
 
@@ -159,7 +170,7 @@
 </section>
 <!-- ================= CUSTOMER REVIEWS ================= -->
 
-<section class="reviews">
+<section class="reviews product-reviews">
 
     <h2>Customer Reviews</h2>
 
@@ -542,5 +553,9 @@
 
 </script>
 
+<div class="order-popup" role="dialog" aria-modal="true" aria-label="Track your order"><div class="order-box">
+<button class="close-order" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><h2>Track Your Order</h2>
+<p>Enter your order ID and message us on WhatsApp for an update.</p><input type="text" id="trackingNumber" placeholder="Enter Order ID">
+<button class="track-btn" type="button">Track Order</button></div></div>
 </body>
 </html>
