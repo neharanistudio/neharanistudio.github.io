@@ -180,8 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if(floatingWishlist)floatingWishlist.addEventListener("click",addCurrentProductToWishlist);
   const closeSearchPopup = function () {
     if (searchPopup) searchPopup.classList.remove("active");
-    if (searchInput) searchInput.value = "";
-    showAllProducts();
   };
   const filterProducts = function (category) {
     $$(".product-item").forEach(function (item) {
@@ -190,11 +188,39 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchInput) searchInput.value = "";
     $("#featured-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+  const normalizeSearch = function (value) {
+    return String(value || "").toLowerCase().trim().replace(/[^a-z0-9]+/g, " ").replace(/\\s+/g, " ");
+  };
   const filterBySearch = function (term) {
-    const value = term.trim().toLowerCase();
-    $$(".product-item").forEach(function (item) {
-      item.style.display = item.textContent.toLowerCase().includes(value) ? "" : "none";
+    const value = normalizeSearch(term);
+    const words = value.split(" ").filter(Boolean);
+    const items = $(".product-item");
+    let matches = 0;
+    items.forEach(function (item) {
+      const category = normalizeSearch(item.dataset.category || "");
+      const card = $(".product-card", item);
+      const name = normalizeSearch($("h3", card || item)?.textContent || "");
+      const searchable = category + " " + name;
+      const categoryMatch = value && (category === value || category.replace(/s$/, "") === value.replace(/s$/, ""));
+      const textMatch = words.length > 0 && words.every(function (word) { return searchable.includes(word); });
+      const visible = !value || categoryMatch || textMatch;
+      item.style.display = visible ? "" : "none";
+      if (visible && value) matches++;
     });
+    return matches;
+  };
+  const submitProductSearch = function (term) {
+    const query = String(term || "").trim();
+    if (!query) return;
+    if (!$("#featured-products") && !$(".product-item").length) {
+      window.location.href = "index.html?search=" + encodeURIComponent(query) + "#featured-products";
+      return;
+    }
+    filterBySearch(query);
+    if (searchInput) searchInput.value = query;
+    const heading = $("#featured-products .section-heading h2");
+    if (heading) heading.textContent = 'Search Results for "' + query + '"';
+    $("#featured-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   function showAllProducts() {
     $$(".product-item").forEach(function (item) { item.style.display = ""; });
@@ -237,9 +263,8 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () { if (searchInput) searchInput.focus(); }, 100);
     }
     if (event.target.closest(".search-submit")) {
-      filterBySearch(searchInput ? searchInput.value : "");
+      submitProductSearch(searchInput ? searchInput.value : "");
       closeSearchPopup();
-      $("#featured-products")?.scrollIntoView({ behavior: "smooth" });
     }
     if (event.target.closest("#viewAllProducts")) {
       event.preventDefault();
@@ -271,10 +296,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (event.target.closest(".close-order")) $(".order-popup")?.classList.remove("active");
     if (event.target.closest(".track-btn")) {
-      const orderId = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
-      const result = $("#trackingResult");
-      if (!orderId) { if (result) result.textContent = "Please enter your order ID."; }
-      else if (result) result.textContent = "Order lookup needs to be connected to your order records and courier tracking service before live status can be shown.";
+      const query = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
+      if (!query) {
+        const result = $("#trackingResult");
+        if (result) result.textContent = "Please enter a product name or category, such as Shoes or Bags.";
+        else alert("Please enter a product name or category.");
+        return;
+      }
+      $(".order-popup")?.classList.remove("active");
+      submitProductSearch(query);
     }
   });
 
@@ -282,8 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchInput.addEventListener("input", function () { filterBySearch(searchInput.value); });
     searchInput.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
-        filterBySearch(searchInput.value); closeSearchPopup();
-        $("#featured-products")?.scrollIntoView({ behavior: "smooth" });
+        submitProductSearch(searchInput.value); closeSearchPopup();
       }
     });
   }
@@ -343,6 +372,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
   });
 
+  const initialSearch = new URLSearchParams(window.location.search).get("search");
+  if (initialSearch) submitProductSearch(initialSearch);
   renderCart();
   renderWishlist();
 });
