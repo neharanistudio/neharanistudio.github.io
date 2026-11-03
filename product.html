@@ -20,7 +20,7 @@
 
 <body>
 <!-- STORE HEADER -->
-<div class="product-topbar"><span>🚚 Nationwide Delivery Across Pakistan</span><div><a href="index.html">Home</a></div></div>
+<div class="product-topbar"><span>🚚 Nationwide Delivery Across Pakistan</span><div><a href="#" id="trackOrder">Track Order</a><span>|</span><a href="index.html">Home</a></div></div>
 <header class="product-site-header">
  <a href="index.html" class="product-site-logo"><img src="images/logo.png" alt="Neha Rani Studio"><span>Neha Rani Studio</span></a>
  <div class="product-header-actions">
@@ -435,5 +435,9 @@
 
 </script>
 
+<div class="order-popup" role="dialog" aria-modal="true" aria-label="Track your order"><div class="order-box">
+<button class="close-order" type="button" aria-label="Close"><i class="fa-solid fa-xmark"></i></button><h2>Track Your Order</h2>
+<p>Enter the tracking number provided with your order. Live tracking needs your courier service.</p><input type="text" id="trackingNumber" placeholder="Enter courier tracking number">
+<button class="track-btn" type="button">Track Order</button><p id="trackingResult" class="tracking-result" aria-live="polite"></p></div></div>
 </body>
 </html>
