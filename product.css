@@ -119,3 +119,8 @@
  #mainProductImage{height:min(78vw,380px)}
  .product-thumb{width:58px;height:58px}
 }
+
+/* Match the full-height cart and wishlist drawers on product pages */
+.cart-panel,.wishlist-panel{position:fixed!important;top:0!important;bottom:0!important;right:-105vw!important;width:min(420px,92vw)!important;height:100vh!important;height:100dvh!important;max-height:100dvh!important;box-sizing:border-box!important;overflow-y:auto!important;padding:28px 22px calc(24px + env(safe-area-inset-bottom))!important;border-radius:0!important;z-index:1000001!important}
+.cart-panel.active,.wishlist-panel.active{right:0!important}
+@media(max-width:768px){.cart-panel,.wishlist-panel{width:100vw!important;max-width:100vw!important;height:100vh!important;height:100dvh!important;right:-105vw!important;top:0!important;bottom:0!important;border-radius:0!important;padding:28px 18px calc(24px + env(safe-area-inset-bottom))!important}.cart-panel.active,.wishlist-panel.active{right:0!important}}
