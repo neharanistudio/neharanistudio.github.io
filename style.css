@@ -3155,3 +3155,152 @@ img{max-width:100%}
  .product-actions .product-btn{font-size:8px;padding:7px 3px}
  .collection-shortcuts{gap:14px}
 }
+
+
+/* =========================================================
+   MOBILE LAYOUT REFINEMENT — stable, fluid and touch-friendly
+   Keeps the existing catalogue, pink identity and interactions.
+========================================================= */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 76px; }
+  body { width: 100%; min-width: 0; overflow-x: clip; }
+  .container, .section-heading, .products-wrapper,
+  .categorySwiper, .brand-promises, .brand-story-inner,
+  .offer-content, .footer-container {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* A tidy header that stays available while scrolling */
+  body > .top-bar { min-height: 30px; padding: 7px 10px; line-height: 1.4; }
+  body > .header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 64px;
+    min-height: 64px;
+    padding: 0 12px;
+    background: rgba(255,255,255,.98);
+    border-bottom: 1px solid #f5dce7;
+    box-shadow: 0 3px 12px rgba(90,35,60,.07);
+  }
+  .header-left, .header-right { min-width: 0; gap: 6px; }
+  .header-left { justify-content: flex-start; }
+  .header-center { position: static; min-width: 0; transform: none; }
+  .header-center .logo { min-width: 0; gap: 7px; justify-content: center; }
+  .header-center .logo img { width: 36px; height: 36px; flex: 0 0 36px; }
+  .header-center .logo h2 {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(12px, 3.5vw, 16px);
+    white-space: nowrap;
+  }
+  .header-right { justify-content: flex-end; }
+  .header .menu-icon, .header .search-btn,
+  .header .wishlist-btn, .header .cart-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    flex: 0 0 36px;
+    font-size: 14px;
+  }
+
+  /* Comfortable section rhythm and prevent accidental page-width jumps */
+  .hero-slider { padding: 12px 10px 22px; }
+  .heroSwiper { width: 100%; }
+  .hero-content { width: 100%; min-width: 0; padding: 22px 16px 30px; gap: 14px; }
+  .hero-image, .hero-text { width: 100%; min-width: 0; }
+  .hero-image img { width: 100%; max-height: 225px; object-fit: contain; }
+  .hero-text h1 { max-width: 100%; overflow-wrap: anywhere; }
+  .hero-text p { max-width: 34rem; }
+  .hero-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+  .collection-shortcuts {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 12px 18px;
+  }
+  .categorySwiper { overflow: hidden; }
+  .category-card { min-width: 0; }
+  .category-card img { width: 100%; aspect-ratio: 1 / 1; height: auto; }
+  .category-card h3 { overflow-wrap: anywhere; }
+
+  .products-wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 20px 12px;
+  }
+  .product-item, .product-card, .product-image, .product-info { min-width: 0; }
+  .product-image { width: 100%; aspect-ratio:  .78 / 1; height: auto; }
+  .product-image img { width: 100%; height: 100%; object-fit: cover; }
+  .product-info { padding: 10px 2px; }
+  .product-info h3 {
+    min-height: 0;
+    font-size: 12px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .product-price { margin: 6px 0 10px; font-size: 13px; }
+  .product-actions { display: flex; align-items: center; gap: 7px; min-width: 0; }
+  .product-actions .wishlist-add {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    flex: 0 0 34px;
+    margin: 0;
+  }
+  .product-actions .product-btn {
+    min-width: 0;
+    min-height: 38px;
+    flex: 1 1 0;
+    padding: 7px 5px;
+    font-size: 9px;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .brand-promises { padding: 18px 12px; }
+  .promise-item { min-width: 0; }
+  .promise-item div { min-width: 0; }
+  .promise-item strong, .promise-item small { overflow-wrap: anywhere; }
+  .offer-content { width: 92%; gap: 16px; }
+  .offer-text h2, .bestseller-copy h2, .brand-story-copy h2 { overflow-wrap: anywhere; }
+  .bestseller-feature { width: 92%; }
+  .brand-story-inner { width: 92%; }
+  .review-invitation { max-width: 92%; }
+  .footer-container { width: 92%; }
+  .footer-box { min-width: 0; }
+  .footer-box p, .footer-box a { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 390px) {
+  body > .header { grid-template-columns: 34px minmax(0, 1fr) auto; gap: 5px; padding: 0 9px; }
+  .header-center .logo { gap: 5px; }
+  .header-center .logo img { width: 32px; height: 32px; flex-basis: 32px; }
+  .header-center .logo h2 { font-size: 11px; }
+  .header .menu-icon, .header .search-btn,
+  .header .wishlist-btn, .header .cart-btn {
+    width: 33px; height: 33px; min-width: 33px; flex-basis: 33px;
+  }
+  .header-right { gap: 4px; }
+  .products-wrapper { gap: 17px 9px; }
+  .product-actions { gap: 5px; }
+  .product-actions .wishlist-add { width: 31px; height: 31px; min-width: 31px; flex-basis: 31px; }
+  .product-actions .product-btn { font-size: 8px; padding-inline: 3px; }
+  .section-heading h2 { font-size: 22px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
