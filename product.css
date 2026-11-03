@@ -1,0 +1,59 @@
+/* Neha Rani Studio - product details page */
+.product-detail-page {
+  width: min(1180px, 92%);
+  margin: 48px auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+  background: #fff;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(232,93,151,.10);
+}
+.product-gallery { min-width: 0; position: relative; }
+#mainProductImage {
+  width: 100%;
+  height: 480px;
+  object-fit: contain;
+  background: #fff8fb;
+  border-radius: 18px;
+}
+.product-thumbnails { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.product-detail-info { min-width: 0; padding: 12px 0; }
+.product-category { color: #e85d97; font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.product-detail-info h1 { font-size: clamp(26px,3vw,38px); line-height: 1.2; margin: 12px 0; color: #29232a; }
+.product-detail-info h2 { font-size: 26px; color: #e85d97; margin-bottom: 18px; }
+.product-detail-info .rating { color: #e8a500; margin-bottom: 24px; }
+.product-detail-info .rating span { color: #777; font-size: 13px; }
+.description h3 { font-size: 17px; margin-bottom: 8px; }
+.description p, .delivery-info p { color: #666; font-size: 14px; line-height: 1.8; }
+.delivery-info { background: #fff6fa; border-radius: 14px; padding: 16px; margin: 20px 0; }
+.buttons { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.buttons button, .buttons a { min-height: 46px; border-radius: 30px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; }
+#detailAddCart, .buy-btn { color: #fff; background: #e85d97; }
+#detailWishlist { width: 46px; padding: 0; color: #e85d97; background: #fff0f6; }
+.image-buttons { display: flex; justify-content: space-between; margin-top: 10px; }
+.image-buttons button { width: 38px; height: 38px; border-radius: 50%; background: #fff0f6; color: #e85d97; }
+.related-products { width: min(1180px,92%); margin: 45px auto; }
+.related-products h2, .reviews h2 { font-size: 26px; margin-bottom: 20px; color: #333; }
+.related-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.related-card { background: #fff; padding: 14px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.06); min-width: 0; }
+.related-card img { width: 100%; height: 180px; object-fit: contain; background: #fff8fb; border-radius: 12px; }
+.related-card h3 { font-size: 15px; margin: 12px 0 6px; }
+.related-card p { color: #e85d97; font-weight: 600; margin-bottom: 10px; }
+.related-card a { color: #e85d97; font-size: 13px; font-weight: 600; }
+@media (max-width: 768px) {
+  .product-detail-page { width: 92%; margin: 22px auto; padding: 16px; grid-template-columns: 1fr; gap: 22px; border-radius: 18px; }
+  #mainProductImage { height: min(78vw,360px); }
+  .product-detail-info { padding: 0; }
+  .product-detail-info h1 { font-size: 25px; }
+  .product-detail-info h2 { font-size: 23px; }
+  .buttons { display: grid; grid-template-columns: minmax(0,1fr) 46px; }
+  .buttons .buy-btn { grid-column: 1 / -1; }
+  .related-products { margin: 30px auto; }
+  .related-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+  .related-card { padding: 10px; }
+  .related-card img { height: 145px; }
+  .related-card h3 { font-size: 13px; }
+}
