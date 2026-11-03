@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/categories/ribbon.jpg", category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
+    "bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "dress-1": { id: "dress-1", name: "Beautiful Dress", price: "Rs. 4,999", image: "images/dresses.jpg", images: ["images/dresses.jpg"], category: "Dresses" },
     "perfume-1": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
     "perfume": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
@@ -137,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const productName = $("#productName");
   let detailProduct = null, detailImages = [], detailImageIndex = 0;
   const mainImage = $("#mainProductImage"), thumbnails = $("#productThumbnails");
+  if (mainImage) mainImage.addEventListener("error", function () { this.onerror = null; this.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700"><rect width="100%" height="100%" fill="#fff0f6"/><text x="50%" y="48%" text-anchor="middle" font-family="Arial" font-size="32" fill="#b83f78">Product photo</text><text x="50%" y="56%" text-anchor="middle" font-family="Arial" font-size="18" fill="#8b6476">Upload product images to display here</text></svg>'); });
   const renderGallery = function () {
     if (!mainImage || !detailImages.length) return;
     detailImageIndex = (detailImageIndex + detailImages.length) % detailImages.length;
@@ -170,8 +172,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }else{productName.textContent="Product not found";if(description)description.textContent="This product link may be outdated. Please return to the homepage to browse available products.";}
   }
   if(thumbnails)thumbnails.addEventListener("click",function(event){const thumb=event.target.closest("[data-gallery-index]");if(thumb)showDetailImage(Number(thumb.dataset.galleryIndex));});
-  const topAddCart=$("#topAddCart");
-  if(topAddCart)topAddCart.addEventListener("click",function(){if(detailProduct)addToCart(Object.assign({},detailProduct));});
+  const topAddCart=$("#topAddCart"), floatingAddCart=$("#floatingAddCart"), floatingWishlist=$("#floatingWishlist");
+  const addCurrentProductToCart=function(){if(detailProduct)addToCart(Object.assign({},detailProduct));};
+  const addCurrentProductToWishlist=function(){if(detailProduct)addToWishlist(Object.assign({},detailProduct));};
+  if(topAddCart)topAddCart.addEventListener("click",addCurrentProductToCart);
+  if(floatingAddCart)floatingAddCart.addEventListener("click",addCurrentProductToCart);
+  if(floatingWishlist)floatingWishlist.addEventListener("click",addCurrentProductToWishlist);
   const closeSearchPopup = function () {
     if (searchPopup) searchPopup.classList.remove("active");
     if (searchInput) searchInput.value = "";
@@ -266,10 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.target.closest(".close-order")) $(".order-popup")?.classList.remove("active");
     if (event.target.closest(".track-btn")) {
       const orderId = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
-      if (!orderId) alert("Please enter your order ID.");
-      else window.open("https://wa.me/923045255325?text=" + encodeURIComponent(
-        "Assalam-o-Alaikum, I would like an update on my order. Order ID: " + orderId
-      ), "_blank", "noopener");
+      const result = $("#trackingResult");
+      if (!orderId) { if (result) result.textContent = "Please enter your order ID."; }
+      else if (result) result.textContent = "Order lookup needs to be connected to your order records and courier tracking service before live status can be shown.";
     }
   });
 
