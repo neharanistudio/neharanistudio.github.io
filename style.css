@@ -3057,3 +3057,15 @@ body>.header{position:relative;top:auto;min-height:78px;border-bottom:1px solid 
 body>.header .logo img{width:48px;height:48px;object-fit:contain}
 body>.header .logo h2{font-size:19px;color:#d84e89}
 @media(max-width:600px){.policy-page,.payment-page{padding:28px 12px 38px}.policy-box,.payment-box{padding:23px 18px;border-radius:3px}.policy-box p,.payment-box p{font-size:13px}.policy-box .contact-info{grid-template-columns:1fr;padding:15px}.policy-page-links{gap:10px 15px}.policy-page-links a{font-size:11px}}
+
+/* Honest customer feedback invitation */
+.review-invitation{width:min(720px,92%);margin:0 auto;padding:36px 24px;text-align:center;background:#fff0f6;border:1px solid #f6d8e5}
+.review-invitation-icon{display:block;color:#e85d97;font-family:Georgia,serif;font-size:42px;line-height:1}
+.review-invitation h3{margin:12px 0 8px;color:#33272e;font-size:20px;font-weight:600}
+.review-invitation p{max-width:540px;margin:0 auto 18px;color:#71666b;font-size:13px;line-height:1.8}
+.review-invitation a{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 20px;background:#25D366;color:#fff;text-decoration:none;font-size:12px;font-weight:700}
+.review-invitation a:hover{background:#1ebe5d}
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+img{max-width:100%}
+@media(max-width:600px){.review-invitation{padding:28px 18px}.review-invitation h3{font-size:18px}}
