@@ -373,6 +373,13 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "product.html?id=" + encodeURIComponent(card.dataset.id);
       return;
     }
+    const collectionShortcut = event.target.closest(".collection-shortcuts a[data-category]");
+    if (collectionShortcut) {
+      event.preventDefault();
+      filterProducts(collectionShortcut.dataset.category);
+      window.location.hash = "featured-products";
+      return;
+    }
     const categoryCard = event.target.closest(".category-card");
     if (categoryCard && categoryCard.dataset.category) filterProducts(categoryCard.dataset.category);
 
