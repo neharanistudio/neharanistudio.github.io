@@ -172,62 +172,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "Abayas": "A graceful abaya that brings together modest styling and timeless elegance. A versatile wardrobe choice for everyday wear, gatherings and occasions.",
       };
       if(description) description.textContent = productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
-      const reviewSets = {
-        "Gift Hampers": [
-          ["Areeba Shah","The hamper looked so pretty when it arrived. The wrapping made it feel extra special."],
-          ["Sana Rauf","I ordered it as a birthday surprise and loved the thoughtful presentation."],
-          ["Minal Ahmed","Everything was arranged neatly and the gift box looked elegant."],
-          ["Hafsa Noor","A lovely gifting option. The packaging made a beautiful first impression."]
-        ],
-        "Ribbon Bouquets": [
-          ["Laiba Khan","The ribbon details were delicate and the bouquet looked beautiful in person."],
-          ["Eman Ali","Such a sweet surprise gift. The colours and finishing were lovely."],
-          ["Aqsa Javed","It looked graceful and was packed carefully for delivery."],
-          ["Misha Raza","A unique bouquet idea and a pretty keepsake for a special day."]
-        ],
-        "Bags": [
-          ["Iqra Malik","The bag has a lovely finish and enough room for my everyday essentials."],
-          ["Mehwish Tariq","It arrived safely packed and looked just like the product photos."],
-          ["Anaya Aslam","I liked the design and the overall look is very elegant."],
-          ["Rida Faisal","A stylish bag for daily use. The details look neat."]
-        ],
-        "Dresses": [
-          ["Hira Ahmed","The fabric felt comfortable and the outfit looked graceful when worn."],
-          ["Maham Yousaf","The colour and design were just what I was looking for."],
-          ["Zoya Iqbal","Loved the finishing and the overall look of this dress."],
-          ["Aiman Raza","A lovely outfit for a small get-together. The fit was comfortable."]
-        ],
-        "Perfumes": [
-          ["Nimra Shah","The fragrance is pleasant and the bottle looks lovely."],
-          ["Sadia Noor","A nice scent for everyday use, with neat packaging."],
-          ["Alina Tariq","I liked the fragrance profile and the presentation."],
-          ["Komal Aziz","The perfume arrived securely packed and made a nice impression."]
-        ],
-        "Jewelry": [
-          ["Maira Khan","The jewellery set has a beautiful shine and looks elegant."],
-          ["Ayesha Rauf","The detailing is pretty and it was packed with care."],
-          ["Nawal Ahmed","A lovely accessory for festive outfits. I liked the finish."],
-          ["Saira Malik","The design looks delicate and adds a nice touch to an outfit."]
-        ],
-        "Shoes": [
-          ["Maryam Ali","The design is pretty and the pair looks just like the pictures."],
-          ["Sehrish Khan","I liked the style and the finishing looks neat."],
-          ["Noor Fatima","A lovely pair for everyday outfits. Packaging was secure."],
-          ["Dua Aslam","The overall look is elegant and easy to style."]
-        ],
-        "Abayas": [
-          ["Amna Siddiqui","The abaya looks elegant and the fabric drapes beautifully."],
-          ["Esha Rani","I liked the simple design and neat finishing."],
-          ["Sumbul Noor","A graceful piece with a comfortable feel."],
-          ["Areej Malik","The look is modest and elegant, just what I wanted."]
-        ]
-      };
       const reviewGrid = $("#productReviewGrid");
       if (reviewGrid) {
-        const reviews = reviewSets[detailProduct.category] || reviewSets["Dresses"];
-        reviewGrid.innerHTML = reviews.map(function(review) {
-          return '<article class="review-card"><div class="stars">★★★★★</div><p>' + escapeHTML(review[1]) + '</p><h4>' + escapeHTML(review[0]) + '</h4></article>';
-        }).join("");
+        reviewGrid.innerHTML = '<div class="review-invitation"><span class="review-invitation-icon">♡</span><h3>Be the first to share your experience</h3><p>Have you purchased this product? We would love to hear your genuine feedback.</p><a href="https://wa.me/923045255325?text=' + encodeURIComponent("Assalam-o-Alaikum, I would like to share feedback about " + detailProduct.name + ".") + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Share Feedback</a></div>';
       }
 
       const detailAdd=$("#detailAddCart");
