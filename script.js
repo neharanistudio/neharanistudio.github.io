@@ -151,6 +151,28 @@ document.addEventListener("DOMContentLoaded", function () {
     $$(".image-buttons button").forEach(function(btn){btn.disabled=detailImages.length<2;});
   };
   const showDetailImage = function(index){if(!detailImages.length)return;detailImageIndex=(index+detailImages.length)%detailImages.length;renderGallery();};
+  // Keep galleries ready for up to six genuine product photos.
+  const galleryTouchStart = { x: 0, y: 0 };
+  if (mainImage) {
+    mainImage.setAttribute("tabindex", "0");
+    mainImage.setAttribute("role", "button");
+    mainImage.setAttribute("aria-label", "Product photo. Swipe left or right to view more photos.");
+    mainImage.addEventListener("touchstart", function(event) {
+      if (!event.touches || !event.touches.length) return;
+      galleryTouchStart.x = event.touches[0].clientX;
+      galleryTouchStart.y = event.touches[0].clientY;
+    }, { passive: true });
+    mainImage.addEventListener("touchend", function(event) {
+      if (!event.changedTouches || !event.changedTouches.length || detailImages.length < 2) return;
+      const dx = event.changedTouches[0].clientX - galleryTouchStart.x;
+      const dy = event.changedTouches[0].clientY - galleryTouchStart.y;
+      if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.2) showDetailImage(detailImageIndex + (dx < 0 ? 1 : -1));
+    }, { passive: true });
+    mainImage.addEventListener("keydown", function(event) {
+      if (event.key === "ArrowLeft") { event.preventDefault(); showDetailImage(detailImageIndex - 1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); showDetailImage(detailImageIndex + 1); }
+    });
+  }
   window.prevImage=function(){showDetailImage(detailImageIndex-1);};
   window.nextImage=function(){showDetailImage(detailImageIndex+1);};
   if(productName){
@@ -160,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if(detailProduct){
       productName.textContent=detailProduct.name;
       if(price)price.textContent=detailProduct.price;
-      detailImages=detailProduct.images||[detailProduct.image];renderGallery();
+      detailImages=(detailProduct.images||[detailProduct.image]).filter(Boolean).slice(0,6);renderGallery();
       const productDescriptions = {
         "Gift Hampers": "Make every celebration memorable with this thoughtfully presented gift hamper. Its elegant arrangement makes it a lovely choice for birthdays, weddings, anniversaries and special surprises.",
         "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
