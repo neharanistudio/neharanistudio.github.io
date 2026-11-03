@@ -236,3 +236,15 @@
   color:#E1306C;
 }
 .footer-instagram-link:hover{color:#E1306C}
+
+/* Product page cache refresh + tidy mobile action spacing */
+.product-site-logo img{object-fit:contain}
+.product-detail-page{box-shadow:0 12px 35px rgba(232,93,151,.08)}
+.related-card-link .related-view-link{display:inline-flex;margin-top:4px;color:#d84e89;font-size:12px;font-weight:700}
+@media(max-width:600px){
+ .product-header-actions .product-header-add{width:36px;min-width:36px;padding:0}
+ .product-header-actions .product-header-add i{font-size:14px}
+ .product-header-actions .product-header-wishlist{width:36px;min-width:36px}
+ .product-detail-page{margin:14px auto;padding:12px;gap:16px}
+ .product-floating-actions{right:10px}
+}
