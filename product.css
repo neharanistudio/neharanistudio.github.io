@@ -264,3 +264,32 @@
 .product-collection-note{display:flex;align-items:center;gap:9px;margin:0 0 22px;color:#9b5574;font-size:13px}
 .product-collection-note i{color:#e85d97;font-size:16px}
 @media(max-width:768px){.product-reviews .review-grid{grid-template-columns:1fr;gap:11px}.product-highlight-card{padding:18px!important}.product-highlights-section{padding:30px 0!important}.product-highlights-heading h2{font-size:23px}}
+
+
+/* Product gallery: side-to-side controls, swipe and a six-photo thumbnail rail */
+.product-gallery{position:relative;overflow:hidden}
+.product-gallery #mainProductImage{display:block;touch-action:pan-y;user-select:none;-webkit-user-drag:none;cursor:grab}
+.product-gallery #mainProductImage:active{cursor:grabbing}
+.product-gallery .image-buttons{
+  position:absolute;left:18px;right:18px;top:calc(10px + 250px);
+  transform:translateY(-50%);display:flex;justify-content:space-between;
+  margin:0;pointer-events:none;z-index:3
+}
+.product-gallery .image-buttons button{
+  pointer-events:auto;width:42px;height:42px;border:1px solid #f3c8da;
+  border-radius:50%;background:rgba(255,255,255,.94);color:#c74680;
+  box-shadow:0 4px 14px rgba(70,30,50,.13);display:flex;align-items:center;
+  justify-content:center;transition:transform .18s ease,background .18s ease
+}
+.product-gallery .image-buttons button:hover{background:#e85d97;color:#fff;transform:scale(1.06)}
+.product-thumbnails{
+  display:flex;flex-wrap:nowrap;gap:10px;overflow-x:auto;overflow-y:hidden;
+  padding:3px 2px 8px;scroll-snap-type:x mandatory;scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch
+}
+.product-thumbnails .product-thumb{flex:0 0 68px;scroll-snap-align:start}
+@media(max-width:768px){
+ .product-gallery .image-buttons{top:calc(10px + min(39vw,180px));left:14px;right:14px}
+ .product-gallery .image-buttons button{width:38px;height:38px}
+ .product-thumbnails .product-thumb{flex-basis:58px}
+}
