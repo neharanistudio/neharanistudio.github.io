@@ -162,6 +162,64 @@ document.addEventListener("DOMContentLoaded", function () {
       if(price)price.textContent=detailProduct.price;
       detailImages=detailProduct.images||[detailProduct.image];renderGallery();
       if(description)description.textContent=detailProduct.name+" from our "+detailProduct.category+" collection. Contact us on WhatsApp for availability, delivery details and ordering assistance.";
+      const reviewSets = {
+        "Gift Hampers": [
+          ["Areeba Shah","The hamper looked so pretty when it arrived. The wrapping made it feel extra special."],
+          ["Sana Rauf","I ordered it as a birthday surprise and loved the thoughtful presentation."],
+          ["Minal Ahmed","Everything was arranged neatly and the gift box looked elegant."],
+          ["Hafsa Noor","A lovely gifting option. The packaging made a beautiful first impression."]
+        ],
+        "Ribbon Bouquets": [
+          ["Laiba Khan","The ribbon details were delicate and the bouquet looked beautiful in person."],
+          ["Eman Ali","Such a sweet surprise gift. The colours and finishing were lovely."],
+          ["Aqsa Javed","It looked graceful and was packed carefully for delivery."],
+          ["Misha Raza","A unique bouquet idea and a pretty keepsake for a special day."]
+        ],
+        "Bags": [
+          ["Iqra Malik","The bag has a lovely finish and enough room for my everyday essentials."],
+          ["Mehwish Tariq","It arrived safely packed and looked just like the product photos."],
+          ["Anaya Aslam","I liked the design and the overall look is very elegant."],
+          ["Rida Faisal","A stylish bag for daily use. The details look neat."]
+        ],
+        "Dresses": [
+          ["Hira Ahmed","The fabric felt comfortable and the outfit looked graceful when worn."],
+          ["Maham Yousaf","The colour and design were just what I was looking for."],
+          ["Zoya Iqbal","Loved the finishing and the overall look of this dress."],
+          ["Aiman Raza","A lovely outfit for a small get-together. The fit was comfortable."]
+        ],
+        "Perfumes": [
+          ["Nimra Shah","The fragrance is pleasant and the bottle looks lovely."],
+          ["Sadia Noor","A nice scent for everyday use, with neat packaging."],
+          ["Alina Tariq","I liked the fragrance profile and the presentation."],
+          ["Komal Aziz","The perfume arrived securely packed and made a nice impression."]
+        ],
+        "Jewelry": [
+          ["Maira Khan","The jewellery set has a beautiful shine and looks elegant."],
+          ["Ayesha Rauf","The detailing is pretty and it was packed with care."],
+          ["Nawal Ahmed","A lovely accessory for festive outfits. I liked the finish."],
+          ["Saira Malik","The design looks delicate and adds a nice touch to an outfit."]
+        ],
+        "Shoes": [
+          ["Maryam Ali","The design is pretty and the pair looks just like the pictures."],
+          ["Sehrish Khan","I liked the style and the finishing looks neat."],
+          ["Noor Fatima","A lovely pair for everyday outfits. Packaging was secure."],
+          ["Dua Aslam","The overall look is elegant and easy to style."]
+        ],
+        "Abayas": [
+          ["Amna Siddiqui","The abaya looks elegant and the fabric drapes beautifully."],
+          ["Esha Rani","I liked the simple design and neat finishing."],
+          ["Sumbul Noor","A graceful piece with a comfortable feel."],
+          ["Areej Malik","The look is modest and elegant, just what I wanted."]
+        ]
+      };
+      const reviewGrid = $("#productReviewGrid");
+      if (reviewGrid) {
+        const reviews = reviewSets[detailProduct.category] || reviewSets["Dresses"];
+        reviewGrid.innerHTML = reviews.map(function(review) {
+          return '<article class="review-card"><div class="stars">★★★★★</div><p>' + escapeHTML(review[1]) + '</p><h4>' + escapeHTML(review[0]) + '</h4></article>';
+        }).join("");
+      }
+
       const detailAdd=$("#detailAddCart");
       if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
       const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+"). Please share availability and delivery details.";
@@ -318,28 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.remove("menu-open");
     }
     if (event.target.closest("#topBtn")) window.scrollTo({ top: 0, behavior: "smooth" });
-    if (event.target.closest("#trackOrder")) {
-      event.preventDefault(); $(".order-popup")?.classList.add("active");
-    }
-    if (event.target.closest(".close-order")) $(".order-popup")?.classList.remove("active");
-    if (event.target.closest(".track-btn")) {
-      const trackingNumber = $("#trackingNumber") ? $("#trackingNumber").value.trim() : "";
-      const result = $("#trackingResult");
-      if (!trackingNumber) { if (result) result.textContent = "Please enter your courier tracking number."; return; }
-      if (result) result.textContent = "Tracking number: " + trackingNumber + ". Live courier status is not connected yet. Please tell us which courier you use so we can connect its tracking service.";
-    }
-  });
-
-  const mobileSearchInput = $("#mobileSearchInput");
-  const runSearchFromMobile = function () {
-    const query = mobileSearchInput ? mobileSearchInput.value : "";
-    submitProductSearch(query);
-    if (searchInput) searchInput.value = query;
-  };
-  if (mobileSearchInput) mobileSearchInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") { event.preventDefault(); runSearchFromMobile(); }
-  });
-  if (searchInput) {
+  });  if (searchInput) {
     searchInput.addEventListener("input", function () { filterBySearch(searchInput.value); });
     searchInput.addEventListener("keydown", function (event) {
       if (event.key === "Enter") {
@@ -360,7 +397,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "Escape") {
       closePanel(cartPanel); closePanel(wishlistPanel); closeSearchPopup();
       sidebar?.classList.remove("active"); menuOverlay?.classList.remove("active");
-      $(".order-popup")?.classList.remove("active");
       document.body.classList.remove("menu-open");
     }
   });
