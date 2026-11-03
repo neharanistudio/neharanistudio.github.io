@@ -172,9 +172,58 @@ document.addEventListener("DOMContentLoaded", function () {
         "Abayas": "A graceful abaya that brings together modest styling and timeless elegance. A versatile wardrobe choice for everyday wear, gatherings and occasions.",
       };
       if(description) description.textContent = productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
+      const productHighlights = {
+        "gift-box": [
+          ["Beautiful presentation", "A thoughtfully arranged gift box that makes the unboxing feel like part of the celebration."],
+          ["Made for meaningful moments", "A lovely gifting choice for birthdays, weddings, anniversaries and heartfelt surprises."],
+          ["A gift to remember", "An elegant way to make someone feel special on an important day."]
+        ],
+        "ribbon-bouquet": [
+          ["Charming ribbon details", "A decorative bouquet with a soft, graceful look that stands out from traditional flowers."],
+          ["A keepsake-style surprise", "A sweet choice when you want your gift to feel memorable beyond the occasion."],
+          ["Perfect for celebrations", "A thoughtful pick for birthdays, anniversaries and little moments worth celebrating."]
+        ],
+        "bag-1": [
+          ["Easy to style", "A versatile handbag that can complement both everyday outfits and dressed-up looks."],
+          ["A polished finishing touch", "An accessory that adds a neat, elegant detail to your overall outfit."],
+          ["For everyday moments", "A stylish pick for outings, meet-ups and occasions when you want to carry your essentials."]
+        ],
+        "dress-1": [
+          ["Graceful look", "A stylish outfit chosen for an elegant look at gatherings and special moments."],
+          ["Easy outfit inspiration", "Pair it with your favourite accessories to create a look that feels your own."],
+          ["For special plans", "A lovely wardrobe choice for festive moments, get-togethers and occasions."]
+        ],
+        "perfume-1": [
+          ["A finishing touch", "A fragrance choice to complete your getting-ready routine."],
+          ["Lovely gifting idea", "A thoughtful option for someone who enjoys adding fragrance to their day."],
+          ["Everyday or occasion", "A little extra detail for daily routines, celebrations and special plans."]
+        ],
+        "jewelry-1": [
+          ["Decorative detail", "A beautiful finishing touch to bring extra interest to your favourite outfits."],
+          ["Occasion-ready styling", "A lovely accessory choice for festive looks, celebrations and gatherings."],
+          ["Easy to pair", "Style it with traditional or modern outfits to make the look your own."]
+        ],
+        "shoes-1": [
+          ["Versatile styling", "A pair that can be styled with a range of casual and dressed-up outfits."],
+          ["A complete look", "The finishing detail that helps bring your outfit together."],
+          ["For your plans", "A style choice for everyday outings, meet-ups and special occasions."]
+        ],
+        "abaya": [
+          ["Modest elegance", "A graceful style that brings a refined touch to modest dressing."],
+          ["Timeless wardrobe choice", "An easy piece to reach for when you want a simple, elegant look."],
+          ["Versatile styling", "A lovely option for everyday wear, gatherings and special occasions."]
+        ]
+      };
       const reviewGrid = $("#productReviewGrid");
       if (reviewGrid) {
-        reviewGrid.innerHTML = '<div class="review-invitation"><span class="review-invitation-icon">♡</span><h3>Be the first to share your experience</h3><p>Have you purchased this product? We would love to hear your genuine feedback.</p><a href="https://wa.me/923045255325?text=' + encodeURIComponent("Assalam-o-Alaikum, I would like to share feedback about " + detailProduct.name + ".") + '" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Share Feedback</a></div>';
+        const highlights = productHighlights[detailProduct.id] || [
+          ["Thoughtfully selected", "A considered addition to the Neha Rani Studio collection."],
+          ["Style it your way", "Make this piece your own with the accessories and details you love."],
+          ["A lovely choice", "Explore this item for everyday moments, gifting or a special occasion."]
+        ];
+        reviewGrid.innerHTML = highlights.map(function (item) {
+          return '<article class="review-card product-highlight-card"><span class="product-highlight-icon" aria-hidden="true">✧</span><p>' + escapeHTML(item[1]) + '</p><h4>' + escapeHTML(item[0]) + '</h4></article>';
+        }).join("");
       }
 
       const detailAdd=$("#detailAddCart");
