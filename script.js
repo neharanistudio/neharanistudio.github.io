@@ -161,7 +161,17 @@ document.addEventListener("DOMContentLoaded", function () {
       productName.textContent=detailProduct.name;
       if(price)price.textContent=detailProduct.price;
       detailImages=detailProduct.images||[detailProduct.image];renderGallery();
-      if(description)description.textContent=detailProduct.name+" from our "+detailProduct.category+" collection. Contact us on WhatsApp for availability, delivery details and ordering assistance.";
+      const productDescriptions = {
+        "Gift Hampers": "Make every celebration memorable with this thoughtfully presented gift hamper. Its elegant arrangement makes it a lovely choice for birthdays, weddings, anniversaries and special surprises.",
+        "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
+        "Bags": "Complete your everyday and occasion looks with this elegant handbag. Its versatile design pairs effortlessly with a range of outfits, making it a stylish accessory for day-to-day use and outings.",
+        "Dresses": "Refresh your wardrobe with this stylish outfit, selected for its graceful look and versatile appeal. A lovely option for gatherings, festive moments and polished everyday dressing.",
+        "Perfumes": "Add a refined finishing touch to your routine with this fragrance. A thoughtful choice for personal use or gifting, ideal for those who enjoy a fresh and memorable scent.",
+        "Jewelry": "Elevate your look with this elegant jewelry piece. Its decorative detailing makes it a beautiful finishing touch for festive outfits, celebrations and special occasions.",
+        "Shoes": "Step out in style with this versatile pair of ladies' shoes. Designed to complement a variety of looks, it is a lovely choice for everyday wear and casual outings.",
+        "Abayas": "A graceful abaya that brings together modest styling and timeless elegance. A versatile wardrobe choice for everyday wear, gatherings and occasions.",
+      };
+      if(description) description.textContent = productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const reviewSets = {
         "Gift Hampers": [
           ["Areeba Shah","The hamper looked so pretty when it arrived. The wrapping made it feel extra special."],
