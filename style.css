@@ -2825,3 +2825,98 @@ body.menu-open, body.panel-open { overflow: hidden; }
 .policy-page-links{display:flex;justify-content:center;align-items:center;gap:10px 18px;flex-wrap:wrap;padding:22px 14px;background:#fff7fb;border-top:1px solid #f4dce7}
 .policy-page-links a{font-size:12px;color:#89516b;text-decoration:none;font-weight:600}
 .policy-page-links a:hover{color:#d74783;text-decoration:underline}
+
+
+/* =========================================================
+   NEHA RANI STUDIO — EDITORIAL LUXURY REFRESH
+   Keeps the existing product catalogue and shopping logic.
+========================================================= */
+:root{
+  --primary:#c77d96;
+  --primary-dark:#a95f79;
+  --soft-pink:#fbf3f5;
+  --ink:#292326;
+  --muted:#786d71;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{color:var(--ink);background:#fff;font-family:'Poppins',sans-serif}
+.top-bar{background:#f8eef1;color:#70545f;min-height:34px;font-size:11px;letter-spacing:.7px}
+.top-bar a{color:#70545f}
+.header{min-height:86px;background:rgba(255,255,255,.98);box-shadow:0 3px 18px rgba(63,35,45,.045);border-bottom:1px solid #f2e9ec}
+.logo img{width:54px;height:54px;object-fit:contain}
+.logo h2,.footer-logo h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;letter-spacing:.3px;color:#8f596d}
+.main-nav{background:#fff;border-bottom:1px solid #f1e8eb;gap:38px;padding:15px 20px}
+.main-nav a{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:#55474d;font-weight:500}
+.main-nav a:hover{color:var(--primary)}
+.search-btn,.cart-btn,.wishlist-btn,.menu-icon{background:#fbf3f5;color:#9c6177}
+.hero-slider{background:linear-gradient(110deg,#fbf3f5 0%,#fff 58%,#f7edf0 100%);padding:28px 0 38px}
+.hero-content{width:min(1320px,92%);min-height:430px;margin:auto;gap:42px}
+.hero-subtitle,.offer-subtitle{color:#a66b80;letter-spacing:2.4px;font-size:11px;font-weight:600}
+.hero-text h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(38px,5vw,66px);font-weight:400;line-height:1.12;letter-spacing:-1px;color:#33272c}
+.hero-text p{max-width:470px;color:#786d71;line-height:1.9;font-size:14px}
+.hero-btn{background:#bd7c92;color:#fff;border-radius:2px;padding:14px 28px;letter-spacing:1px;text-transform:uppercase;font-size:11px;font-weight:600;box-shadow:none}
+.hero-btn:hover{background:#985d73;transform:translateY(-2px)}
+.hero-image img{max-height:430px;object-fit:contain}
+.swiper-pagination-bullet-active{background:#bd7c92}
+.category-section,.featured-products,.reviews{padding-top:64px;padding-bottom:64px}
+.category-section{background:#fff}
+.section-heading{width:min(1320px,92%);margin:0 auto 28px;display:flex;align-items:end;justify-content:space-between}
+.section-heading h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(27px,3vw,38px);letter-spacing:-.4px;color:#352a2f}
+.section-heading>a{color:#9e6579;font-size:12px;letter-spacing:.8px;text-transform:uppercase}
+.category-card{background:#fff;border:1px solid #f1e8eb;border-radius:3px;padding:10px 10px 14px;box-shadow:none;transition:.25s}
+.category-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(75,43,54,.08)}
+.category-card img{border-radius:2px;object-fit:cover}
+.category-card h3{font-family:Georgia,'Times New Roman',serif;font-size:15px;font-weight:500;color:#55434b}
+.featured-products{background:#fbf7f8}
+.products-wrapper{width:min(1320px,92%);gap:22px}
+.product-card{border:1px solid #f0e8eb;border-radius:3px;box-shadow:0 4px 18px rgba(57,37,44,.045)}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(57,37,44,.09)}
+.product-image{background:#f8f4f5}
+.product-image img{object-fit:cover}
+.product-tag{background:#bd7c92;border-radius:2px;letter-spacing:.5px;font-size:10px;text-transform:uppercase}
+.product-info h3{font-family:Georgia,'Times New Roman',serif;font-size:17px;font-weight:500;color:#382d32}
+.product-price{color:#a8667d;font-size:17px;font-weight:600}
+.wishlist-add{border-radius:2px;background:#f8eef1;color:#a8667d}
+.product-btn{border-radius:2px;background:#bd7c92;text-transform:uppercase;letter-spacing:.7px;font-size:11px}
+.offer-banner{padding:60px 0;background:#fff}
+.offer-content{width:min(1320px,92%);border-radius:3px;background:linear-gradient(115deg,#f8edf1,#fcf7f8);box-shadow:none;border:1px solid #f1e5e9;padding:52px}
+.offer-text h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;color:#382d32;font-size:clamp(30px,4vw,46px)}
+.offer-text p{color:#786d71}
+.offer-subtitle{background:transparent;padding:0}
+.reviews{background:#fbf7f8}
+.review-grid{width:min(1320px,92%);gap:16px}
+.review-card{border:1px solid #f0e7ea;border-radius:3px;box-shadow:none;padding:25px 20px}
+.review-card h4{font-family:Georgia,'Times New Roman',serif;font-weight:500}
+.stars{color:#bd9a70}
+.footer{background:#f8eef1;padding-top:58px}
+.footer-container{width:min(1320px,92%)}
+.footer-box h3{font-family:Georgia,'Times New Roman',serif;font-weight:500;color:#795365}
+.footer-box p,.footer-box a{color:#6e6267}
+.footer-logo img{object-fit:contain}
+.social-icons a{border-radius:3px;color:#9e6579;box-shadow:none}
+.footer-bottom{color:#786d71}
+.sidebar{background:#fffafb}
+.sidebar h3{font-family:Georgia,'Times New Roman',serif;color:#8f596d}
+.sidebar a.active,.sidebar a:hover{background:#f8edf1;color:#9e6579}
+.cart-panel,.wishlist-panel{border-left:1px solid #f0e6e9}
+@media(max-width:768px){
+ .top-bar{font-size:9px;letter-spacing:.3px}
+ .header{min-height:62px}
+ .logo img{width:36px;height:36px}
+ .logo h2{font-size:15px;letter-spacing:0}
+ .main-nav{display:none}
+ .hero-slider{padding:18px 0 28px}
+ .hero-content{min-height:0;gap:16px}
+ .hero-text h1{font-size:36px}
+ .hero-text p{font-size:12px}
+ .hero-image img{max-height:260px}
+ .section-heading{margin-bottom:20px}
+ .category-section,.featured-products,.reviews{padding-top:38px;padding-bottom:38px}
+ .offer-content{padding:28px 18px}
+ .footer-logo img{width:48px;height:48px}
+}
+@media(max-width:420px){
+ .hero-text h1{font-size:31px}
+ .hero-image img{max-height:220px}
+ .section-heading h2{font-size:26px}
+}
