@@ -3035,3 +3035,25 @@ body{background:#fff;color:#292329}
  .promise-item small{font-size:10px}
  .brand-story-copy p{font-size:12px}
 }
+
+/* Consistent blush-pink styling for support and policy pages */
+.policy-page,.payment-page{width:100%;min-height:62vh;padding:54px 18px 64px;background:linear-gradient(180deg,#fff7fa 0%,#fff 55%)}
+.policy-box,.payment-box{width:min(900px,100%);margin:0 auto;padding:clamp(24px,5vw,48px);background:#fff;border:1px solid #f5dce7;border-radius:4px;box-shadow:0 12px 38px rgba(90,35,60,.06)}
+.policy-box h1,.payment-box h1{margin:0 0 22px;color:#33272e;font-size:clamp(27px,4vw,38px);line-height:1.2;font-weight:600}
+.policy-box h3,.payment-box h3{margin:25px 0 9px;color:#c83e7c;font-size:17px;font-weight:600}
+.policy-box p,.payment-box p{color:#6d6066;font-size:14px;line-height:1.9}
+.policy-box .contact-info{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 20px;margin:24px 0;padding:20px;background:#fff5f9}
+.policy-box .contact-info h3{margin:5px 0}
+.policy-contact,.payment-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:22px;padding:13px 22px;background:#e85d97;color:#fff!important;border-radius:2px;text-decoration:none;font-size:13px;font-weight:600;transition:.2s}
+.policy-contact:hover,.payment-whatsapp:hover{background:#cf3f7c;transform:translateY(-2px)}
+.faq-item{padding:17px 0;border-bottom:1px solid #f5e2ea}
+.faq-item h3{margin:0 0 7px}.faq-item p{margin:0}
+.payment-method{margin:18px 0;padding:18px 20px;background:#fff5f9;border:1px solid #f6dce7}
+.payment-note{margin-top:20px;padding:15px 18px;background:#fff8ed;border-left:3px solid #e7ad61}
+.policy-page-links{width:100%;padding:17px 12px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 22px;background:#fff0f6;border-top:1px solid #f4d9e5}
+.policy-page-links a{color:#9f3f6d;text-decoration:none;font-size:12px;font-weight:500}
+.policy-page-links a:hover{color:#e85d97;text-decoration:underline}
+body>.header{position:relative;top:auto;min-height:78px;border-bottom:1px solid #f4dce7;box-shadow:0 4px 18px rgba(70,30,50,.05)}
+body>.header .logo img{width:48px;height:48px;object-fit:contain}
+body>.header .logo h2{font-size:19px;color:#d84e89}
+@media(max-width:600px){.policy-page,.payment-page{padding:28px 12px 38px}.policy-box,.payment-box{padding:23px 18px;border-radius:3px}.policy-box p,.payment-box p{font-size:13px}.policy-box .contact-info{grid-template-columns:1fr;padding:15px}.policy-page-links{gap:10px 15px}.policy-page-links a{font-size:11px}}
