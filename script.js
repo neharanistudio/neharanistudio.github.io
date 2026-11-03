@@ -121,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!product) return;
     cart.push(product);
     renderCart();
-    openPanel(cartPanel);
+    // Do not open/shift the cart drawer automatically; shoppers can open it
+    // themselves from the header cart icon when they are ready.
   };
   const addToWishlist = function (product) {
     if (!product) return;
@@ -199,20 +200,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const value = normalizeSearch(term);
     const words = value.split(" ").filter(Boolean);
     const items = $$(".product-item");
-    let matches = 0;
-    items.forEach(function (item) {
+    const details = items.map(function (item) {
       const card = $(".product-card", item);
       const image = $("img", card || item);
-      const category = normalizeSearch(item.dataset.category || "");
-      const name = normalizeSearch($("h3", card || item)?.textContent || "");
-      const alt = normalizeSearch(image?.alt || "");
-      const id = normalizeSearch(card?.dataset.id || "");
-      const searchable = [category, name, alt, id].join(" ");
-      const visible = !value || words.every(function (word) {
-        return searchable.includes(word);
-      });
-      item.hidden = !visible;
-      item.style.display = visible ? "" : "none";
+      return {
+        item: item,
+        category: normalizeSearch(item.dataset.category || ""),
+        name: normalizeSearch($("h3", card || item)?.textContent || ""),
+        alt: normalizeSearch(image?.alt || ""),
+        id: normalizeSearch(card?.dataset.id || "")
+      };
+    });
+    // If the search matches a category, show every product in that category only.
+    const matchingCategories = details.map(function (p) { return p.category; }).filter(function (category, index, all) {
+      return category && all.indexOf(category) === index &&
+        words.length && words.every(function (word) { return category.includes(word); });
+    });
+    let matches = 0;
+    details.forEach(function (p) {
+      const categoryMatch = matchingCategories.length
+        ? matchingCategories.includes(p.category)
+        : (!value || words.every(function (word) {
+            return (p.name + " " + p.alt + " " + p.id).includes(word);
+          }));
+      const visible = !value || categoryMatch;
+      p.item.hidden = !visible;
+      p.item.style.display = visible ? "" : "none";
       if (visible && value) matches++;
     });
     const empty = $("#noSearchResults");
