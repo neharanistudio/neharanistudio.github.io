@@ -3525,3 +3525,11 @@ img{max-width:100%}
 .hero-full-banner .hero-image{position:static!important;inset:auto!important;display:flex!important;justify-content:center;align-items:center;width:100%!important;height:auto!important;}
 .hero-full-banner .hero-image img{display:block;width:100%!important;max-width:100%!important;height:auto!important;max-height:440px;object-fit:contain!important;object-position:center;}
 @media(max-width:768px){.hero-full-banner{max-height:300px;}.hero-full-banner .hero-image img{max-height:300px;}}
+
+
+/* Third hero slide: copy on the left, larger complete image on the right */
+.hero-full-banner{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;padding:42px 50px!important;min-height:460px!important;height:auto!important;max-height:none!important;overflow:hidden;background:linear-gradient(110deg,#fff7fa 0%,#fff 100%)!important;}
+.hero-full-banner .hero-text{display:block!important;flex:0 0 40%!important;width:40%!important;max-width:470px!important;}
+.hero-full-banner .hero-image{position:static!important;inset:auto!important;flex:1 1 60%!important;width:60%!important;height:auto!important;min-width:0;display:flex!important;justify-content:flex-end!important;align-items:center!important;}
+.hero-full-banner .hero-image img{display:block;width:100%!important;max-width:680px!important;height:auto!important;max-height:390px!important;object-fit:contain!important;object-position:right center!important;}
+@media(max-width:768px){.hero-full-banner{flex-direction:column-reverse!important;text-align:center!important;padding:25px 20px!important;gap:18px!important;min-height:0!important;}.hero-full-banner .hero-text{flex:auto!important;width:100%!important;max-width:100%!important;}.hero-full-banner .hero-text h1{font-size:28px!important;}.hero-full-banner .hero-text p{font-size:13px!important;}.hero-full-banner .hero-image{flex:auto!important;width:100%!important;justify-content:center!important;}.hero-full-banner .hero-image img{max-width:100%!important;max-height:240px!important;object-position:center!important;}}
