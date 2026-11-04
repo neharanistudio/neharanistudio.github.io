@@ -3533,3 +3533,57 @@ img{max-width:100%}
 .hero-full-banner .hero-image{position:static!important;inset:auto!important;flex:1 1 60%!important;width:60%!important;height:auto!important;min-width:0;display:flex!important;justify-content:flex-end!important;align-items:center!important;}
 .hero-full-banner .hero-image img{display:block;width:100%!important;max-width:680px!important;height:auto!important;max-height:390px!important;object-fit:contain!important;object-position:right center!important;}
 @media(max-width:768px){.hero-full-banner{flex-direction:column-reverse!important;text-align:center!important;padding:25px 20px!important;gap:18px!important;min-height:0!important;}.hero-full-banner .hero-text{flex:auto!important;width:100%!important;max-width:100%!important;}.hero-full-banner .hero-text h1{font-size:28px!important;}.hero-full-banner .hero-text p{font-size:13px!important;}.hero-full-banner .hero-image{flex:auto!important;width:100%!important;justify-content:center!important;}.hero-full-banner .hero-image img{max-width:100%!important;max-height:240px!important;object-position:center!important;}}
+
+
+
+/* FINAL: keep all three homepage hero banners exactly consistent */
+.heroSwiper .swiper-slide{height:auto!important;display:flex!important;align-items:stretch!important}
+.heroSwiper .hero-content{
+  box-sizing:border-box!important;
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:28px!important;
+  width:100%!important;
+  min-height:460px!important;
+  height:460px!important;
+  max-height:460px!important;
+  padding:38px 5%!important;
+  overflow:hidden!important;
+  background:linear-gradient(110deg,#fff7fa 0%,#fff 100%)!important;
+}
+.heroSwiper .hero-content .hero-text{
+  display:flex!important;flex:0 0 40%!important;width:40%!important;
+  max-width:470px!important;flex-direction:column!important;
+}
+.heroSwiper .hero-content .hero-image{
+  display:flex!important;flex:0 0 56%!important;width:56%!important;
+  height:100%!important;min-width:0!important;align-items:center!important;
+  justify-content:flex-end!important;overflow:hidden!important;
+}
+.heroSwiper .hero-content .hero-image img{
+  display:block!important;width:100%!important;height:100%!important;
+  max-width:100%!important;max-height:100%!important;
+  object-fit:contain!important;object-position:right center!important;
+}
+@media(max-width:768px){
+ .heroSwiper .hero-content{
+   flex-direction:column-reverse!important;justify-content:center!important;
+   gap:14px!important;width:100%!important;height:auto!important;
+   min-height:0!important;max-height:none!important;padding:22px 16px 28px!important;
+   text-align:center!important;
+ }
+ .heroSwiper .hero-content .hero-text{
+   display:flex!important;flex:0 0 auto!important;width:100%!important;
+   max-width:100%!important;align-items:center!important;
+ }
+ .heroSwiper .hero-content .hero-text h1{font-size:clamp(27px,7vw,36px)!important}
+ .heroSwiper .hero-content .hero-image{
+   flex:0 0 auto!important;width:100%!important;height:220px!important;
+   justify-content:center!important;
+ }
+ .heroSwiper .hero-content .hero-image img{
+   width:100%!important;height:100%!important;object-position:center!important;
+ }
+}
