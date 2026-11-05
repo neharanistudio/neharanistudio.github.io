@@ -3817,3 +3817,15 @@ img{max-width:100%}
   }
   .categorySwiper .category-card > .category-placeholder{font-size:24px !important}
 }
+
+
+/* Category slider controls and responsive end-to-end navigation */
+.categorySwiper{position:relative;width:min(1320px,94%);margin:0 auto;padding:10px 44px 24px!important;box-sizing:border-box;}
+.categorySwiper .swiper-wrapper{align-items:stretch;}
+.categorySwiper .swiper-slide{width:132px!important;flex-shrink:0;}
+.category-slider-btn{position:absolute;z-index:5;top:48px;width:34px;height:34px;border:1px solid #f0cddd;border-radius:50%;background:#fff;color:#b83f78;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(100,40,70,.12);cursor:pointer;}
+.category-prev{left:2px}.category-next{right:2px}
+.category-slider-btn:disabled{opacity:.3;cursor:not-allowed}
+@media(max-width:768px){.categorySwiper{width:100%;padding:8px 34px 20px!important}.categorySwiper .swiper-slide{width:104px!important}.category-slider-btn{top:38px;width:28px;height:28px;font-size:11px}.category-prev{left:2px}.category-next{right:2px}}
+@media(max-width:480px){.categorySwiper{padding-left:30px!important;padding-right:30px!important}.categorySwiper .swiper-slide{width:94px!important}.category-slider-btn{top:34px;width:25px;height:25px}}
+@media(min-width:769px){.categorySwiper{padding-left:46px!important;padding-right:46px!important}}
