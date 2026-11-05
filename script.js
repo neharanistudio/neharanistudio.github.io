@@ -203,10 +203,12 @@ document.addEventListener("DOMContentLoaded", function () {
           if(!button)return;
           selectedVariant=detailProduct.variants[Number(button.dataset.variantIndex)];
           detailProduct.selectedVariant=selectedVariant.name;
-          detailProduct.image=selectedVariant.images[0];
-          // Keep all six product photos visible below, while opening the chosen colour's first photo.
+          const selectedPhoto=selectedVariant.images && selectedVariant.images[0];
+          detailProduct.image=selectedPhoto || detailProduct.image;
+          // Keep every uploaded photo in the gallery, but immediately show the selected pack's exact photo.
           detailImages=(detailProduct.images||[]).filter(Boolean);
-          const selectedPhotoIndex=detailImages.indexOf(selectedVariant.images[0]);
+          let selectedPhotoIndex=detailImages.indexOf(selectedPhoto);
+          if(selectedPhotoIndex<0 && selectedPhoto){detailImages.unshift(selectedPhoto);selectedPhotoIndex=0;}
           detailImageIndex=selectedPhotoIndex>=0?selectedPhotoIndex:0;
           renderGallery();renderVariantOptions();
         });
