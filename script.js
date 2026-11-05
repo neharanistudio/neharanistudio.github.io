@@ -471,11 +471,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     if ($(".categorySwiper")) new Swiper(".categorySwiper", {
       slidesPerView: "auto",
+      slidesPerGroup: 1,
       spaceBetween: 16,
       freeMode: false,
-      watchOverflow: true,
+      watchOverflow: false,
+      watchSlidesProgress: true,
       observer: true,
       observeParents: true,
+      nested: true,
+      touchAngle: 25,
+      threshold: 5,
+      resistance: true,
+      resistanceRatio: 0.65,
+      touchStartPreventDefault: false,
+      preventInteractionOnTransition: true,
       navigation: { nextEl: ".category-next", prevEl: ".category-prev" },
       breakpoints: {
         0: { spaceBetween: 10 },
