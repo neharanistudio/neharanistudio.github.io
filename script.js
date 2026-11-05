@@ -490,7 +490,6 @@ document.addEventListener("DOMContentLoaded", function () {
       resistanceRatio: 0.85,
       touchStartPreventDefault: false,
       preventInteractionOnTransition: false,
-      navigation: { nextEl: ".category-next", prevEl: ".category-prev" },
       breakpoints: {
         0: { spaceBetween: 10 },
         481: { spaceBetween: 14 },
