@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if(price)price.textContent=detailProduct.price;
       detailImages=(detailProduct.images||[detailProduct.image]).filter(Boolean).slice(0,6);renderGallery();
       const productDescriptions = {
-        "Gift Hampers": "Make every celebration memorable with this thoughtfully presented gift hamper. Its elegant arrangement makes it a lovely choice for birthdays, weddings, anniversaries and special surprises.",
+        "Gift Hampers": "Add a graceful floral touch to your special moments with this rose-decorated jewelry gift box. Its elegant presentation makes it a lovely choice for storing or gifting earrings, rings and necklaces, and for birthdays, weddings, anniversaries and celebrations.",
         "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
         "Bags": "Complete your everyday and occasion looks with this elegant handbag. Its versatile design pairs effortlessly with a range of outfits, making it a stylish accessory for day-to-day use and outings.",
         "Dresses": "Refresh your wardrobe with this stylish outfit, selected for its graceful look and versatile appeal. A lovely option for gatherings, festive moments and polished everyday dressing.",
@@ -196,9 +196,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if(description) description.textContent = productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const productHighlights = {
         "gift-box": [
-          ["Beautiful presentation", "A thoughtfully arranged gift box that makes the unboxing feel like part of the celebration."],
-          ["Made for meaningful moments", "A lovely gifting choice for birthdays, weddings, anniversaries and heartfelt surprises."],
-          ["A gift to remember", "An elegant way to make someone feel special on an important day."]
+          ["Elegant rose decoration", "A pretty floral design that gives this jewelry gift box a romantic, gift-ready look."],
+          ["For jewelry keepsakes", "A lovely box for presenting or keeping earrings, rings and necklaces together."],
+          ["Perfect for special occasions", "A thoughtful choice for birthdays, weddings, anniversaries and celebration gifting."]
         ],
         "ribbon-bouquet": [
           ["Charming ribbon details", "A decorative bouquet with a soft, graceful look that stands out from traditional flowers."],
