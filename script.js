@@ -203,9 +203,11 @@ document.addEventListener("DOMContentLoaded", function () {
           selectedVariant=detailProduct.variants[Number(button.dataset.variantIndex)];
           detailProduct.selectedVariant=selectedVariant.name;
           detailProduct.image=selectedVariant.images[0];
-          detailProduct.images=selectedVariant.images.slice();
-          detailImages=selectedVariant.images.slice(0,6);
-          detailImageIndex=0;renderGallery();renderVariantOptions();
+          // Keep all six product photos visible below, while opening the chosen colour's first photo.
+          detailImages=(detailProduct.images||[]).filter(Boolean).slice(0,6);
+          const selectedPhotoIndex=detailImages.indexOf(selectedVariant.images[0]);
+          detailImageIndex=selectedPhotoIndex>=0?selectedPhotoIndex:0;
+          renderGallery();renderVariantOptions();
         });
         renderGallery();renderVariantOptions();
       }
