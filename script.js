@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":"#d71935";
             return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
           }).join("");
-          if(variantNote)variantNote.textContent=selectedVariant ? "Selected: "+selectedVariant.name : "Select a rose colour to view its photos.";
+          if(variantNote)variantNote.textContent=selectedVariant ? "Selected: "+selectedVariant.name : "Choose Pink Pack or Santa Pack to view its product photo.";
         };
         variantOptions.addEventListener("click",function(event){
           const button=event.target.closest("[data-variant-index]");
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderGallery();renderVariantOptions();
       }
       const productDescriptions = {
-        "surprise-explosion-box": "Make birthdays and special celebrations unforgettable with this five-layer surprise explosion gift box. Open it to reveal a playful layered surprise, perfect for birthdays, Valentine’s Day, anniversaries and thoughtful gifting. Available in Red, Blue, Black and Pink, with Pink Pack and Santa Pack options. Please message us to confirm your preferred pack before ordering.",
+        "surprise-explosion-box": "Make birthdays and special celebrations unforgettable with this five-layer surprise explosion gift box. Open it to reveal a playful layered surprise, perfect for birthdays, Valentine’s Day, anniversaries and thoughtful gifting. Choose between Pink Pack and Santa Pack. Pink Pack shows the pink box, while Santa Pack shows the red open box.",
         "glow-rose-dome": "Bring a soft romantic glow to any room with this elegant artificial rose displayed inside a clear decorative dome. A beautiful tabletop keepsake for birthdays, anniversaries, weddings, Valentine’s Day, Mother’s Day and festive gifting. Choose your favourite rose colour: white, pink or red. (Battery: AAA, not included.)",
         "red-rose-bear": "Surprise someone special with this charming red artificial rose bear, beautifully presented in a decorative gift box with a 360° rotating display. A romantic keepsake and thoughtful gift for your girlfriend, wife or mother, perfect for birthdays, anniversaries, weddings, Valentine’s Day and Mother’s Day.",
         "Gift Hampers": "Add a graceful floral touch to your special moments with this rose-decorated jewelry gift box. Its elegant presentation makes it a lovely choice for storing or gifting earrings, rings and necklaces, and for birthdays, weddings, anniversaries and celebrations.",
