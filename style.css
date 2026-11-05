@@ -3598,3 +3598,28 @@ img{max-width:100%}
 .category-card:hover .category-placeholder{border-color:var(--primary);transform:scale(1.05)}
 @media(max-width:768px){.category-placeholder{width:82px;height:82px;font-size:27px}}
 @media(max-width:480px){.category-placeholder{width:74px;height:74px;font-size:24px}}
+
+
+/* Keep every new collection thumbnail identical to the original category photos */
+.category-card .category-placeholder{
+  display:flex !important;
+  width:120px !important;
+  height:120px !important;
+  min-width:120px;
+  min-height:120px;
+  aspect-ratio:1 / 1;
+  flex:0 0 120px;
+  box-sizing:border-box;
+  border-radius:50%;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:0;
+  margin:0;
+}
+@media(max-width:768px){
+  .category-card .category-placeholder{width:82px !important;height:82px !important;min-width:82px;min-height:82px;flex-basis:82px}
+}
+@media(max-width:480px){
+  .category-card .category-placeholder{width:74px !important;height:74px !important;min-width:74px;min-height:74px;flex-basis:74px}
+}
