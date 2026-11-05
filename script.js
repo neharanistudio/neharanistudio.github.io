@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mainImage) mainImage.addEventListener("error", function () { this.onerror = null; this.src = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700"><rect width="100%" height="100%" fill="#fff0f6"/><text x="50%" y="48%" text-anchor="middle" font-family="Arial" font-size="32" fill="#b83f78">Product photo</text><text x="50%" y="56%" text-anchor="middle" font-family="Arial" font-size="18" fill="#8b6476">Upload product images to display here</text></svg>'); });
   const renderGallery = function () {
     if (!mainImage || !detailImages.length) return;
-    detailImageIndex = (detailImageIndex + detailImages.length) % detailImages.length;
+    detailImageIndex = Math.max(0, Math.min(detailImageIndex, detailImages.length - 1));
     mainImage.src = detailImages[detailImageIndex];
     mainImage.alt = (detailProduct ? detailProduct.name : "Product") + " photo " + (detailImageIndex + 1);
     if (thumbnails) thumbnails.innerHTML = detailImages.map(function(src,index) {
