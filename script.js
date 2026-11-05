@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const products = {
     "gift-box": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "gift-hamper": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
+    "red-rose-bear": { id: "red-rose-bear", name: "Red Rose Bear Rotating Gift Box", price: "Rs. 5,000", image: "1ac13be0-8fd5-4936-b6c2-5b711d608318.avif", images: ["1ac13be0-8fd5-4936-b6c2-5b711d608318.avif","30eda5da-edef-4179-84c1-e84ec5ba2e9f.avif","667bd30e-1053-40df-9a04-572cb88428fc.avif","819c467e-29c9-48d7-b054-fc57b20ef7ff.avif","8edb78cd-3c97-4e36-b7ac-1b7c97afdbf9.avif","e0e61986-831b-4eed-805b-9cf3df2a91ea.avif"], category: "Gift Hampers" },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/flowers.jpg", images: ["images/flowers.jpg"], category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
@@ -184,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if(price)price.textContent=detailProduct.price;
       detailImages=(detailProduct.images||[detailProduct.image]).filter(Boolean).slice(0,6);renderGallery();
       const productDescriptions = {
+        "red-rose-bear": "Surprise someone special with this charming red artificial rose bear, beautifully presented in a decorative gift box with a 360° rotating display. A romantic keepsake and thoughtful gift for your girlfriend, wife or mother, perfect for birthdays, anniversaries, weddings, Valentine’s Day and Mother’s Day.",
         "Gift Hampers": "Add a graceful floral touch to your special moments with this rose-decorated jewelry gift box. Its elegant presentation makes it a lovely choice for storing or gifting earrings, rings and necklaces, and for birthdays, weddings, anniversaries and celebrations.",
         "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
         "Bags": "Complete your everyday and occasion looks with this elegant handbag. Its versatile design pairs effortlessly with a range of outfits, making it a stylish accessory for day-to-day use and outings.",
@@ -193,8 +195,13 @@ document.addEventListener("DOMContentLoaded", function () {
         "Shoes": "Step out in style with this versatile pair of ladies' shoes. Designed to complement a variety of looks, it is a lovely choice for everyday wear and casual outings.",
         "Abayas": "A graceful abaya that brings together modest styling and timeless elegance. A versatile wardrobe choice for everyday wear, gatherings and occasions.",
       };
-      if(description) description.textContent = productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
+      if(description) description.textContent = productDescriptions[detailProduct.id] || productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const productHighlights = {
+        "red-rose-bear": [
+          ["Romantic rose bear design", "A charming bear made with artificial red roses for a memorable gifting moment."],
+          ["360° rotating display", "A decorative rotating display box that lets the rose bear be admired from every angle."],
+          ["Made for special occasions", "A thoughtful gift for birthdays, anniversaries, weddings, Valentine’s Day and Mother’s Day."]
+        ],
         "gift-box": [
           ["Elegant rose decoration", "A pretty floral design that gives this jewelry gift box a romantic, gift-ready look."],
           ["For jewelry keepsakes", "A lovely box for presenting or keeping earrings, rings and necklaces together."],
