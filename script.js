@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const products = {
-    "gift-box": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/product1-1.jpg", images: ["images/product1-1.jpg","images/product1-2.jpg","images/product1-3.jpg","images/product1-4.jpg"], category: "Gift Hampers" },
-    "gift-hamper": { id: "gift-box", name: "Luxury Gift Box", price: "Rs. 2,999", image: "images/product1-1.jpg", images: ["images/product1-1.jpg","images/product1-2.jpg","images/product1-3.jpg","images/product1-4.jpg"], category: "Gift Hampers" },
+    "gift-box": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
+    "gift-hamper": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/flowers.jpg", images: ["images/flowers.jpg"], category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
