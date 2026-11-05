@@ -469,32 +469,35 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: true, speed: 700, autoplay: { delay: 4500, disableOnInteraction: false },
       pagination: { el: ".heroSwiper .swiper-pagination", clickable: true }
     });
-    // Use native horizontal scrolling for collections. This gives reliable
-    // finger-swipe on mobile without dragging the whole document vertically.
-    const categoryTrack = $(".categorySwiper");
-    if (categoryTrack) {
-      categoryTrack.classList.add("category-native-scroll");
-      const categoryNext = $(".category-next");
-      const categoryPrev = $(".category-prev");
-      const scrollAmount = function () {
-        const slide = $(".swiper-slide", categoryTrack);
-        return slide ? slide.getBoundingClientRect().width + 10 : 120;
-      };
-      if (categoryNext) categoryNext.addEventListener("click", function () {
-        categoryTrack.scrollBy({ left: scrollAmount(), behavior: "smooth" });
-      });
-      if (categoryPrev) categoryPrev.addEventListener("click", function () {
-        categoryTrack.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
-      });
-      const updateCategoryArrows = function () {
-        const maxScroll = categoryTrack.scrollWidth - categoryTrack.clientWidth;
-        if (categoryPrev) categoryPrev.disabled = categoryTrack.scrollLeft <= 2;
-        if (categoryNext) categoryNext.disabled = categoryTrack.scrollLeft >= maxScroll - 2;
-      };
-      categoryTrack.addEventListener("scroll", updateCategoryArrows, { passive: true });
-      window.addEventListener("resize", updateCategoryArrows);
-      updateCategoryArrows();
-    }
+    if ($(".categorySwiper")) new Swiper(".categorySwiper", {
+      slidesPerView: "auto",
+      slidesPerGroup: 1,
+      spaceBetween: 10,
+      freeMode: false,
+      watchOverflow: false,
+      watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+      simulateTouch: true,
+      allowTouchMove: true,
+      grabCursor: true,
+      touchRatio: 1,
+      touchAngle: 45,
+      threshold: 3,
+      longSwipes: true,
+      shortSwipes: true,
+      resistance: true,
+      resistanceRatio: 0.85,
+      touchStartPreventDefault: false,
+      preventInteractionOnTransition: false,
+      navigation: { nextEl: ".category-next", prevEl: ".category-prev" },
+      breakpoints: {
+        0: { spaceBetween: 10 },
+        481: { spaceBetween: 14 },
+        769: { spaceBetween: 18 },
+        1025: { spaceBetween: 20 }
+      }
+    });
   }
 
   const topButton = $("#topBtn");
