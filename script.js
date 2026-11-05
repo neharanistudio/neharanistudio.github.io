@@ -470,8 +470,19 @@ document.addEventListener("DOMContentLoaded", function () {
       pagination: { el: ".heroSwiper .swiper-pagination", clickable: true }
     });
     if ($(".categorySwiper")) new Swiper(".categorySwiper", {
-      slidesPerView: 4, spaceBetween: 12, freeMode: true,
-      breakpoints: { 480: { slidesPerView: 4.5, spaceBetween: 14 }, 768: { slidesPerView: 6, spaceBetween: 18 }, 1024: { slidesPerView: 8, spaceBetween: 20 } }
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      freeMode: false,
+      watchOverflow: true,
+      observer: true,
+      observeParents: true,
+      navigation: { nextEl: ".category-next", prevEl: ".category-prev" },
+      breakpoints: {
+        0: { spaceBetween: 10 },
+        481: { spaceBetween: 14 },
+        769: { spaceBetween: 18 },
+        1025: { spaceBetween: 20 }
+      }
     });
   }
 
