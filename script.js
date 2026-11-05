@@ -203,21 +203,23 @@ document.addEventListener("DOMContentLoaded", function () {
             const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":variant.name.toLowerCase().includes("gold")?"#d4af37":"#171717";
             return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
           }).join("");
-          if(variantNote)variantNote.textContent=selectedVariant ? "Selected: "+selectedVariant.name : "Choose Pink Pack or Santa Pack to view its product photo.";
+          if(variantNote)variantNote.textContent=selectedVariant ? "Selected colour: "+selectedVariant.name : "Select a colour to view its matching gift box photo.";
         };
         variantOptions.addEventListener("click",function(event){
-          const button=event.target.closest("[data-variant-index]");
+          const button=event.target.closest("button[data-variant-index]");
           if(!button)return;
-          selectedVariant=detailProduct.variants[Number(button.dataset.variantIndex)];
+          const chosenIndex=Number(button.getAttribute("data-variant-index"));
+          if(!Number.isInteger(chosenIndex) || !detailProduct.variants[chosenIndex])return;
+          selectedVariant=detailProduct.variants[chosenIndex];
+          const selectedPhoto=(selectedVariant.images||[]).find(Boolean);
+          if(!selectedPhoto)return;
           detailProduct.selectedVariant=selectedVariant.name;
-          const selectedPhoto=selectedVariant.images && selectedVariant.images[0];
-          detailProduct.image=selectedPhoto || detailProduct.image;
-          // Keep every uploaded photo in the gallery, but immediately show the selected pack's exact photo.
-          detailImages=(detailProduct.images||[]).filter(Boolean);
-          let selectedPhotoIndex=detailImages.indexOf(selectedPhoto);
-          if(selectedPhotoIndex<0 && selectedPhoto){detailImages.unshift(selectedPhoto);selectedPhotoIndex=0;}
-          detailImageIndex=selectedPhotoIndex>=0?selectedPhotoIndex:0;
-          renderGallery();renderVariantOptions();
+          detailProduct.image=selectedPhoto;
+          const allPhotos=(detailProduct.images||[]).filter(Boolean);
+          detailImages=[selectedPhoto].concat(allPhotos.filter(function(photo){return photo!==selectedPhoto;}));
+          detailImageIndex=0;
+          renderGallery();
+          renderVariantOptions();
         });
         renderGallery();renderVariantOptions();
       }
