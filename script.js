@@ -205,22 +205,27 @@ document.addEventListener("DOMContentLoaded", function () {
           }).join("");
           if(variantNote)variantNote.textContent=selectedVariant ? "Selected colour: "+selectedVariant.name : "Select a colour to view its matching gift box photo.";
         };
-        variantOptions.addEventListener("click",function(event){
+        variantOptions.onclick=function(event){
           const button=event.target.closest("button[data-variant-index]");
           if(!button)return;
           const chosenIndex=Number(button.getAttribute("data-variant-index"));
-          if(!Number.isInteger(chosenIndex) || !detailProduct.variants[chosenIndex])return;
-          selectedVariant=detailProduct.variants[chosenIndex];
-          const selectedPhoto=(selectedVariant.images||[]).find(Boolean);
+          const chosen=detailProduct.variants[chosenIndex];
+          if(!chosen)return;
+          const selectedPhoto=(chosen.images||[]).find(Boolean);
           if(!selectedPhoto)return;
-          detailProduct.selectedVariant=selectedVariant.name;
-          detailProduct.image=selectedPhoto;
+          selectedVariant=chosen;
+          detailProduct.selectedVariant=chosen.name;
           const allPhotos=(detailProduct.images||[]).filter(Boolean);
           detailImages=[selectedPhoto].concat(allPhotos.filter(function(photo){return photo!==selectedPhoto;}));
           detailImageIndex=0;
+          if(mainImage){
+            mainImage.src=selectedPhoto+(selectedPhoto.includes("?")?"&":"?")+"colour="+encodeURIComponent(chosen.name)+"&refresh=20261105b";
+            mainImage.alt=detailProduct.name+" - "+chosen.name;
+          }
           renderGallery();
           renderVariantOptions();
-        });
+          if(mainImage)mainImage.src=selectedPhoto+(selectedPhoto.includes("?")?"&":"?")+"colour="+encodeURIComponent(chosen.name)+"&refresh=20261105b";
+        };
         renderGallery();renderVariantOptions();
       }
       const productDescriptions = {
