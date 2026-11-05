@@ -201,31 +201,25 @@ document.addEventListener("DOMContentLoaded", function () {
           variantOptions.innerHTML=detailProduct.variants.map(function(variant,index){
             const selected=!!selectedVariant && variant.name===selectedVariant.name;
             const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":variant.name.toLowerCase().includes("gold")?"#d4af37":"#171717";
-            return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
+            return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" onclick="window.selectGraduationGiftColour('+index+')" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
           }).join("");
           if(variantNote)variantNote.textContent=selectedVariant ? "Selected colour: "+selectedVariant.name : "Select a colour to view its matching gift box photo.";
         };
-        const selectGraduationColour=function(chosenIndex){
-          const chosen=detailProduct.variants[chosenIndex];
-          if(!chosen)return;
-          const selectedPhoto=(chosen.images||[]).find(Boolean);
-          if(!selectedPhoto)return;
+        window.selectGraduationGiftColour=function(chosenIndex){
+          const chosen=detailProduct && detailProduct.variants && detailProduct.variants[chosenIndex];
+          if(!chosen || !chosen.images || !chosen.images[0])return;
+          const photo=chosen.images[0];
           selectedVariant=chosen;
           detailProduct.selectedVariant=chosen.name;
           const allPhotos=(detailProduct.images||[]).filter(Boolean);
-          detailImages=[selectedPhoto].concat(allPhotos.filter(function(photo){return photo!==selectedPhoto;}));
+          detailImages=[photo].concat(allPhotos.filter(function(src){return src!==photo;}));
           detailImageIndex=0;
           renderGallery();
-          if(mainImage){mainImage.src=selectedPhoto;mainImage.alt=detailProduct.name+" - "+chosen.name;}
+          if(mainImage){mainImage.src=photo;mainImage.alt=detailProduct.name+" - "+chosen.name;}
           renderVariantOptions();
         };
-        const renderVariantOptionsWithClicks=function(){
-          renderVariantOptions();
-          Array.from(variantOptions.querySelectorAll("button[data-variant-index]")).forEach(function(button){
-            button.onclick=function(){selectGraduationColour(Number(button.getAttribute("data-variant-index")));};
-          });
-        };
-        renderVariantOptionsWithClicks();
+        renderVariantOptions();
+
 
       }
       const productDescriptions = {
