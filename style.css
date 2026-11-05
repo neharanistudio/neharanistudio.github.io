@@ -3829,3 +3829,24 @@ img{max-width:100%}
 @media(max-width:768px){.categorySwiper{width:100%;padding:8px 34px 20px!important}.categorySwiper .swiper-slide{width:104px!important}.category-slider-btn{top:38px;width:28px;height:28px;font-size:11px}.category-prev{left:2px}.category-next{right:2px}}
 @media(max-width:480px){.categorySwiper{padding-left:30px!important;padding-right:30px!important}.categorySwiper .swiper-slide{width:94px!important}.category-slider-btn{top:34px;width:25px;height:25px}}
 @media(min-width:769px){.categorySwiper{padding-left:46px!important;padding-right:46px!important}}
+
+
+/* MOBILE COLLECTION SWIPE FIX — keep horizontal gestures inside the category slider */
+.categorySwiper{
+  touch-action:pan-y pinch-zoom !important;
+  overscroll-behavior-x:contain;
+  -webkit-user-select:none;
+  user-select:none;
+}
+.categorySwiper .swiper-wrapper,
+.categorySwiper .swiper-slide{
+  touch-action:pan-y pinch-zoom !important;
+}
+.categorySwiper .category-card{ -webkit-tap-highlight-color:transparent; }
+@media(max-width:768px){
+  .categorySwiper{
+    overflow:hidden !important;
+    -webkit-overflow-scrolling:touch;
+  }
+  .categorySwiper .swiper-wrapper{ will-change:transform; }
+}
