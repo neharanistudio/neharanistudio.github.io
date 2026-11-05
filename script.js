@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "gift-box": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "gift-hamper": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "red-rose-bear": { id: "red-rose-bear", name: "Red Rose Bear Rotating Gift Box", price: "Rs. 5,000", image: "1ac13be0-8fd5-4936-b6c2-5b711d608318.avif", images: ["1ac13be0-8fd5-4936-b6c2-5b711d608318.avif","30eda5da-edef-4179-84c1-e84ec5ba2e9f.avif","667bd30e-1053-40df-9a04-572cb88428fc.avif","819c467e-29c9-48d7-b054-fc57b20ef7ff.avif","8edb78cd-3c97-4e36-b7ac-1b7c97afdbf9.avif","e0e61986-831b-4eed-805b-9cf3df2a91ea.avif"], category: "Gift Hampers" },
+    "glow-rose-dome": { id: "glow-rose-dome", name: "Glow Rose Dome with LED Lights", price: "Rs. 2,500", image: "2494cdfc379a07711a3b05b87f82b635.avif", images: ["2494cdfc379a07711a3b05b87f82b635.avif","360580c0-8d2a-4eba-8299-6f168c49bd96.avif","c76adbeb-a54f-4d46-b544-34680dc2dba8.avif","dbe1bd57-c5eb-4541-8bc6-49f85d1cf953.avif","f0248652-13c6-4e20-a1fa-c4b4f50d91bb.avif"], variants: [{name:"White Rose",images:["2494cdfc379a07711a3b05b87f82b635.avif","360580c0-8d2a-4eba-8299-6f168c49bd96.avif"]},{name:"Pink Rose",images:["c76adbeb-a54f-4d46-b544-34680dc2dba8.avif","dbe1bd57-c5eb-4541-8bc6-49f85d1cf953.avif"]},{name:"Red Rose",images:["f0248652-13c6-4e20-a1fa-c4b4f50d91bb.avif"]}], category: "Gift Hampers" },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/flowers.jpg", images: ["images/flowers.jpg"], category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
@@ -184,7 +185,35 @@ document.addEventListener("DOMContentLoaded", function () {
       productName.textContent=detailProduct.name;
       if(price)price.textContent=detailProduct.price;
       detailImages=(detailProduct.images||[detailProduct.image]).filter(Boolean).slice(0,6);renderGallery();
+      const variantPicker=$("#productVariantPicker"),variantOptions=$("#productVariantOptions"),variantNote=$("#variantSelectionNote");
+      if(detailProduct.variants && variantPicker && variantOptions){
+        variantPicker.hidden=false;
+        let selectedVariant=detailProduct.variants[0];
+        const renderVariantOptions=function(){
+          variantOptions.innerHTML=detailProduct.variants.map(function(variant,index){
+            const selected=variant.name===selectedVariant.name;
+            const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":"#d71935";
+            return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
+          }).join("");
+          if(variantNote)variantNote.textContent="Selected: "+selectedVariant.name;
+        };
+        variantOptions.addEventListener("click",function(event){
+          const button=event.target.closest("[data-variant-index]");
+          if(!button)return;
+          selectedVariant=detailProduct.variants[Number(button.dataset.variantIndex)];
+          detailProduct.selectedVariant=selectedVariant.name;
+          detailProduct.image=selectedVariant.images[0];
+          detailProduct.images=selectedVariant.images.slice();
+          detailImages=selectedVariant.images.slice(0,6);
+          detailImageIndex=0;renderGallery();renderVariantOptions();
+        });
+        detailProduct.selectedVariant=selectedVariant.name;
+        detailProduct.image=selectedVariant.images[0];
+        detailProduct.images=selectedVariant.images.slice();
+        detailImages=selectedVariant.images.slice(0,6);renderGallery();renderVariantOptions();
+      }
       const productDescriptions = {
+        "glow-rose-dome": "Bring a soft romantic glow to any room with this elegant artificial rose displayed inside a clear decorative dome. A beautiful tabletop keepsake for birthdays, anniversaries, weddings, Valentine’s Day, Mother’s Day and festive gifting. Choose your favourite rose colour: white, pink or red. (Battery: AAA, not included.)",
         "red-rose-bear": "Surprise someone special with this charming red artificial rose bear, beautifully presented in a decorative gift box with a 360° rotating display. A romantic keepsake and thoughtful gift for your girlfriend, wife or mother, perfect for birthdays, anniversaries, weddings, Valentine’s Day and Mother’s Day.",
         "Gift Hampers": "Add a graceful floral touch to your special moments with this rose-decorated jewelry gift box. Its elegant presentation makes it a lovely choice for storing or gifting earrings, rings and necklaces, and for birthdays, weddings, anniversaries and celebrations.",
         "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
