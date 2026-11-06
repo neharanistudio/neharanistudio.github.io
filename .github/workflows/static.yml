@@ -44,8 +44,8 @@ jobs:
               });
               core.info('Cancelled the stuck Pages deployment.');
             } catch (error) {
-              if (error.status === 404) {
-                core.info('The old Pages deployment is already cleared.');
+              if (error.status === 404 || (error.status === 400 && /already (finished|cancelled)|it's finished/i.test(error.message))) {
+                core.info('The old Pages deployment is no longer active; continuing.');
               } else {
                 throw error;
               }
