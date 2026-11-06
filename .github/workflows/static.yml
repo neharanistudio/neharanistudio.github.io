@@ -41,7 +41,7 @@ jobs:
               await github.request('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel', {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                pages_deployment_id: 'd77324fb46dd19a476f0de738db2b716a00331f7'
+                pages_deployment_id: '991a3ffd8e53c89cacea532005eb1ef63b45dc6a'
               });
               core.info('Cancelled the stuck Pages deployment.');
             } catch (error) {
