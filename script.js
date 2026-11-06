@@ -564,6 +564,7 @@ document.addEventListener("DOMContentLoaded", function () {
       pagination: { el: ".heroSwiper .swiper-pagination", clickable: true }
     });
     if ($(".categorySwiper")) new Swiper(".categorySwiper", {
+      navigation: { nextEl: ".categorySwiper .category-next", prevEl: ".categorySwiper .category-prev" },
       slidesPerView: "auto",
       slidesPerGroup: 1,
       spaceBetween: 10,
