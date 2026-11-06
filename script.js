@@ -523,7 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  $(".sidebar-category-toggle").forEach(function (toggle) {
+  $$(".sidebar-category-toggle").forEach(function (toggle) {
     const submenuId = toggle.getAttribute("aria-controls");
     const submenu = submenuId ? document.getElementById(submenuId) : null;
     if (!submenu) return;
@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  $(".sidebar [data-category]").forEach(function (link) {
+  $$(".sidebar [data-category]").forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
       $$(".sidebar [data-category]").forEach(function (item) { item.classList.remove("active"); });
