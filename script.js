@@ -568,6 +568,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // Native scroll slider: reliable finger swipe on touchscreens and mouse drag on desktop.
   const categorySliderElement = $(".categorySwiper");
   if (categorySliderElement) {
+  // Explicit touch-drag support for Windows touchscreen laptops and mobile devices.
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchStartScrollLeft = 0;
+    let touchMovedHorizontally = false;
+    categorySliderElement.addEventListener("touchstart", function(event) {
+      if (!event.touches || event.touches.length !== 1) return;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
+      touchStartScrollLeft = categorySliderElement.scrollLeft;
+      touchMovedHorizontally = false;
+    }, { passive: true });
+    categorySliderElement.addEventListener("touchmove", function(event) {
+      if (!event.touches || event.touches.length !== 1) return;
+      const deltaX = event.touches[0].clientX - touchStartX;
+      const deltaY = event.touches[0].clientY - touchStartY;
+      if (!touchMovedHorizontally && Math.abs(deltaX) > 7 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        touchMovedHorizontally = true;
+      }
+      if (touchMovedHorizontally) {
+        event.preventDefault();
+        categorySliderElement.scrollLeft = touchStartScrollLeft - deltaX;
+      }
+    }, { passive: false });
+    categorySliderElement.addEventListener("touchend", function() {
+      if (touchMovedHorizontally) {
+        categorySliderElement.dataset.dragged = "true";
+        window.setTimeout(function() { delete categorySliderElement.dataset.dragged; }, 250);
+      }
+      touchMovedHorizontally = false;
+    }, { passive: true });
     let isDragging = false;
     let startX = 0;
     let startScrollLeft = 0;
