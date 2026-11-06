@@ -3941,3 +3941,10 @@ img{max-width:100%}
 .sidebar-submenu a i{width:18px;font-size:14px}
 .sidebar-submenu a .sidebar-submenu-icon{width:18px;text-align:center;font-size:16px}
 .sidebar-submenu a:hover{background:#fbe7ef;color:#b84e78;transform:translateX(3px)}
+
+
+/* Final collection interaction and plain pink nail icon */
+.categorySwiper{cursor:grab;touch-action:pan-y pinch-zoom!important;}
+.categorySwiper.is-mouse-dragging{cursor:grabbing;}
+.sidebar-submenu a[data-category="nails"]>i{color:#df4f8b!important;width:18px;font-size:15px;}
+.sidebar-submenu .nails-category-sign{all:unset;}
