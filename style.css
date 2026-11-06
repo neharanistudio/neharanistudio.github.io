@@ -3958,3 +3958,7 @@ img{max-width:100%}
 .categorySwiper.is-mouse-dragging{cursor:grabbing!important;scroll-behavior:auto!important;}
 @media(max-width:768px){.categorySwiper{width:100%!important;padding:8px 12px 20px!important;}.categorySwiper .swiper-wrapper{gap:14px!important;}.categorySwiper .swiper-slide{flex-basis:104px!important;width:104px!important;}}
 @media(max-width:480px){.categorySwiper .swiper-wrapper{gap:12px!important;}.categorySwiper .swiper-slide{flex-basis:94px!important;width:94px!important;}}
+
+
+/* Brand wordmark: use the studio pink instead of muted purple */
+.header .header-center .logo h2{color:#e85d97 !important;}
