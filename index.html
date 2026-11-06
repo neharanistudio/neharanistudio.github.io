@@ -167,10 +167,16 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         All Products
     </a>
 
-    <a href="#" data-category="Party & Event Decorations">
+    <div class="sidebar-category-group">
+      <a href="#" class="sidebar-category-toggle" aria-expanded="false" aria-controls="partyDecorSubmenu">
         <i class="fa-solid fa-champagne-glasses"></i>
-        Party &amp; Event Decorations
-    </a>
+        <span>Party &amp; Event Decorations</span>
+        <i class="fa-solid fa-chevron-down sidebar-chevron" aria-hidden="true"></i>
+      </a>
+      <div class="sidebar-submenu" id="partyDecorSubmenu" hidden>
+        <a href="#" data-category="event-party-supplies">Event &amp; Party Supplies</a>
+      </div>
+    </div>
 
     <div class="sidebar-category-group">
       <a href="#" class="sidebar-category-toggle" aria-expanded="false" aria-controls="giftHampersSubmenu">
@@ -187,6 +193,21 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         <i class="fa-solid fa-ribbon"></i>
         Ribbon Bouquets
     </a>
+
+    <div class="sidebar-category-group">
+      <a href="#" class="sidebar-category-toggle" aria-expanded="false" aria-controls="homeLivingSubmenu">
+        <i class="fa-solid fa-house"></i>
+        <span>Home &amp; Living</span>
+        <i class="fa-solid fa-chevron-down sidebar-chevron" aria-hidden="true"></i>
+      </a>
+      <div class="sidebar-submenu" id="homeLivingSubmenu" hidden>
+        <a href="#" data-category="seasonal-decor">Seasonal Decor</a>
+        <a href="#" data-category="home-decor-products">Home Decor Products</a>
+        <a href="#" data-category="lighting-accessories">Lighting &amp; Accessories</a>
+        <a href="#" data-category="dining-entertaining">Dining &amp; Entertaining</a>
+        <a href="#" data-category="kids-home-store">Kids' Home Store</a>
+      </div>
+    </div>
 
     <div class="sidebar-category-group">
       <a href="#" class="sidebar-category-toggle" aria-expanded="false" aria-controls="womensClothingSubmenu">
