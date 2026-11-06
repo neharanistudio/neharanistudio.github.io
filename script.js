@@ -523,17 +523,18 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  const womensAccessoriesToggle = $(".sidebar-category-toggle");
-  const womensAccessoriesSubmenu = $("#womensAccessoriesSubmenu");
-  if (womensAccessoriesToggle && womensAccessoriesSubmenu) {
-    womensAccessoriesToggle.addEventListener("click", function (event) {
+  $(".sidebar-category-toggle").forEach(function (toggle) {
+    const submenuId = toggle.getAttribute("aria-controls");
+    const submenu = submenuId ? document.getElementById(submenuId) : null;
+    if (!submenu) return;
+    toggle.addEventListener("click", function (event) {
       event.preventDefault();
-      const isExpanded = womensAccessoriesToggle.getAttribute("aria-expanded") === "true";
-      womensAccessoriesToggle.setAttribute("aria-expanded", String(!isExpanded));
-      womensAccessoriesSubmenu.hidden = isExpanded;
-      womensAccessoriesToggle.classList.toggle("expanded", !isExpanded);
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!isExpanded));
+      submenu.hidden = isExpanded;
+      toggle.classList.toggle("expanded", !isExpanded);
     });
-  }
+  });
 
   $(".sidebar [data-category]").forEach(function (link) {
     link.addEventListener("click", function (event) {
