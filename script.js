@@ -411,6 +411,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("click", function (event) {
+    const sidebarToggle = event.target.closest(".sidebar-category-toggle");
+    if (sidebarToggle) {
+      event.preventDefault();
+      const submenuId = sidebarToggle.getAttribute("aria-controls");
+      const submenu = submenuId ? document.getElementById(submenuId) : null;
+      if (submenu) {
+        const expanded = sidebarToggle.getAttribute("aria-expanded") === "true";
+        sidebarToggle.setAttribute("aria-expanded", String(!expanded));
+        submenu.hidden = expanded;
+        sidebarToggle.classList.toggle("expanded", !expanded);
+      }
+      return;
+    }
     const buyNowButton = event.target.closest(".buy-now");
     if (buyNowButton) {
       event.preventDefault(); event.stopPropagation();
@@ -523,19 +536,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  $$(".sidebar-category-toggle").forEach(function (toggle) {
-    const submenuId = toggle.getAttribute("aria-controls");
-    const submenu = submenuId ? document.getElementById(submenuId) : null;
-    if (!submenu) return;
-    toggle.addEventListener("click", function (event) {
-      event.preventDefault();
-      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!isExpanded));
-      submenu.hidden = isExpanded;
-      toggle.classList.toggle("expanded", !isExpanded);
-    });
-  });
-
   $$(".sidebar [data-category]").forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
