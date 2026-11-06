@@ -563,34 +563,57 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: true, speed: 700, autoplay: { delay: 4500, disableOnInteraction: false },
       pagination: { el: ".heroSwiper .swiper-pagination", clickable: true }
     });
-    if ($(".categorySwiper")) new Swiper(".categorySwiper", {
-      slidesPerView: "auto",
-      slidesPerGroup: 1,
-      spaceBetween: 10,
-      freeMode: false,
-      watchOverflow: false,
-      watchSlidesProgress: true,
-      observer: true,
-      observeParents: true,
-      simulateTouch: true,
-      allowTouchMove: true,
-      grabCursor: true,
-      touchRatio: 1,
-      touchAngle: 45,
-      threshold: 3,
-      longSwipes: true,
-      shortSwipes: true,
-      resistance: true,
-      resistanceRatio: 0.85,
-      touchStartPreventDefault: false,
-      preventInteractionOnTransition: false,
-      breakpoints: {
-        0: { spaceBetween: 10 },
-        481: { spaceBetween: 14 },
-        769: { spaceBetween: 18 },
-        1025: { spaceBetween: 20 }
-      }
-    });
+    if ($(".categorySwiper")) {
+      const categorySliderElement = $(".categorySwiper");
+      const categorySlider = new Swiper(categorySliderElement, {
+        slidesPerView: "auto", slidesPerGroup: 1, spaceBetween: 10,
+        freeMode: false, watchOverflow: false, watchSlidesProgress: true,
+        observer: true, observeParents: true, simulateTouch: true,
+        allowTouchMove: true, grabCursor: true, touchRatio: 1,
+        touchAngle: 45, threshold: 3, longSwipes: true, shortSwipes: true,
+        resistance: true, resistanceRatio: 0.85,
+        touchStartPreventDefault: false, preventInteractionOnTransition: false,
+        breakpoints: { 0:{spaceBetween:10}, 481:{spaceBetween:14}, 769:{spaceBetween:18}, 1025:{spaceBetween:20} }
+      });
+
+      // Mouse drag fallback; touch devices continue using Swiper's native swipe.
+      let dragStartX=0, dragStartTranslate=0, mouseDragging=false, movedDuringDrag=false;
+      categorySliderElement.addEventListener("pointerdown", function(event) {
+        if(event.pointerType!=="mouse" || event.button!==0) return;
+        mouseDragging=true; movedDuringDrag=false; dragStartX=event.clientX;
+        dragStartTranslate=categorySlider.getTranslate();
+        categorySlider.setTransition(0);
+        categorySliderElement.classList.add("is-mouse-dragging");
+        try{categorySliderElement.setPointerCapture(event.pointerId)}catch(_){}
+        event.preventDefault(); event.stopImmediatePropagation();
+      }, true);
+      categorySliderElement.addEventListener("pointermove", function(event) {
+        if(!mouseDragging || event.pointerType!=="mouse") return;
+        const deltaX=event.clientX-dragStartX;
+        if(Math.abs(deltaX)>4) movedDuringDrag=true;
+        categorySlider.setTranslate(dragStartTranslate+deltaX);
+        categorySlider.updateProgress();
+        event.preventDefault(); event.stopImmediatePropagation();
+      }, true);
+      const finishMouseDrag=function(event) {
+        if(!mouseDragging || (event.pointerType && event.pointerType!=="mouse")) return;
+        mouseDragging=false;
+        categorySliderElement.classList.remove("is-mouse-dragging");
+        categorySlider.slideToClosest(250);
+        if(movedDuringDrag) {
+          categorySliderElement.dataset.dragged="true";
+          window.setTimeout(function(){delete categorySliderElement.dataset.dragged;},100);
+        }
+        event.stopImmediatePropagation();
+      };
+      categorySliderElement.addEventListener("pointerup",finishMouseDrag,true);
+      categorySliderElement.addEventListener("pointercancel",finishMouseDrag,true);
+      categorySliderElement.addEventListener("click",function(event) {
+        if(categorySliderElement.dataset.dragged==="true"){
+          event.preventDefault(); event.stopImmediatePropagation();
+        }
+      },true);
+    }
   }
 
   const topButton = $("#topBtn");
