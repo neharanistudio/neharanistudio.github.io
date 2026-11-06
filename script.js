@@ -219,6 +219,10 @@ document.addEventListener("DOMContentLoaded", function () {
           detailImageIndex=0;
           renderGallery();
           if(mainImage){mainImage.src=photo;mainImage.alt=detailProduct.name+" - "+chosen.name;}
+          const selectedText=detailProduct.id==="pink-number-bow-party-balloons" ? " I want number "+chosen.name+"." : "";
+          const updatedMessage="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+")."+selectedText+" Please share availability and delivery details.\nProduct link: "+window.location.href;
+          const updatedHref="https://wa.me/923045255325?text="+encodeURIComponent(updatedMessage);
+          ["#whatsappBtn",".product-header-whatsapp","#floatingProductWhatsApp"].forEach(function(selector){const link=$(selector);if(link)link.href=updatedHref;});
           renderVariantOptions();
         };
         renderVariantOptions();
@@ -309,7 +313,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const detailAdd=$("#detailAddCart");
       if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
-      const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+"). Please share availability and delivery details.";
+      const numberChoice=detailProduct.id==="pink-number-bow-party-balloons" && detailProduct.selectedVariant ? " I want number "+detailProduct.selectedVariant+"." : "";
+      const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+")."+numberChoice+" Please share availability and delivery details.";
       const orderMessage=message+"\nProduct link: "+window.location.href;
       const waHref="https://wa.me/923045255325?text="+encodeURIComponent(orderMessage);
       const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp"),floatingWA=$("#floatingProductWhatsApp");
