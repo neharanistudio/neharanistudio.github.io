@@ -3852,11 +3852,18 @@ img{max-width:100%}
 }
 
 
-/* Hide slider arrow controls; keep natural finger-swipe interaction */
-.category-slider-btn{display:none !important}
-.categorySwiper{padding-left:8px !important;padding-right:8px !important}
+/* Visible collection slider controls for desktop and mobile */
+.category-slider-btn{display:flex !important;align-items:center;justify-content:center;position:absolute;z-index:10;top:50%;transform:translateY(-50%);width:34px;height:34px;border:1px solid #f0cddd;border-radius:50%;background:#fff;color:#b83f78;box-shadow:0 3px 12px rgba(100,40,70,.12);cursor:pointer}
+.category-slider-btn:disabled{opacity:.35;cursor:not-allowed}
+.category-prev{left:2px}.category-next{right:2px}
+.categorySwiper{padding-left:44px !important;padding-right:44px !important}
 @media(max-width:768px){
-  .categorySwiper{padding-left:12px !important;padding-right:12px !important}
+  .categorySwiper{padding-left:36px !important;padding-right:36px !important}
+  .category-slider-btn{width:28px;height:28px;font-size:11px}
+}
+@media(max-width:480px){
+  .categorySwiper{padding-left:32px !important;padding-right:32px !important}
+  .category-slider-btn{width:25px;height:25px;font-size:10px}
 }
 
 
@@ -3895,19 +3902,22 @@ img{max-width:100%}
 
 
 /* Pink nail sign to match the studio category icons */
-.sidebar a[data-category="nails"] .nails-category-sign{
+.sidebar-submenu .nails-category-sign{
   display:inline-grid;
   place-items:center;
+  flex:0 0 28px;
   width:28px;
   height:28px;
-  margin-right:8px;
+  margin-right:2px;
   border-radius:50%;
-  background:#fff0f6;
+  background:#ffe5f0;
+  border:1px solid #f6b8d0;
   color:#df4f8b;
-  font-size:16px;
+  font-size:15px;
   line-height:1;
   vertical-align:middle;
 }
+.sidebar-submenu .nails-category-sign i{color:#df4f8b;font-size:14px}
 
 
 /* Nails subcategory chip inside Women's Accessories */
