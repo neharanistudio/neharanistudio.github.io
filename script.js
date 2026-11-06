@@ -454,6 +454,14 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.hash = "featured-products";
       return;
     }
+    const categorySubcategory = event.target.closest(".category-subcategory-chip[data-category]");
+    if (categorySubcategory) {
+      event.preventDefault();
+      event.stopPropagation();
+      filterProducts(categorySubcategory.dataset.category);
+      window.location.hash = "featured-products";
+      return;
+    }
     const categoryCard = event.target.closest(".category-card");
     if (categoryCard && categoryCard.dataset.category) filterProducts(categoryCard.dataset.category);
 
