@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sidebar?.classList.add("active"); menuOverlay?.classList.add("active");
       document.body.classList.add("menu-open");
     }
-    if (event.target === menuOverlay || event.target.closest(".sidebar a")) {
+    if (event.target === menuOverlay || (event.target.closest(".sidebar a") && !event.target.closest(".sidebar-category-toggle"))) {
       sidebar?.classList.remove("active"); menuOverlay?.classList.remove("active");
       document.body.classList.remove("menu-open");
     }
@@ -523,7 +523,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  $$(".sidebar [data-category]").forEach(function (link) {
+  const womensAccessoriesToggle = $(".sidebar-category-toggle");
+  const womensAccessoriesSubmenu = $("#womensAccessoriesSubmenu");
+  if (womensAccessoriesToggle && womensAccessoriesSubmenu) {
+    womensAccessoriesToggle.addEventListener("click", function (event) {
+      event.preventDefault();
+      const isExpanded = womensAccessoriesToggle.getAttribute("aria-expanded") === "true";
+      womensAccessoriesToggle.setAttribute("aria-expanded", String(!isExpanded));
+      womensAccessoriesSubmenu.hidden = isExpanded;
+      womensAccessoriesToggle.classList.toggle("expanded", !isExpanded);
+    });
+  }
+
+  $(".sidebar [data-category]").forEach(function (link) {
     link.addEventListener("click", function (event) {
       event.preventDefault();
       $$(".sidebar [data-category]").forEach(function (item) { item.classList.remove("active"); });
