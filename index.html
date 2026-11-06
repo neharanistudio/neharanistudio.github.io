@@ -222,10 +222,18 @@ href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
         Perfumes
     </a>
 
-    <a href="#" data-category="accessories">
+    <div class="sidebar-category-group">
+      <a href="#" class="sidebar-category-toggle" aria-expanded="false" aria-controls="womensAccessoriesSubmenu">
         <i class="fa-solid fa-glasses"></i>
-        Women's Accessories
-    </a>
+        <span>Women's Accessories</span>
+        <i class="fa-solid fa-chevron-down sidebar-chevron" aria-hidden="true"></i>
+      </a>
+      <div class="sidebar-submenu" id="womensAccessoriesSubmenu" hidden>
+        <a href="#" data-category="nails"><span class="sidebar-submenu-icon">💅</span> Nails &amp; Nail Accessories</a>
+        <a href="#" data-category="hair-accessories"><i class="fa-solid fa-scissors"></i> Hair Accessories</a>
+        <a href="#" data-category="sunglasses"><i class="fa-solid fa-glasses"></i> Sunglasses</a>
+      </div>
+    </div>
     <a href="#" data-category="mens-clothing">
         <i class="fa-solid fa-shirt"></i>
         Men's Clothing
@@ -740,7 +748,6 @@ alt="Women's Accessories">
 <h3>
 Women's Accessories
 </h3>
-<button class="category-subcategory-chip" type="button" data-category="nails">💅 Nails &amp; Nail Accessories</button>
 
 </div>
 
