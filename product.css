@@ -305,4 +305,4 @@
 @media(max-width:600px){.product-variant-picker{padding:13px}.product-variant-options{gap:8px}.product-variant-option{font-size:12px;padding:8px 11px}}
 
 /* Number selection boxes for party balloons */
-.number-variant-option{min-width:42px;min-height:42px;justify-content:center;border-radius:10px;padding:8px 12px;font-size:16px;font-weight:700}
+.number-variant-option{min-width:42px;min-height:42px;justify-content:center;border-radius:10px;padding:8px 12px;font-size:16px;font-weight:700;background:#ffe1ee;border:1px solid #f2a6c8;color:#a92e68}.number-variant-option:hover,.number-variant-option.active{background:#f5a8cb;border-color:#d84e89;color:#7f1749;box-shadow:0 0 0 2px rgba(216,78,137,.14)}
