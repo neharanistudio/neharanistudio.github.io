@@ -3928,3 +3928,16 @@ img{max-width:100%}
 }
 .category-subcategory-chip:hover{background:#fbdce9;transform:translateY(-1px)}
 .category-subcategory-chip:focus-visible{outline:2px solid #d84e89;outline-offset:2px}
+
+
+/* Women's Accessories expandable sidebar submenu */
+.sidebar-category-group{margin-bottom:10px}
+.sidebar-category-toggle{position:relative}
+.sidebar-category-toggle .sidebar-chevron{margin-left:auto;width:auto;font-size:12px;transition:transform .2s ease}
+.sidebar-category-toggle.expanded .sidebar-chevron{transform:rotate(180deg)}
+.sidebar-submenu{padding:2px 0 8px 16px;margin:-4px 0 8px 12px;border-left:2px solid #f2c5d7}
+.sidebar-submenu[hidden]{display:none!important}
+.sidebar-submenu a{display:flex;align-items:center;gap:10px;padding:10px 12px;margin:3px 0;border-radius:10px;font-size:13px;background:#fff8fb;color:#654653}
+.sidebar-submenu a i{width:18px;font-size:14px}
+.sidebar-submenu a .sidebar-submenu-icon{width:18px;text-align:center;font-size:16px}
+.sidebar-submenu a:hover{background:#fbe7ef;color:#b84e78;transform:translateX(3px)}
