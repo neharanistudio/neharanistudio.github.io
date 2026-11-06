@@ -558,62 +558,54 @@ document.addEventListener("DOMContentLoaded", function () {
     if (wishlistPanel?.classList.contains("active") && !wishlistPanel.contains(event.target) && !clickedWishlistControl) closePanel(wishlistPanel);
   });
 
-  if (window.Swiper) {
-    if ($(".heroSwiper")) new Swiper(".heroSwiper", {
+  if (window.Swiper && $(".heroSwiper")) {
+    new Swiper(".heroSwiper", {
       loop: true, speed: 700, autoplay: { delay: 4500, disableOnInteraction: false },
       pagination: { el: ".heroSwiper .swiper-pagination", clickable: true }
     });
-    if ($(".categorySwiper")) {
-      const categorySliderElement = $(".categorySwiper");
-      const categorySlider = new Swiper(categorySliderElement, {
-        slidesPerView: "auto", slidesPerGroup: 1, spaceBetween: 10,
-        freeMode: false, watchOverflow: false, watchSlidesProgress: true,
-        observer: true, observeParents: true, simulateTouch: true,
-        allowTouchMove: true, grabCursor: true, touchRatio: 1,
-        touchAngle: 45, threshold: 3, longSwipes: true, shortSwipes: true,
-        resistance: true, resistanceRatio: 0.85,
-        touchStartPreventDefault: false, preventInteractionOnTransition: false,
-        breakpoints: { 0:{spaceBetween:10}, 481:{spaceBetween:14}, 769:{spaceBetween:18}, 1025:{spaceBetween:20} }
-      });
+  }
 
-      // Mouse drag fallback; touch devices continue using Swiper's native swipe.
-      let dragStartX=0, dragStartTranslate=0, mouseDragging=false, movedDuringDrag=false;
-      categorySliderElement.addEventListener("pointerdown", function(event) {
-        if(event.pointerType!=="mouse" || event.button!==0) return;
-        mouseDragging=true; movedDuringDrag=false; dragStartX=event.clientX;
-        dragStartTranslate=categorySlider.getTranslate();
-        categorySlider.setTransition(0);
-        categorySliderElement.classList.add("is-mouse-dragging");
-        try{categorySliderElement.setPointerCapture(event.pointerId)}catch(_){}
-        event.preventDefault(); event.stopImmediatePropagation();
-      }, true);
-      categorySliderElement.addEventListener("pointermove", function(event) {
-        if(!mouseDragging || event.pointerType!=="mouse") return;
-        const deltaX=event.clientX-dragStartX;
-        if(Math.abs(deltaX)>4) movedDuringDrag=true;
-        categorySlider.setTranslate(dragStartTranslate+deltaX);
-        categorySlider.updateProgress();
-        event.preventDefault(); event.stopImmediatePropagation();
-      }, true);
-      const finishMouseDrag=function(event) {
-        if(!mouseDragging || (event.pointerType && event.pointerType!=="mouse")) return;
-        mouseDragging=false;
-        categorySliderElement.classList.remove("is-mouse-dragging");
-        categorySlider.slideToClosest(250);
-        if(movedDuringDrag) {
-          categorySliderElement.dataset.dragged="true";
-          window.setTimeout(function(){delete categorySliderElement.dataset.dragged;},100);
-        }
-        event.stopImmediatePropagation();
-      };
-      categorySliderElement.addEventListener("pointerup",finishMouseDrag,true);
-      categorySliderElement.addEventListener("pointercancel",finishMouseDrag,true);
-      categorySliderElement.addEventListener("click",function(event) {
-        if(categorySliderElement.dataset.dragged==="true"){
-          event.preventDefault(); event.stopImmediatePropagation();
-        }
-      },true);
-    }
+  // Native scroll slider: reliable finger swipe on touchscreens and mouse drag on desktop.
+  const categorySliderElement = $(".categorySwiper");
+  if (categorySliderElement) {
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let moved = false;
+    categorySliderElement.addEventListener("pointerdown", function(event) {
+      if (event.pointerType !== "mouse" || event.button !== 0) return;
+      isDragging = true;
+      moved = false;
+      startX = event.clientX;
+      startScrollLeft = categorySliderElement.scrollLeft;
+      categorySliderElement.classList.add("is-mouse-dragging");
+      categorySliderElement.setPointerCapture(event.pointerId);
+      event.preventDefault();
+    });
+    categorySliderElement.addEventListener("pointermove", function(event) {
+      if (!isDragging) return;
+      const distance = event.clientX - startX;
+      if (Math.abs(distance) > 3) moved = true;
+      categorySliderElement.scrollLeft = startScrollLeft - distance;
+      if (moved) event.preventDefault();
+    });
+    const stopDragging = function() {
+      if (!isDragging) return;
+      isDragging = false;
+      categorySliderElement.classList.remove("is-mouse-dragging");
+      if (moved) {
+        categorySliderElement.dataset.dragged = "true";
+        window.setTimeout(function() { delete categorySliderElement.dataset.dragged; }, 120);
+      }
+    };
+    categorySliderElement.addEventListener("pointerup", stopDragging);
+    categorySliderElement.addEventListener("pointercancel", stopDragging);
+    categorySliderElement.addEventListener("click", function(event) {
+      if (categorySliderElement.dataset.dragged === "true") {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
   }
 
   const topButton = $("#topBtn");
