@@ -3852,21 +3852,11 @@ img{max-width:100%}
 }
 
 
-/* Visible collection slider controls for desktop and mobile */
-.category-slider-btn{display:flex !important;align-items:center;justify-content:center;position:absolute;z-index:10;top:50%;transform:translateY(-50%);width:34px;height:34px;border:1px solid #f0cddd;border-radius:50%;background:#fff;color:#b83f78;box-shadow:0 3px 12px rgba(100,40,70,.12);cursor:pointer}
-.category-slider-btn:disabled{opacity:.35;cursor:not-allowed}
-.category-prev{left:2px}.category-next{right:2px}
-.categorySwiper{padding-left:44px !important;padding-right:44px !important}
-@media(max-width:768px){
-  .categorySwiper{padding-left:36px !important;padding-right:36px !important}
-  .category-slider-btn{width:28px;height:28px;font-size:11px}
-}
-@media(max-width:480px){
-  .categorySwiper{padding-left:32px !important;padding-right:32px !important}
-  .category-slider-btn{width:25px;height:25px;font-size:10px}
-}
-
-
+/* Collection slider: swipe/drag only, no arrow controls */
+.category-slider-btn{display:none !important}
+.categorySwiper{padding-left:8px !important;padding-right:8px !important;touch-action:pan-y pinch-zoom !important;overscroll-behavior-x:contain}
+.categorySwiper .swiper-wrapper,.categorySwiper .swiper-slide{touch-action:pan-y pinch-zoom !important}
+@media(max-width:768px){.categorySwiper{padding-left:12px !important;padding-right:12px !important}}
 /* Nails category icon tile */
 .category-card.category-icon-card .category-icon-tile{
   width:120px;
