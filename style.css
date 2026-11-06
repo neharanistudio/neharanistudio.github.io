@@ -3908,3 +3908,23 @@ img{max-width:100%}
   line-height:1;
   vertical-align:middle;
 }
+
+
+/* Nails subcategory chip inside Women's Accessories */
+.category-subcategory-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  margin-top:9px;
+  padding:7px 12px;
+  border:1px solid #f3bfd4;
+  border-radius:999px;
+  background:#fff0f6;
+  color:#c9437d;
+  font:600 12px/1.2 inherit;
+  cursor:pointer;
+  transition:background .2s ease,transform .2s ease;
+}
+.category-subcategory-chip:hover{background:#fbdce9;transform:translateY(-1px)}
+.category-subcategory-chip:focus-visible{outline:2px solid #d84e89;outline-offset:2px}
