@@ -225,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const productDescriptions = {
         "custom-pink-bow-graduation-gift-box": "# 1pc Custom Pink Bow Tassel Graduation Cap Flip-Top Gift Box, Suitable for Elementary, Middle, High School, And University Graduation Ceremonies, Graduation Parties, Teacher-Student Exchange Gifts, Jewelry, Perfume, Makeup",
+        "2pcs-silicone-resin-mold-set": "2pcs Silicone Resin Mold, Include Large Round Tray & Ring Holder Epoxy Resin Mold for Coaster, Fruit Board, Dish, Resin Painting Art, Jewelry Storage Plate, Home Decoration",
         "personalized-3d-name-led-light": "[Customized Graduation Season] 1pc Personalized 3D Name LED Night Light – Customized Creativity for Birthday, Christmas & Graduation – Warm Ambient Decor Desk Lamp – Unforgettable Gift for Friends & Loved Ones",
         "foam-rose-bear": "1pc Rose Bear Artificial Foam Flowers Bear Romantic Creative Gifts for Valentines Day, Mothers Day, Anniversary, Wedding Birthday Gifts Christmas Gifts with Box",
         "pink-bow-gift-set": "Gift Set for Her/Him - 24pcs: 6 Mirrors + 6 Gift Bags + 6 Hair Ties + 6 Tag Cards. Pink Bow Party Gift Box. Multi-piece Party Favor Set, Bridesmaid Souvenirs, and Casual Birthday Gifts. Includes Folding Mirrors, Hair Ties, and Lanyard Thank You",
