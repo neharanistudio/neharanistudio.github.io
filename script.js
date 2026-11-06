@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
           variantOptions.innerHTML=detailProduct.variants.map(function(variant,index){
             const selected=!!selectedVariant && variant.name===selectedVariant.name;
             const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":variant.name.toLowerCase().includes("gold")?"#d4af37":"#171717";
-            return '<button type="button" class="product-variant-option'+(selected?' active':'')+'" data-variant-index="'+index+'" onclick="window.selectGraduationGiftColour('+index+')" aria-pressed="'+selected+'"><span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>'+escapeHTML(variant.name)+'</button>';
+            return '<button type="button" class="product-variant-option'+(detailProduct.id==="pink-number-bow-party-balloons"?" number-variant-option":"")+(selected?' active':'')+'" data-variant-index="'+index+'" onclick="window.selectGraduationGiftColour('+index+')" aria-pressed="'+selected+'">'+(detailProduct.id==="pink-number-bow-party-balloons"?"":'<span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>')+escapeHTML(variant.name)+'</button>';
           }).join("");
           if(variantNote)variantNote.textContent=selectedVariant ? (detailProduct.id==="pink-number-bow-party-balloons" ? "Selected number: "+selectedVariant.name : "Selected colour: "+selectedVariant.name) : (detailProduct.id==="pink-number-bow-party-balloons" ? "Select a number from 0 to 9." : "Select a colour to view its matching gift box photo.");
         };
