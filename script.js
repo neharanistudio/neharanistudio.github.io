@@ -210,9 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
           variantOptions.innerHTML=detailProduct.variants.map(function(variant,index){
             const selected=!!selectedVariant && variant.name===selectedVariant.name;
             const swatch=variant.name.toLowerCase().includes("white")?"#fff":variant.name.toLowerCase().includes("pink")?"#f3a6c5":variant.name.toLowerCase().includes("gold")?"#d4af37":"#171717";
-            return '<button type="button" class="product-variant-option'+(detailProduct.id==="pink-number-bow-party-balloons"?" number-variant-option":"")+(selected?' active':'')+'" data-variant-index="'+index+'" onclick="window.selectGraduationGiftColour('+index+')" aria-pressed="'+selected+'">'+(detailProduct.id==="pink-number-bow-party-balloons"?"":'<span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>')+escapeHTML(variant.name)+'</button>';
+            return '<button type="button" class="product-variant-option'+((detailProduct.id==="pink-number-bow-party-balloons"||detailProduct.id==="6-color-liquid-blush")?" number-variant-option":"")+(selected?' active':'')+'" data-variant-index="'+index+'" onclick="window.selectGraduationGiftColour('+index+')" aria-pressed="'+selected+'">'+((detailProduct.id==="pink-number-bow-party-balloons"||detailProduct.id==="6-color-liquid-blush")?"":'<span class="variant-swatch" style="--variant-swatch:'+swatch+'"></span>')+escapeHTML(variant.name)+'</button>';
           }).join("");
-          if(variantNote)variantNote.textContent=selectedVariant ? (detailProduct.id==="pink-number-bow-party-balloons" ? "Selected number: "+selectedVariant.name : "Selected colour: "+selectedVariant.name) : (detailProduct.id==="pink-number-bow-party-balloons" ? "Select a number from 0 to 9." : "Select a colour to view its matching gift box photo.");
+          if(variantNote)variantNote.textContent=selectedVariant ? (detailProduct.id==="pink-number-bow-party-balloons" ? "Selected number: "+selectedVariant.name : detailProduct.id==="6-color-liquid-blush" ? "Selected shade: "+selectedVariant.name : "Selected colour: "+selectedVariant.name) : (detailProduct.id==="pink-number-bow-party-balloons" ? "Select a number from 0 to 9." : detailProduct.id==="6-color-liquid-blush" ? "Select a shade (1–6)." : "Select a colour to view its matching gift box photo.");
         };
         window.selectGraduationGiftColour=function(chosenIndex){
           const chosen=detailProduct && detailProduct.variants && detailProduct.variants[chosenIndex];
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
           detailImageIndex=0;
           renderGallery();
           if(mainImage){mainImage.src=photo;mainImage.alt=detailProduct.name+" - "+chosen.name;}
-          const selectedText=detailProduct.id==="pink-number-bow-party-balloons" ? " I want number "+chosen.name+"." : "";
+          const selectedText=detailProduct.id==="pink-number-bow-party-balloons" ? " I want number "+chosen.name+"." : detailProduct.id==="6-color-liquid-blush" ? " Selected shade: "+chosen.name+"." : " Selected option: "+chosen.name+".";
           const updatedMessage="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+")."+selectedText+" Please share availability and delivery details.\nProduct link: "+window.location.href;
           const updatedHref="https://wa.me/923045255325?text="+encodeURIComponent(updatedMessage);
           ["#whatsappBtn",".product-header-whatsapp","#floatingProductWhatsApp"].forEach(function(selector){const link=$(selector);if(link)link.href=updatedHref;});
