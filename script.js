@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mainImage.src = detailImages[detailImageIndex];
     mainImage.alt = (detailProduct ? detailProduct.name : "Product") + " photo " + (detailImageIndex + 1);
     if (thumbnails) thumbnails.innerHTML = detailImages.map(function(src,index) {
-      return '<button type="button" class="product-thumb'+(index===detailImageIndex?' active':'')+'" data-gallery-index="'+index+'" aria-label="View photo '+(index+1)+'"><img src="'+escapeHTML(src)+'" alt=""></button>';
+      return '<button type="button" class="product-thumb'+(index===detailImageIndex?' active':'')+'" data-gallery-index="'+index+'" data-photo-number="'+(index+1)+'" aria-label="View photo '+(index+1)+'"><img src="'+escapeHTML(src)+'" alt=""></button>';
     }).join("");
     $$(".image-buttons button").forEach(function(btn){btn.disabled=detailImages.length<2;});
   };
