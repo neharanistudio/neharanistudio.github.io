@@ -3968,3 +3968,15 @@ img{max-width:100%}
 .photo-number-badge { position:absolute; z-index:2; top:10px; left:10px; min-width:25px; height:25px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#e85d97; color:#fff; font-size:13px; font-weight:700; box-shadow:0 2px 7px rgba(0,0,0,.16); }
 .product-thumb { position:relative; }
 .product-thumb::after { content:attr(data-photo-number); position:absolute; top:3px; left:3px; width:19px; height:19px; display:flex; align-items:center; justify-content:center; border-radius:50%; background:#e85d97; color:#fff; font-size:11px; font-weight:700; }
+
+
+/* Liquid blush: clear pink shade swatches and numbered gallery photos */
+.product-gallery{position:relative!important;}
+.product-gallery #mainProductImage{display:block;}
+.gallery-current-number{position:absolute;z-index:8;top:14px;left:14px;min-width:34px;height:34px;padding:0 8px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#e85d97;color:#fff;font-size:16px;font-weight:700;box-shadow:0 3px 10px rgba(130,40,80,.22);pointer-events:none;}
+.product-thumbnails .product-thumb{position:relative!important;overflow:hidden!important;}
+.product-thumbnails .product-thumb .photo-number-badge{position:absolute;z-index:4;top:4px;left:4px;min-width:22px;height:22px;padding:0 4px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#e85d97;color:#fff;font-size:12px;font-weight:700;box-shadow:0 2px 6px rgba(80,20,50,.2);pointer-events:none;}
+.product-variant-option[data-blush-shade="true"]{border:1px solid #f3b5cd!important;color:#d94d88!important;background:#fff7fa!important;}
+.product-variant-option[data-blush-shade="true"] .variant-swatch{display:inline-block!important;width:19px!important;height:19px!important;min-width:19px!important;border-radius:50%!important;background:var(--variant-swatch)!important;border:1px solid #e8a1bd!important;box-shadow:0 1px 4px rgba(150,50,90,.15)!important;}
+.product-variant-option[data-blush-shade="true"].active{border:2px solid #e85d97!important;background:#ffe8f1!important;color:#c83f79!important;box-shadow:0 0 0 3px rgba(232,93,151,.12)!important;}
+.product-variant-option[data-blush-shade="true"]:hover{border-color:#e85d97!important;background:#fff0f6!important;}
