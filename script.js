@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "jewelry": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/jewellery.jpg", images: ["images/jewellery.jpg"], category: "Jewelry" },
     "shoes-1": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/shoes.jpg", images: ["images/shoes.jpg"], category: "Shoes" },
     "shoes": { id: "shoes-1", name: "Ladies Shoes", price: "Rs. 3,499", image: "images/shoes.jpg", images: ["images/shoes.jpg"], category: "Shoes" },
-    "abaya": { id: "abaya", name: "Luxury Abaya", price: "Rs. 5,999", image: "images/abayas.jpg", images: ["images/abayas.jpg"], category: "Abayas" }
+    "abaya": { id: "abaya", name: "Luxury Abaya", price: "Rs. 5,999", image: "images/abayas.jpg", images: ["images/abayas.jpg"], category: "Abayas" },
     "long-lasting-glitter-eyeshadow-highlighter-pen": { id: "long-lasting-glitter-eyeshadow-highlighter-pen", name: "Glitter Eyeshadow Highlighter Pen", price: "Rs. 1,500", image: "1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif", images: ["1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif","5fab3631-ca99-407c-b6ed-5c6c3dd95cc6.avif","67b9acaa-2795-4501-8a93-08415ca38fe5.avif","8740f66b-fa6e-4496-b9b7-7c5fda70292d.avif","d11741ea-94b6-4574-9d8e-35216f4732ab.avif"], category: "Makeup", subcategory: "Eyeshadow", description: "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones" },
   };
 
