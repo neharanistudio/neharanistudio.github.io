@@ -250,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
       const productDescriptions = {
+        "10pcs-press-on-nails": "# 10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art",
         "velvet-matte-lipstick": "1pc Velvet Matte Lipstick Red Tone Lip Gloss Long Lasting Smudge Proof Waterproof Non Drying Christmas Surprise Gift",
         "2pcs-140cm-3d-self-standing-unicorn-foil-balloons": "# 2pcs 140Cm Enormous 3D Self-Standing Unicorn Foil Balloons, Cartoon Rainbow Gradient Winged Unicorn Inflatable Mylar Balloons, Suitable for Birthdays, New Year, Anniversaries, Princess Parties, Showers, Weddings, Photo Booth Props, Party Supplies",
         "photography-backdrop-2pcs": "# photography backdrop 2pcs Per Set, Including a Pink And Blue Transparent Chiffon Background, for Gender-Revealing Shower Decoration, Valentine'S Day Confession Scene Setting Background Decoration, Scene Construction Supplies, And Beautiful Ribbons",
