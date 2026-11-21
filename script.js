@@ -249,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
       const productDescriptions = {
+        "velvet-matte-lipstick": "1pc Velvet Matte Lipstick Red Tone Lip Gloss Long Lasting Smudge Proof Waterproof Non Drying Christmas Surprise Gift",
         "2pcs-140cm-3d-self-standing-unicorn-foil-balloons": "# 2pcs 140Cm Enormous 3D Self-Standing Unicorn Foil Balloons, Cartoon Rainbow Gradient Winged Unicorn Inflatable Mylar Balloons, Suitable for Birthdays, New Year, Anniversaries, Princess Parties, Showers, Weddings, Photo Booth Props, Party Supplies",
         "photography-backdrop-2pcs": "# photography backdrop 2pcs Per Set, Including a Pink And Blue Transparent Chiffon Background, for Gender-Revealing Shower Decoration, Valentine'S Day Confession Scene Setting Background Decoration, Scene Construction Supplies, And Beautiful Ribbons",
         "custom-pink-bow-graduation-gift-box": "# 1pc Custom Pink Bow Tassel Graduation Cap Flip-Top Gift Box, Suitable for Elementary, Middle, High School, And University Graduation Ceremonies, Graduation Parties, Teacher-Student Exchange Gifts, Jewelry, Perfume, Makeup",
