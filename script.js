@@ -250,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
       const productDescriptions = {
+        "long-lasting-glitter-eyeshadow-highlighter-pen": "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones",
         "10pcs-press-on-nails": "# 10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art",
         "velvet-matte-lipstick": "1pc Velvet Matte Lipstick Red Tone Lip Gloss Long Lasting Smudge Proof Waterproof Non Drying Christmas Surprise Gift",
         "2pcs-140cm-3d-self-standing-unicorn-foil-balloons": "# 2pcs 140Cm Enormous 3D Self-Standing Unicorn Foil Balloons, Cartoon Rainbow Gradient Winged Unicorn Inflatable Mylar Balloons, Suitable for Birthdays, New Year, Anniversaries, Princess Parties, Showers, Weddings, Photo Booth Props, Party Supplies",
@@ -267,7 +268,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "transparent-ribbon-gift-box": "Gift for Her/Him 1pc Transparent Gift Box - Clear Display Box, Open Design with Ribbon And Bow, Suitable for Jewelry, Cosplay Mannequins - Ideal for Retail Stores, Home Or Gifting, Jewelry Storage Box, Elegant Display, Sturdy Construction",
         "eternal-rose-bear": "Simulation Flower Eternal Rose Bear Gift Box, with Crown, I Love You Heart Foil Balloon And Blank Heart Card, Artificial Eternal Flower Teddy Bear Valentine'S Day, Anniversary, Birthday, Wedding Romantic Gift, for Girlfriend Wife Mom",
         "surprise-explosion-box": "Surprise Explosion Money Gift Box Gift Box The Love Box Birthday Valentine'S Explosion Box Surprise Snack Box 5 Layers (Red/Blue/Black/Pink)",
-        "glow-rose-dome": "# 1pc Glow-in-the-Dark Rose Flower Decoration with LED-like Glow - Elegant Tabletop Centerpiece in Clear Dome, Battery-Powered (AAA Not Included) - Perfect Gift for Valentine's, Mother'S Day, Weddings, Birthdays, Christmas - Women'S Home Decor for Anniversary, Party, or Everyday Decoration, Romantic Present, Decorative Accent, Detailed Craftsmanship, Glow In Dark, Party Planners, Artificial Flowers, Flowers Artificial, Home Decor Items, Wedding Decorations",
+        "long-lasting-glitter-eyeshadow-highlighter-pen": { id: "long-lasting-glitter-eyeshadow-highlighter-pen", name: "Glitter Eyeshadow Highlighter Pen", price: "Rs. 1,500", image: "1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif", images: ["1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif","5fab3631-ca99-407c-b6ed-5c6c3dd95cc6.avif","67b9acaa-2795-4501-8a93-08415ca38fe5.avif","8740f66b-fa6e-4496-b9b7-7c5fda70292d.avif","d11741ea-94b6-4574-9d8e-35216f4732ab.avif"], category: "Makeup", subcategory: "Blush, Highlighter & Contour", description: "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones" },
+    "glow-rose-dome": "# 1pc Glow-in-the-Dark Rose Flower Decoration with LED-like Glow - Elegant Tabletop Centerpiece in Clear Dome, Battery-Powered (AAA Not Included) - Perfect Gift for Valentine's, Mother'S Day, Weddings, Birthdays, Christmas - Women'S Home Decor for Anniversary, Party, or Everyday Decoration, Romantic Present, Decorative Accent, Detailed Craftsmanship, Glow In Dark, Party Planners, Artificial Flowers, Flowers Artificial, Home Decor Items, Wedding Decorations",
         "red-rose-bear": "1pc Red Rose Bear Gift Box with Decorative Gift Packaging, 360° Rotating Artificial Rose Bear Display Box, Romantic Flower Bear Gift for Her Girlfriend Wife Mom, Valentine'S Day Mother'S Day Wedding Season Birthday Anniversary Gift",
         "Gift Hampers": "Add a graceful floral touch to your special moments with this rose-decorated jewelry gift box. Its elegant presentation makes it a lovely choice for storing or gifting earrings, rings and necklaces, and for birthdays, weddings, anniversaries and celebrations.",
         "Ribbon Bouquets": "A charming ribbon bouquet designed to add a graceful touch to meaningful moments. A beautiful keepsake-style gift for birthdays, celebrations, anniversaries and heartfelt surprises.",
@@ -280,6 +282,12 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       if(description) description.textContent = productDescriptions[detailProduct.id] || productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const productHighlights = {
+        "long-lasting-glitter-eyeshadow-highlighter-pen": [
+          ["Glitter eyeshadow highlighter pen", "A pen-style makeup product with a glitter finish."],
+          ["Waterproof formula", "Made for a waterproof makeup look."],
+          ["Medium coverage", "Provides medium coverage."],
+          ["For all skin tones", "Described as suitable for all skin tones."]
+        ],
         "10pcs-press-on-nails": [
           ["10-piece nail set", "A set of 10 press-on false nails for a coordinated manicure look."],
           ["Medium almond shape", "Medium-length almond-shaped nails with a glossy finish."],
