@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const products = {
+    "10pcs-press-on-nails": { id: "10pcs-press-on-nails", name: "10pcs Press On Nails", price: "Rs. 600", image: "21a72ade-a66a-4bb4-9fd5-d403035930db.avif", images: ["21a72ade-a66a-4bb4-9fd5-d403035930db.avif","719fb30e-5471-4d1b-a0e9-1d36ab406417.avif","945205f1-c851-4e6d-af9b-878f42e798eb.avif","dc115add-739f-4f82-9ee2-dac009fc60b2.avif"], category: "Makeup", subcategory: "Nails", description: "10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art" },
     "gift-box": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "gift-hamper": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "eternal-rose-bear": { id: "eternal-rose-bear", name: "Eternal Rose Bear Gift Box with Crown", price: "Rs. 6,059", image: "5bfd25a531b24d0c8e3edacc4a50b535-goods.avif", images: ["5bfd25a531b24d0c8e3edacc4a50b535-goods.avif","8afd27ab871c4ea7ae78a6ec75b379cd-goods.avif","9a22604e6edc4aa0bb5aaf0cd63b0ac1-goods.avif"], category: "Gift Hampers", description: "Simulation Flower Eternal Rose Bear Gift Box, with Crown, I Love You Heart Foil Balloon And Blank Heart Card, Artificial Eternal Flower Teddy Bear Valentine'S Day, Anniversary, Birthday, Wedding Romantic Gift, for Girlfriend Wife Mom" },
@@ -278,6 +279,12 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       if(description) description.textContent = productDescriptions[detailProduct.id] || productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const productHighlights = {
+        "10pcs-press-on-nails": [
+          ["10-piece nail set", "A set of 10 press-on false nails for a coordinated manicure look."],
+          ["Medium almond shape", "Medium-length almond-shaped nails with a glossy finish."],
+          ["French tips & 3D details", "Features French-tip styling, black polka dots and 3D flower details in nude pink, cream, white and golden tones."],
+          ["Reusable full-cover style", "Full-cover reusable false nails for elegant everyday, office or special-occasion nail art."]
+        ],
         "velvet-matte-lipstick": [
           ["Velvet matte finish", "A smooth matte-look lipstick for a soft, velvety lip finish."],
           ["Red tone colour", "A red-toned lip colour for a bold, classic look."],
