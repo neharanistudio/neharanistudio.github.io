@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "butterfly-acrylic-keepsake": { id: "butterfly-acrylic-keepsake", name: "Butterfly Acrylic Keepsake for Mom", price: "Rs. 1,500", image: "81f7b9c6-d837-43dd-8392-cf18ef9b275a.avif", images: ["81f7b9c6-d837-43dd-8392-cf18ef9b275a.avif","dd34973f-6a8e-4aff-bf2f-c2a69a6c5aba.avif"], category: "Gift Hampers", description: "A thoughtful butterfly-shaped 2D flat acrylic keepsake, gifted from a daughter or son to Mom. A lovely choice for Mother’s Day, birthdays and Christmas. Size: 9.91 × 6.86 cm." },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/flowers.jpg", images: ["images/flowers.jpg"], category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
+    "shiny-evening-crescent-bag": { id: "shiny-evening-crescent-bag", name: "Shiny Evening Crescent Bag", price: "Rs. 2,000", image: "10f20528073b4106b11fbbd190db4f10-goods.avif", images: ["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif","73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"], variants: [{name:"Golden",images:["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif"]},{name:"Silvery",images:["73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"]}], category: "Bags", subcategory: "Women's Clutches & Evening Bags", description: "# Shiny Evening Bag, Suitable for Carrying Lipstick, Coins, Headphones. Can Be Used As a Shoulder Bag Or Crossbody Bag. Fashionable Crescent Shape Mini Lightweight Clutch Bag for Women" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "dress-1": { id: "dress-1", name: "Beautiful Dress", price: "Rs. 4,999", image: "images/dresses.jpg", images: ["images/dresses.jpg"], category: "Dresses" },
@@ -270,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "miqh-diamond-gel-nail-polish": "# MIQH Single Pack Diamond Gel Nail Polish - Long-Lasting Shine LED Cured Nail Polish, Vibrant Colors, Professional Nail Design And Additions | Shiny Colorful Diamond Gel Nail Polish 7Ml, Nail Polish, Gel Nail Polish Under Light, Women'S Nail Polish",
         "velvet-matte-lipstick": "1pc Velvet Matte Lipstick Red Tone Lip Gloss Long Lasting Smudge Proof Waterproof Non Drying Christmas Surprise Gift",
         "12-color-lip-oil": "# Lip Oil, 12 Colors Moisturizing Hydrating Candy Lip Glaze, Mirror Shine Pearl Nude Lip Tint, Natural Lip Gloss For Daily Use",
+        "shiny-evening-crescent-bag": "# Shiny Evening Bag, Suitable for Carrying Lipstick, Coins, Headphones. Can Be Used As a Shoulder Bag Or Crossbody Bag. Fashionable Crescent Shape Mini Lightweight Clutch Bag for Women",
         "2pcs-140cm-3d-self-standing-unicorn-foil-balloons": "# 2pcs 140Cm Enormous 3D Self-Standing Unicorn Foil Balloons, Cartoon Rainbow Gradient Winged Unicorn Inflatable Mylar Balloons, Suitable for Birthdays, New Year, Anniversaries, Princess Parties, Showers, Weddings, Photo Booth Props, Party Supplies",
         "photography-backdrop-2pcs": "# photography backdrop 2pcs Per Set, Including a Pink And Blue Transparent Chiffon Background, for Gender-Revealing Shower Decoration, Valentine'S Day Confession Scene Setting Background Decoration, Scene Construction Supplies, And Beautiful Ribbons",
         "custom-pink-bow-graduation-gift-box": "# 1pc Custom Pink Bow Tassel Graduation Cap Flip-Top Gift Box, Suitable for Elementary, Middle, High School, And University Graduation Ceremonies, Graduation Parties, Teacher-Student Exchange Gifts, Jewelry, Perfume, Makeup",
@@ -373,6 +375,13 @@ document.addEventListener("DOMContentLoaded", function () {
           ["A polished finishing touch", "An accessory that adds a neat, elegant detail to your overall outfit."],
           ["For everyday moments", "A stylish pick for outings, meet-ups and occasions when you want to carry your essentials."]
         ],
+        "shiny-evening-crescent-bag": [
+          ["Fashionable crescent shape", "A chic mini crescent-shaped evening bag that adds a stylish touch to your outfit."],
+          ["Golden & Silvery options", "Choose the finish that best matches your personal style and occasion."],
+          ["Lightweight & compact", "A mini bag designed to carry small essentials such as lipstick, coins and headphones."],
+          ["Versatile carrying style", "Can be carried as a shoulder bag or a crossbody bag."],
+          ["Colour confirmation", "Please mention your preferred colour when placing your order."]
+        ],
         "dress-1": [
           ["Graceful look", "A stylish outfit chosen for an elegant look at gatherings and special moments."],
           ["Easy outfit inspiration", "Pair it with your favourite accessories to create a look that feels your own."],
@@ -413,9 +422,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const detailAdd=$("#detailAddCart");
       if(detailAdd)detailAdd.addEventListener("click",function(){addToCart(Object.assign({},detailProduct));});
-      const numberChoice=detailProduct.id==="pink-number-bow-party-balloons" && detailProduct.selectedVariant ? " I want number "+detailProduct.selectedVariant+"." : "";
+      const variantChoice=detailProduct.selectedVariant ? " My selected option is "+detailProduct.selectedVariant+"." : "";
       const phoneModelNote=detailProduct.id==="rose-red-exquisite-phone-case" ? " All mobile models are available. Please tell us your mobile phone model when placing your order." : "";
-      const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+")."+numberChoice+phoneModelNote+" Please share availability and delivery details.";
+      const message="Assalam-o-Alaikum, I would like to order "+detailProduct.name+" ("+detailProduct.price+")."+variantChoice+phoneModelNote+" Please share availability and delivery details.";
       const orderMessage=message+"\nProduct link: "+window.location.href;
       const waHref="https://wa.me/923045255325?text="+encodeURIComponent(orderMessage);
       const buyNow=$("#whatsappBtn"),headerWA=$(".product-header-whatsapp"),floatingWA=$("#floatingProductWhatsApp");
