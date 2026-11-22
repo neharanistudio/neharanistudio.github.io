@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  let cart = safeRead("nrs_cart", safeRead("cart", []));
-  let wishlist = safeRead("nrs_wishlist", safeRead("wishlist", []));
+  let cart = safeRead("nrs_cart", safeRead("cart", [])).filter(function (item) { return item && item.id !== "dress-1"; });
+  let wishlist = safeRead("nrs_wishlist", safeRead("wishlist", [])).filter(function (item) { return item && item.id !== "dress-1"; });
   const saveCart = function () {
     localStorage.setItem("nrs_cart", JSON.stringify(cart));
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "shiny-evening-crescent-bag": { id: "shiny-evening-crescent-bag", name: "Shiny Evening Crescent Bag", price: "Rs. 2,000", image: "10f20528073b4106b11fbbd190db4f10-goods.avif", images: ["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif","73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"], variants: [{name:"Golden",images:["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif"]},{name:"Silvery",images:["73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"]}], category: "Bags", subcategory: "Women's Clutches & Evening Bags", description: "# Shiny Evening Bag, Suitable for Carrying Lipstick, Coins, Headphones. Can Be Used As a Shoulder Bag Or Crossbody Bag. Fashionable Crescent Shape Mini Lightweight Clutch Bag for Women" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
-    "dress-1": { id: "dress-1", name: "Beautiful Dress", price: "Rs. 4,999", image: "images/dresses.jpg", images: ["images/dresses.jpg"], category: "Dresses" },
     "perfume-1": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
     "perfume": { id: "perfume-1", name: "Premium Perfume", price: "Rs. 2,499", image: "images/perfumes.jpg", images: ["images/perfumes.jpg"], category: "Perfumes" },
     "jewelry-1": { id: "jewelry-1", name: "Luxury Jewelry", price: "Rs. 5,499", image: "images/jewellery.jpg", images: ["images/jewellery.jpg"], category: "Jewelry" },
@@ -430,11 +429,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ["Lightweight & compact", "A mini bag designed to carry small essentials such as lipstick, coins and headphones."],
           ["Versatile carrying style", "Can be carried as a shoulder bag or a crossbody bag."],
           ["Colour confirmation", "Please mention your preferred colour when placing your order."]
-        ],
-        "dress-1": [
-          ["Graceful look", "A stylish outfit chosen for an elegant look at gatherings and special moments."],
-          ["Easy outfit inspiration", "Pair it with your favourite accessories to create a look that feels your own."],
-          ["For special plans", "A lovely wardrobe choice for festive moments, get-togethers and occasions."]
         ],
         "perfume-1": [
           ["A finishing touch", "A fragrance choice to complete your getting-ready routine."],
