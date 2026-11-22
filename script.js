@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const products = {
     "10pcs-press-on-nails": { id: "10pcs-press-on-nails", name: "10pcs Press On Nails", price: "Rs. 600", image: "21a72ade-a66a-4bb4-9fd5-d403035930db.avif", images: ["21a72ade-a66a-4bb4-9fd5-d403035930db.avif","719fb30e-5471-4d1b-a0e9-1d36ab406417.avif","945205f1-c851-4e6d-af9b-878f42e798eb.avif","dc115add-739f-4f82-9ee2-dac009fc60b2.avif"], category: "Makeup", subcategory: "Nails", description: "10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art" },
+    "miqh-diamond-gel-nail-polish": { id: "miqh-diamond-gel-nail-polish", name: "MIQH Diamond Gel Nail Polish", price: "Rs. 900", image: "08f5ab11-ed42-4bce-b579-7dbec3a232ba.avif", images: ["08f5ab11-ed42-4bce-b579-7dbec3a232ba.avif","19696647-33fe-4d69-b91f-289d833dd454.avif","20c5eb9c-6bf8-4466-acfd-4e3c7369a60d.avif","2da720aa-e05a-4f84-9c80-7bd748bfd37b.avif","425cd2ad-edcf-474b-85a8-3f5c5e401413.avif","7f611c0d-d036-4349-9fc7-9b8e809b8f1a.avif"], category: "Makeup", subcategory: "Nail Polish", description: "# MIQH Single Pack Diamond Gel Nail Polish - Long-Lasting Shine LED Cured Nail Polish, Vibrant Colors, Professional Nail Design And Additions | Shiny Colorful Diamond Gel Nail Polish 7Ml, Nail Polish, Gel Nail Polish Under Light, Women'S Nail Polish" },
     "gift-box": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "gift-hamper": { id: "gift-box", name: "Floral Rose Jewelry Gift Box", price: "Rs. 2,500", image: "38e741213269e58e0f0808eecdb54bd2.avif", images: ["38e741213269e58e0f0808eecdb54bd2.avif","3e660d84b622b7e3cd41db9b79707c9a.avif","708f803e62acd1dff76a167189b64b1c.avif","d39364e4-1667-11ee-8fd0-0a580a698dd1.avif","e4af9116843812b5625fb6820142e44d.avif"], category: "Gift Hampers" },
     "eternal-rose-bear": { id: "eternal-rose-bear", name: "Eternal Rose Bear Gift Box with Crown", price: "Rs. 6,059", image: "5bfd25a531b24d0c8e3edacc4a50b535-goods.avif", images: ["5bfd25a531b24d0c8e3edacc4a50b535-goods.avif","8afd27ab871c4ea7ae78a6ec75b379cd-goods.avif","9a22604e6edc4aa0bb5aaf0cd63b0ac1-goods.avif"], category: "Gift Hampers", description: "Simulation Flower Eternal Rose Bear Gift Box, with Crown, I Love You Heart Foil Balloon And Blank Heart Card, Artificial Eternal Flower Teddy Bear Valentine'S Day, Anniversary, Birthday, Wedding Romantic Gift, for Girlfriend Wife Mom" },
@@ -266,6 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "shimmering-eyeliner-eyeshadow-sticks": "# Set of 2 Shimmering Eyeliner And Eyeshadow Sticks - Water-Resistant, Smudge-Proof, Golden Sparkle, Durable, Easy to Use, Eye Cosmetics, Highly Pigmented, Versatile, Glitter Eyeliner And Eyeshadow",
         "long-lasting-glitter-eyeshadow-highlighter-pen": "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones",
         "10pcs-press-on-nails": "# 10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art",
+        "miqh-diamond-gel-nail-polish": "# MIQH Single Pack Diamond Gel Nail Polish - Long-Lasting Shine LED Cured Nail Polish, Vibrant Colors, Professional Nail Design And Additions | Shiny Colorful Diamond Gel Nail Polish 7Ml, Nail Polish, Gel Nail Polish Under Light, Women'S Nail Polish",
         "velvet-matte-lipstick": "1pc Velvet Matte Lipstick Red Tone Lip Gloss Long Lasting Smudge Proof Waterproof Non Drying Christmas Surprise Gift",
         "12-color-lip-oil": "# Lip Oil, 12 Colors Moisturizing Hydrating Candy Lip Glaze, Mirror Shine Pearl Nude Lip Tint, Natural Lip Gloss For Daily Use",
         "2pcs-140cm-3d-self-standing-unicorn-foil-balloons": "# 2pcs 140Cm Enormous 3D Self-Standing Unicorn Foil Balloons, Cartoon Rainbow Gradient Winged Unicorn Inflatable Mylar Balloons, Suitable for Birthdays, New Year, Anniversaries, Princess Parties, Showers, Weddings, Photo Booth Props, Party Supplies",
@@ -336,6 +338,12 @@ document.addEventListener("DOMContentLoaded", function () {
           ["Medium almond shape", "Medium-length almond-shaped nails with a glossy finish."],
           ["French tips & 3D details", "Features French-tip styling, black polka dots and 3D flower details in nude pink, cream, white and golden tones."],
           ["Reusable full-cover style", "Full-cover reusable false nails for elegant everyday, office or special-occasion nail art."]
+        ],
+        "miqh-diamond-gel-nail-polish": [
+          ["Diamond gel shine", "Shiny, colourful diamond-effect gel nail polish for a vibrant nail look."],
+          ["LED cured formula", "Designed to be cured under an LED nail lamp."],
+          ["7 ml single pack", "Single-pack 7 ml nail polish for nail design and professional-style manicures."],
+          ["Colour confirmation", "Please mention your preferred colour when placing your order."]
         ],
         "velvet-matte-lipstick": [
           ["Velvet matte finish", "A smooth matte-look lipstick for a soft, velvety lip finish."],
