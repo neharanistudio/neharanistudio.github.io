@@ -478,14 +478,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     const selected = normalizeCategory(category);
     const categoryGroups = {
-      "bags": ["bags", "womens-clutches-evening-bags"],
+      "bags": ["bags", "handbags", "womens-clutches-evening-bags"],
       "makeup": ["makeup", "lipstick-lip-gloss", "eyeshadow", "nail-polish", "nails", "blush-highlighter-contour"],
-      "jewelry": ["jewelry", "rings"],
+      "jewelry": ["jewelry", "rings", "jewelry-sets"],
       "tech-accessories": ["tech-accessories", "phone-accessories"],
       "dresses": ["dresses", "womens-clothing"],
       "shoes": ["shoes", "womens-shoes"],
       "skincare": ["skincare", "skin-care"],
-      "party-and-event-decorations": ["party-and-event-decorations", "party-event-decorations"]
+      "party-and-event-decorations": ["party-and-event-decorations", "party-event-decorations", "balloons-garlands", "backdrops-decor"],
+      "gift-hampers": ["gift-hampers", "gift-boxes-hampers", "gift-sets", "rose-bears-floral-gifts", "keepsakes", "led-decorative-lights", "craft-supplies"]
     };
     const matchingCategories = categoryGroups[selected] || [selected];
     $(".product-item").forEach(function (item) {
