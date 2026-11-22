@@ -708,6 +708,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Native scroll slider: reliable finger swipe on touchscreens and mouse drag on desktop.
   const categorySliderElement = $(".categorySwiper");
   if (categorySliderElement) {
+    // Handle collection taps directly before slider/other click handlers.
+    categorySliderElement.addEventListener("click", function(event) {
+      const card = event.target.closest(".category-card[data-category]");
+      if (!card) return;
+      if (categorySliderElement.dataset.dragged === "true") return;
+      event.preventDefault();
+      event.stopPropagation();
+      filterProducts(card.dataset.category);
+      window.location.hash = "featured-products";
+    }, true);
+  }
+  if (categorySliderElement) {
   // Explicit touch-drag support for Windows touchscreen laptops and mobile devices.
     let touchStartX = 0;
     let touchStartY = 0;
