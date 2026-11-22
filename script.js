@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "butterfly-acrylic-keepsake": { id: "butterfly-acrylic-keepsake", name: "Butterfly Acrylic Keepsake for Mom", price: "Rs. 1,500", image: "81f7b9c6-d837-43dd-8392-cf18ef9b275a.avif", images: ["81f7b9c6-d837-43dd-8392-cf18ef9b275a.avif","dd34973f-6a8e-4aff-bf2f-c2a69a6c5aba.avif"], category: "Gift Hampers", description: "A thoughtful butterfly-shaped 2D flat acrylic keepsake, gifted from a daughter or son to Mom. A lovely choice for Mother’s Day, birthdays and Christmas. Size: 9.91 × 6.86 cm." },
     "ribbon-bouquet": { id: "ribbon-bouquet", name: "Ribbon Bouquet", price: "Rs. 3,499", image: "images/flowers.jpg", images: ["images/flowers.jpg"], category: "Ribbon Bouquets" },
     "bag-1": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
+    "sweet-fashion-polka-dot-leopard-floral-ring": { id: "sweet-fashion-polka-dot-leopard-floral-ring", name: "Sweet Fashion Large Flower Ring", price: "Rs. 750", image: "686e5f3a-c371-4aa5-ad19-d6aab1577a7c.avif", images: ["686e5f3a-c371-4aa5-ad19-d6aab1577a7c.avif","9598c662-65f0-44a9-a2f6-a12cc4ed8d16.avif"], category: "Jewelry", subcategory: "Rings", description: "# 1pc Sweet Fashion Light Luxury Elegant Black And White Polka Dot Leopard Print Floral Pattern Large Flower Ring Suitable for Women'S Daily Casual Wear Trendy All-Match Holiday Gift" },
     "shiny-evening-crescent-bag": { id: "shiny-evening-crescent-bag", name: "Shiny Evening Crescent Bag", price: "Rs. 2,000", image: "10f20528073b4106b11fbbd190db4f10-goods.avif", images: ["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif","73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"], variants: [{name:"Golden",images:["10f20528073b4106b11fbbd190db4f10-goods.avif","152edd005c504390a3100417467e4ad1-goods.avif","39e8157bbb78458a9702c3385426d885-goods.avif"]},{name:"Silvery",images:["73060beb1f0da0bca0c16b4d3886059e.avif","8831ea64-fe31-4b94-a600-9f31d2e375ad.avif","96ca4042e06046239eb589d426613fe6-goods.avif"]}], category: "Bags", subcategory: "Women's Clutches & Evening Bags", description: "# Shiny Evening Bag, Suitable for Carrying Lipstick, Coins, Headphones. Can Be Used As a Shoulder Bag Or Crossbody Bag. Fashionable Crescent Shape Mini Lightweight Clutch Bag for Women" },
     "hand-bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
     "bag": { id: "bag-1", name: "Elegant Hand Bag", price: "Rs. 3,999", image: "images/bags.jpg", images: ["images/bags.jpg"], category: "Bags" },
@@ -265,6 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "crystal-butterfly-bracelet-phone-case": "# Phone Case - Crystal Butterfly with Cute Bracelet TPU Case | Shockproof Protective Phone Case | Scratch-Resistant Transparent Case for Iphone 7 / X / XS / 11 Series And Iphone 12 / 13 / 14 / 15/16 Models",
         "panda-mimi-transparent-phone-case": "# Phone Case - 2D Flat 1pc Brand Printed with Foundation Hollow Hugging Panda Mimi Pattern Transparent Side Heart Large Window Phone Case Suitable for Iphone 11/12/13/14/15/16/17/Pro/Pro Max/Plus, Offering Anti-Drop",
         "butterfly-glass-inlay-ring": "# A Butterfly Ring with Rectangular Glass Inlay, an Elegant Open-style Fashion Accessory",
+        "sweet-fashion-polka-dot-leopard-floral-ring": "# 1pc Sweet Fashion Light Luxury Elegant Black And White Polka Dot Leopard Print Floral Pattern Large Flower Ring Suitable for Women'S Daily Casual Wear Trendy All-Match Holiday Gift",
         "shimmering-eyeliner-eyeshadow-sticks": "# Set of 2 Shimmering Eyeliner And Eyeshadow Sticks - Water-Resistant, Smudge-Proof, Golden Sparkle, Durable, Easy to Use, Eye Cosmetics, Highly Pigmented, Versatile, Glitter Eyeliner And Eyeshadow",
         "long-lasting-glitter-eyeshadow-highlighter-pen": "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones",
         "10pcs-press-on-nails": "# 10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art",
@@ -321,6 +323,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
         "butterfly-glass-inlay-ring": [
           ["Available Colours", "1. Golden\n2. Silvery\n3. Black\n4. Blue\n5. Pink"],
+          ["Colour confirmation", "Please confirm your preferred colour when placing your order."]
+        ],
+        "sweet-fashion-polka-dot-leopard-floral-ring": [
           ["Colour confirmation", "Please confirm your preferred colour when placing your order."]
         ],
         "shimmering-eyeliner-eyeshadow-sticks": [
