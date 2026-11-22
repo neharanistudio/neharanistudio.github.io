@@ -463,8 +463,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (searchPopup) searchPopup.classList.remove("active");
   };
   const filterProducts = function (category) {
-    $$(".product-item").forEach(function (item) {
-      const visible = category === "all" || item.dataset.category === category;
+    const normalizeCategory = function (value) {
+      return String(value || "").toLowerCase().replace(/&amp;/g, "&")
+        .replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    };
+    const selected = normalizeCategory(category);
+    const categoryGroups = {
+      "bags": ["bags", "womens-clutches-evening-bags"],
+      "makeup": ["makeup", "lipstick-lip-gloss", "eyeshadow", "nail-polish", "nails", "blush-highlighter-contour"],
+      "jewelry": ["jewelry", "rings"],
+      "tech-accessories": ["tech-accessories", "phone-accessories"],
+      "dresses": ["dresses", "womens-clothing"],
+      "shoes": ["shoes", "womens-shoes"],
+      "skincare": ["skincare", "skin-care"],
+      "party-and-event-decorations": ["party-and-event-decorations", "party-event-decorations"]
+    };
+    const matchingCategories = categoryGroups[selected] || [selected];
+    $(".product-item").forEach(function (item) {
+      const itemCategory = normalizeCategory(item.dataset.category);
+      const visible = selected === "all" || matchingCategories.includes(itemCategory);
       item.hidden = !visible;
       item.style.display = visible ? "" : "none";
     });
