@@ -715,6 +715,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Native scroll slider: reliable finger swipe on touchscreens and mouse drag on desktop.
   const categorySliderElement = $(".categorySwiper");
+  const subcategoryNav = document.querySelector(".subcategory-nav");
+  if (subcategoryNav) {
+    subcategoryNav.addEventListener("click", function(event) {
+      const chip = event.target.closest(".category-subcategory-chip[data-category]");
+      if (!chip) return;
+      event.preventDefault();
+      event.stopPropagation();
+      filterProducts(chip.dataset.category);
+    }, true);
+  }
   if (categorySliderElement) {
     // Handle collection taps directly before slider/other click handlers.
     categorySliderElement.addEventListener("click", function(event) {
