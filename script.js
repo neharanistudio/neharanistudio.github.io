@@ -25,6 +25,43 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   };
 
+  const subcategoryLabels = {
+    "gift-boxes-hampers":"Gift Boxes & Hampers","gift-sets":"Gift Sets","rose-bears-floral-gifts":"Rose Bears & Floral Gifts",
+    "keepsakes":"Keepsakes","led-decorative-lights":"LED Decorative Lights","craft-supplies":"Craft Supplies",
+    "balloons-garlands":"Balloons & Garlands","backdrops-decor":"Backdrops & Decor",
+    "lipstick-lip-gloss":"Lipstick & Lip Gloss","eyeshadow":"Eyeshadow","blush-highlighter-contour":"Blush, Highlighter & Contour",
+    "nail-polish":"Nail Polish","nails":"Nails","rings":"Rings","jewelry-sets":"Jewelry Sets & Accessories",
+    "womens-clutches-evening-bags":"Women's Clutches & Evening Bags","handbags":"Handbags","womens-shoes":"Women's Shoes",
+    "phone-accessories":"Phone Accessories","perfumes":"Perfumes","dresses":"Women's Clothing"
+  };
+  const organizeProductsBySubcategory = function () {
+    const wrapper = $(".products-wrapper");
+    if (!wrapper || wrapper.dataset.subcategoryOrganized === "true") return;
+    const items = $(".product-item", wrapper);
+    const groups = new Map();
+    items.forEach(function (item) {
+      const key = String(item.dataset.category || "other").toLowerCase();
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    });
+    groups.forEach(function (groupItems, key) {
+      const section = document.createElement("section");
+      section.className = "subcategory-product-group";
+      section.dataset.subcategory = key;
+      const heading = document.createElement("h3");
+      heading.className = "subcategory-product-heading";
+      heading.textContent = subcategoryLabels[key] || key.replace(/-/g, " ").replace(/\\b\\w/g, function (c) { return c.toUpperCase(); });
+      const grid = document.createElement("div");
+      grid.className = "subcategory-products-grid";
+      groupItems.forEach(function (item) { grid.appendChild(item); });
+      section.appendChild(heading);
+      section.appendChild(grid);
+      wrapper.appendChild(section);
+    });
+    wrapper.dataset.subcategoryOrganized = "true";
+  };
+  organizeProductsBySubcategory();
+
   const products = {
     "10pcs-press-on-nails": { id: "10pcs-press-on-nails", name: "10pcs Press On Nails", price: "Rs. 600", image: "21a72ade-a66a-4bb4-9fd5-d403035930db.avif", images: ["21a72ade-a66a-4bb4-9fd5-d403035930db.avif","719fb30e-5471-4d1b-a0e9-1d36ab406417.avif","945205f1-c851-4e6d-af9b-878f42e798eb.avif","dc115add-739f-4f82-9ee2-dac009fc60b2.avif"], category: "Makeup", subcategory: "Nails", description: "10pcs Press On Nails Medium Almond Glossy French Tip Black Polka Dots 3D Flower Design Nude Pink Cream White Golden Full Cover Reusable False Nails for Women Minimalist Elegant Daily Office Nail Art" },
     "miqh-diamond-gel-nail-polish": { id: "miqh-diamond-gel-nail-polish", name: "MIQH Diamond Gel Nail Polish", price: "Rs. 900", image: "08f5ab11-ed42-4bce-b579-7dbec3a232ba.avif", images: ["08f5ab11-ed42-4bce-b579-7dbec3a232ba.avif","19696647-33fe-4d69-b91f-289d833dd454.avif","20c5eb9c-6bf8-4466-acfd-4e3c7369a60d.avif","2da720aa-e05a-4f84-9c80-7bd748bfd37b.avif","425cd2ad-edcf-474b-85a8-3f5c5e401413.avif","7f611c0d-d036-4349-9fc7-9b8e809b8f1a.avif"], category: "Makeup", subcategory: "Nail Polish", description: "# MIQH Single Pack Diamond Gel Nail Polish - Long-Lasting Shine LED Cured Nail Polish, Vibrant Colors, Professional Nail Design And Additions | Shiny Colorful Diamond Gel Nail Polish 7Ml, Nail Polish, Gel Nail Polish Under Light, Women'S Nail Polish" },
@@ -494,6 +531,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const visible = selected === "all" || matchingCategories.includes(itemCategory);
       item.hidden = !visible;
       item.style.display = visible ? "" : "none";
+    });
+    $(".subcategory-product-group").forEach(function (group) {
+      const hasVisible = $(".product-item", group).some(function (item) { return !item.hidden; });
+      group.hidden = !hasVisible;
+      group.style.display = hasVisible ? "" : "none";
     });
     if (searchInput) searchInput.value = "";
     $("#featured-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
