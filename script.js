@@ -486,15 +486,26 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     const selected = normalizeCategory(category);
     const categoryGroups = {
-      "bags": ["bags", "handbags", "womens-clutches-evening-bags"],
-      "makeup": ["makeup", "lipstick-lip-gloss", "eyeshadow", "nail-polish", "nails", "blush-highlighter-contour"],
-      "jewelry": ["jewelry", "rings", "jewelry-sets"],
-      "tech-accessories": ["tech-accessories", "phone-accessories"],
-      "dresses": ["dresses", "womens-clothing"],
-      "shoes": ["shoes", "womens-shoes"],
-      "skincare": ["skincare", "skin-care"],
-      "party-and-event-decorations": ["party-and-event-decorations", "party-event-decorations", "balloons-garlands", "backdrops-decor"],
-      "gift-hampers": ["gift-hampers", "gift-boxes-hampers", "gift-sets", "rose-bears-floral-gifts", "keepsakes", "led-decorative-lights", "craft-supplies"]
+      "bags": ["bags","handbags","womens-handbags","womens-shoulder-bags","womens-crossbody-bags","womens-clutches-evening-bags","womens-satchels","womens-tote-bags","hobo-bags","womens-purse-set","womens-backpacks","womens-wallets-card-cases","laptop-bags","gym-bag","bags-backpacks","storage-bag","waist-chest-bags","luggage-travel-gear","casual-unisex-backpacks","toiletry-bags"],
+      "makeup": ["makeup","makeup-products","makeup-kits","makeup-deals","makeup-palettes","face-makeup","eye-makeup","lip-makeup","face-primer","foundation-concealer","face-powder","blush-highlighter-contour","setting-spray","eyeshadow","eyeliner-mascara","lipstick-lip-gloss","false-eyelashes","beauty-tools","body-paint-makeup","makeup-bags-storage","makeup-mirrors","nails","press-on-nails","nail-polish","nail-tools","nail-appliances","nail-art","nail-powder"],
+      "jewelry": ["jewelry","rings","jewelry-sets","womens-jewelry","mens-jewelry","loose-gemstones","jewelry-boxes-organizers","watch-accessories","jewelry-cleaning-care","jewelry-making-accessories"],
+      "tech-accessories": ["tech-accessories","phone-accessories","cases-holsters-sleeves","maintenance-upkeep-repairs","cables-adapters","photo-shooting","stands","chargers","power-banks","wireless-chargers"],
+      "dresses": ["dresses","womens-clothing","wedding-event-wear","abayas","womens-t-shirts","womens-coats-jackets","womens-sweaters","womens-two-piece-sets","womens-pants","womens-blouses-shirts","womens-jeans","womens-skirts","womens-blazers","womens-undergarments"],
+      "shoes": ["shoes","womens-shoes","womens-heeled-sandals","womens-ankle-boots-booties","womens-fashion-sneakers","womens-flats","womens-slippers","womens-flip-flops","womens-sandals","womens-loafers-slip-ons","womens-knee-high-boots","womens-shoe-accessories"],
+      "skincare": ["skincare","skin-care","facial-care","body-care","foot-hand-nail-care","oral-care","personal-care","bathing-accessories","refillable-containers"],
+      "party-and-event-decorations": ["party-and-event-decorations","party-event-decorations","event-party-supplies","party-decorations-supplies","balloons","banners-backdrops","party-tableware","party-favors","cake-toppers-candles","party-garlands","backdrops-decor","balloons-garlands"],
+      "gift-hampers": ["gift-hampers","gift-boxes-hampers","gift-sets","gift-boxes-bags","gift-baskets","chocolate-sweet-hampers","greeting-cards","rose-bears-floral-gifts","keepsakes","led-decorative-lights","craft-supplies","personalized-products","gift-wrapping-supplies"],
+      "ribbon-bouquets": ["ribbon-bouquets","flower-bouquets","artificial-flower-bouquets","money-bouquets","chocolate-bouquets","customized-bouquets"],
+      "saree": ["saree","silk-sarees","chiffon-sarees","georgette-sarees","cotton-sarees","lawn-sarees","organza-sarees","banarasi-sarees","net-sarees","velvet-sarees","satin-sarees","linen-sarees","jacquard-sarees","tissue-sarees"],
+      "perfumes": ["perfumes","mens-fragrance","womens-fragrance","kids-fragrance","couples-fragrance"],
+      "accessories": ["accessories","womens-eyewear","womens-hats-caps","womens-scarves-wraps","womens-belts","womens-keyrings-keychains-charms","womens-gloves-mittens","womens-buttons-pins","womens-glasses-accessories","womens-faux-collar","womens-wedding-accessories","hand-fans","costume-wigs","applique-patches","face-covering","womens-earmuffs","handbag-hangers","hair-accessories","wigs-hair-extensions","hair-styling-tools"],
+      "mens-clothing": ["mens-clothing","mens-sweaters","mens-t-shirts","mens-casual-dress-shirts","mens-hoodies-sweatshirts","mens-polos","mens-jackets-coats","mens-sets","mens-casual-pants","mens-jeans","mens-suits-separates","mens-tops","mens-shorts","mens-cargo-pants","mens-pants"],
+      "mens-shoes": ["mens-shoes","mens-loafers-slip-ons","mens-casual-shoes","mens-sandals","mens-snow-boots","mens-semi-formal-shoes","mens-slippers","mens-wide-fit-shoes","mens-boots","mens-work-utility-footwear","mens-mules-clogs","mens-skateboarding-shoes","mens-canvas-shoes","mens-rain-boots"],
+      "mens-accessories": ["mens-accessories","mens-eyewear","mens-watches","mens-hats-caps","mens-belts","mens-ties-accessories","mens-keyrings-keychains-charms","mens-scarves","mens-gloves-mittens","mens-suspenders","cigarette-cases","mens-earmuffs","shaving-hair-removal","hair-cutting-tools"],
+      "kids-clothing": ["kids-clothing","girls-dresses","baby-sets","girls-sets","boys-sets","girls-pants","baby-one-pieces","boys-pants","underwear-pajamas","boys-t-shirts","baby-dresses","girls-t-shirts","girls-jackets-coats","baby-tops","boys-jackets-coats","girls-tops","boys-tops","baby-bottoms","boys-shirts","girls-shirts","girls-swimwear","boys-swimwear","baby-girls-0-3-yrs","young-girls-4-7-yrs","tween-girls-8-12-yrs","teen-girls-13-16-yrs","baby-boys-0-3-yrs","young-boys-4-7-yrs","tween-boys-8-12-yrs","teen-boys-13-16-yrs"],
+      "kids-shoes": ["kids-shoes","girls-loafers-slip-ons","girls-boots","girls-sandals-slippers","boys-sneakers","girls-sneakers","boys-athletic","baby-girl-shoes","boys-boots","boys-sandals-slippers","baby-boy-shoes","girls-athletic","girls-pumps","boys-loafers-slip-ons","girls-mules-clogs","boys-mules-clogs"],
+      "kids-accessories": ["kids-accessories","kids-eyewear","kids-socks","kids-watches","kids-hats-caps","kids-gloves-scarves","kids-hair-accessories","kids-bags","costumes-accessories","kids-backpacks","ties-belts-accessories","kids-keyrings-keychains","kids-buttons-pins"],
+      "home-living": ["home-living","seasonal-decor","home-decor-products","lighting-accessories","dining-entertaining","kids-home-store","kitchen-utensils-supplies","kitchen-storage-organization","bedding","home-storage-organization","bath","closet-laundry-storage","couch-sofa-decor","rugs-mats","window-treatments-hardware","bakeware","kitchen-table-linens","cleaning-supplies","cookware","towels-shower-curtains","glassware-drinkware","blankets-throws","wall-art","travel-to-go-drinkware"]
     };
     const matchingCategories = categoryGroups[selected] || [selected];
     $(".product-item").forEach(function (item) {
@@ -616,10 +627,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = "product.html?id=" + encodeURIComponent(card.dataset.id);
       return;
     }
-    const collectionShortcut = event.target.closest(".collection-shortcuts a[data-category]");
-    if (collectionShortcut) {
+    const categoryLink = event.target.closest("a[data-category]");
+    if (categoryLink && !categoryLink.classList.contains("sidebar-category-toggle")) {
       event.preventDefault();
-      filterProducts(collectionShortcut.dataset.category);
+      filterProducts(categoryLink.dataset.category);
       window.location.hash = "featured-products";
       return;
     }
