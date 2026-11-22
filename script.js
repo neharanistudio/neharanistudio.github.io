@@ -508,7 +508,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "home-living": ["home-living","seasonal-decor","home-decor-products","lighting-accessories","dining-entertaining","kids-home-store","kitchen-utensils-supplies","kitchen-storage-organization","bedding","home-storage-organization","bath","closet-laundry-storage","couch-sofa-decor","rugs-mats","window-treatments-hardware","bakeware","kitchen-table-linens","cleaning-supplies","cookware","towels-shower-curtains","glassware-drinkware","blankets-throws","wall-art","travel-to-go-drinkware"]
     };
     const matchingCategories = categoryGroups[selected] || [selected];
-    $(".product-item").forEach(function (item) {
+    $$(".product-item").forEach(function (item) {
       const itemCategory = normalizeCategory(item.dataset.category);
       const visible = selected === "all" || matchingCategories.includes(itemCategory);
       item.hidden = !visible;
@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitProductSearch = function (term) {
     const query = String(term || "").trim();
     if (!query) return;
-    if (!$("#featured-products") && !$(".product-item").length) {
+    if (!$("#featured-products") && !$$(".product-item").length) {
       window.location.href = "index.html?search=" + encodeURIComponent(query) + "#featured-products";
       return;
     }
@@ -574,7 +574,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $("#featured-products")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   function showAllProducts() {
-    $(".product-item").forEach(function (item) { item.hidden = false; item.style.display = ""; });
+    $$(".product-item").forEach(function (item) { item.hidden = false; item.style.display = ""; });
   }
 
   document.addEventListener("click", function (event) {
