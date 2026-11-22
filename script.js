@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "butterfly-glass-inlay-ring": { id: "butterfly-glass-inlay-ring", name: "Butterfly Glass Inlay Ring", price: "Rs. 750", image: "58769b05-b174-4b20-bc8e-2ddd9aef8dbd.avif", images: ["58769b05-b174-4b20-bc8e-2ddd9aef8dbd.avif","da264dd8-a0de-4e16-bdba-c0e9a29ad9a5.avif"], variants: [{name:"Golden",images:["58769b05-b174-4b20-bc8e-2ddd9aef8dbd.avif"]},{name:"Silvery",images:["da264dd8-a0de-4e16-bdba-c0e9a29ad9a5.avif"]},{name:"Black",images:["58769b05-b174-4b20-bc8e-2ddd9aef8dbd.avif"]},{name:"Blue",images:["da264dd8-a0de-4e16-bdba-c0e9a29ad9a5.avif"]},{name:"Pink",images:["58769b05-b174-4b20-bc8e-2ddd9aef8dbd.avif"]}], category: "Jewelry", subcategory: "Rings", description: "# A Butterfly Ring with Rectangular Glass Inlay, an Elegant Open-style Fashion Accessory" },
     "shimmering-eyeliner-eyeshadow-sticks": { id: "shimmering-eyeliner-eyeshadow-sticks", name: "Shimmering Eyeliner And Eyeshadow Sticks (Set of 2)", price: "Rs. 1,500", image: "704d8fee-daed-4e32-9b96-27c263178e52.avif", images: ["704d8fee-daed-4e32-9b96-27c263178e52.avif","be3db858-b231-44d3-be1c-70a6b6cff8cd.avif","e8baffc6-db62-4315-8550-0317becd074e.avif","fce60b95-031f-4a7a-b269-b161e413ca77.avif"], category: "Makeup", subcategory: "Eyeshadow", description: "# Set of 2 Shimmering Eyeliner And Eyeshadow Sticks - Water-Resistant, Smudge-Proof, Golden Sparkle, Durable, Easy to Use, Eye Cosmetics, Highly Pigmented, Versatile, Glitter Eyeliner And Eyeshadow" },
     "long-lasting-glitter-eyeshadow-highlighter-pen": { id: "long-lasting-glitter-eyeshadow-highlighter-pen", name: "Glitter Eyeshadow Highlighter Pen", price: "Rs. 1,500", image: "1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif", images: ["1476a376-b4e1-4fd1-863b-6bc5ab62cd5c.avif","5fab3631-ca99-407c-b6ed-5c6c3dd95cc6.avif","67b9acaa-2795-4501-8a93-08415ca38fe5.avif","8740f66b-fa6e-4496-b9b7-7c5fda70292d.avif","d11741ea-94b6-4574-9d8e-35216f4732ab.avif"], category: "Makeup", subcategory: "Eyeshadow", description: "# Long-Lasting Glitter Eyeshadow Highlighter Pen - Waterproof, Medium Coverage for All Skin Tones" },
+    "elegant-pointed-toe-stiletto-heels": { id: "elegant-pointed-toe-stiletto-heels", name: "Elegant Pointed-Toe Stiletto Heels", price: "Rs. 5,990", image: "19f3e1b7-f392-48d5-aeea-219158e25386.avif", images: ["19f3e1b7-f392-48d5-aeea-219158e25386.avif","713fcece-0df2-40bc-b1b3-f98b10fb6b69.avif","be214e46-029f-4bce-a3ac-35384fade95d.avif","d90136ea-ea10-4711-8ecc-23a9d3dc0382.avif"], variants: [{name:"Black",images:["19f3e1b7-f392-48d5-aeea-219158e25386.avif","713fcece-0df2-40bc-b1b3-f98b10fb6b69.avif","be214e46-029f-4bce-a3ac-35384fade95d.avif","d90136ea-ea10-4711-8ecc-23a9d3dc0382.avif"]},{name:"White",images:["19f3e1b7-f392-48d5-aeea-219158e25386.avif","713fcece-0df2-40bc-b1b3-f98b10fb6b69.avif","be214e46-029f-4bce-a3ac-35384fade95d.avif","d90136ea-ea10-4711-8ecc-23a9d3dc0382.avif"]},{name:"Red",images:["19f3e1b7-f392-48d5-aeea-219158e25386.avif","713fcece-0df2-40bc-b1b3-f98b10fb6b69.avif","be214e46-029f-4bce-a3ac-35384fade95d.avif","d90136ea-ea10-4711-8ecc-23a9d3dc0382.avif"]}], category: "Shoes", subcategory: "Women's Shoes", description: "# Elegant Pointed-Toe Stiletto Heels | Synthetic Upper with Metal Buckle Detail | Suitable for Weddings, Parties, and Work | Stylish Burgundy, White/Black | All-Season Comfortable Fit | Durable TPU Sole | Christmas Gifts, Women Shoes" },
   };
 
   const cartPanel = $(".cart-panel");
@@ -264,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       }
       const productDescriptions = {
+        "elegant-pointed-toe-stiletto-heels": "# Elegant Pointed-Toe Stiletto Heels | Synthetic Upper with Metal Buckle Detail | Suitable for Weddings, Parties, and Work | Stylish Burgundy, White/Black | All-Season Comfortable Fit | Durable TPU Sole | Christmas Gifts, Women Shoes",
         "rose-red-exquisite-phone-case": "# Phone Case: Rose Red Exquisite Accessory for iPhone Case, Offering Full Protection and a Stylish Choice, Ideal for Gifting",
         "minnie-cartoon-warner-bros-phone-case": "# Phone Case: 2D Flat, Warner Bros Cute Minnie Cartoon Anime Phone Case Suitable for iPhone 18 17 16 15 14 13 12 11 Pro Max XS XR Mini 8 7 and 6, Birthday Gift, Fan Gift, 2D Flat",
         "crystal-butterfly-bracelet-phone-case": "# Phone Case - Crystal Butterfly with Cute Bracelet TPU Case | Shockproof Protective Phone Case | Scratch-Resistant Transparent Case for Iphone 7 / X / XS / 11 Series And Iphone 12 / 13 / 14 / 15/16 Models",
@@ -308,6 +310,12 @@ document.addEventListener("DOMContentLoaded", function () {
       };
       if(description) description.textContent = productDescriptions[detailProduct.id] || productDescriptions[detailProduct.category] || "Explore this thoughtfully selected piece from Neha Rani Studio. For product details, availability and ordering assistance, contact our team on WhatsApp.";
       const productHighlights = {
+        "elegant-pointed-toe-stiletto-heels": [
+          ["Pointed-toe stiletto design", "Elegant pointed-toe heels with a stylish metal buckle detail."],
+          ["Black, White & Red options", "Available in Black, White and Red. Please mention your preferred colour when ordering."],
+          ["Size confirmation", "Please confirm your required shoe size before placing your order."],
+          ["Occasion-ready style", "Suitable for weddings, parties and work."]
+        ],
         "rose-red-exquisite-phone-case": [
           ["All mobile models available", "Please mention your mobile phone model when placing your order so we can provide you with the right cover."],
           ["Full protection", "Designed to offer protection for your phone."],
